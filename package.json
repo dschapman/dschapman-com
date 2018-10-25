@@ -9,11 +9,17 @@
   },
   "dependencies": {
     "gatsby": "^2.0.0",
+    "gatsby-plugin-typography": "^2.2.0",
     "gatsby-source-filesystem": "^2.0.1-rc.6",
     "gatsby-transformer-remark": "^2.1.1-rc.5",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-simple-dropdown": "^3.2.3",
-    "react-spring": "^5.9.2"
+    "react-spring": "^5.9.2",
+    "react-typography": "^0.16.13",
+    "typography": "^0.16.17",
+    "typography-theme-bootstrap": "^0.16.7",
+    "typography-theme-lawton": "^0.15.10",
+    "typography-theme-st-annes": "^0.15.10"
   }
 }

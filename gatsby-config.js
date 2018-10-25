@@ -1,7 +1,7 @@
 console.log(__dirname)
 module.exports = {
     siteMetadata: {
-        title: 'My Blog',
+        title: 'D. S. Chapman',
         description: 'This is my cool blog.'
     },
     plugins: [
@@ -12,6 +12,12 @@ module.exports = {
                 name: 'pages',
                 path: `${__dirname}/src/pages`
             }
-        }
+        },
+        {
+            resolve: `gatsby-plugin-typography`,
+            options: {
+                pathToConfigModule: `src/styles/typography.js`,
+            },
+        },
     ]
 }

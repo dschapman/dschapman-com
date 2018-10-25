@@ -10,21 +10,18 @@ const Template = ({data, pageContext}) => {
     return (
         <div>
             <Header />
-            <h1 style={{fontFamily: 'avenir'}}>{title}</h1>
+            <h2>{title}</h2>
             <div className='blogpost'
                 dangerouslySetInnerHTML={{__html: html}}
-                style={{
-                    fontFamily: 'avenir'
-                }}
             />
-            <div style={{marginBottom: 'lrem', fontFamily: 'avenir'}}>
+            <div style={{marginBottom: 'lrem'}}>
                 {next && 
                     <Link to={next.frontmatter.path}>
                         Next
                     </Link>
                 }
             </div>
-            <div style = {{fontFamily: 'avenir'}}>
+            <div>
                 {prev && 
                     <Link to={prev.frontmatter.path}>
                         Prev

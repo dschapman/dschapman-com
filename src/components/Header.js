@@ -8,10 +8,9 @@ const TitleAndDescription = ({data}) => {
         <div style={{
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'center',
-            fontFamily: 'avenir'                
+            alignItems: 'center',              
         }}>
-            <h2 style={{marginBottom:0}}>{title}</h2>
+            <h1 style={{marginBottom:0}}>{title}</h1>
             <p style={{
                 marginTop:0,
                 opacity: 0.5,
@@ -28,7 +27,6 @@ const BlogLinks = ({data}) => {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            fontFamily: 'avenir'
           }}>
             {edges.map(edge => {
               const {frontmatter} = edge.node
@@ -49,7 +47,6 @@ const BlogLinks = ({data}) => {
 }
 
 const Header = () => {
-    //console.log('got here')
     return (
         <StaticQuery
             query={graphql`
@@ -81,7 +78,6 @@ const Header = () => {
             render={data =>
             <div>
             <TitleAndDescription data={data} />
-            {console.log(data)}
             <BlogLinks data={data} />
             </div>
         }
