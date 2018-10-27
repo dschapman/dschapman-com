@@ -1,5 +1,6 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from 'gatsby'
+import GatsbyDropdown from './GatsbyDropdown.js'
 
 const TitleAndDescription = ({data}) => {
     const title = data.site.siteMetadata.title
@@ -10,7 +11,7 @@ const TitleAndDescription = ({data}) => {
             flexDirection: 'column',
             alignItems: 'center',              
         }}>
-            <h1 style={{marginBottom:0}}>{title}</h1>
+            <h1 style={{marginBottom:0}}><Link to='/'>{title}</Link></h1>
             <p style={{
                 marginTop:0,
                 opacity: 0.5,
@@ -21,28 +22,12 @@ const TitleAndDescription = ({data}) => {
 
 const BlogLinks = ({data}) => {
     const { edges } = data.allMarkdownRemark
+    var blogLinks = []
+    for (var i = 0; i < edges.length; i++) {
+        blogLinks.push({"linkName":edges[i].node.frontmatter.title, "linkPath":edges[i].node.frontmatter.path})
+    }
     return (
-        <div>
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}>
-            {edges.map(edge => {
-              const {frontmatter} = edge.node
-              return (
-                <div
-                  key={frontmatter.path}
-                  style={{marginBottom: '1rem'}}
-                >
-                  <Link to={frontmatter.path}>
-                    {frontmatter.title}
-                  </Link>
-                </div>
-              )
-            })}
-          </div>
-        </div>
+        blogLinks
       )
 }
 
@@ -78,7 +63,7 @@ const Header = () => {
             render={data =>
             <div>
             <TitleAndDescription data={data} />
-            <BlogLinks data={data} />
+            <GatsbyDropdown dropdownName={"Blog"} dropdownLinks={BlogLinks({data})} />
             </div>
         }
             />

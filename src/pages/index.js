@@ -9,7 +9,7 @@ const Layout = () => {
             <ParallaxLayer offset={0} speed={0.1}>
                 <Header />
             </ParallaxLayer>
-            <ParallaxLayer offset={.5} speed={1}>
+            <ParallaxLayer offset={1} speed={1}>
             <div>
                 <h1>Richard Hamming on Luck</h1>
                 <div>
