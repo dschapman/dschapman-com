@@ -11,11 +11,8 @@ const Template = ({data, pageContext}) => {
     return (
         <div>
         <Parallax pages={2}>
-
-            <ParallaxLayer offset={0} speed={0.1}>
-                <Header />
-            </ParallaxLayer>
-            <ParallaxLayer offset={0.75} speed={1}>
+            <Header />
+            <ParallaxLayer offset={0} speed={.5}>
                 <h2>{title}</h2>
                 <div className='blogpost'
                     dangerouslySetInnerHTML={{__html: html}}

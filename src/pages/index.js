@@ -6,10 +6,9 @@ const Layout = () => {
     return (
         <div>
         <Parallax pages={3}>
-            <ParallaxLayer offset={0} speed={0.1}>
-                <Header />
-            </ParallaxLayer>
-            <ParallaxLayer offset={1} speed={1}>
+
+            <Header />
+            <ParallaxLayer offset={0} speed={1}>
             <div>
                 <h1>Richard Hamming on Luck</h1>
                 <div>

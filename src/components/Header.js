@@ -1,6 +1,17 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from 'gatsby'
-import GatsbyDropdown from './GatsbyDropdown.js'
+import {GatsbyDropdown, GatsbyButton} from './GatsbyComponents.js'
+
+const NavBar = ({data}) => {
+
+    return (
+        <div className="navbar" style={{background:"red"}}>
+            <GatsbyButton buttonName={"Home"} buttonLink={'/'} />
+            <GatsbyButton buttonName={"About"} buttonLink={'/about'} />
+            <GatsbyDropdown dropdownName={"Blog"} dropdownLinks={BlogLinks({data})} />
+        </div>
+    )
+}
 
 const TitleAndDescription = ({data}) => {
     const title = data.site.siteMetadata.title
@@ -9,7 +20,8 @@ const TitleAndDescription = ({data}) => {
         <div style={{
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'center',              
+            alignItems: 'center',
+            justifyContent: 'center',              
         }}>
             <h1 style={{marginBottom:0}}><Link to='/'>{title}</Link></h1>
             <p style={{
@@ -63,7 +75,7 @@ const Header = () => {
             render={data =>
             <div>
             <TitleAndDescription data={data} />
-            <GatsbyDropdown dropdownName={"Blog"} dropdownLinks={BlogLinks({data})} />
+            <NavBar data={data}/>
             </div>
         }
             />
