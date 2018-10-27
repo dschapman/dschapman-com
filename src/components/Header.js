@@ -35,9 +35,10 @@ const TitleAndDescription = ({data}) => {
 const BlogLinks = ({data}) => {
     const { edges } = data.allMarkdownRemark
     var blogLinks = []
-    for (var i = 0; i < edges.length; i++) {
+    for (var i = 0; i < edges.length && i < 3; i++) {
         blogLinks.push({"linkName":edges[i].node.frontmatter.title, "linkPath":edges[i].node.frontmatter.path})
     }
+    blogLinks.push({"linkName":"All Posts by Tag","linkPath":"/tags"})
     return (
         blogLinks
       )

@@ -1,14 +1,15 @@
 import React from "react"
-import { graphql, Link } from 'gatsby'
+import {Link } from 'gatsby'
 import Header from '../components/Header'
+import {Parallax, ParallaxLayer} from 'react-spring'
 
 const singleTagsTemplate = ({data, pageContext}) => {
     const { posts, tagName} = pageContext
     return (
-        <div style = {{
-            fontFamily: 'avenir'
-        }}>
+        <div>
+        <Parallax pages={1}> 
         <Header />
+        <ParallaxLayer offset={0} speed={.5}>
             <div>
                 Posts about { `${tagName}`}
             </div>
@@ -25,6 +26,8 @@ const singleTagsTemplate = ({data, pageContext}) => {
                     })}
                 </ul>
             </div>
+            </ParallaxLayer>
+        </Parallax>
         </div>
     )
 }
