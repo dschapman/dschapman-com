@@ -5,12 +5,11 @@ import Header from '../components/Header'
 const Layout = () => {
     return (
         <div>
-        <Parallax pages={3}>
-
+        <Parallax pages={3} style={{backgroundColor: "#ffff"}}>
             <Header />
-            <ParallaxLayer offset={0} speed={1}>
+            <ParallaxLayer offset={0} speed={.5}>
             <div>
-                <h1>Richard Hamming on Luck</h1>
+                <h1 style={{textAlign: "center"}}>Richard Hamming on Luck</h1>
                 <div>
                 <p>
                     From Richard Hamming’s classic and must-read talk, “
