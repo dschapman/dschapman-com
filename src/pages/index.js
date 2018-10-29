@@ -2,12 +2,13 @@ import React from "react"
 import { Parallax, ParallaxLayer } from 'react-spring'
 import Header from '../components/Header'
 
+
 const Layout = () => {
     return (
         <div>
         <Parallax pages={3} style={{backgroundColor: "#ffff"}}>
-            <Header />
             <ParallaxLayer offset={0} speed={.5}>
+            <Header />
             <div>
                 <h1 style={{textAlign: "center"}}>Richard Hamming on Luck</h1>
                 <div>
