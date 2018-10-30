@@ -17,7 +17,7 @@ class EmailForm extends React.Component {
     handleSubmit(event) {
         event.preventDefault()
 
-       
+       alert(this.state.value)
     }
 
     render() {
