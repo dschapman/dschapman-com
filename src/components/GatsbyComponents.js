@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'gatsby';
-import './style.css';
+import '../styles/stylesheet.css';
 
 class GatsbyButton extends React.Component{
 constructor(props){
@@ -53,11 +53,11 @@ showDropdownMenu(event) {
         <div  className="dropdown" onMouseLeave={this.hideDropdownMenu} style = {{background:"red"} } >
          <div className="button" onClick={this.showDropdownMenu} onMouseEnter={this.showDropdownMenu}> {this.state.dropdownName} </div>
           { this.state.displayMenu ? (
-          <ul>
+          <ul className={"dropdown-list"}>
             {this.state.dropdownLinks.map(dropdownLink => {
               return (
                 <li
-                  key={dropdownLink.linkPath}
+                  key={dropdownLink.linkPath} className={"dropdown-list-item"}
                 >
                   <Link to={dropdownLink.linkPath}>
                     {dropdownLink.linkName}

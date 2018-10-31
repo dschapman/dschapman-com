@@ -8,7 +8,8 @@
     position: relative;
     display: inline-block;
 }
-ul {
+
+.dropdown-list{
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -22,18 +23,18 @@ ul {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
-li a {
+.dropdown-list-item a {
     color: #000;
     text-decoration: none;
 }
-li {
+.dropdown-list-item {
     padding: 8px 16px;
     border-bottom: 1px solid #e5e5e5;
 }
-li:last-child {
+.dropdown-list-item:last-child {
     border-bottom: none;
 }
-li:hover {
+.dropdown-list-item:hover {
     background-color: #e5e5e5;
     color: white;
 }
