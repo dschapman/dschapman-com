@@ -1,14 +1,13 @@
 import React from "react"
 import { Link } from 'gatsby'
-import Header from '../components/Header'
+import Layout from '../components/Layout'
 import { Parallax, ParallaxLayer } from "react-spring";
 
 const allTagsTemplate = ({data, pageContext}) => {
     const {tags} = pageContext
     return (
-        <div >
+        <Layout >
             <Parallax pages={1}>
-            <Header />
             <ParallaxLayer offset={0} speed={.5}>
             <div>
                 Tags
@@ -26,7 +25,7 @@ const allTagsTemplate = ({data, pageContext}) => {
             </div>
             </ParallaxLayer>
             </Parallax>
-        </div>
+        </Layout>
     )
 }
 export default allTagsTemplate

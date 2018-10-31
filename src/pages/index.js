@@ -1,12 +1,12 @@
 import React from "react"
 import { Parallax, ParallaxLayer } from 'react-spring'
-import Header from '../components/Header'
+import Layout from '../components/Layout'
 import {DIV, P, H1} from '../styles/StyledComponents'
 
 
-const Layout = () => {
+const MainPage = () => {
     return (
-        <DIV >
+        <Layout >
         <Parallax pages={3} style={{backgroundColor: "#ffff"}}>
             <ParallaxLayer offset={0} speed={.5}>
             <Header />
@@ -36,8 +36,8 @@ const Layout = () => {
             </DIV>
             </ParallaxLayer>
         </Parallax>
-        </DIV>
+        </Layout>
     )     
 }
 
-export default Layout
+export default MainPage
