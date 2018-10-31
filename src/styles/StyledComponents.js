@@ -1,10 +1,23 @@
 import styled from 'react-emotion'
 
-const Container = styled.div`
-  ${tw``};
-`
-const Text = styled.p`
-  ${tw``};
-`
+const DIV = styled.div(
+  tw``,
+  props => ({color: props.color})
+)
 
-export {Container, Text}
+const P = styled.p(
+  tw``,
+  props => ({color: props.color})
+)
+
+const H1 = styled.h1(
+  tw``,
+  props => ({color: props.color})
+)
+
+const H2 = styled.h2(
+  tw``,
+  props => ({color: props.color})
+)
+
+export {DIV, P, H1, H2}
