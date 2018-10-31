@@ -1,6 +1,11 @@
 import React from 'react';
 import {Link} from 'gatsby';
+import styled from 'react-emotion'
 import '../styles/stylesheet.css';
+
+const Button = styled.button(
+  tw`bg-red text-white font-bold py-2 px-8 border-none`
+)
 
 class GatsbyButton extends React.Component{
 constructor(props){
@@ -12,7 +17,7 @@ constructor(props){
 }
 render() {
   return (
-    <div className="button"> <Link style={{color:"white"}} to={this.state.buttonLink}>{this.state.buttonName}</Link> </div>
+    <Button> <Link style={{color:"white"}} to={this.state.buttonLink}>{this.state.buttonName}</Link> </Button>
   )
 }
 }
@@ -51,7 +56,7 @@ showDropdownMenu(event) {
   render() {
     return (
         <div  className="dropdown" onMouseLeave={this.hideDropdownMenu} style = {{background:"red"} } >
-         <div className="button" onClick={this.showDropdownMenu} onMouseEnter={this.showDropdownMenu}> {this.state.dropdownName} </div>
+         <Button onClick={this.showDropdownMenu} onMouseEnter={this.showDropdownMenu}> {this.state.dropdownName} </Button>
           { this.state.displayMenu ? (
           <ul className={"dropdown-list"}>
             {this.state.dropdownLinks.map(dropdownLink => {

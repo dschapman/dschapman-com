@@ -9,7 +9,6 @@ const MainPage = () => {
         <Layout >
         <Parallax pages={3} style={{backgroundColor: "#ffff"}}>
             <ParallaxLayer offset={0} speed={.5}>
-            <Header />
             <DIV>
                 <H1 style={{textAlign: "center"}}>Richard Hamming on Luck</H1>
                 <DIV>

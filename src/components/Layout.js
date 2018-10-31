@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from './Header.js'
+import Header from './Header'
 import styled from 'react-emotion'
 
 const Layout = styled.div(
