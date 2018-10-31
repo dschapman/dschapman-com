@@ -19,5 +19,11 @@ module.exports = {
                 pathToConfigModule: `src/styles/typography.js`,
             },
         },
+        {
+            resolve: 'gatsby-plugin-mailchimp',
+            options: {
+              endpoint: 'https://danielschapman.us19.list-manage.com/subscribe/post?u=ecd4715a0f288f445add5af6a&amp;id=673a64233f',
+            },
+          },
     ]
 }
