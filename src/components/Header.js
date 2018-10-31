@@ -1,7 +1,7 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from 'gatsby'
 import {GatsbyDropdown, GatsbyButton} from './GatsbyComponents.js'
-import styles from '../styles/stylesheet.css'
+import '../styles/stylesheet.css'
 
 const NavBar = ({data}) => {
 
