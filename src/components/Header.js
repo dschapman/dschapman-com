@@ -1,15 +1,22 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from 'gatsby'
 import {GatsbyDropdown, GatsbyButton} from './GatsbyComponents.js'
+import styled from "react-emotion";
 
 const NavBar = ({data}) => {
 
+    const Navbar = styled.div(
+        tw`flex flex-wrap justify-left bg-red`,
+        props => ({
+            color: props.color,
+        })
+    )
     return (
-        <div className="navbar" style={{background:"red"}}>
+        <Navbar>
             <GatsbyButton buttonName={"Home"} buttonLink={'/'} />
             <GatsbyButton buttonName={"About"} buttonLink={'/about'} />
             <GatsbyDropdown dropdownName={"Blog"} dropdownLinks={BlogLinks({data})} />
-        </div>
+        </Navbar>
     )
 }
 
