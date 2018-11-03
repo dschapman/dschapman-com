@@ -11,12 +11,12 @@ const P = styled.p(
 )
 
 const H1 = styled.h1(
-  tw``,
+  tw`text-blue-darkest mt-8 mb-1`,
   props => ({color: props.color})
 )
 
 const H2 = styled.h2(
-  tw``,
+  tw`text-blue-darker`,
   props => ({color: props.color})
 )
 

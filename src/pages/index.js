@@ -1,7 +1,7 @@
 import React from "react"
 import { Parallax, ParallaxLayer } from 'react-spring'
 import Header from '../components/Header'
-import {DIV, P, H1} from '../styles/StyledComponents'
+import {DIV, P, H2} from '../styles/StyledComponents'
 
 
 const MainPage = () => {
@@ -12,7 +12,7 @@ const MainPage = () => {
         <Header />
 
             <DIV>
-                <H1 style={{textAlign: "center"}}>Richard Hamming on Luck</H1>
+                <H2 style={{textAlign: "left"}}>Richard Hamming on Luck</H2>
                 <DIV>
                 <P>
                     From Richard Hamming’s classic and must-read talk, “

@@ -2,11 +2,12 @@ import React from "react"
 import { StaticQuery, graphql, Link } from 'gatsby'
 import {GatsbyDropdown, GatsbyButton} from './GatsbyComponents.js'
 import styled from "react-emotion";
+import {H1} from "../styles/StyledComponents"
 
 const NavBar = ({data}) => {
 
     const Navbar = styled.div(
-        tw`flex flex-wrap justify-left bg-red`,
+        tw`flex flex-wrap justify-center bg-white border-solid border-t-0 border-r-0 border-l-0 border-b-1 border-blue-lighter `,
         props => ({
             color: props.color,
         })
@@ -30,7 +31,7 @@ const TitleAndDescription = ({data}) => {
             alignItems: 'center',
             justifyContent: 'center',              
         }}>
-            <h1 style={{marginBottom:0}}><Link to='/'>{title}</Link></h1>
+            <H1>{title}</H1>
             <p style={{
                 marginTop:0,
                 opacity: 0.5,
