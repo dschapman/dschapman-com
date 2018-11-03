@@ -1,7 +1,7 @@
 import styled from 'react-emotion'
 
 const DIV = styled.div(
-  tw``,
+  tw`overflow-hidden`,
   props => ({color: props.color})
 )
 

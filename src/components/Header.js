@@ -1,13 +1,12 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from 'gatsby'
 import {GatsbyDropdown, GatsbyButton} from './GatsbyComponents.js'
-import '../styles/stylesheet.css'
 import styled from "react-emotion";
 
 const NavBar = ({data}) => {
 
     const Navbar = styled.div(
-        tw`flex flex-wrap justify-center bg-red`,
+        tw`flex flex-wrap justify-left bg-red`,
         props => ({
             color: props.color,
         })

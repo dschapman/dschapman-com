@@ -1,10 +1,21 @@
 import React from 'react';
 import {Link} from 'gatsby';
 import styled from 'react-emotion'
-import '../styles/stylesheet.css';
 
 const Button = styled.button(
-  tw`bg-red text-white font-bold py-2 px-8 border-none`
+  tw`bg-red text-white font-bold py-2 px-4 border-none`
+)
+
+const Dropdown = styled.div(
+  tw`relative bg-red`
+)
+
+const DropdownList = styled.ul(
+  tw`list-reset w-32 mx-2 my-10 pin-t bg-white font-bold absolute shadow z-1`
+)
+
+const DropdownListItem = styled.li(
+  tw`py-2 px-4 border-b border-grey-lightest hover:bg-grey-lightest`
 )
 
 class GatsbyButton extends React.Component{
@@ -55,29 +66,29 @@ showDropdownMenu(event) {
 
   render() {
     return (
-        <div  className="dropdown" onMouseLeave={this.hideDropdownMenu} style = {{background:"red"} } >
+        <Dropdown onMouseLeave={this.hideDropdownMenu}>
          <Button onClick={this.showDropdownMenu} onMouseEnter={this.showDropdownMenu}> {this.state.dropdownName} </Button>
           { this.state.displayMenu ? (
-          <ul className={"dropdown-list"}>
+          <DropdownList>
             {this.state.dropdownLinks.map(dropdownLink => {
               return (
-                <li
-                  key={dropdownLink.linkPath} className={"dropdown-list-item"}
+                <DropdownListItem
+                  key={dropdownLink.linkPath}
                 >
                   <Link to={dropdownLink.linkPath}>
                     {dropdownLink.linkName}
                   </Link>
-                </li>
+                </DropdownListItem>
               )
             })} 
-          </ul>
+          </DropdownList>
         ):
         (
           null
         )
         }
 
-       </div>
+       </Dropdown>
 
     );
   }

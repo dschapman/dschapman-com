@@ -1,14 +1,16 @@
 import React from "react"
 import { Parallax, ParallaxLayer } from 'react-spring'
-import Layout from '../components/Layout'
+import Header from '../components/Header'
 import {DIV, P, H1} from '../styles/StyledComponents'
 
 
 const MainPage = () => {
     return (
-        <Layout >
-        <Parallax pages={3} style={{backgroundColor: "#ffff"}}>
-            <ParallaxLayer offset={0} speed={.5}>
+        <div>
+        <Parallax pages={1} style={{backgroundColor: "#ffff"}}>
+        <ParallaxLayer offset={0} speed={.5}>
+        <Header />
+
             <DIV>
                 <H1 style={{textAlign: "center"}}>Richard Hamming on Luck</H1>
                 <DIV>
@@ -35,7 +37,7 @@ const MainPage = () => {
             </DIV>
             </ParallaxLayer>
         </Parallax>
-        </Layout>
+        </div>
     )     
 }
 
