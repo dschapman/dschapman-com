@@ -2,6 +2,7 @@ import React from 'react'
 import {graphql, Link} from 'gatsby'
 import { Parallax, ParallaxLayer } from 'react-spring'
 import Header from '../components/Header'
+import {H2} from '../styles/StyledComponents'
 
 const Template = ({data, pageContext}) => {
     const {next, prev} = pageContext
@@ -13,23 +14,25 @@ const Template = ({data, pageContext}) => {
         <Parallax pages={2}>
             <ParallaxLayer offset={0} speed={.5}>
             <Header />
-                <h2>{title}</h2>
+                <H2>{title}</H2>
                 <div className='blogpost'
                     dangerouslySetInnerHTML={{__html: html}}
                 />
                 <div>
-                    {next && 
-                        <Link to={next.frontmatter.path}>
-                            Next
-                        </Link>
-                    }
-                </div>
-                <div>
-                    {prev && 
-                        <Link to={prev.frontmatter.path}>
-                            Prev
-                        </Link>
-                    }
+                    <div>
+                        {next && 
+                            <Link to={next.frontmatter.path}>
+                                Next
+                            </Link>
+                        }
+                    </div>
+                    <div>
+                        {prev && 
+                            <Link to={prev.frontmatter.path}>
+                                Prev
+                            </Link>
+                        }
+                    </div>
                 </div>
             </ParallaxLayer>
         </Parallax>

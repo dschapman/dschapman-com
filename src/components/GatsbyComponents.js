@@ -3,15 +3,15 @@ import {Link} from 'gatsby';
 import styled from 'react-emotion'
 
 const Button = styled.button(
-  tw`bg-red text-white font-bold py-2 px-4 border-none`
+  tw`bg-white text-blue-dark font-bold py-2 px-4 border-none`
 )
 
 const Dropdown = styled.div(
-  tw`relative bg-red`
+  tw`relative bg-white`
 )
 
 const DropdownList = styled.ul(
-  tw`list-reset w-32 mx-2 my-10 pin-t bg-white font-bold absolute shadow z-1`
+  tw`list-reset w-32 mx-2 my-10 pin-t bg-grey-lightest font-bold absolute shadow-md z-1`
 )
 
 const DropdownListItem = styled.li(
@@ -28,7 +28,7 @@ constructor(props){
 }
 render() {
   return (
-    <Button> <Link style={{color:"white"}} to={this.state.buttonLink}>{this.state.buttonName}</Link> </Button>
+    <Button> <Link to={this.state.buttonLink}>{this.state.buttonName}</Link> </Button>
   )
 }
 }
