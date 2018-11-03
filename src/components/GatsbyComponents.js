@@ -15,7 +15,7 @@ const DropdownList = styled.ul(
 )
 
 const DropdownListItem = styled.li(
-  tw`py-2 px-4 border-b border-grey-lightest hover:bg-grey-lightest`
+  tw`py-2 px-4 border-b border-grey-lightest hover:bg-grey-lightest text-center text-sm`
 )
 
 class GatsbyButton extends React.Component{

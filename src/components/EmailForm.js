@@ -1,5 +1,18 @@
 import React from 'react'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
+import styled from 'react-emotion';
+
+const FORM = styled.form(
+  tw`border-solid border-teal rounded-lg`,
+)
+
+const SUBMIT = styled.input(
+  tw`rounded-lg bg-white border-none text-teal-light hover:bg-teal-dark hover:text-white`,
+)
+
+const EMAIL = styled.input(
+  tw`border-none rounded-lg`
+)
 
 class EmailForm extends React.Component {
     constructor(props) {
@@ -10,7 +23,8 @@ class EmailForm extends React.Component {
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
     }
-  
+    
+
     handleChange(event) {
       this.setState({value: event.target.value});
     }
@@ -33,13 +47,10 @@ class EmailForm extends React.Component {
 
     render() {
       return (
-        <form ref={this.form} name="email-submit" onSubmit={this.handleSubmit}>
-          <label>
-            Email:
-            <input type="email" name="email" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
+        <FORM ref={this.form} name="email-submit" onSubmit={this.handleSubmit}>
+          <EMAIL type="email" name="email" value={this.state.value} onChange={this.handleChange} />
+          <SUBMIT type="submit" value="Submit" />
+        </FORM>
       );
     }
   }
