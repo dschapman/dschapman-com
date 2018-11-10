@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from 'gatsby'
 import Header from '../components/Header'
 import { Parallax, ParallaxLayer } from "react-spring";
-import {Body} from "../styles/StyledComponents"
+import {H2, Body} from "../styles/StyledComponents"
 
 const allTagsTemplate = ({data, pageContext}) => {
     const {tags} = pageContext
@@ -11,9 +11,9 @@ const allTagsTemplate = ({data, pageContext}) => {
         <Header />
         <Body>
             
-            <div>
+            <H2>
                 Tags
-            </div>
+            </H2>
             <div>
                 {tags.map((tagName, index) => {
                     return (

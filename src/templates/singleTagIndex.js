@@ -1,7 +1,7 @@
 import React from "react"
 import {Link } from 'gatsby'
 import Header from '../components/Header'
-import {Body} from '../styles/StyledComponents'
+import {H2, Body} from '../styles/StyledComponents'
 
 const singleTagsTemplate = ({data, pageContext}) => {
     const { posts, tagName} = pageContext
@@ -9,10 +9,9 @@ const singleTagsTemplate = ({data, pageContext}) => {
     <div>
     <Header />
     <Body>
-        
-            <div>
+            <H2>
                 Posts about { `${tagName}`}
-            </div>
+            </H2>
             <div>
                 <ul>
                     {posts.map((post, index) => {

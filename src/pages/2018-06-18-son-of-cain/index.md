@@ -15,7 +15,7 @@ This discussion also reminded me of one of the poems that I wrote in 2016 before
 <hr />
 
 <h4>Son of Cain</h4>
-I thought I was Abel,
+<pre>I thought I was Abel,
 the good son, persecuted for doing right,
 but I love gardening.
 When I work hard I expect recognition,
@@ -42,12 +42,12 @@ Poets too are children of Cain.
 
 <em>Do well and you will be accepted.</em>
 <em>Do well</em> – simple words.
-But what if like Cain my fruit, my children, my music, even my words are not enough to wash away the blood.
+But what if like Cain my fruit, my children, my music, even mywords are not enough to wash away the blood.
 The blood He seemed to see before it ever washed those rocks.
 The bloody taint on all the fruit Cain offered the same day Abel brought his spotless lambs.
 <em>Do well and you too will be Abel.</em>
 It’s greater than I can bear.
-
+ 
 I cannot be an able son.
 My fruit is tainted like the father of gardeners, musicians, and poets.
 There’s very little hope for Cain,
@@ -55,4 +55,4 @@ but Cain needed hope most of all.
 I hope he hoped when Seth was born,
 for the son of Seth was born for men like Cain,
 and all his sons,
-I hope
+I hope</pre>
