@@ -1,0 +1,58 @@
+---
+path: "/son-of-cain"
+date: "2018-06-18"
+title: "Son of Cain"
+tags: ['poetry','writing', 'poem']
+excerpt: "A preview of my second post"
+---
+
+During the past seven months since I finished <a href="/on-writing-poems-daily">writing a poem every day for a year</a>, I have not used this site much. In truth my own writing has been inconsistent. I've been jumping from project to project with long breaks in between writing or editing sessions. In fairness my life has been full of many good things including reading! Right now I am half-way through John Steinbeck's <em>East of Eden.</em> Near where I left off there's an extended discussion on the Biblical story of Cain and Abel.
+<blockquote>"I think this is the best-known story in the world because it is everybody’s story. I think it is the symbol story of the human soul...Therefore I think this old and terrible story is important because it is a chart of the soul—the secret, rejected, guilty soul. Mr. Trask, you said you did not kill your brother and then you remembered something. I don’t want to know what it was, but was it very far apart from Cain and Abel?"</blockquote>
+I look forward to seeing how this imagery will unfold in the rest of the novel. So far Steinbek has proved himself a master of probing Biblical images like a wound to amplify the harsh elements of his story, which in turn serves as a commentary on both the biblical narrative and the human condition.
+
+This discussion also reminded me of one of the poems that I wrote in 2016 before I started my Year of Poems project. This poem was my own wrestling with the story of Cain and Abel and God's rejection of Cain. As Samuel Hamilton points out in <em>East of Eden, </em>it is Cain and not Abel who has children. Children, who if you read on in the biblical narrative go on to build the first cities, work with bronze, make music, and even write some of the first recorded rhymes. In other words, it is Cain who is "the fathers of all those who play the lyre and pipe." (Gen 4:21)
+
+<hr />
+
+<h4>Son of Cain</h4>
+I thought I was Abel,
+the good son, persecuted for doing right,
+but I love gardening.
+When I work hard I expect recognition,
+not loud parades or accolades,
+but the quiet nod, the pat on the back.
+I thrive on quiet, proud, humility.
+
+That silence would kill me.
+
+Quiet disapproval for sins I couldn’t see.
+My brother basking in warmth hidden from me,
+my younger brother.
+
+I hope I wouldn’t act as Cain.
+But Cain, no doubt, doubted he would act as Cain.
+
+<em>If you do well, will you not be accepted?</em>
+Herders, craftsmen, musicians are all born of Cain
+and haunted, like their father, by those words.
+Lyres and pipes, smithies and cities,
+all are children of Cain,
+ever searching, ever questing to atone.
+Poets too are children of Cain.
+
+<em>Do well and you will be accepted.</em>
+<em>Do well</em> – simple words.
+But what if like Cain my fruit, my children, my music, even my words are not enough to wash away the blood.
+The blood He seemed to see before it ever washed those rocks.
+The bloody taint on all the fruit Cain offered the same day Abel brought his spotless lambs.
+<em>Do well and you too will be Abel.</em>
+It’s greater than I can bear.
+
+I cannot be an able son.
+My fruit is tainted like the father of gardeners, musicians, and poets.
+There’s very little hope for Cain,
+but Cain needed hope most of all.
+I hope he hoped when Seth was born,
+for the son of Seth was born for men like Cain,
+and all his sons,
+I hope

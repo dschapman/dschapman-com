@@ -34,8 +34,7 @@ class EmailForm extends React.Component {
        alert(this.state.value)
        addToMailchimp(this.state.value)
        .then(data => {
-        // I recommend setting data to React state
-        // but you can do whatever you want (including ignoring this `then()` altogether)
+        this.state.returnMessage = data
         console.log(data)
       })
       .catch(() => {
