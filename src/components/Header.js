@@ -4,6 +4,7 @@ import {GatsbyDropdown, GatsbyButton} from './GatsbyComponents.js'
 import styled from "react-emotion";
 import {H1} from "../styles/StyledComponents"
 
+
 const NavBar = ({data}) => {
 
     const Navbar = styled.div(
