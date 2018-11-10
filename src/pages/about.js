@@ -1,6 +1,6 @@
 import React from "react"
 import { Parallax, ParallaxLayer } from 'react-spring'
-import {H2,P} from '../styles/StyledComponents'
+import {H2,P,Body} from '../styles/StyledComponents'
 import Header from '../components/Header'
 import EmailForm from '../components/EmailForm'
 import avatar from '../images/avatar.jpg'
@@ -8,10 +8,8 @@ import avatar from '../images/avatar.jpg'
 const Layout = () => {
     return (
         <div>
-        <Parallax pages={3}>
-        <ParallaxLayer offset={0} speed={.5}>
-            <Header />
-            <div>
+        <Header /> 
+            <Body>
                 <H2>About Me</H2>
                 <div className={'flex-container'} style={{display: 'flex',}}>
                     <div style={{width: '100px'}}/>
@@ -25,9 +23,7 @@ const Layout = () => {
                 <div className={'flex-container'} style={{display: 'flex', justifyContent: 'center'}}>
                 <EmailForm />
                 </div>
-            </div>
-            </ParallaxLayer>
-        </Parallax>
+            </Body>
         </div>
     )     
 }

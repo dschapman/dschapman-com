@@ -24,19 +24,20 @@ const NavBar = ({data}) => {
 const TitleAndDescription = ({data}) => {
     const title = data.site.siteMetadata.title
     const description = data.site.siteMetadata.description
+    
+    const Title = styled.div(
+        tw`flex flex-col items-center justify-center`
+    )
+
     return (
-        <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',              
-        }}>
+        
+        <Title>
             <H1>{title}</H1>
             <p style={{
                 marginTop:0,
                 opacity: 0.5,
-            }}>{description}</p>
-        </div>
+            }} onScroll>{description}</p>
+        </Title>
     )
 }
 
@@ -53,6 +54,10 @@ const BlogLinks = ({data}) => {
 }
 
 const Header = () => {
+    const Head = styled.div(
+        tw`pinned`
+    )
+
     return (
         <StaticQuery
             query={graphql`
@@ -82,10 +87,10 @@ const Header = () => {
         }
             `}
             render={data =>
-            <div>
+            <Head>
             <TitleAndDescription data={data} />
             <NavBar data={data}/>
-            </div>
+            </Head>
         }
             />
     )

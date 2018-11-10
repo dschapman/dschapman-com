@@ -1,8 +1,11 @@
 import styled from 'react-emotion'
 
-const DIV = styled.div(
+const Body = styled.div(
+  tw`px-25 xs:px-4 sm:px-10 md:px-15 lg:px-20`,
+)
+
+const Div = styled.div(
   tw`overflow-hidden`,
-  props => ({color: props.color})
 )
 
 const P = styled.p(
@@ -20,4 +23,4 @@ const H2 = styled.h2(
   props => ({color: props.color})
 )
 
-export {DIV, P, H1, H2}
+export {Div, P, H1, H2, Body}

@@ -1,16 +1,15 @@
 import React from "react"
 import {Link } from 'gatsby'
 import Header from '../components/Header'
-import {Parallax, ParallaxLayer} from 'react-spring'
+import {Body} from '../styles/StyledComponents'
 
 const singleTagsTemplate = ({data, pageContext}) => {
     const { posts, tagName} = pageContext
     return (
     <div>
+    <Header />
+    <Body>
         
-        <Parallax pages={1}> 
-        <Header />
-        <ParallaxLayer offset={0} speed={.5}>
             <div>
                 Posts about { `${tagName}`}
             </div>
@@ -27,8 +26,7 @@ const singleTagsTemplate = ({data, pageContext}) => {
                     })}
                 </ul>
             </div>
-            </ParallaxLayer>
-        </Parallax>
+        </Body>
         </div>
     )
 }

@@ -1,8 +1,7 @@
 import React from 'react'
 import {graphql, Link} from 'gatsby'
-import { Parallax, ParallaxLayer } from 'react-spring'
 import Header from '../components/Header'
-import {H2} from '../styles/StyledComponents'
+import {H2,Body} from '../styles/StyledComponents'
 
 const Template = ({data, pageContext}) => {
     const {next, prev} = pageContext
@@ -11,9 +10,8 @@ const Template = ({data, pageContext}) => {
     const html = markdownRemark.html
     return (
         <div>
-        <Parallax pages={2}>
-            <ParallaxLayer offset={0} speed={.5}>
             <Header />
+            <Body>
                 <H2>{title}</H2>
                 <div className='blogpost'
                     dangerouslySetInnerHTML={{__html: html}}
@@ -34,8 +32,7 @@ const Template = ({data, pageContext}) => {
                         }
                     </div>
                 </div>
-            </ParallaxLayer>
-        </Parallax>
+                </Body>
         </div>
     )
 }

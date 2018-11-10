@@ -3,7 +3,7 @@ import addToMailchimp from 'gatsby-plugin-mailchimp'
 import styled from 'react-emotion';
 
 const FORM = styled.form(
-  tw`border-solid border-teal rounded-lg`,
+  tw`border-solid border-teal rounded-lg outline-none`,
 )
 
 const SUBMIT = styled.input(
