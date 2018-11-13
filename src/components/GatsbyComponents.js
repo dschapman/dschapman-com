@@ -3,7 +3,7 @@ import {Link} from 'gatsby';
 import styled from 'react-emotion'
 
 const Button = styled.button(
-  tw`bg-white text-blue-dark font-bold py-2 px-4 border-none`
+  tw`bg-white text-blue hover:text-blue-dark font-bold py-2 px-4 border-none`
 )
 
 const Dropdown = styled.div(
@@ -18,6 +18,10 @@ const DropdownListItem = styled.li(
   tw`py-2 px-4 border-b border-grey-lightest hover:bg-grey-lightest text-center text-sm`
 )
 
+const S_Link = styled(Link)`
+  ${tw`text-blue hover:text-blue-dark`}
+`
+
 class GatsbyButton extends React.Component{
 constructor(props){
   super(props);
@@ -28,7 +32,7 @@ constructor(props){
 }
 render() {
   return (
-    <Button> <Link to={this.state.buttonLink}>{this.state.buttonName}</Link> </Button>
+    <Button> <S_Link to={this.state.buttonLink}>{this.state.buttonName}</S_Link> </Button>
   )
 }
 }
@@ -75,9 +79,9 @@ showDropdownMenu(event) {
                 <DropdownListItem
                   key={dropdownLink.linkPath}
                 >
-                  <Link to={dropdownLink.linkPath}>
+                  <S_Link to={dropdownLink.linkPath}>
                     {dropdownLink.linkName}
-                  </Link>
+                  </S_Link>
                 </DropdownListItem>
               )
             })} 
@@ -94,4 +98,4 @@ showDropdownMenu(event) {
   }
 }
 
-export {GatsbyButton, GatsbyDropdown}
+export {GatsbyButton, GatsbyDropdown, S_Link}

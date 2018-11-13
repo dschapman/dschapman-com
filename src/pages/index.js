@@ -1,15 +1,14 @@
 import React from "react"
-import { Parallax, ParallaxLayer } from 'react-spring'
 import Header from '../components/Header'
-import {Body,Div, P, H2} from '../styles/StyledComponents'
+import {Body,Content,Div, P, H2} from '../styles/StyledComponents'
 
 
 const MainPage = () => {
     return (
-        <div>
+        <Body>
         <Header />
 
-            <Body>
+            <Content>
                 <H2 style={{textAlign: "left"}}>Richard Hamming on Luck</H2>
                 <Div>
                 <P>
@@ -96,8 +95,8 @@ const MainPage = () => {
                     </em>
                     </P>
                     
-            </Body>
-        </div>
+            </Content>
+        </Body>
     )     
 }
 

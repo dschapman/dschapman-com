@@ -6,9 +6,8 @@ import {H1} from "../styles/StyledComponents"
 
 
 const NavBar = ({data}) => {
-
     const Navbar = styled.div(
-        tw`flex flex-wrap justify-center bg-white border-solid border-t-0 border-r-0 border-l-0 border-b-1 border-blue-lighter `,
+        tw`min-w-full flex flex-wrap justify-center bg-white border-solid border-t-0 border-r-0 border-l-0 border-b border-blue  `,
         props => ({
             color: props.color,
         })
@@ -18,14 +17,19 @@ const NavBar = ({data}) => {
             <GatsbyButton buttonName={"Home"} buttonLink={'/'} />
             <GatsbyButton buttonName={"About"} buttonLink={'/about'} />
             <GatsbyDropdown dropdownName={"Blog"} dropdownLinks={BlogLinks({data})} />
+            <div />
         </Navbar>
+        
     )
 }
 
 const TitleAndDescription = ({data}) => {
+    
+
     const title = data.site.siteMetadata.title
     const description = data.site.siteMetadata.description
     
+
     const Title = styled.div(
         tw`flex flex-col items-center justify-center`
     )
@@ -37,7 +41,7 @@ const TitleAndDescription = ({data}) => {
             <p style={{
                 marginTop:0,
                 opacity: 0.5,
-            }} onScroll>{description}</p>
+            }} >{description}</p>
         </Title>
     )
 }
@@ -56,7 +60,7 @@ const BlogLinks = ({data}) => {
 
 const Header = () => {
     const Head = styled.div(
-        tw`pinned`
+        tw`w-screen pin-x pin-t bg-white`
     )
 
     return (

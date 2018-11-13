@@ -1,7 +1,11 @@
 import styled from 'react-emotion'
 
 const Body = styled.div(
-  tw`px-25 xs:px-4 sm:px-10 md:px-15 lg:px-20`,
+  tw`flex flex-col w-screen fixed pin-l pin-y`
+)
+
+const Content = styled.div(
+  tw`flex-1 px-25 xs:px-4 sm:px-10 md:px-15 lg:px-20 overflow-y-auto scrolling-touch scrolling-auto`,
 )
 
 const Div = styled.div(
@@ -23,4 +27,4 @@ const H2 = styled.h2(
   props => ({color: props.color})
 )
 
-export {Div, P, H1, H2, Body}
+export {Div, P, H1, H2, Content, Body}
