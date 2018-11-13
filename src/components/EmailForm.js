@@ -3,21 +3,21 @@ import addToMailchimp from 'gatsby-plugin-mailchimp'
 import styled from 'react-emotion';
 
 const FORM = styled.form(
-  tw`border-solid border-teal rounded-lg`,
+  tw`border-solid border-teal-dark rounded`,
 )
 
 const SUBMIT = styled.input(
-  tw`rounded-lg bg-white border-none text-teal-light hover:bg-teal-dark hover:text-white`,
+  tw` rounded bg-white border-none text-teal-light hover:bg-teal-darker hover:text-white hover:border-teal-dark hover-border-solid hover:border-4`,
 )
 
 const EMAIL = styled.input(
-  tw`border-none rounded-lg`
+  tw`border-none rounded-lg outline-none`
 )
 
 class EmailForm extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {value: ''};
+      this.state = {value: '', returnMessage: ''};
   
       this.form = React.createRef()
       this.handleChange = this.handleChange.bind(this);
@@ -34,8 +34,7 @@ class EmailForm extends React.Component {
        alert(this.state.value)
        addToMailchimp(this.state.value)
        .then(data => {
-        // I recommend setting data to React state
-        // but you can do whatever you want (including ignoring this `then()` altogether)
+        this.state.returnMessage = data
         console.log(data)
       })
       .catch(() => {

@@ -1,17 +1,14 @@
 import React from "react"
-import { Parallax, ParallaxLayer } from 'react-spring'
-import {H2,P} from '../styles/StyledComponents'
+import {H2,P,Content,Body} from '../styles/StyledComponents'
 import Header from '../components/Header'
 import EmailForm from '../components/EmailForm'
 import avatar from '../images/avatar.jpg'
 
 const Layout = () => {
     return (
-        <div>
-        <Parallax pages={3}>
-        <ParallaxLayer offset={0} speed={.5}>
-            <Header />
-            <div>
+        <Body>
+        <Header /> 
+            <Content>
                 <H2>About Me</H2>
                 <div className={'flex-container'} style={{display: 'flex',}}>
                     <div style={{width: '100px'}}/>
@@ -25,10 +22,8 @@ const Layout = () => {
                 <div className={'flex-container'} style={{display: 'flex', justifyContent: 'center'}}>
                 <EmailForm />
                 </div>
-            </div>
-            </ParallaxLayer>
-        </Parallax>
-        </div>
+            </Content>
+        </Body>
     )     
 }
 

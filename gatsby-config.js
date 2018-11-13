@@ -33,6 +33,12 @@ module.exports = {
               endpoint: 'https://danielschapman.us19.list-manage.com/subscribe/post?u=ecd4715a0f288f445add5af6a&amp;id=673a64233f',
             },
           },
+          {
+            resolve: 'gatsby-plugin-favicon',
+            options: { 
+                logo: "./src/images/favicon.jpg"
+            }
+          }
         
         
     ]

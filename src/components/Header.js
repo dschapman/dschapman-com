@@ -4,10 +4,10 @@ import {GatsbyDropdown, GatsbyButton} from './GatsbyComponents.js'
 import styled from "react-emotion";
 import {H1} from "../styles/StyledComponents"
 
-const NavBar = ({data}) => {
 
+const NavBar = ({data}) => {
     const Navbar = styled.div(
-        tw`flex flex-wrap justify-center bg-white border-solid border-t-0 border-r-0 border-l-0 border-b-1 border-blue-lighter `,
+        tw`min-w-full flex flex-wrap justify-center bg-white border-solid border-t-0 border-r-0 border-l-0 border-b border-blue  `,
         props => ({
             color: props.color,
         })
@@ -17,26 +17,32 @@ const NavBar = ({data}) => {
             <GatsbyButton buttonName={"Home"} buttonLink={'/'} />
             <GatsbyButton buttonName={"About"} buttonLink={'/about'} />
             <GatsbyDropdown dropdownName={"Blog"} dropdownLinks={BlogLinks({data})} />
+            <div />
         </Navbar>
+        
     )
 }
 
 const TitleAndDescription = ({data}) => {
+    
+
     const title = data.site.siteMetadata.title
     const description = data.site.siteMetadata.description
+    
+
+    const Title = styled.div(
+        tw`flex flex-col items-center justify-center`
+    )
+
     return (
-        <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',              
-        }}>
+        
+        <Title>
             <H1>{title}</H1>
             <p style={{
                 marginTop:0,
                 opacity: 0.5,
-            }}>{description}</p>
-        </div>
+            }} >{description}</p>
+        </Title>
     )
 }
 
@@ -53,6 +59,10 @@ const BlogLinks = ({data}) => {
 }
 
 const Header = () => {
+    const Head = styled.div(
+        tw`w-screen pin-x pin-t bg-white`
+    )
+
     return (
         <StaticQuery
             query={graphql`
@@ -82,10 +92,10 @@ const Header = () => {
         }
             `}
             render={data =>
-            <div>
+            <Head>
             <TitleAndDescription data={data} />
             <NavBar data={data}/>
-            </div>
+            </Head>
         }
             />
     )

@@ -1,18 +1,18 @@
 import React from "react"
 import { Link } from 'gatsby'
 import Header from '../components/Header'
-import { Parallax, ParallaxLayer } from "react-spring";
+import {H2, Content, Body} from "../styles/StyledComponents"
 
 const allTagsTemplate = ({data, pageContext}) => {
     const {tags} = pageContext
     return (
-        <div>
-            <Parallax pages={1}>
-            <ParallaxLayer offset={0} speed={.5}>
-            <Header />
-            <div>
+        <Body>
+        <Header />
+        <Content>
+            
+            <H2>
                 Tags
-            </div>
+            </H2>
             <div>
                 {tags.map((tagName, index) => {
                     return (
@@ -24,9 +24,8 @@ const allTagsTemplate = ({data, pageContext}) => {
                     )
                 })}
             </div>
-            </ParallaxLayer>
-            </Parallax>
-        </div>
+        </Content>
+        </Body>
     )
 }
 export default allTagsTemplate
