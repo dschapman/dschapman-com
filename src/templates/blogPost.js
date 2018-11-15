@@ -11,7 +11,7 @@ const Template = ({data, pageContext}) => {
     const html = markdownRemark.html
     return (
         <Body>
-            <Header/>
+            <Header />
             <Content>
                 <H2>{title}</H2>
                 <div className='blogpost'
