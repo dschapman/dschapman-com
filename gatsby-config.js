@@ -2,7 +2,8 @@ console.log(__dirname)
 module.exports = {
     siteMetadata: {
         title: 'D. S. Chapman',
-        tagline: 'But the birds sing so I sing'
+        tagline: 'But the birds sing so I sing',
+        description: 'Poetry, Essays, Reviews'
     },
     plugins: [
         'gatsby-transformer-remark',
@@ -13,6 +14,7 @@ module.exports = {
                 path: `${__dirname}/src/pages`
             }
         },
+        'gatsby-plugin-react-helmet',
         'gatsby-plugin-tailwindcss',
         {
             resolve: `gatsby-plugin-emotion`,

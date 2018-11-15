@@ -4,6 +4,7 @@ import {GatsbyDropdown, GatsbyButton} from './GatsbyComponents.js'
 import styled from "react-emotion"
 import {H1} from "../styles/StyledComponents"
 import Headroom from 'react-headroom'
+import Helmet from 'react-helmet'
 
 
 const NavBar = ({data}) => {
@@ -70,6 +71,7 @@ class Header extends Component {
                     siteMetadata {
                         title
                         tagline
+                        description
                     }
                 }
                 allMarkdownRemark(
@@ -92,6 +94,14 @@ class Header extends Component {
             `}
             render={data =>
             <Head>
+            <Helmet 
+                title={data.site.siteMetadata.title}
+                meta ={[ 
+                    {name:"tagline", content:data.site.siteMetadata.tagline},
+                    {name:"description", content:data.site.siteMetadata.description}
+                
+                ]}
+            />
             <Headroom>
             
             <TitleAndDescription data={data} />
