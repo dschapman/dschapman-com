@@ -2,7 +2,7 @@ console.log(__dirname)
 module.exports = {
     siteMetadata: {
         title: 'D. S. Chapman',
-        description: 'This is my cool blog.'
+        tagline: 'But the birds sing so I sing'
     },
     plugins: [
         'gatsby-transformer-remark',

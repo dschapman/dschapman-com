@@ -3,7 +3,7 @@ path: "/on-writing-poems-daily"
 date: "2017-12-23"
 title: "On Writing Poems Daily"
 tags: ['poetry','writing', 'habit']
-excerpt: "It has been over a month since I finished writing a poem every day for a year. Once every 24 hours for 365 days I sat down to write a new poem from scratch."
+excerpt: "It has been over a month since I finished writing a poem every day for a year. Once every 24 hours for 365 days I sat down to write a new poem from scratch. I have enjoyed the break this last month from late nights writing poetry by LCD screen. I will admit that I have not spent the entirety of the last month thinking of more poems, editing my overflowing supply of poems, or even contemplating the benefits of writing a poem every day for a year. But it was a unique experience, and I learned a great deal in the process about poetry, writing, and habits. Here are a few of those lessons."
 ---
 
 It has been over a month since I finished writing a poem every day for a year. Once every 24 hours for 365 days I sat down to write a new poem from scratch. I have enjoyed the break this last month from late nights writing poetry by LCD screen. I will admit that I have not spent the entirety of the last month thinking of more poems, editing my overflowing supply of poems, or even contemplating the benefits of writing a poem every day for a year. But it was a unique experience, and I learned a great deal in the process about poetry, writing, and habits. Here are a few of those lessons.
