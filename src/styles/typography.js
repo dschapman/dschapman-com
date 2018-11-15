@@ -6,6 +6,9 @@ import stAnnesTheme from 'typography-theme-st-annes'
 stAnnesTheme.overrideThemeStyles = (options) => ({
     'a': {
         color: '#2779bd',
+    },
+    'blockquote': {
+        borderColor: '#b2b7ff',
     }
 })
 
