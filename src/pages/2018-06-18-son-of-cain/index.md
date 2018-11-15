@@ -3,7 +3,7 @@ path: "/son-of-cain"
 date: "2018-06-18"
 title: "Son of Cain"
 tags: ['poetry','writing', 'poem']
-excerpt: "A preview of my second post"
+excerpt: "During the past seven months since I finished writing a poem every day for a year, I have not used this site much. In truth my own writing has been inconsistent. I've been jumping from project to project with long breaks in between writing or editing sessions. In fairness my life has been full of many good things including reading! Right now I am half-way through John Steinbeck's East of Eden. Near where I left off there's an extended discussion on the Biblical story of Cain and Abel."
 ---
 
 During the past seven months since I finished <a href="/on-writing-poems-daily">writing a poem every day for a year</a>, I have not used this site much. In truth my own writing has been inconsistent. I've been jumping from project to project with long breaks in between writing or editing sessions. In fairness my life has been full of many good things including reading! Right now I am half-way through John Steinbeck's <em>East of Eden.</em> Near where I left off there's an extended discussion on the Biblical story of Cain and Abel.

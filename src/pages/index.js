@@ -1,103 +1,82 @@
 import React from "react"
 import Header from '../components/Header'
-import {Body,Content,Div, P, H2} from '../styles/StyledComponents'
+import {Link,graphql} from 'gatsby'
+import {Body,Content,Div, P, H2, S_Link} from '../styles/StyledComponents'
+import styled from 'react-emotion'
+
+const Post = styled.div(
+    tw`flex flex-col`
+)
 
 
-const MainPage = () => {
+const Tags = styled.div(
+    tw`flex`
+)
+
+const Tag = styled.div(
+    tw`p-1 text-xs`
+)
+
+const Date = styled.div(
+    tw`italic`
+)
+
+const MainPage = ({data}) => {
+    const {allMarkdownRemark} = data
+    const posts = allMarkdownRemark.edges
+    console.log(posts[0].node)
+    
     return (
         <Body>
         <Header />
 
             <Content>
-                <H2 style={{textAlign: "left"}}>Richard Hamming on Luck</H2>
-                <Div>
-                <P>
-                    From Richard Hamming’s classic and must-read talk, “
-                    <a href="http://www.cs.virginia.edu/~robins/YouAndYourResearch.html">
-                    You and Your Research
-                    </a>
-                    ”.
-                </P>
-                <blockquote>
-                    <P>
-                    There is indeed an element of luck, and no, there isn’t. The prepared
-                    mind sooner or later finds something important and does it. So yes, it
-                    is luck.{" "}
-                    <em>
-                        The particular thing you do is luck, but that you do something is
-                        not.
-                    </em>
-                    </P>
-                </blockquote>
-                </Div>
-                <P>Posted April 09, 2011</P>
-                <P>
-                    There is indeed an element of luck, and no, there isn’t. The prepared
-                    mind sooner or later finds something important and does it. So yes, it
-                    is luck.{" "}
-                    <em>
-                        The particular thing you do is luck, but that you do something is
-                        not.
-                    </em>
-                    </P>
-                    <P>
-                    There is indeed an element of luck, and no, there isn’t. The prepared
-                    mind sooner or later finds something important and does it. So yes, it
-                    is luck.{" "}
-                    <em>
-                        The particular thing you do is luck, but that you do something is
-                        not.
-                    </em>
-                    </P>
-                    <P>
-                    There is indeed an element of luck, and no, there isn’t. The prepared
-                    mind sooner or later finds something important and does it. So yes, it
-                    is luck.{" "}
-                    <em>
-                        The particular thing you do is luck, but that you do something is
-                        not.
-                    </em>
-                    </P>
-                    <P>
-                    There is indeed an element of luck, and no, there isn’t. The prepared
-                    mind sooner or later finds something important and does it. So yes, it
-                    is luck.{" "}
-                    <em>
-                        The particular thing you do is luck, but that you do something is
-                        not.
-                    </em>
-                    </P>
-                    <P>
-                    There is indeed an element of luck, and no, there isn’t. The prepared
-                    mind sooner or later finds something important and does it. So yes, it
-                    is luck.{" "}
-                    <em>
-                        The particular thing you do is luck, but that you do something is
-                        not.
-                    </em>
-                    </P>
-                    <P>
-                    There is indeed an element of luck, and no, there isn’t. The prepared
-                    mind sooner or later finds something important and does it. So yes, it
-                    is luck.{" "}
-                    <em>
-                        The particular thing you do is luck, but that you do something is
-                        not.
-                    </em>
-                    </P>
-                    <P>
-                    There is indeed an element of luck, and no, there isn’t. The prepared
-                    mind sooner or later finds something important and does it. So yes, it
-                    is luck.{" "}
-                    <em>
-                        The particular thing you do is luck, but that you do something is
-                        not.
-                    </em>
-                    </P>
-                    
+            {posts.map(({node}, index) => {
+                const post = node.frontmatter
+                const tags = node.frontmatter.tags
+                    return (
+                        <Post>
+                            <Link to={post.path}><H2 key={index}>
+                                {post.title}
+                            </H2></Link>
+                            <div className="excerpt">{post.excerpt} <Link to={post.path}>(read more...)</Link></div>
+                            <Date>{post.date}</Date>
+                            <Tags>{tags.map((tagName, index) => {
+                                    return (
+                                        <Tag>
+                                            <Link to={`tags/${tagName}`}>
+                                                {tagName}
+                                            </Link>
+                                        </Tag>
+                                    )
+                                    })}
+                            </Tags>
+                        </Post>
+                    )
+                })}
             </Content>
         </Body>
     )     
 }
+
+export const query = graphql`
+    query{
+        allMarkdownRemark (
+            sort: {order: ASC, fields: [frontmatter___date]}
+        ) {
+            edges {
+                node {
+                    frontmatter {
+                        path
+                        date
+                        title
+                        tags
+                        excerpt
+                    }
+                }
+            }
+        }
+    }
+`
 
 export default MainPage

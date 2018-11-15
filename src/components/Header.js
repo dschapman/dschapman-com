@@ -28,7 +28,7 @@ const TitleAndDescription = ({data}) => {
     
 
     const title = data.site.siteMetadata.title
-    const description = data.site.siteMetadata.description
+    const tagline = data.site.siteMetadata.tagline
     
 
     const Title = styled.div(
@@ -39,10 +39,6 @@ const TitleAndDescription = ({data}) => {
         
         <Title>
             <H1>{title}</H1>
-            <p style={{
-                marginTop:0,
-                opacity: 0.5,
-            }} >{description}</p>
         </Title>
     )
 }
@@ -73,7 +69,7 @@ class Header extends Component {
                 site {
                     siteMetadata {
                         title
-                        description
+                        tagline
                     }
                 }
                 allMarkdownRemark(
