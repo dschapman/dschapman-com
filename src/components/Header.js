@@ -1,8 +1,9 @@
-import React from "react"
+import React, {Component} from "react"
 import { StaticQuery, graphql, Link } from 'gatsby'
 import {GatsbyDropdown, GatsbyButton} from './GatsbyComponents.js'
-import styled from "react-emotion";
+import styled from "react-emotion"
 import {H1} from "../styles/StyledComponents"
+import Headroom from 'react-headroom'
 
 
 const NavBar = ({data}) => {
@@ -31,7 +32,7 @@ const TitleAndDescription = ({data}) => {
     
 
     const Title = styled.div(
-        tw`flex flex-col items-center justify-center`
+        tw`flex flex-col items-center justify-center bg-white`
     )
 
     return (
@@ -58,11 +59,13 @@ const BlogLinks = ({data}) => {
       )
 }
 
-const Header = () => {
-    const Head = styled.div(
-        tw`w-screen pin-x pin-t bg-white`
-    )
+class Header extends Component {
 
+
+    render(){
+    const Head = styled.div(
+            tw`bg-white`,
+    )
     return (
         <StaticQuery
             query={graphql`
@@ -93,12 +96,17 @@ const Header = () => {
             `}
             render={data =>
             <Head>
+            <Headroom>
+            
             <TitleAndDescription data={data} />
             <NavBar data={data}/>
+
+            </Headroom>
             </Head>
         }
             />
     )
+    }
 }
 
 export default Header

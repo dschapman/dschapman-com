@@ -1,7 +1,7 @@
 import styled from 'react-emotion'
 
 const Body = styled.div(
-  tw`flex flex-col w-screen fixed pin-l pin-y`
+  tw`flex flex-col w-screen`
 )
 
 const Content = styled.div(
