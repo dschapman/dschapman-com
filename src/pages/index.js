@@ -27,7 +27,7 @@ const MainPage = ({data}) => {
     
     return (
         <Body>
-        <Header />}
+        <Header />
 
             <Content>
             {posts.map(({node}, index) => {
@@ -53,9 +53,7 @@ const MainPage = ({data}) => {
                         </Post>
                     )
                 })}
-                {console.log("Got to bottom of Content")}
             </Content>
-            {console.log("Got to bottom of Body")}
         </Body>
     )     
 }

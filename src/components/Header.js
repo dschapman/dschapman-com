@@ -106,9 +106,7 @@ const Header =() => {
             
             <TitleAndDescription data={data} />
             <NavBar data={data}/>
-            {console.log("Got to bottom of Headroom")}
             </Headroom>
-            {console.log("Got to bottom of Head")}
             </Head>
             
         }
