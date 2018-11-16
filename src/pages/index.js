@@ -27,7 +27,7 @@ const MainPage = ({data}) => {
     
     return (
         <Body>
-        <Header />
+        {/*<Header />*/}
 
             <Content>
             {posts.map(({node}, index) => {
