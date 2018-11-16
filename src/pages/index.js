@@ -1,7 +1,7 @@
 import React from "react"
 import Header from '../components/Header'
 import {Link,graphql} from 'gatsby'
-import {Body,Content,Div, P, H2, S_Link} from '../styles/StyledComponents'
+import {Body,Content, H2} from '../styles/StyledComponents'
 import styled from 'react-emotion'
 
 const Post = styled.div(

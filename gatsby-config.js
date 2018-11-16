@@ -40,8 +40,13 @@ module.exports = {
             options: { 
                 logo: "./src/images/favicon.jpg"
             }
-          },
-            {
+          }
+            ,
+        
+        
+    ]
+}
+/*
               resolve: `gatsby-plugin-google-analytics`,
               options: {
                 trackingId: "UA-87782104-2",
@@ -60,8 +65,4 @@ module.exports = {
                 siteSpeedSampleRate: 10,
                 cookieDomain: "dschapman.com",
               }
-            },
-        
-        
-    ]
-}
+            */
