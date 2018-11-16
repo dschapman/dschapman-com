@@ -102,12 +102,10 @@ class Header extends Component {
                 
                 ]}
             />
-            <Headroom>
             
             <TitleAndDescription data={data} />
             <NavBar data={data}/>
 
-            </Headroom>
             </Head>
         }
             />
