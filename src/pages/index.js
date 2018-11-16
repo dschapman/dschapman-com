@@ -24,7 +24,6 @@ const Date = styled.div(
 const MainPage = ({data}) => {
     const {allMarkdownRemark} = data
     const posts = allMarkdownRemark.edges
-    console.log(posts[0].node)
     
     return (
         <Body>
@@ -35,15 +34,15 @@ const MainPage = ({data}) => {
                 const post = node.frontmatter
                 const tags = node.frontmatter.tags
                     return (
-                        <Post>
-                            <Link to={post.path}><H2 key={index}>
+                        <Post key={index}>
+                            <Link to={post.path}><H2>
                                 {post.title}
                             </H2></Link>
                             <div className="excerpt">{post.excerpt} <Link to={post.path}>(read more...)</Link></div>
                             <Date>{post.date}</Date>
                             <Tags>{tags.map((tagName, index) => {
                                     return (
-                                        <Tag>
+                                        <Tag key={index}>
                                             <Link to={`tags/${tagName}`}>
                                                 {tagName}
                                             </Link>
