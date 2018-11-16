@@ -56,10 +56,10 @@ const BlogLinks = ({data}) => {
       )
 }
 
-class Header extends Component {
+const Header =() => {
 
 
-    render(){
+    
     const Head = styled.div(
             tw`bg-white`,
     )
@@ -102,15 +102,17 @@ class Header extends Component {
                 
                 ]}
             />
+            <Headroom>
             
             <TitleAndDescription data={data} />
             <NavBar data={data}/>
 
+            </Headroom>
             </Head>
         }
             />
     )
-    }
+    
 }
 
 export default Header
