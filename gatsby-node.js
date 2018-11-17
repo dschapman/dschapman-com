@@ -1,5 +1,7 @@
 const path = require('path')
 
+const componentWithMDXScope = require("gatsby-mdx/component-with-mdx-scope");
+
 const createTagPages = (createPage, posts) => {
     const allTagsIndexTemplate = path.resolve('src/templates/allTagsIndex.js')
     const singleTagIndexTemplate = path.resolve('src/templates/singleTagIndex.js')
@@ -53,15 +55,24 @@ exports.createPages = (({graphql, actions}) => {
             graphql(
                 `
                     query{
-                        allMarkdownRemark (
-                            sort: {order: ASC, fields: [frontmatter___date]}
+                        allMdx (
                         ) {
                             edges {
                                 node {
+                                    id
+                                    parent{
+                                        ... on File {
+                                            name
+                                            sourceInstanceName
+                                        }
+                                    }
                                     frontmatter {
                                         path
                                         title
                                         tags
+                                    }
+                                    code {
+                                        scope
                                     }
                                 }
                             }
@@ -69,19 +80,24 @@ exports.createPages = (({graphql, actions}) => {
                     }
                 `
             ).then(result => {
-                const posts = result.data.allMarkdownRemark.edges
+                if (result.errors) {
+                    console.log(result.errors);
+                    reject(result.errors);
+                }
+                console.log(result)
+                const posts = result.data.allMdx.edges
                 
                 createTagPages(createPage, posts)
                 
                 posts.forEach(({node}, index)=> {
-                    const path = node.frontmatter.path
                     createPage({
-                        path,
-                        component: blogPostTemplate,
+                        path: `/${node.parent.sourceInstanceName}/${node.parent.name}`,
+                        component: componentWithMDXScope(
+                            path.resolve("./src/components/blog-layout.js"),
+                            node.code.scope
+                        ),
                         context: {
-                            pathSlug: path,
-                            prev: index===0 ? null : posts[index-1].node,
-                            next: index=== (posts.length-1) ? null : posts[index + 1].node
+                            id:node.id
                         }
                     })
                     resolve()

@@ -6,8 +6,12 @@ module.exports = {
         description: 'Poetry, Essays, Reviews'
     },
     plugins: [
+        {
+            resolve:'gatsby-mdx',
+            options: {
+                extensions:[".mdx",".md"]
+            }},
         'gatsby-transformer-remark',
-        'gatsby-mdx',
         {
             resolve: 'gatsby-source-filesystem',
             options: {

@@ -22,8 +22,8 @@ const Date = styled.div(
 )
 
 const MainPage = ({data}) => {
-    const {allMarkdownRemark} = data
-    const posts = allMarkdownRemark.edges
+    const {allMdx} = data
+    const posts = allMdx.edges
     
     return (
         <Body>
@@ -60,7 +60,7 @@ const MainPage = ({data}) => {
 
 export const query = graphql`
     query{
-        allMarkdownRemark (
+        allMdx (
             sort: {order: DESC, fields: [frontmatter___date]}
         ) {
             edges {

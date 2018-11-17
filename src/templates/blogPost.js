@@ -6,17 +6,18 @@ import {S_Link} from '../components/GatsbyComponents'
 
 const Template = ({data, pageContext}) => {
     const {next, prev} = pageContext
-    const {markdownRemark} = data
-    const title = markdownRemark.frontmatter.title
-    const html = markdownRemark.html
+    const {mdx} = data
+    const title = mdx.frontmatter.title
+    const html = mdx.rawBody
     return (
         <Body>
             <Header />
             <Content>
                 <H2>{title}</H2>
-                <div className='blogpost'
-                    dangerouslySetInnerHTML={{__html: html}}
-                />
+                <div className='blogpost'>
+                    {html}
+                </div>
+                
                 <div>
                     <div>
                         {next && 
@@ -40,8 +41,8 @@ const Template = ({data, pageContext}) => {
 
 export const query = graphql`
     query($pathSlug: String!) {
-        markdownRemark(frontmatter: { path: {eq: $pathSlug}}) {
-            html
+        mdx(frontmatter: { path: {eq: $pathSlug}}) {
+            rawBody
             frontmatter {
                 title
             }

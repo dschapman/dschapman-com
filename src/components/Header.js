@@ -45,7 +45,7 @@ const TitleAndDescription = ({data}) => {
 }
 
 const BlogLinks = ({data}) => {
-    const { edges } = data.allMarkdownRemark
+    const { edges } = data.allMdx
     var blogLinks = []
     for (var i = 0; i < edges.length && i < 3; i++) {
         blogLinks.push({"linkName":edges[i].node.frontmatter.title, "linkPath":edges[i].node.frontmatter.path})
@@ -74,7 +74,7 @@ const Header =() => {
                         description
                     }
                 }
-                allMarkdownRemark(
+                allMdx(
                     sort: {
                         order: DESC,
                         fields: [frontmatter___date],
