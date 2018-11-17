@@ -6,7 +6,14 @@ module.exports = {
         description: 'Poetry, Essays, Reviews'
     },
     plugins: [
-        'gatsby-transformer-remark',
+        {
+            resolve:'gatsby-mdx',
+            options: {
+                extensions:[".mdx",".md"],
+                defaultLayouts: {
+                    default: require.resolve("./src/components/blog-layout")
+                }
+            }},
         {
             resolve: 'gatsby-source-filesystem',
             options: {
