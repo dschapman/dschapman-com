@@ -7,6 +7,7 @@ module.exports = {
     },
     plugins: [
         'gatsby-transformer-remark',
+        'gatsby-mdx',
         {
             resolve: 'gatsby-source-filesystem',
             options: {
