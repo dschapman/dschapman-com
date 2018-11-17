@@ -9,9 +9,11 @@ module.exports = {
         {
             resolve:'gatsby-mdx',
             options: {
-                extensions:[".mdx",".md"]
+                extensions:[".mdx",".md"],
+                defaultLayouts: {
+                    default: require.resolve("./src/components/blog-layout")
+                }
             }},
-        'gatsby-transformer-remark',
         {
             resolve: 'gatsby-source-filesystem',
             options: {

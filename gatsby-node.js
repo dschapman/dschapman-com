@@ -45,65 +45,60 @@ const createTagPages = (createPage, posts) => {
     })
 }
 
-exports.createPages = (({graphql, actions}) => {
-    const {createPage} = actions
-
+exports.createPages = ({ graphql, actions }) => {
+    const { createPage } = actions;
     return new Promise((resolve, reject) => {
-        const blogPostTemplate = path.resolve('src/templates/blogPost.js')
-        
-        resolve(
-            graphql(
-                `
-                    query{
-                        allMdx (
-                        ) {
-                            edges {
-                                node {
-                                    id
-                                    parent{
-                                        ... on File {
-                                            name
-                                            sourceInstanceName
-                                        }
-                                    }
-                                    frontmatter {
-                                        path
-                                        title
-                                        tags
-                                    }
-                                    code {
-                                        scope
-                                    }
-                                }
-                            }
-                        }
+      resolve(
+        graphql(
+          `
+            {
+              allMdx (
+                sort: {order: ASC, fields: [frontmatter___date]}
+            ) {
+                edges {
+                  node {
+                    frontmatter{
+                        tags
+                        title
+                        path
                     }
-                `
-            ).then(result => {
-                if (result.errors) {
-                    console.log(result.errors);
-                    reject(result.errors);
+                    id
+                    parent {
+                      ... on File {
+                        name
+                        sourceInstanceName
+                      }
+                    }
+                    code {
+                      scope
+                    }
+                  }
                 }
-                console.log(result)
-                const posts = result.data.allMdx.edges
-                
-                createTagPages(createPage, posts)
-                
-                posts.forEach(({node}, index)=> {
-                    createPage({
-                        path: `/${node.parent.sourceInstanceName}/${node.parent.name}`,
-                        component: componentWithMDXScope(
-                            path.resolve("./src/components/blog-layout.js"),
-                            node.code.scope
-                        ),
-                        context: {
-                            id:node.id
-                        }
-                    })
-                    resolve()
-                })
-            })
-        )
-    
-    })
-})
+              }
+            }
+          `
+        ).then(result => {
+          if (result.errors) {
+            console.log(result.errors);
+            reject(result.errors);
+          }
+          // Create tag pages
+          createTagPages(createPage,result.data.allMdx.edges)
+          // Create blog posts pages.
+          posts = result.data.allMdx.edges
+          posts.forEach(({ node }, index) => {
+            createPage({
+              path: `/${node.parent.sourceInstanceName}/${node.parent.name}`,
+              component: componentWithMDXScope(
+                path.resolve("./src/components/blog-layout.js"),
+                node.code.scope
+              ),
+              context: { 
+                  id: node.id,
+                }
+            });
+          });
+        })
+      );
+    });
+  };

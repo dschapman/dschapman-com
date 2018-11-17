@@ -1,6 +1,25 @@
-export default ({ children }) => (
+import React from 'react'
+import Header from './Header'
+import {Body,Content,H2} from '../styles/StyledComponents'
+import {S_Link} from './GatsbyComponents'
+
+
+const Template = ({ children, pageContext}, {data}) => {
+    const {frontmatter} = pageContext
+    console.log(data)
+    return( 
     <div>
-        <h1>My Layout</h1>
-        <div>{children}</div>
+        <Body>
+            <Header />
+            <Content>
+            <H2>{frontmatter.title}</H2>
+            <div>{children}</div>
+            
+            </Content>
+        </Body>
     </div>
-)
+
+    )
+}
+
+export default Template
