@@ -1,12 +1,11 @@
 import React from 'react'
 import Header from './Header'
 import {Body,Content,H2} from '../styles/StyledComponents'
-import {S_Link} from './GatsbyComponents'
 
 
-const Template = ({ children, pageContext}, {data}) => {
+const Template = ({ children, pageContext}) => {
     const {frontmatter} = pageContext
-    console.log(data)
+    console.log(pageContext)
     return( 
     <div>
         <Body>

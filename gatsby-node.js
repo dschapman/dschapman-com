@@ -95,6 +95,7 @@ exports.createPages = ({ graphql, actions }) => {
               ),
               context: { 
                   id: node.id,
+                  frontmatter:node.frontmatter,
                 }
             });
           });
