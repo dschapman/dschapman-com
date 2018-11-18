@@ -34,7 +34,8 @@
     "typography": "^0.16.17",
     "typography-theme-bootstrap": "^0.16.7",
     "typography-theme-lawton": "^0.15.10",
-    "typography-theme-st-annes": "^0.15.10"
+    "typography-theme-st-annes": "^0.15.10",
+    "typography-theme-twin-peaks": "^0.15.11"
   },
   "devDependencies": {
     "tailwindcss": "^0.6.6"
