@@ -1,13 +1,14 @@
 import React from 'react'
 import Header from './Header'
-import {Body,Content,H2} from '../styles/StyledComponents'
+import {MDXProvider} from "@mdx-js/tag"
+import {Body,Content,H2,Poem,Stanza} from '../styles/StyledComponents'
+import { S_Link } from './GatsbyComponents';
 
 
 const Template = ({ children, pageContext}) => {
     const {frontmatter} = pageContext
-    console.log(pageContext)
     return( 
-    <div>
+    <MDXProvider>
         <Body>
             <Header />
             <Content>
@@ -16,7 +17,7 @@ const Template = ({ children, pageContext}) => {
             
             </Content>
         </Body>
-    </div>
+    </MDXProvider>
 
     )
 }
