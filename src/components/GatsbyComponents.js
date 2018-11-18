@@ -3,7 +3,7 @@ import {Link} from 'gatsby';
 import styled from 'react-emotion'
 
 const Button = styled.button(
-  tw`bg-white text-blue hover:text-blue-dark font-bold py-2 px-4 border-none`
+  tw`bg-white text-blue text-lg hover:text-blue-dark font-bold py-2 px-4 border-none`
 )
 
 const Dropdown = styled.div(
