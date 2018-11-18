@@ -6,14 +6,14 @@ module.exports = {
         description: 'Poetry, Essays, Reviews'
     },
     plugins: [
-        'gatsby-transformer-remark',
         {
-            resolve: 'gatsby-source-filesystem',
+            resolve:'gatsby-mdx',
             options: {
-                name: 'pages',
-                path: `${__dirname}/src/pages`
-            }
-        },
+                extensions:[".mdx",".md"],
+                defaultLayouts: {
+                    default: require.resolve("./src/components/blog-layout")
+                }
+            }},
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-tailwindcss',
         {
@@ -22,6 +22,14 @@ module.exports = {
               // Accepts all options defined by `babel-plugin-emotion` plugin.
             },
           },
+        {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                name: 'pages',
+                path: `${__dirname}/src/pages`
+            }
+        },
+        
         
         {
             resolve: `gatsby-plugin-typography`,
