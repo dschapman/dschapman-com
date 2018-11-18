@@ -27,4 +27,15 @@ const H2 = styled.h2(
   props => ({color: props.color})
 )
 
-export {Div, P, H1, H2, Content, Body}
+const Poem = styled.figure(
+  tw``,{
+  
+  p: tw`whitespace-pre`
+}
+)
+
+const Stanza = styled.p(
+  tw`whitespace-pre-wrap`
+)
+
+export {Div, P, H1, H2, Content, Body, Poem, Stanza}

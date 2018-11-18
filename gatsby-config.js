@@ -14,13 +14,6 @@ module.exports = {
                     default: require.resolve("./src/components/blog-layout")
                 }
             }},
-        {
-            resolve: 'gatsby-source-filesystem',
-            options: {
-                name: 'pages',
-                path: `${__dirname}/src/pages`
-            }
-        },
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-tailwindcss',
         {
@@ -29,6 +22,14 @@ module.exports = {
               // Accepts all options defined by `babel-plugin-emotion` plugin.
             },
           },
+        {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                name: 'pages',
+                path: `${__dirname}/src/pages`
+            }
+        },
+        
         
         {
             resolve: `gatsby-plugin-typography`,
