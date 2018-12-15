@@ -9,7 +9,7 @@ import Helmet from 'react-helmet'
 
 const NavBar = ({data}) => {
     const Navbar = styled.div(
-        tw`min-w-full flex flex-wrap justify-center bg-white border-solid border-t-0 border-r-0 border-l-0 border-b border-blue  `,
+        tw`min-w-full flex flex-wrap justify-center bg-white border-solid border-t-0 border-r-0 border-l-0 border-b border-blue relative `,
         props => ({
             color: props.color,
         })

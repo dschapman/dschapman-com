@@ -7,11 +7,11 @@ const Button = styled.button(
 )
 
 const Dropdown = styled.div(
-  tw`relative bg-white`
+  tw`bg-white`
 )
 
 const DropdownList = styled.ul(
-  tw`list-reset w-32 mx-2 my-10 pin-t bg-grey-lightest font-bold absolute shadow-md z-1`
+  tw`list-reset w-screen pin-x mx-0 my-px bg-white font-bold absolute shadow-md z-1`
 )
 
 const DropdownListItem = styled.li(
