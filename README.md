@@ -1,5 +1,5 @@
-## Adding Content
-Content is added via markdown files (mdx is supported). Pages are created based on the folder name in the [/src/pages/](../master/src/pages/) directory.
+## Adding Markdown Content
+Most content is added via markdown files (mdx is supported). Pages are created based on the folder name in the [/src/pages/](../master/src/pages/) directory.
 
 ## Using Tailwind
 There are two options for implementing tailwind styled components on this site.
