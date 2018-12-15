@@ -12,7 +12,8 @@ const Button = styled.button(
 )
 ```
 Any tailwind styling will go within the \`\` following the tw variable.
-2. Using the css className from react emotion.
+
+2. If the changes are specific to just one instance you can use the css className from react emotion.
 ```javascript
 import {css} from 'react-emotion'
 
