@@ -19,7 +19,7 @@ const DropdownListItem = styled.li(
 )
 
 const S_Link = styled(Link)`
-  ${tw`text-blue hover:text-blue-dark`}
+  ${tw`text-blue hover:text-blue-dark hover:underline`}
 `
 
 class GatsbyButton extends React.Component{

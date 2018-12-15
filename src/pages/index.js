@@ -1,7 +1,8 @@
 import React from "react"
 import Header from '../components/Header'
-import {Link,graphql} from 'gatsby'
+import {graphql} from 'gatsby'
 import {Body,Content, H2} from '../styles/StyledComponents'
+import {S_Link} from '../components/GatsbyComponents'
 import styled from 'react-emotion'
 
 const Post = styled.div(
@@ -38,18 +39,18 @@ const MainPage = ({data}) => {
                 const tags = node.frontmatter.tags
                     return (
                         <Post key={index}>
-                            <Link to={post.path}><H2>
+                            <S_Link to={post.path}><H2>
                                 {post.title}
-                            </H2></Link>
-                            <div className="excerpt">{post.excerpt} <Link to={post.path}>(read more...)</Link></div>
+                            </H2></S_Link>
+                            <div className="excerpt">{post.excerpt} <S_Link to={post.path}>(read more...)</S_Link></div>
                             <PostFooter>
                             
                             <Tags>{tags.map((tagName, index) => {
                                     return (
                                         <Tag key={index}>
-                                            <Link to={`tags/${tagName}`}>
+                                            <S_Link to={`tags/${tagName}`}>
                                                 {tagName}
-                                            </Link>
+                                            </S_Link>
                                         </Tag>
                                     )
                                     })}
