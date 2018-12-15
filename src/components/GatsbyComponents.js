@@ -3,7 +3,7 @@ import {Link} from 'gatsby';
 import styled from 'react-emotion'
 
 const Button = styled.button(
-  tw`bg-white text-blue text-lg hover:text-blue-dark font-bold py-2 px-4 border-none`
+  tw`bg-white text-blue text-lg hover:text-blue-dark hover:underline font-bold py-2 px-4 border-none`
 )
 
 const Dropdown = styled.div(
@@ -15,7 +15,7 @@ const DropdownList = styled.ul(
 )
 
 const DropdownListItem = styled.li(
-  tw`py-2 px-4 border-b border-grey-lightest hover:bg-grey-lightest text-center text-sm`
+  tw`py-2 px-4 border-b border-grey-lightest hover:bg-grey-lightest text-center text-sm hover:underline`
 )
 
 const S_Link = styled(Link)`
