@@ -3,24 +3,25 @@ import {H2,P,Content,Body} from '../styles/StyledComponents'
 import Header from '../components/Header'
 import EmailForm from '../components/EmailForm'
 import avatar from '../images/avatar.jpg'
+import {css} from "react-emotion"
 
 const Layout = () => {
     return (
         <Body>
         <Header /> 
             <Content>
-                <H2>About Me</H2>
-                <div className={'flex-container'} style={{display: 'flex',}}>
-                    <div style={{width: '100px'}}/>
-                    <div><a href="https://twitter.com/ds_chapman"><img src={avatar} style={{borderRadius: '50%', width: '200px', minWidth: '125px'}} alt="D. S. Chapman" /></a></div>
-                    <div style={{width: '40px'}}/> 
+                <H2 className={css(tw`xs:text-center sm:text-center md:text-center lg:text-left xl:text-left`)}>About Me</H2>
+                <div className={css(tw`flex xs:flex-wrap sm:flex-wrap md:flex-wrap lg:flex-no-wrap xl:flex-no-wrap xs:justify-center sm:justify-center md:justify-center`)}>
+                    <div className={css(tw`w-8 xs:w-0 sm:w-0 md:w-0 lg:w-32 xl:w-32 `)}/>
+                    <div><a href="https://twitter.com/ds_chapman"><img src={avatar} className={css(tw`rounded-full max-w-xxs `)} alt="D. S. Chapman" /></a></div>
+                    <div className={css(tw`w-4 xs:w-0 sm:w-0 md:w-0 lg:w-16 xl:w-16`)}/> 
                     <div>
                         <P>I am a Writer and Poet from the Pacific Northwest, now living and working in Northern Virgina. Explore this site to view some samples of my work including my poetry. </P>
                         <P>If you are interested in receiving updates when I release major projects, enter your email below.</P>
                     </div>
                 </div>
-                <div className={'flex-container'} style={{display: 'flex', justifyContent: 'center'}}>
-                <EmailForm />
+                <div className={css(tw`flex justify-center`)}>
+                   <EmailForm className={css(tw`w-full`)}/>
                 </div>
             </Content>
         </Body>
