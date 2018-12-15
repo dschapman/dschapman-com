@@ -23,7 +23,7 @@ const H1 = styled.h1(
 )
 
 const H2 = styled.h2(
-  tw`text-blue-darker`,
+  tw`text-blue-darker pt-4 text-2xl`,
   props => ({color: props.color})
 )
 

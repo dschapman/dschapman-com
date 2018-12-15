@@ -5,20 +5,23 @@ import {Body,Content, H2} from '../styles/StyledComponents'
 import styled from 'react-emotion'
 
 const Post = styled.div(
-    tw`flex flex-col`
+    tw`pt-4 flex flex-col`
 )
 
+const PostFooter = styled.div(
+    tw`pt-4 flex justify-between`
+)
 
 const Tags = styled.div(
     tw`flex`
 )
 
 const Tag = styled.div(
-    tw`p-1 text-xs`
+    tw`pr-2 text-xs`
 )
 
 const Date = styled.div(
-    tw`italic`
+    tw`text-sm`
 )
 
 const MainPage = ({data}) => {
@@ -39,7 +42,8 @@ const MainPage = ({data}) => {
                                 {post.title}
                             </H2></Link>
                             <div className="excerpt">{post.excerpt} <Link to={post.path}>(read more...)</Link></div>
-                            <Date>{post.date}</Date>
+                            <PostFooter>
+                            
                             <Tags>{tags.map((tagName, index) => {
                                     return (
                                         <Tag key={index}>
@@ -50,6 +54,8 @@ const MainPage = ({data}) => {
                                     )
                                     })}
                             </Tags>
+                            <Date>{post.date}</Date>
+                            </PostFooter>
                         </Post>
                     )
                 })}

@@ -1,19 +1,58 @@
 import Typography from "typography"
-import bootstrapTheme from "typography-theme-bootstrap"
-import lawtonTheme from "typography-theme-lawton"
-import stAnnesTheme from 'typography-theme-st-annes'
-import twinPeaksTheme from 'typography-theme-twin-peaks'
 
-twinPeaksTheme.overrideThemeStyles = (options) => ({
-    'a': {
-        color: '#2779bd',
-        backgroundImage: 'none'
-    },
-    'blockquote': {
-        borderColor: '#b2b7ff',
-    }
+const typography = new Typography({
+    baseFontSize: '20px',
+    baseLineHeight: '1.5',
+    scaleRatio: '2.5',
+    googleFonts: [
+        {
+            name: 'Cormorant Upright',
+            styles: ['400'],
+        },
+        {
+            name: 'Playfair Display',
+            styles: ['400', '700', '400i', '700i'],
+        },
+        {
+            name: 'Playfair Display SC',
+            styles: ['400', '700', '400i', '700i'],
+        },
+        {
+            name: 'EB Garamond',
+            styles: ['400', '400i']
+        }
+    ],
+    headerFontFamily: ['Playfair Display SC', 'Playfair Display', 'Cormorant Upright',  'georgia', 'serif'],
+    headerWeight: 400,
+    bodyFontFamily: ['EB Garamond', 'serif'],
+    bodyWeight: 400,
+    overrideStyles: ({rhythm}, options) => ({
+        'a': {
+            color: '#2779bd',
+            textDecoration: 'none'
+        },
+        'a > :hover':{
+            textDecoration: 'underline'
+        },
+        'blockquote': {
+            borderColor: '#b2b7ff',
+            borderLeft: `${rhythm(3 / 16)} solid`,
+            paddingLeft: rhythm(13/16),
+            fontStyle: 'italic',
+            marginLeft: 0,
+            marginRight: 0
+        },
+        'blockquote > :last-child': {
+          marginBottom: 0,
+        },
+        'blockquote cite': {
+          fontStyle: 'normal',
+        },
+        'blockquote cite:before': {
+          content: '"— "',
+        },
+    }),
+
 })
-
-const typography = new Typography(twinPeaksTheme)
 
 export default typography
