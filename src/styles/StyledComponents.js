@@ -5,7 +5,10 @@ const Body = styled.div(
 )
 
 const Content = styled.div(
-  tw`flex-1 px-25 xs:px-4 sm:px-10 md:px-15 lg:px-20 overflow-y-auto scrolling-touch scrolling-auto mx-auto 2xl:max-w-2xl xl:max-w-xl lg:max-w-lg md:max-w-md sm:max-w-sm xs:max-w-xs`,
+  tw` bg-white flex-1 w-screen px-25 xs:px-4 sm:px-10 md:px-15 lg:px-20 
+   overflow-y-auto scrolling-touch scrolling-auto mx-auto
+   2xl:max-w-2xl xl:max-w-xl lg:max-w-lg md:max-w-md sm:max-w-sm xs:max-w-xs
+  `,
 )
 
 const Div = styled.div(
@@ -23,7 +26,8 @@ const H1 = styled.h1(
 )
 
 const H2 = styled.h2(
-  tw`text-blue-darker pt-4 text-2xl`,
+  tw`text-blue-darker pt-4 text-2xl
+  xs:text-center sm-text-center md-text-center lg:text-left xl:text-left 2xl:text-left`,
   props => ({color: props.color})
 )
 

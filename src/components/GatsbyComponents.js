@@ -15,7 +15,7 @@ const DropdownList = styled.ul(
 )
 
 const DropdownListItem = styled.li(
-  tw`py-2 px-4 border-b border-grey-lightest hover:bg-grey-lightest text-center text-sm hover:underline`
+  tw`py-2 px-4 mb-0 hover:bg-grey-lightest text-center text-sm hover:underline`
 )
 
 const S_Link = styled(Link)`

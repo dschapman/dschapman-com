@@ -3,15 +3,15 @@ import addToMailchimp from 'gatsby-plugin-mailchimp'
 import styled from 'react-emotion';
 
 const FORM = styled.form(
-  tw`z-0 border-solid border-teal-dark rounded`,
+  tw`flex flex-col border-none`,
 )
 
 const SUBMIT = styled.input(
-  tw`z-10 bg-white border-none text-teal-light hover:bg-teal-darker hover:text-white hover:border-teal-dark hover-border-solid hover:border-4`,
+  tw`rounded-full mx-10 bg-white border-none text-teal-light hover:bg-teal-darker hover:text-white`,
 )
 
 const EMAIL = styled.input(
-  tw`border-none rounded-lg outline-none`
+  tw`rounded border-transparent text-center mb-4 outline-none bg-grey-lighter focus:bg-white focus:border-blue-light focus:border-solid`
 )
 
 class EmailForm extends React.Component {
@@ -47,7 +47,7 @@ class EmailForm extends React.Component {
     render() {
       return (
         <FORM ref={this.form} name="email-submit" onSubmit={this.handleSubmit}>
-          <EMAIL type="email" name="email" value={this.state.value} onChange={this.handleChange} />
+          <EMAIL type="email" name="email" value={this.state.value} onChange={this.handleChange} placeholder="Enter your Email"/>
           <SUBMIT type="submit" value="Submit" />
         </FORM>
       );
