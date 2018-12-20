@@ -12,8 +12,7 @@ const Layout = () => {
             <Content>
                 <H2 className={css(tw`xs:text-center sm:text-center md:text-center lg:text-left xl:text-left`)}>About Me</H2>
                 <div className={css(tw`flex xs:flex-wrap sm:flex-wrap md:flex-wrap lg:flex-no-wrap xl:flex-no-wrap xs:justify-center sm:justify-center md:justify-center`)}>
-                    <div className={css(tw`w-8 xs:w-0 sm:w-0 md:w-0 lg:w-32 xl:w-32 `)}/>
-                    <div><a href="https://twitter.com/ds_chapman"><img src={avatar} className={css(tw`rounded-full max-w-xxs `)} alt="D. S. Chapman" /></a></div>
+                    <div><a href="https://twitter.com/ds_chapman"><img src={avatar} className={css(tw`rounded-full max-w-xxs `)} alt="Follow this link to my Twitter." /></a></div>
                     <div className={css(tw`w-4 xs:w-0 sm:w-0 md:w-0 lg:w-16 xl:w-16`)}/> 
                     <div>
                         <P>I am a Writer and Poet from the Pacific Northwest, now living and working in Northern Virgina. Explore this site to view some samples of my work including my poetry. </P>
