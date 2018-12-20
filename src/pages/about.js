@@ -15,7 +15,7 @@ const Layout = () => {
                     <div><a href="https://twitter.com/ds_chapman"><img src={avatar} className={css(tw`rounded-full max-w-xxs `)} alt="Follow D.S. Chapman on Twitter." title="Follow D.S. Chapman on Twitter." /></a></div>
                     <div className={css(tw`w-4 xs:w-0 sm:w-0 md:w-0 lg:w-16 xl:w-16`)}/> 
                     <div>
-                        <P>I am a Writer and Poet from the Pacific Northwest, now living and working in Northern Virgina. Explore this site to view some samples of my work including my upcoming poetry collection. </P>
+                        <P>I am a Writer and Poet from the Pacific Northwest, now living and working in Northern Virgina. Explore this site to view some samples of my work, including my upcoming poetry collection. </P>
                         <P>If you are interested in receiving updates when I release major projects, enter your email below.</P>
                     </div>
                 </div>
