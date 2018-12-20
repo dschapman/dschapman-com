@@ -7,7 +7,7 @@ const FORM = styled.form(
 )
 
 const SUBMIT = styled.input(
-  tw`rounded-full mx-10 bg-white border-none text-teal-light hover:bg-teal-darker hover:text-white`,
+  tw`rounded-full mx-10 bg-white text-teal-light hover:bg-teal-dark hover:text-white border-teal-dark border-solid`,
 )
 
 const EMAIL = styled.input(
