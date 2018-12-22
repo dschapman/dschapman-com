@@ -8,6 +8,7 @@ module.exports = {
         image: '/images/avatar.jpg',
         twitterUsername: '@ds_chapman'
     },
+    pathPrefix: `/images`,
     plugins: [
         {
             resolve:'gatsby-mdx',
@@ -64,5 +65,6 @@ module.exports = {
             },
         
         
-    ]
+    ],
+    
 }
