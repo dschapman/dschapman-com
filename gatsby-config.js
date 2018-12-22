@@ -57,17 +57,6 @@ module.exports = {
                 // Puts tracking script in the head instead of the body
                 head: true,
                 // Setting this parameter is optional
-                anonymize: false,
-                // Setting this parameter is also optional
-                respectDNT: false,
-                // Avoids sending pageview hits from custom paths
-                exclude: [""],
-                // Enables Google Optimize using your container Id
-                optimizeId: "",
-                // Any additional create only fields (optional)
-                sampleRate: 5,
-                siteSpeedSampleRate: 10,
-                cookieDomain: "dschapman.com",
               }
             },
         
