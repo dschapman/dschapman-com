@@ -2,6 +2,14 @@ const path = require('path')
 
 const componentWithMDXScope = require("gatsby-mdx/component-with-mdx-scope");
 
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [path.resolve(__dirname, "src"), "node_modules"]
+    }
+  });
+};
+
 const createTagPages = (createPage, posts) => {
     const allTagsIndexTemplate = path.resolve('src/templates/allTagsIndex.js')
     const singleTagIndexTemplate = path.resolve('src/templates/singleTagIndex.js')
