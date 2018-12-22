@@ -5,6 +5,7 @@ import styled from "react-emotion"
 import {H1} from "../styles/StyledComponents"
 import Headroom from 'react-headroom'
 import Helmet from 'react-helmet'
+import SEO from './SEO'
 
 
 const NavBar = ({data}) => {
@@ -94,14 +95,7 @@ const Header =() => {
             `}
             render={data =>
             <Head>
-            <Helmet 
-                title={data.site.siteMetadata.title}
-                meta ={[ 
-                    {name:"tagline", content:data.site.siteMetadata.tagline},
-                    {name:"description", content:data.site.siteMetadata.description}
-                
-                ]}
-            />
+            <SEO/>
             <Headroom>
             
             <TitleAndDescription data={data} />

@@ -2,8 +2,11 @@ console.log(__dirname)
 module.exports = {
     siteMetadata: {
         title: 'D. S. Chapman',
-        tagline: 'But the birds sing so I sing',
-        description: 'Poetry, Essays, Reviews'
+        tagline: 'The birds sing so I sing',
+        description: 'Website and blog of poet D.S. Chapman. Articles on poetry, books, and the writing process. Poems about the things that poems are about.',
+        url: 'https://www.dschapman.com',
+        image: '/images/avatar.jpg',
+        twitterUsername: '@ds_chapman'
     },
     plugins: [
         {
@@ -63,23 +66,3 @@ module.exports = {
         
     ]
 }
-/*
-              resolve: `gatsby-plugin-google-analytics`,
-              options: {
-                trackingId: "UA-87782104-2",
-                // Puts tracking script in the head instead of the body
-                head: false,
-                // Setting this parameter is optional
-                anonymize: true,
-                // Setting this parameter is also optional
-                respectDNT: true,
-                // Avoids sending pageview hits from custom paths
-                exclude: [""],
-                // Enables Google Optimize using your container Id
-                optimizeId: "",
-                // Any additional create only fields (optional)
-                sampleRate: 5,
-                siteSpeedSampleRate: 10,
-                cookieDomain: "dschapman.com",
-              }
-            */
