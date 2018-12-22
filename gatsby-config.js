@@ -50,6 +50,26 @@ module.exports = {
             }
           }
             ,
+            {
+            resolve: `gatsby-plugin-google-analytics`,
+              options: {
+                trackingId: "UA-87782104-2",
+                // Puts tracking script in the head instead of the body
+                head: false,
+                // Setting this parameter is optional
+                anonymize: true,
+                // Setting this parameter is also optional
+                respectDNT: true,
+                // Avoids sending pageview hits from custom paths
+                exclude: [""],
+                // Enables Google Optimize using your container Id
+                optimizeId: "",
+                // Any additional create only fields (optional)
+                sampleRate: 5,
+                siteSpeedSampleRate: 10,
+                cookieDomain: "dschapman.com",
+              }
+            },
         
         
     ]
