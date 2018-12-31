@@ -3,7 +3,7 @@ import Typography from "typography"
 const typography = new Typography({
     baseFontSize: '20px',
     baseLineHeight: '1.5',
-    scaleRatio: '2.5',
+    scaleRatio: '3',
     googleFonts: [
         {
             name: 'Cormorant Upright',
