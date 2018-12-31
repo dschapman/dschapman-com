@@ -1,7 +1,8 @@
 import React, {Component} from "react"
 import { StaticQuery, graphql, Link } from 'gatsby'
-import {GatsbyDropdown, GatsbyButton} from './GatsbyComponents.js'
+import {GatsbyDropdown, GatsbyButton, S_Link} from './GatsbyComponents.js'
 import styled from "react-emotion"
+import {css} from "react-emotion"
 import {H1} from "../styles/StyledComponents"
 import Headroom from 'react-headroom'
 import Helmet from 'react-helmet'
@@ -17,10 +18,10 @@ const NavBar = ({data}) => {
     )
     return (
         <Navbar>
-            <GatsbyButton buttonName={"Home"} buttonLink={'/'} />
             <GatsbyButton buttonName={"About"} buttonLink={'/about'} />
+            <GatsbyDropdown dropdownName={"Poetry"} dropdownLinks={[{"linkName":' ',"linkPath":'\\'}]}/>
+            <GatsbyDropdown dropdownName={"Guides"} dropdownLinks={[{"linkName":' ',"linkPath":'\\'}]} />
             <GatsbyDropdown dropdownName={"Blog"} dropdownLinks={BlogLinks({data})} />
-            <div />
         </Navbar>
         
     )
@@ -40,7 +41,7 @@ const TitleAndDescription = ({data}) => {
     return (
         
         <Title>
-            <H1>{title}</H1>
+            <S_Link className={css(tw`text-blue-darkest no-underline hover:no-underline`)} to="/"><H1 className={css(tw`hover:no-underline`)}>{title}</H1></S_Link>
         </Title>
     )
 }

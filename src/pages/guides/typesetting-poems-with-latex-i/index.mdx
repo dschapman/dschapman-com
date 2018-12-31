@@ -1,0 +1,61 @@
+---
+path: "/guides/typesetting-poems-with-latex-i"
+date: "2018-12-29"
+title: "Typesetting Poems with LaTeX - Part 1"
+tags: ['poetry','guide', 'typsetting']
+type: guide
+excerpt: "There are not many options when trying to typset a collection of poetry. A word processor provides the necessary functionality, but it is not well suited for the work. Adobe's InDesign provides the necessary precision but at a high cost, especially for smaller teams attempting to compile poems without paying Adobe's monthly fees. For those who are looking for alternatives, LaTeX provides both the precision and due to its license its available at the lovely price of free!"
+---
+
+There are not many options when trying to typset a collection of poetry. A word processor provides the necessary functionality, but it is not well suited for the work. Adobe's InDesign provides the necessary precision but at a high cost, especially for smaller teams attempting to compile poems without paying Adobe's monthly fees. For those who are looking for alternatives, LaTeX provides both the precision and due to [its license](https://en.wikipedia.org/wiki/LaTeX_Project_Public_License) its available at the lovely price of free!
+
+## What is LaTeX?
+
+LaTeX is a typesetting software. Unlike other document preparation software, LaTeX is not a WYSIWYG (what you see is what you get), but uses a markup-like syntax to outline the specifications of the document. 
+
+What that means in practice is that a LaTeX document reads much like an HTML document, with declarations and tags outlining different elements of the document.
+
+
+```LaTeX
+\\documentclass{article}
+\\usepackage{fancyhdr} %different packages provide different functionality
+\\begin{document}
+The text of the document goes here.
+\\end{document}
+```
+
+## Getting Started with LaTeX
+
+In order to start compiling your poems with LaTeX you will need
+
+**1. To Install LaTeX**
+
+I recommend that you use [TeX Live](https://www.tug.org/texlive/). The TeX User Group website provides installations and instructions for [Windows](https://www.tug.org/texlive/windows.html), [MacOS](https://www.tug.org/mactex/), and [Linux](https://www.tug.org/texlive/quickinstall.html). There are [other free distributions of LaTeX](http://www.tug.org/interest.html#free); however, TeX Live is the most compatible with my text editor of choice.
+
+**2. A Text Editor**
+
+You can use whatever text editor you're most comfortable with to compose your document; however, I recommend Microsoft's [Visual Studio Code](https://code.visualstudio.com) (Available on all platforms) since it integrates with LaTeX using the [LaTeX Workshop Extension](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) and allows you to compose and preview the output of your LaTeX in the same window.
+
+(For more information on installing and managing extensions on VS Code check out [this link](https://code.visualstudio.com/docs/editor/extension-gallery))
+
+Alternatively you can also use [OverLeaf](https://www.overleaf.com) to edit your LaTeX documents. You will need to create an account, but once you do you can immediately start editing your document from your browser without installing anything!
+
+**3. Learn the Basics of LaTeX syntax**
+
+LaTeX has existed since 1983, and there are [plenty](https://www.overleaf.com/learn/latex/Free_online_introduction_to_LaTeX_(part_1)) [of](https://www.latex-project.org/about/) [resources](https://tobi.oetiker.ch/lshort/lshort.pdf) that you can use to learn the basics of LaTeX, but here's a short introduction to get you started.
+
+### The Basics of LaTeX
+
+1. All commands in LaTeX begin with a backslash (`\\`) and often include arguments contained in curly brackets (`{}`).
+2. Every LaTeX document begins with a `\\documentclass` command. Our earlier example began with `\\documentclass{article}`.  The `\\documentclass` command uses different arguments depending on the type of document you wish to produce. In our example we are using the 'article' type, but we could also use 'book', 'report', or other defined types. 
+3. Another type of command syntax can be seen with the `\\begin{document}` and `\\end{document}` commands. These commands bookend the content of a LaTeX document much like the content of an HTML document is found between the `<body>` and `</body>` tags. You will see that other commands use the same `\\begin{}` and `\\end{}` structure to define different elements of the document.
+4. Comments in LaTeX are defined by the `%` character. Any text on the line following the character will be ignored by the LaTeX compiler. 
+5. Some times you will need functionality that is not supported natively by LaTeX. In these cases you can take advantage of packages that are included with your LaTeX distribution. In order to use these packages simply include the `\\usepackage{package-name}` command at the beginning of your document. LaTeX includes [a large variety of packages](https://en.wikibooks.org/wiki/LaTeX/Package_Reference) which extend its functionality allowing you to - manage page margins, change fonts, print mathematical formulas, or typset critical editions of poetry. 
+
+The important thing to rememember when editing documents in LaTeX is that it's less important to use LaTeX to define how your document looks - all of that can be tweaked later during the publishing process. It's more important that when you use commands you use commands to label what each component of your document is.
+
+## Typesetting Poems with poemscol
+
+Now that we have some background, we can return to the original problem - typesetting a collection of poetry. To typeset poetry with LaTeX we're going to take advantage of one of LaTeX's existing packages - poemscol. Poemscol was originally developed to typeset critical editions of poetry so it has more than enough functionality for what we're trying to do. 
+
+First have to import the package by adding this command to the top of our document `\\usepackage{poemscol}`. Once you've done that you're good to go.
