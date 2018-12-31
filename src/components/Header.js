@@ -18,9 +18,9 @@ const NavBar = ({data}) => {
     )
     return (
         <Navbar>
+            <GatsbyButton buttonName={"Home"} buttonLink={'/'} />
             <GatsbyButton buttonName={"About"} buttonLink={'/about'} />
-            <GatsbyDropdown dropdownName={"Poetry"} dropdownLinks={[{"linkName":' ',"linkPath":'\\'}]}/>
-            <GatsbyDropdown dropdownName={"Guides"} dropdownLinks={[{"linkName":' ',"linkPath":'\\'}]} />
+            <GatsbyDropdown dropdownName={"Poetry"} dropdownLinks={[{"linkName":"Seasons of Thought","linkPath":"/poetry/seasons-of-thought"}]} />
             <GatsbyDropdown dropdownName={"Blog"} dropdownLinks={BlogLinks({data})} />
         </Navbar>
         
