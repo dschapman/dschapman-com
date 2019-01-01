@@ -20,7 +20,7 @@ const NavBar = ({data}) => {
         <Navbar>
             <GatsbyButton buttonName={"About"} buttonLink={'/about'} />
             <GatsbyDropdown dropdownName={"Poetry"} dropdownLinks={[{"linkName":"Seasons of Thought","linkPath":"/poetry/seasons-of-thought"}]} />
-            <GatsbyDropdown dropdownName={"Guides"} dropdownLinks={[{"linkName":"","linkPath":""}]} />
+            <GatsbyDropdown dropdownName={"Guides"} dropdownLinks={GuideLinks({data})} />
             <GatsbyDropdown dropdownName={"Blog"} dropdownLinks={BlogLinks({data})} />
         </Navbar>
         
@@ -47,14 +47,35 @@ const TitleAndDescription = ({data}) => {
 }
 
 const BlogLinks = ({data}) => {
-    const { edges } = data.allMdx
     var blogLinks = []
-    for (var i = 0; i < edges.length && i < 3; i++) {
+
+    if(data.blogPosts!=null){
+    const { edges } = data.blogPosts
+    
+    for (var i = 0; i < edges.length; i++) {
         blogLinks.push({"linkName":edges[i].node.frontmatter.title, "linkPath":edges[i].node.frontmatter.path})
-    }
+    }}
     blogLinks.push({"linkName":"All Posts by Tag","linkPath":"/tags"})
     return (
         blogLinks
+      )
+}
+
+const GuideLinks = ({data}) => {
+    var guideLinks = []
+
+    if(data.guidePosts!=null) {
+        const { edges } = data.guidePosts
+        
+        for (var i = 0; i < edges.length; i++) {
+            guideLinks.push({"linkName":edges[i].node.frontmatter.title, "linkPath":edges[i].node.frontmatter.path})
+        }}
+    if(guideLinks == []) {
+        guideLinks.push({"linkName":" ", "linkPath":" "})
+    }
+    //guideLinks.push({"linkName":"All Posts by Tag","linkPath":"/tags"})
+    return (
+        guideLinks
       )
 }
 
@@ -70,29 +91,39 @@ const Header =() => {
             query={graphql`
             query {
                 site {
-                    siteMetadata {
+                  siteMetadata {
+                    title
+                    tagline
+                    description
+                  }
+                }
+                guidePosts: allMdx(limit:5, sort: {order: DESC, fields: [frontmatter___date]}, filter: {frontmatter: {published: {eq: true}, type: {eq: "guide"}}}) {
+                  edges {
+                    node {
+                      frontmatter {
                         title
-                        tagline
-                        description
+                        path
+                        date
+                        type
+                        published
+                      }
                     }
+                  }
                 }
-                allMdx(
-                    sort: {
-                        order: DESC,
-                        fields: [frontmatter___date],
+                blogPosts: allMdx(limit: 4, sort: {order: DESC, fields: [frontmatter___date]}, filter: {frontmatter: {published: {eq: true}, type: {eq: "blog"}}}) {
+                  edges {
+                    node {
+                      frontmatter {
+                        title
+                        path
+                        date
+                        type
+                        published
+                      }
                     }
-                ) {
-                 edges {
-                   node {
-                     frontmatter{
-                      title
-                      path
-                      date
-                    }
-                   }
+                  }
                 }
-            }
-        }
+              }
             `}
             render={data =>
             <Head>
