@@ -1,7 +1,8 @@
 import React, {Component} from "react"
 import { StaticQuery, graphql, Link } from 'gatsby'
-import {GatsbyDropdown, GatsbyButton} from './GatsbyComponents.js'
+import {GatsbyDropdown, GatsbyButton, S_Link} from './GatsbyComponents.js'
 import styled from "react-emotion"
+import {css} from "react-emotion"
 import {H1} from "../styles/StyledComponents"
 import Headroom from 'react-headroom'
 import Helmet from 'react-helmet'
@@ -17,10 +18,10 @@ const NavBar = ({data}) => {
     )
     return (
         <Navbar>
-            <GatsbyButton buttonName={"Home"} buttonLink={'/'} />
             <GatsbyButton buttonName={"About"} buttonLink={'/about'} />
+            <GatsbyDropdown dropdownName={"Poetry"} dropdownLinks={[{"linkName":"Seasons of Thought","linkPath":"/poetry/seasons-of-thought"}]} />
+            <GatsbyDropdown dropdownName={"Guides"} dropdownLinks={GuideLinks({data})} />
             <GatsbyDropdown dropdownName={"Blog"} dropdownLinks={BlogLinks({data})} />
-            <div />
         </Navbar>
         
     )
@@ -40,20 +41,41 @@ const TitleAndDescription = ({data}) => {
     return (
         
         <Title>
-            <H1>{title}</H1>
+            <S_Link className={css(tw`text-blue-darkest no-underline hover:no-underline`)} to="/"><H1 className={css(tw`hover:no-underline`)}>{title}</H1></S_Link>
         </Title>
     )
 }
 
 const BlogLinks = ({data}) => {
-    const { edges } = data.allMdx
     var blogLinks = []
-    for (var i = 0; i < edges.length && i < 3; i++) {
+
+    if(data.blogPosts!=null){
+    const { edges } = data.blogPosts
+    
+    for (var i = 0; i < edges.length; i++) {
         blogLinks.push({"linkName":edges[i].node.frontmatter.title, "linkPath":edges[i].node.frontmatter.path})
-    }
+    }}
     blogLinks.push({"linkName":"All Posts by Tag","linkPath":"/tags"})
     return (
         blogLinks
+      )
+}
+
+const GuideLinks = ({data}) => {
+    var guideLinks = []
+
+    if(data.guidePosts!=null) {
+        const { edges } = data.guidePosts
+        
+        for (var i = 0; i < edges.length; i++) {
+            guideLinks.push({"linkName":edges[i].node.frontmatter.title, "linkPath":edges[i].node.frontmatter.path})
+        }}
+    if(guideLinks == []) {
+        guideLinks.push({"linkName":" ", "linkPath":" "})
+    }
+    //guideLinks.push({"linkName":"All Posts by Tag","linkPath":"/tags"})
+    return (
+        guideLinks
       )
 }
 
@@ -69,29 +91,39 @@ const Header =() => {
             query={graphql`
             query {
                 site {
-                    siteMetadata {
+                  siteMetadata {
+                    title
+                    tagline
+                    description
+                  }
+                }
+                guidePosts: allMdx(limit:5, sort: {order: DESC, fields: [frontmatter___date]}, filter: {frontmatter: {published: {eq: true}, type: {eq: "guide"}}}) {
+                  edges {
+                    node {
+                      frontmatter {
                         title
-                        tagline
-                        description
+                        path
+                        date
+                        type
+                        published
+                      }
                     }
+                  }
                 }
-                allMdx(
-                    sort: {
-                        order: DESC,
-                        fields: [frontmatter___date],
+                blogPosts: allMdx(limit: 4, sort: {order: DESC, fields: [frontmatter___date]}, filter: {frontmatter: {published: {eq: true}, type: {eq: "blog"}}}) {
+                  edges {
+                    node {
+                      frontmatter {
+                        title
+                        path
+                        date
+                        type
+                        published
+                      }
                     }
-                ) {
-                 edges {
-                   node {
-                     frontmatter{
-                      title
-                      path
-                      date
-                    }
-                   }
+                  }
                 }
-            }
-        }
+              }
             `}
             render={data =>
             <Head>

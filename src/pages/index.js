@@ -4,6 +4,7 @@ import {graphql} from 'gatsby'
 import {Body,Content, H2} from '../styles/StyledComponents'
 import {S_Link} from '../components/GatsbyComponents'
 import styled from 'react-emotion'
+import {css} from 'react-emotion'
 
 const Post = styled.div(
     tw`pt-4 flex flex-col`
@@ -39,7 +40,7 @@ const MainPage = ({data}) => {
                 const tags = node.frontmatter.tags
                     return (
                         <Post key={index}>
-                            <S_Link to={post.path}><H2>
+                            <S_Link to={post.path} className={css(tw`hover:no-underline`)}><H2>
                                 {post.title}
                             </H2></S_Link>
                             <div className="excerpt">{post.excerpt} <S_Link to={post.path}>(read more...)</S_Link></div>
@@ -68,7 +69,9 @@ const MainPage = ({data}) => {
 export const query = graphql`
     query{
         allMdx (
-            sort: {order: DESC, fields: [frontmatter___date]}
+            limit: 10,
+            sort: {order: DESC, fields: [frontmatter___date]},
+            filter: {frontmatter: {published:{eq: true}}}
         ) {
             edges {
                 node {
@@ -78,6 +81,7 @@ export const query = graphql`
                         title
                         tags
                         excerpt
+                        published
                     }
                 }
             }
