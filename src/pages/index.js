@@ -69,7 +69,9 @@ const MainPage = ({data}) => {
 export const query = graphql`
     query{
         allMdx (
-            sort: {order: DESC, fields: [frontmatter___date]}
+            limit: 10,
+            sort: {order: DESC, fields: [frontmatter___date]},
+            filter: {frontmatter: {published:{eq: true}}}
         ) {
             edges {
                 node {
@@ -79,6 +81,7 @@ export const query = graphql`
                         title
                         tags
                         excerpt
+                        published
                     }
                 }
             }

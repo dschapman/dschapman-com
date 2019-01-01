@@ -11,7 +11,7 @@ const Layout = () => {
         <Header /> 
             <Content>
                 <H2 className={css(tw`xs:text-center sm:text-center md:text-center lg:text-left xl:text-left`)}>Seasons of Thought</H2>
-                <P>A  poetry collection coming 2019 that traces through the seasons of a year. For more information make sure to enter your email below!</P>
+                <P>A  poetry collection coming 2019 that traces its themes through the seasons of the year. For more information make sure to enter your email below!</P>
                 <div className={css(tw`flex justify-center`)}>
                    <EmailForm className={css(tw`w-full`)}/>
                 </div>
