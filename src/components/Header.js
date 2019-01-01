@@ -55,7 +55,7 @@ const BlogLinks = ({data}) => {
     for (var i = 0; i < edges.length; i++) {
         blogLinks.push({"linkName":edges[i].node.frontmatter.title, "linkPath":edges[i].node.frontmatter.path})
     }}
-    blogLinks.push({"linkName":"All Posts by Tag","linkPath":"/tags"})
+    blogLinks.push({"linkName":"All Posts by Tag","linkPath":"/blog/tags"})
     return (
         blogLinks
       )
