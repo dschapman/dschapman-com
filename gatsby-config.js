@@ -19,6 +19,7 @@ module.exports = {
                 }
             }},
         'gatsby-plugin-react-helmet',
+        'gatsby-plugin-sitemap',
         'gatsby-plugin-tailwindcss',
         {
             resolve: `gatsby-plugin-emotion`,
@@ -63,6 +64,7 @@ module.exports = {
                 // Setting this parameter is optional
               }
             },
+            
         
         
     ],
