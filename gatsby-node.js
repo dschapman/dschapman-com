@@ -31,7 +31,7 @@ const createTagPages = (createPage, posts) => {
     const tags = Object.keys(postsByTag)
 
     createPage({
-        path: '/tags',
+        path: 'blog/tags',
         component: allTagsIndexTemplate,
         context: {
             tags: tags.sort()
@@ -42,7 +42,7 @@ const createTagPages = (createPage, posts) => {
         const posts = postsByTag[tagName]
 
         createPage({
-            path: `/tags/${tagName}`,
+            path: `blog/tags/${tagName}`,
             component: singleTagIndexTemplate,
             context: {
                 posts,
@@ -59,31 +59,31 @@ exports.createPages = ({ graphql, actions }) => {
       resolve(
         graphql(
           `
-            {
-              allMdx (
-                sort: {order: ASC, fields: [frontmatter___date]}
-            ) {
-                edges {
-                  node {
-                    frontmatter{
-                        tags
-                        title
-                        path
+          {
+            allMdx(sort: {order: ASC, fields: [frontmatter___date]}, filter: {frontmatter: {published: {eq: true}, type: {eq: "blog"}}}) {
+              edges {
+                node {
+                  frontmatter {
+                    tags
+                    title
+                    path
+                    published
+                    type
+                  }
+                  id
+                  parent {
+                    ... on File {
+                      name
+                      sourceInstanceName
                     }
-                    id
-                    parent {
-                      ... on File {
-                        name
-                        sourceInstanceName
-                      }
-                    }
-                    code {
-                      scope
-                    }
+                  }
+                  code {
+                    scope
                   }
                 }
               }
             }
+          }          
           `
         ).then(result => {
           if (result.errors) {
