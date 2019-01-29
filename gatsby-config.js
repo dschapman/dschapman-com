@@ -6,7 +6,8 @@ module.exports = {
         description: 'Website and blog of poet D.S. Chapman. Articles on poetry, books, and the writing process. Poems about the things that poems are about.',
         url: 'https://www.dschapman.com',
         image: '/images/avatar.jpg',
-        twitterUsername: '@ds_chapman'
+        twitterUsername: '@ds_chapman',
+        siteUrl: "https://www.dschapman.com"
     },
     pathPrefix: `/images`,
     plugins: [
