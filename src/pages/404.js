@@ -5,9 +5,9 @@ import Header from 'components/Header'
 const Layout = () => {
     return(
         <Body>
-        <Header/>
+        <Header title="Page Not Found (404) - D.S. Chapman"/>
         <Content>
-            <div>Sorry that poem hasn't been written yet.</div>
+            <H3>Sorry, that poem hasn't been written yet.</H3>
         </Content>
         </Body>
     )

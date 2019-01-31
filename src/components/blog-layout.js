@@ -10,7 +10,7 @@ const Template = ({ children, pageContext}) => {
     return( 
     <MDXProvider>
         <Body>
-            <Header />
+            <Header title={`${frontmatter.title} - D.S. Chapman`} description={frontmatter.description}/>
             <Content>
             <H2>{frontmatter.title}</H2>
             <div>{children}</div>

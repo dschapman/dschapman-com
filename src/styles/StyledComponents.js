@@ -35,6 +35,7 @@ const H3 = styled.h3(
   tw`text-blue-darker pt-4 text-xl
   xs:text-center sm-text-center md-text-center lg:text-left xl:text-left 2xl:text-left`,
   props => ({color: props.color})
+
 )
 
 export {Div, P, H1, H2, H3, Content, Body}

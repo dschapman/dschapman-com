@@ -11,13 +11,23 @@ module.exports = {
     },
     pathPrefix: `/images`,
     plugins: [
+        'gatsby-plugin-sharp',
         {
             resolve:'gatsby-mdx',
             options: {
                 extensions:[".mdx",".md"],
                 defaultLayouts: {
                     default: require.resolve("./src/components/blog-layout")
-                }
+                },
+                gatsbyRemarkPlugins: [
+                    {
+                        resolve:"gatsby-remark-images",
+                        options: {
+                            maxWidth:1035,
+                            sizeByPixelDensity:false
+                        }
+                    }
+                ]
             }},
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-sitemap',

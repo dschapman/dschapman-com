@@ -69,6 +69,7 @@ exports.createPages = ({ graphql, actions }) => {
                     path
                     published
                     type
+                    description
                   }
                   id
                   parent {
