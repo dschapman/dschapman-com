@@ -19,6 +19,7 @@
     "gatsby-plugin-google-analytics": "^2.0.12",
     "gatsby-plugin-mailchimp": "git+https://github.com/benjaminhoffman/gatsby-plugin-mailchimp.git#gatsby-v2",
     "gatsby-plugin-react-helmet": "^3.0.5",
+    "gatsby-plugin-robots-txt": "^1.4.0",
     "gatsby-plugin-sharp": "^2.0.19",
     "gatsby-plugin-sitemap": "^2.0.4",
     "gatsby-plugin-tailwindcss": "^1.0.3",
