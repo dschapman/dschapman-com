@@ -5,7 +5,6 @@ import styled from "react-emotion"
 import {css} from "react-emotion"
 import {H1} from "../styles/StyledComponents"
 import Headroom from 'react-headroom'
-import Helmet from 'react-helmet'
 import SEO from './SEO'
 
 
@@ -79,14 +78,23 @@ const GuideLinks = ({data}) => {
       )
 }
 
-const Header =() => {
+const Head = styled.div(
+    tw`bg-white`,
+)
 
+class Header extends Component{
 
+    constructor(props){
+        super(props);
+        this.state={
+            Title:props.title,
+            Description:props.description,
+        };
+    }
     
-    const Head = styled.div(
-            tw`bg-white`,
-    )
-    return (
+
+    render (){
+        return(
         <StaticQuery
             query={graphql`
             query {
@@ -127,7 +135,7 @@ const Header =() => {
             `}
             render={data =>
             <Head>
-            <SEO/>
+            <SEO title={this.state.Title} description={this.state.Description} />
             <Headroom>
             
             <TitleAndDescription data={data} />
@@ -137,7 +145,8 @@ const Header =() => {
             
         }
             />
-    )
+        )
+    }
     
 }
 
