@@ -32,7 +32,7 @@ const MainPage = ({data}) => {
     
     return (
         <Body>
-        <Header />
+        <Header title="Home - D.S. Chapman" />
 
             <Content>
             {posts.map(({node}, index) => {
