@@ -49,7 +49,7 @@ const MainPage = ({data}) => {
                             <Tags>{tags.map((tagName, index) => {
                                     return (
                                         <Tag key={index}>
-                                            <S_Link to={`tags/${tagName}`}>
+                                            <S_Link to={`/blog/tags/${tagName}`}>
                                                 {tagName}
                                             </S_Link>
                                         </Tag>
@@ -71,7 +71,7 @@ export const query = graphql`
         allMdx (
             limit: 10,
             sort: {order: DESC, fields: [frontmatter___date]},
-            filter: {frontmatter: {published:{eq: true}}}
+            filter: {frontmatter: {published:{eq: true}, type: {eq: "blog"}}}
         ) {
             edges {
                 node {

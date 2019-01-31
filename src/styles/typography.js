@@ -38,7 +38,6 @@ const typography = new Typography({
             borderColor: '#b2b7ff',
             borderLeft: `${rhythm(3 / 16)} solid`,
             paddingLeft: rhythm(13/16),
-            fontStyle: 'italic',
             marginLeft: 0,
             marginRight: 0
         },
