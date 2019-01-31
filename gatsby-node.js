@@ -70,6 +70,7 @@ exports.createPages = ({ graphql, actions }) => {
                     published
                     type
                     description
+                    image
                   }
                   id
                   parent {
