@@ -38,6 +38,7 @@ const MainPage = ({data}) => {
             {posts.map(({node}, index) => {
                 const post = node.frontmatter
                 const tags = node.frontmatter.tags
+                const type = node.frontmatter.type
                     return (
                         <Post key={index}>
                             <S_Link to={post.path} className={css(tw`hover:no-underline`)}><H2>
@@ -47,13 +48,17 @@ const MainPage = ({data}) => {
                             <PostFooter>
                             
                             <Tags>{tags.map((tagName, index) => {
+                                if(type == "blog"){
                                     return (
                                         <Tag key={index}>
                                             <S_Link to={`/blog/tags/${tagName}`}>
                                                 {tagName}
                                             </S_Link>
                                         </Tag>
-                                    )
+                                    )}
+                                    else {
+                                        return (<div key={index}/>)
+                                    }
                                     })}
                             </Tags>
                             <Date>{post.date}</Date>
@@ -71,7 +76,7 @@ export const query = graphql`
         allMdx (
             limit: 10,
             sort: {order: DESC, fields: [frontmatter___date]},
-            filter: {frontmatter: {published:{eq: true}, type: {eq: "blog"}}}
+            filter: {frontmatter: {published:{eq: true}}}
         ) {
             edges {
                 node {
@@ -82,6 +87,7 @@ export const query = graphql`
                         tags
                         excerpt
                         published
+                        type
                     }
                 }
             }
