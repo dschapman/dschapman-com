@@ -1,7 +1,7 @@
 console.log(__dirname)
 module.exports = {
     siteMetadata: {
-        title: 'D. S. Chapman',
+        title: 'D.S. Chapman',
         tagline: 'The birds sing so I sing',
         description: 'Website and blog of poet D.S. Chapman. Articles on poetry, books, and the writing process. Poems about the things that poems are about.',
         url: 'https://www.dschapman.com',
