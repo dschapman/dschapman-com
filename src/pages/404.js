@@ -1,5 +1,6 @@
 import React from "react"
 import {H3,H2,P,Content,Body} from '../styles/StyledComponents'
+import Poem from 'components/Poem'
 import Header from 'components/Header'
 
 const Layout = () => {
@@ -7,7 +8,14 @@ const Layout = () => {
         <Body>
         <Header title="Page Not Found (404) - D.S. Chapman"/>
         <Content>
-            <H3>Sorry, that poem hasn't been written yet.</H3>
+            <br />
+            <Poem title="Poem Not Found" align="center">
+            I'm sorry this poem is gone; <br />
+            I promise it shone like the dawn, <br />
+            but now it is dark, <br />
+            and the difference is stark, <br />
+            I hope you won't think me a con.
+            </Poem>
         </Content>
         </Body>
     )
