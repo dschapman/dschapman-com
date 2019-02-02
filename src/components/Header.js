@@ -89,7 +89,8 @@ class Header extends Component{
         this.state={
             title:props.title,
             description:props.description,
-            image:props.image
+            image:props.image,
+            path:props.path
         };
     }
     
@@ -136,7 +137,7 @@ class Header extends Component{
             `}
             render={data =>
             <Head>
-            <SEO title={this.state.title} description={this.state.description} image={this.state.image} />
+            <SEO title={this.state.title} description={this.state.description} image={this.state.image} pathname={this.state.path} />
             <Headroom>
             
             <TitleAndDescription data={data} />

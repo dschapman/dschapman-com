@@ -10,7 +10,7 @@ import Poem from "../../components/Poem"
 const Layout = () => {
     return (
         <Body>
-        <Header title="Seasons of Thought - D.S. Chapman - Poetry Collection" description="A collection of poems by D.S. Chapman, coming soon!"/> 
+        <Header title="Seasons of Thought - D.S. Chapman - Poetry Collection" description="A collection of poems by D.S. Chapman, coming soon!" image="/poetry/seasons-of-thought/card.png" path="/poetry/seasons-of-thought/"/> 
             <Content>
                 <H2 className={css(tw`xs:text-center sm:text-center md:text-center lg:text-left xl:text-left`)}>Seasons of Thought</H2>
                 <p>Seasons of Thought is a collection of poems that traces its themes through the seasons of the year. Check out a few of the poems below and make sure to subscribe to the email list for more information when it releases on Amazon in June.</p>

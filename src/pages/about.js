@@ -9,7 +9,7 @@ import {S_Link} from '../components/GatsbyComponents'
 const Layout = () => {
     return (
         <Body>
-        <Header title="About - D.S. Chapman - Poet, Writer"/> 
+        <Header title="About - D.S. Chapman - Poet, Writer" path="/about/"/> 
             <Content>
                 <H2 className={css(tw` text-center sm:text-center md:text-center lg:text-left xl:text-left`)}>About</H2>
                 <div className={css(tw` flex xs:flex-wrap sm:flex-wrap md:flex-wrap lg:flex-no-wrap xl:flex-no-wrap xs:justify-center sm:justify-center md:justify-center`)}>
