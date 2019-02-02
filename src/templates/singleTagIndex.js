@@ -7,7 +7,7 @@ const singleTagsTemplate = ({data, pageContext}) => {
     const { posts, tagName} = pageContext
     return (
     <Body>
-    <Header title={`Posts About ${tagName} - D.S. Chapman`} />
+    <Header title={`Posts About ${tagName} - D.S. Chapman`} path={`/blog/posts/${tagName}`} />
     <Content>
             <H2>
                 Posts about { `${tagName}`}

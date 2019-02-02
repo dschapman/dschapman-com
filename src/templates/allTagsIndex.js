@@ -7,7 +7,7 @@ const allTagsTemplate = ({data, pageContext}) => {
     const {tags} = pageContext
     return (
         <Body>
-        <Header title="All Posts by Tag - D.S. Chapman" />
+        <Header title="All Posts by Tag - D.S. Chapman" path="/blog/tags" />
         <Content>
             
             <H2>
