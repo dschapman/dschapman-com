@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import {css} from "react-emotion"
 import styled from "react-emotion"
-import {H2} from '../styles/StyledComponents'
 
 const PoemCard = styled.div(
     tw`max-w-sm rounded overflow-hidden shadow-lg mx-auto mb-8`,

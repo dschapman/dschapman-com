@@ -2,8 +2,8 @@ import Typography from "typography"
 
 const typography = new Typography({
     baseFontSize: '20px',
-    baseLineHeight: '1.5',
-    scaleRatio: '3',
+    baseLineHeight: '1.45',
+    scaleRatio: '1',
     googleFonts: [
         {
             name: 'Cormorant Upright',
