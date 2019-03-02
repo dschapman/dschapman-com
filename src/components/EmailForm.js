@@ -1,19 +1,31 @@
 import React from 'react'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 import styled from 'react-emotion';
+import {mainTheme} from '../styles/styles'
 
 const Form = styled.form(
-  tw`flex flex-col border-none`,
+  `
+  display: flex;
+  flex-direction: column;
+  border-style: none;
+  `
 )
 
 const Submit = styled.input(
-  tw`rounded-full mx-10 bg-white text-teal-light hover:bg-teal-dark hover:text-white border-teal-dark border-solid`,
-)
-
-
-
-const SubmitBlue = styled.input(
-  tw`rounded-full mx-10 bg-white text-blue-light hover:bg-blue-dark hover:text-white border-blue-dark border-solid`,
+  `
+  
+  border-radius: 9999px;
+  margin: 0 2.5rem 0;
+  background: ${mainTheme.background};
+  &:hover{
+    color: ${mainTheme.background};
+    background:${mainTheme.secondaryDark};
+  };
+  border-color:${mainTheme.secondaryDark};
+  border-style:solid;
+  color: ${props => (props.color || mainTheme.secondaryLight)};
+  `
+  
 )
 
 const Email = styled.input(
@@ -51,23 +63,15 @@ class EmailForm extends React.Component {
     }
 
     render() {
-      if(this.state.color!="blue") {
-      return (
-        <Form ref={this.form} name="email-submit" onSubmit={this.handleSubmit}>
-          <Email type="email" name="email" value={this.state.value} onChange={this.handleChange} placeholder="Enter your Email" autoComplete="off"/>
-          <Submit type="submit" value="Submit" />
-        </Form>
-      );
-      }
-      else if(this.state.color=="blue") { 
+      
+
         return (
           <Form ref={this.form} name="email-submit" onSubmit={this.handleSubmit}>
             <Email type="email" name="email" value={this.state.value} onChange={this.handleChange} placeholder="Enter your Email" autoComplete="off"/>
-            <SubmitBlue type="submit" value="Submit" />
+            <Submit type="submit" value="Submit" color={this.state.color} />
           </Form>
         );
       }
     }
-  }
 
   export default EmailForm;

@@ -1,10 +1,9 @@
 import React from "react"
-import {H2,P,Content,Body} from '../styles/StyledComponents'
+import {H2,P,Content,Body} from '../components/StyledComponents'
 import Header from '../components/Header'
 import EmailForm from '../components/EmailForm'
-import {withPrefix} from "gatsby"
+import {withPrefix, Link} from "gatsby"
 import {css} from "react-emotion"
-import {S_Link} from '../components/GatsbyComponents'
 
 const Layout = () => {
     return (
@@ -16,7 +15,7 @@ const Layout = () => {
                     <div><a href="https://twitter.com/ds_chapman"><img src={withPrefix('/images/avatar.jpg')} className={css(tw`rounded-full max-w-xxs `)} alt="Follow D.S. Chapman on Twitter." title="Follow D.S. Chapman on Twitter." /></a></div>
                     <div className={css(tw` w-4 xs:w-0 sm:w-0 md:w-0 lg:w-16 xl:w-16`)}/> 
                     <div>
-                        <P>D.S. Chapman is a writer and poet from the Pacific Northwest, currently living and working in Northern Virgina. Explore this site to view some samples of his work, including excerpts from his upcoming poetry collection &mdash; <S_Link to="/poetry/seasons-of-thought">Seasons of Thought</S_Link>. </P>
+                        <P>D.S. Chapman is a writer and poet from the Pacific Northwest, currently living and working in Northern Virgina. Explore this site to view some samples of his work, including excerpts from his upcoming poetry collection &mdash; <Link to="/poetry/seasons-of-thought">Seasons of Thought</Link>. </P>
                         <P>If you are interested in receiving updates when he releases major projects, enter your email below.</P>
                     </div>
                 </div>

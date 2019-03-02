@@ -1,16 +1,25 @@
 import React, {Component} from "react"
 import { StaticQuery, graphql, Link } from 'gatsby'
-import {GatsbyDropdown, GatsbyButton, S_Link} from './GatsbyComponents.js'
+import {GatsbyDropdown, GatsbyButton} from './GatsbyComponents.js'
 import styled from "react-emotion"
 import {css} from "react-emotion"
-import {H1} from "../styles/StyledComponents"
+import {H1} from "./StyledComponents"
 import Headroom from 'react-headroom'
 import SEO from './SEO'
+import {mainTheme,mq} from './../styles/styles'
 
 
 const NavBar = ({data}) => {
     const Navbar = styled.div(
-        tw`min-w-full flex flex-wrap justify-center bg-white border-solid border-t-0 border-r-0 border-l-0 border-b border-blue relative `,
+        `
+        min-width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background: ${mainTheme.background};
+        border: solid ${mainTheme.primary};
+        border-width: 0 0 1px 0;
+        `,
         props => ({
             color: props.color,
         })
@@ -34,13 +43,20 @@ const TitleAndDescription = ({data}) => {
     
 
     const Title = styled.div(
-        tw`flex flex-col items-center justify-center bg-white`
+        `
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: ${mainTheme.background};
+        `,
+
     )
 
     return (
         
         <Title>
-            <S_Link className={css(tw`text-blue-darkest no-underline hover:no-underline`)} to="/"><H1 className={css(tw`hover:no-underline`)}>{title}</H1></S_Link>
+            <Link className={css(`color: ${mainTheme.primaryDarkest}; &:hover: text-decoration:none;`)} to="/"><H1 className={css(`hover:text-decoration:none;`)}>{title}</H1></Link>
         </Title>
     )
 }
@@ -78,9 +94,9 @@ const GuideLinks = ({data}) => {
       )
 }
 
-const Head = styled.div(
-    tw`bg-white`,
-)
+const Head = styled.div`
+    background: ${mainTheme.background};
+`
 
 class Header extends Component{
 

@@ -1,5 +1,5 @@
 import React from "react"
-import {H2,Content,Body} from '../../styles/StyledComponents'
+import {H2,Content,Body} from '../../components/StyledComponents'
 import Header from 'components/Header'
 import EmailForm from '../../components/EmailForm'
 import {withPrefix} from "gatsby"

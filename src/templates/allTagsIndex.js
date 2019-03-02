@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from 'gatsby'
 import Header from '../components/Header'
-import {H2, Content, Body} from "../styles/StyledComponents"
+import {H2, Content, Body} from "../components/StyledComponents"
 
 const allTagsTemplate = ({data, pageContext}) => {
     const {tags} = pageContext
