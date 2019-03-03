@@ -1,8 +1,7 @@
 import React from "react"
 import Header from '../components/Header'
-import {graphql} from 'gatsby'
-import {Body,Content, H2} from '../styles/StyledComponents'
-import {S_Link} from '../components/GatsbyComponents'
+import {graphql, Link} from 'gatsby'
+import {Body,Content, H2} from '../components/StyledComponents'
 import styled from 'react-emotion'
 import {css} from 'react-emotion'
 
@@ -41,19 +40,19 @@ const MainPage = ({data}) => {
                 const type = node.frontmatter.type
                     return (
                         <Post key={index}>
-                            <S_Link to={post.path} className={css(tw`hover:no-underline`)}><H2>
+                            <Link to={post.path} className={css(tw`hover:no-underline`)}><H2>
                                 {post.title}
-                            </H2></S_Link>
-                            <div className="excerpt">{post.excerpt} <S_Link to={post.path}>(read more...)</S_Link></div>
+                            </H2></Link>
+                            <div className="excerpt">{post.excerpt} <Link to={post.path}>(read more...)</Link></div>
                             <PostFooter>
                             
                             <Tags>{tags.map((tagName, index) => {
                                 if(type == "blog"){
                                     return (
                                         <Tag key={index}>
-                                            <S_Link to={`/blog/tags/${tagName}`}>
+                                            <Link to={`/blog/tags/${tagName}`}>
                                                 {tagName}
-                                            </S_Link>
+                                            </Link>
                                         </Tag>
                                     )}
                                     else {

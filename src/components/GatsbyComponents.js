@@ -1,26 +1,71 @@
 import React from 'react';
 import {Link} from 'gatsby';
 import styled from 'react-emotion'
+import {mainTheme,mq} from './../styles/styles'
 
 const Button = styled.button(
-  tw`bg-white text-blue text-lg hover:text-blue-dark hover:underline font-bold py-2 px-4 border-none text-base xs:px-3 sm:px-4`
+  `
+  background: ${mainTheme.background};
+  color: ${mainTheme.link};
+  &:hover {
+    text-decoration: underline;
+    color: ${mainTheme.linkHover};
+  };
+  &:active {
+    
+  };
+  font-weight: 700;
+  font-size: 1.125rem;
+  outline: none;
+  border-style: none;
+  z-index: 0;
+  ${mq[0]}{
+    padding:.5rem .75rem .75rem .5rem;
+  }
+  ${mq[1]}{
+    padding: .5rem 1rem 1rem .5rem;
+  }
+  `
 )
 
 const Dropdown = styled.div(
-  tw`bg-white text-base xs:text-sm`
+
+  `background: ${mainTheme.background};
+  color: ${mainTheme.link};
+  ${mq[0]}{
+    font-size: .875rem;
+  }
+  ${mq[1]} {
+    font-size: 1rem;
+  };
+  `
 )
 
 const DropdownList = styled.ul(
-  tw`list-reset w-screen pin-x mx-0 my-px bg-white font-bold absolute shadow-md z-1`
+  `
+  width: 100vw;
+  list-style: none; 
+  padding: 0;
+  background: ${mainTheme.background};
+  font-weight: 700;
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  left: 0;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08);
+  margin: 1px 0 0 1px;
+  `
 )
 
 const DropdownListItem = styled.li(
-  tw`py-2 px-4 mb-0 hover:bg-grey-lightest text-center text-sm hover:underline`
+  `
+  padding: .5rem 1rem 1rem .5rem;
+  margin-bottom: 0;
+  background: ${mainTheme.accent};
+  text-align: center;
+  `
 )
 
-const S_Link = styled(Link)`
-  ${tw`text-blue hover:text-blue-dark hover:underline`}
-`
 
 class GatsbyButton extends React.Component{
 constructor(props){
@@ -32,7 +77,7 @@ constructor(props){
 }
 render() {
   return (
-    <Button> <S_Link to={this.state.buttonLink}>{this.state.buttonName}</S_Link> </Button>
+    <Link to={this.state.buttonLink}><Button>{this.state.buttonName}</Button></Link>
   )
 }
 }
@@ -79,9 +124,9 @@ showDropdownMenu(event) {
                 <DropdownListItem
                   key={dropdownLink.linkPath}
                 >
-                  <S_Link to={dropdownLink.linkPath}>
+                  <Link to={dropdownLink.linkPath}>
                     {dropdownLink.linkName}
-                  </S_Link>
+                  </Link>
                 </DropdownListItem>
               )
             })} 
@@ -98,4 +143,4 @@ showDropdownMenu(event) {
   }
 }
 
-export {GatsbyButton, GatsbyDropdown, S_Link}
+export {GatsbyButton, GatsbyDropdown}

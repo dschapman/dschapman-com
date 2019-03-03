@@ -1,5 +1,5 @@
 import React from "react"
-import {H2,Content,Body} from '../../styles/StyledComponents'
+import {H2,Content,Body} from '../../components/StyledComponents'
 import Header from 'components/Header'
 import EmailForm from '../../components/EmailForm'
 import {withPrefix} from "gatsby"
@@ -12,10 +12,13 @@ const Layout = () => {
         <Body>
         <Header title="Seasons of Thought - D.S. Chapman - Poetry Collection" description="A collection of poems by D.S. Chapman, coming soon!" image="/poetry/seasons-of-thought/card.png" path="/poetry/seasons-of-thought/"/> 
             <Content>
-                <H2 className={css(tw`xs:text-center sm:text-center md:text-center lg:text-left xl:text-left`)}>Seasons of Thought</H2>
-                <p>Seasons of Thought is a collection of poems that traces its themes through the seasons of the year. Check out a few of the poems below and make sure to subscribe to the email list for more information when it releases on Amazon in June.</p>
-                <div className={css(tw`flex justify-center`)}>
-                   <EmailForm className={css(tw`w-full`)} color="blue"/>
+            
+                <div css={css(`display:flex; justify-content:space-evenly; flex-wrap: wrap; flex-basis:auto;`)}>
+                    <div css={css(`display: flex; flex-direction: column; padding-right: 1rem; max-width: 25rem;`)}>
+                        <H2 css={css(tw`xs:text-center sm:text-center md:text-center lg:text-left xl:text-left`)}>Seasons of Thought</H2>
+                        <p>Seasons of Thought is a collection of poems that traces its themes through the seasons of the year. Check out a few of the poems below and make sure to subscribe to the email list for more information when it releases on Amazon in June.</p>
+                    </div>
+                    <EmailForm css={css(``)} color="blue"/>
                 </div>
                 <H2 className={css(tw`xs:text-center text-3xl`)}>Winter</H2>
                 <Poem title="The Hearth" bg="#e6e8ff" align="center"> 

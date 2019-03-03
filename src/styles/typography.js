@@ -1,4 +1,5 @@
 import Typography from "typography"
+import {mainTheme} from "./styles"
 
 const typography = new Typography({
     baseFontSize: '20px',
@@ -28,14 +29,15 @@ const typography = new Typography({
     bodyWeight: 400,
     overrideStyles: ({rhythm}, options) => ({
         'a': {
-            color: '#2779bd',
-            textDecoration: 'none'
+            color: mainTheme.link,
+            textDecoration: 'none',
         },
-        'a > :hover':{
-            textDecoration: 'underline'
+        'a:hover': {
+            textDecoration: 'underline',
+            color: mainTheme.linkHover,
+
         },
         'blockquote': {
-            borderColor: '#b2b7ff',
             borderLeft: `${rhythm(3 / 16)} solid`,
             paddingLeft: rhythm(13/16),
             marginLeft: 0,
