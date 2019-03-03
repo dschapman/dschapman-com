@@ -8,6 +8,7 @@ const Form = styled.form(
   display: flex;
   flex-direction: column;
   border-style: none;
+  padding-top: 2.25rem;
   `
 )
 
@@ -15,7 +16,7 @@ const Submit = styled.input(
   `
   
   border-radius: 9999px;
-  margin: 0 2.5rem 0;
+  margin: 1rem 2rem 0;
   background: ${mainTheme.background};
   &:hover{
     color: ${mainTheme.background};
@@ -23,14 +24,32 @@ const Submit = styled.input(
   };
   border-color:${mainTheme.secondaryDark};
   border-style:solid;
+  border-width:2px;
   color: ${props => (props.color || mainTheme.secondaryLight)};
+  font-size:115%;
   `
+  
   
 )
 
 const Email = styled.input(
-  tw`rounded border-transparent text-center mb-4 outline-none bg-grey-lighter focus:bg-white focus:border-blue-light focus:border-solid`
-)
+  //tw`rounded border-transparent text-center mb-4 outline-none bg-grey-lighter focus:bg-white focus:border-blue-light focus:border-solid`
+  `
+  border-radius: .25rem;
+  border-color: transparent;
+  text-align: center;
+  margin-bottom: 1 rem;
+  outline: 0;
+  background: ${mainTheme.accent};
+  &:focus{
+    background: ${mainTheme.background};
+    border-color: ${mainTheme.primaryLight};
+    border-style: solid;
+    border-width: 2px;
+  };
+  font-size: 115%;
+  `
+  )
 
 class EmailForm extends React.Component {
     constructor(props) {

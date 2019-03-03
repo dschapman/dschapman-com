@@ -11,8 +11,12 @@ const Button = styled.button(
     text-decoration: underline;
     color: ${mainTheme.linkHover};
   };
+  &:active {
+    
+  };
   font-weight: 700;
   font-size: 1.125rem;
+  outline: none;
   border-style: none;
   z-index: 0;
   ${mq[0]}{

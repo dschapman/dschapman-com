@@ -1,6 +1,6 @@
 {
-  "name": "gatsby-starter-hello-world",
-  "description": "Gatsby hello world starter",
+  "name": "DSChapman-Personal-Blog",
+  "description": "Daniel Chapman's Personal Blog",
   "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",
