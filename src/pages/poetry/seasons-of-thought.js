@@ -16,10 +16,10 @@ const Layout = () => {
                 <div css={css(`display:flex; justify-content:space-evenly; flex-wrap: wrap; flex-basis:auto;`)}>
                     <div css={css(`display: flex; flex-direction: column; max-width: 25rem;`)}>
                         <H2 css={css(tw`xs:text-center sm:text-center md:text-center lg:text-left xl:text-left`)}>Seasons of Thought</H2>
-                        <p>Seasons of Thought is a collection of poems that traces its themes through the seasons of the year. Check out a few of the poems below and make sure to subscribe to the email list for more information when it releases on Amazon in June.</p>
+                        <p>Seasons of Thought is a collection of poems that traces its themes through the seasons of the year.</p>
                     </div>
                     <div>
-                    <div>Get an alert when I release this book!</div>
+                    <div>Make sure to sign up for the email list and get notified when the book releases on Amazon this June!</div>
                     <EmailForm css={css(``)} color="blue"/>
                     </div>
                 </div>
