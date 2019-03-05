@@ -18,7 +18,7 @@ const Layout = () => {
                         <H2 css={css(tw`xs:text-center sm:text-center md:text-center lg:text-left xl:text-left`)}>Seasons of Thought</H2>
                         <p>Seasons of Thought is a collection of poems that traces its themes through the seasons of the year.</p>
                     </div>
-                    <div css={css(`max-width:25rem;`)}>
+                    <div css={css(`max-width:25rem; padding-top:2rem;`)}>
                     <div>Make sure to sign up for the email list and get notified when the book releases on Amazon this June!</div>
                     <EmailForm css={css(``)} color="blue"/>
                     </div>
