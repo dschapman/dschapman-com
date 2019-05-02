@@ -10,6 +10,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^0.16.8",
     "@mdx-js/tag": "^0.16.8",
+    "babel-plugin-emotion": "^10.0.9",
     "emotion": "^9.2.12",
     "emotion-server": "^9.2.12",
     "gatsby": "^2.1.17",
@@ -42,6 +43,7 @@
     "typography-theme-twin-peaks": "^0.15.11"
   },
   "devDependencies": {
+    "babel-preset-gatsby": "^0.1.11",
     "tailwindcss": "^0.6.6"
   }
 }

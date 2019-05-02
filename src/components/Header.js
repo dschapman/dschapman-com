@@ -10,7 +10,7 @@ import {mainTheme,mq} from './../styles/styles'
 
 
 const NavBar = ({data}) => {
-    const Navbar = styled.div(
+    const Navbar = styled('div')(
         `
         min-width: 100%;
         display: flex;
@@ -42,7 +42,7 @@ const TitleAndDescription = ({data}) => {
     const tagline = data.site.siteMetadata.tagline
     
 
-    const Title = styled.div(
+    const Title = styled('div')(
         `
         display: flex;
         flex-direction: column;
@@ -94,7 +94,7 @@ const GuideLinks = ({data}) => {
       )
 }
 
-const Head = styled.div`
+const Head = styled('div')`
     background: ${mainTheme.background};
 `
 

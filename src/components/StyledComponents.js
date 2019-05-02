@@ -1,15 +1,14 @@
 import styled from 'react-emotion'
 import {mainTheme,mq} from './../styles/styles'
 
-const Body = styled.div(
+const Body = styled('div')
   `
   display: flex;
   flex-direction: column;
   width: 100vw
   `
-)
 
-const Content = styled.div`
+const Content = styled('div')`
 
   background: ${mainTheme.background};
   flex: 1;
@@ -43,16 +42,11 @@ const Content = styled.div`
   }
 `
 
-const Div = styled.div`
+const Div = styled('div')`
   overflow-x: hidden
 `
 
-const P = styled.p(
-  ``,
-  props => ({color: props.color})
-)
-
-const H1 = styled.h1(
+const H1 = styled('h1')(
   `
   color: ${mainTheme.primaryDarkest};
   margin-top:2rem; 
@@ -62,7 +56,7 @@ const H1 = styled.h1(
   props => ({color: props.color})
 )
 
-const H2 = styled.h2(
+const H2 = styled('h2')(
   `
   color: ${mainTheme.primaryDarkest};
   padding-top: 1rem;
@@ -84,7 +78,7 @@ const H2 = styled.h2(
   props => ({color: props.color})
 )
 
-const H3 = styled.h3(
+const H3 = styled('h3')(
   `
   color: ${mainTheme.primaryDarkest};
   padding-top: 1rem;
@@ -107,4 +101,4 @@ const H3 = styled.h3(
 
 )
 
-export {Div, P, H1, H2, H3, Content, Body}
+export {Div, H1, H2, H3, Content, Body}

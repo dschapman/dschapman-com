@@ -4,7 +4,7 @@ import styled from 'react-emotion';
 import {mainTheme} from '../styles/styles'
 import {css} from 'react-emotion'
 
-const Form = styled.form(
+const Form = styled('form')(
   `
   display: flex;
   flex-direction: column;
@@ -13,7 +13,7 @@ const Form = styled.form(
   `
 )
 
-const Submit = styled.input(
+const Submit = styled('input')(
   `
   
   border-radius: 9999px;
@@ -33,7 +33,7 @@ const Submit = styled.input(
   
 )
 
-const Email = styled.input(
+const Email = styled('input')(
   //tw`rounded border-transparent text-center mb-4 outline-none bg-grey-lighter focus:bg-white focus:border-blue-light focus:border-solid`
   `
   border-radius: .25rem;
