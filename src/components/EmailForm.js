@@ -2,13 +2,14 @@ import React from 'react'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 import styled from 'react-emotion';
 import {mainTheme} from '../styles/styles'
+import {css} from 'react-emotion'
 
 const Form = styled.form(
   `
   display: flex;
   flex-direction: column;
   border-style: none;
-  padding-top: 2.25rem;
+  max-width: 18rem;
   `
 )
 
