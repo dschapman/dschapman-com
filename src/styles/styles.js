@@ -74,7 +74,7 @@ pinkLightest : '#ffebef',
 }
 
 const mainTheme = {
-    accent : colors.greyLightest,
+    accent : colors.white,
     background : colors.white,
     primary : colors.blue,
     primaryDark : colors.blueDarker,
