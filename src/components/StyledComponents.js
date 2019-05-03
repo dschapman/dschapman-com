@@ -1,4 +1,4 @@
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
 import {mainTheme,mq} from './../styles/styles'
 
 const Body = styled('div')

@@ -2,8 +2,8 @@ import React from "react"
 import Header from '../components/Header'
 import {graphql, Link} from 'gatsby'
 import {Body,Content, H2} from '../components/StyledComponents'
-import styled from 'react-emotion'
-import {css} from 'react-emotion'
+import styled from '@emotion/styled'
+import {css} from 'emotion'
 
 const Post = styled('div')(
     tw`pt-4 flex flex-col`

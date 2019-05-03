@@ -1,8 +1,9 @@
+/** @jsx jsx */
 import React, {Component} from "react"
 import { StaticQuery, graphql, Link } from 'gatsby'
 import {GatsbyDropdown, GatsbyButton} from './GatsbyComponents.js'
-import styled from "react-emotion"
-import {css} from "react-emotion"
+import styled from "@emotion/styled"
+import {jsx,css} from "@emotion/core"
 import {H1} from "./StyledComponents"
 import Headroom from 'react-headroom'
 import SEO from './SEO'

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'gatsby';
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
 import {mainTheme,mq} from './../styles/styles'
 
 const Button = styled('button')`
