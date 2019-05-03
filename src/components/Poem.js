@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
-import {css} from "react-emotion"
-import styled from "react-emotion"
+import {css} from "emotion"
+import styled from "@emotion/styled"
 
-const PoemCard = styled.div(
+const PoemCard = styled('div')(
     tw`max-w-sm rounded overflow-hidden shadow-lg mx-auto mb-8`,
     props => ({background: props.background})
 )

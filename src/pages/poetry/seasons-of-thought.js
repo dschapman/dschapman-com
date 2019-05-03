@@ -1,9 +1,10 @@
+/** @jsx jsx */
 import React from "react"
 import {H2,Content,Body} from '../../components/StyledComponents'
 import Header from 'components/Header'
 import EmailForm from '../../components/EmailForm'
 import cover from './seasons-of-thought.png'
-import {css} from "react-emotion"
+import {jsx,css} from "@emotion/core"
 import Poem from "../../components/Poem"
 
 

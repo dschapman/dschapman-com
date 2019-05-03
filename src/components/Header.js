@@ -1,8 +1,9 @@
+/** @jsx jsx */
 import React, {Component} from "react"
 import { StaticQuery, graphql, Link } from 'gatsby'
 import {GatsbyDropdown, GatsbyButton} from './GatsbyComponents.js'
-import styled from "react-emotion"
-import {css} from "react-emotion"
+import styled from "@emotion/styled"
+import {jsx,css} from "@emotion/core"
 import {H1} from "./StyledComponents"
 import Headroom from 'react-headroom'
 import SEO from './SEO'
@@ -10,7 +11,7 @@ import {mainTheme,mq} from './../styles/styles'
 
 
 const NavBar = ({data}) => {
-    const Navbar = styled.div(
+    const Navbar = styled('div')(
         `
         min-width: 100%;
         display: flex;
@@ -42,7 +43,7 @@ const TitleAndDescription = ({data}) => {
     const tagline = data.site.siteMetadata.tagline
     
 
-    const Title = styled.div(
+    const Title = styled('div')(
         `
         display: flex;
         flex-direction: column;
@@ -94,7 +95,7 @@ const GuideLinks = ({data}) => {
       )
 }
 
-const Head = styled.div`
+const Head = styled('div')`
     background: ${mainTheme.background};
 `
 

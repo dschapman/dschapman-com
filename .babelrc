@@ -1,0 +1,8 @@
+{
+    "plugins": ["emotion"],
+    "presets": [
+        [
+          "babel-preset-gatsby",
+        ]
+    ]
+}

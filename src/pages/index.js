@@ -2,26 +2,26 @@ import React from "react"
 import Header from '../components/Header'
 import {graphql, Link} from 'gatsby'
 import {Body,Content, H2} from '../components/StyledComponents'
-import styled from 'react-emotion'
-import {css} from 'react-emotion'
+import styled from '@emotion/styled'
+import {css} from 'emotion'
 
-const Post = styled.div(
+const Post = styled('div')(
     tw`pt-4 flex flex-col`
 )
 
-const PostFooter = styled.div(
+const PostFooter = styled('div')(
     tw`pt-4 flex justify-between`
 )
 
-const Tags = styled.div(
+const Tags = styled('div')(
     tw`flex`
 )
 
-const Tag = styled.div(
+const Tag = styled('div')(
     tw`pr-2 text-xs`
 )
 
-const Date = styled.div(
+const Date = styled('div')(
     tw`text-sm`
 )
 

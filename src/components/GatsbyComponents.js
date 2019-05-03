@@ -1,10 +1,9 @@
 import React from 'react';
 import {Link} from 'gatsby';
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
 import {mainTheme,mq} from './../styles/styles'
 
-const Button = styled.button(
-  `
+const Button = styled('button')`
   background: ${mainTheme.background};
   color: ${mainTheme.link};
   &:hover {
@@ -14,7 +13,8 @@ const Button = styled.button(
   &:active {
     
   };
-  font-weight: 700;
+  font-family: 'proxima-nova';
+  font-weight: 100;
   font-size: 1.125rem;
   outline: none;
   border-style: none;
@@ -25,12 +25,11 @@ const Button = styled.button(
   ${mq[1]}{
     padding: .5rem 1rem 1rem .5rem;
   }
-  `
-)
+}  `
 
-const Dropdown = styled.div(
 
-  `background: ${mainTheme.background};
+const Dropdown = styled('div')`
+  background: ${mainTheme.background};
   color: ${mainTheme.link};
   ${mq[0]}{
     font-size: .875rem;
@@ -39,15 +38,16 @@ const Dropdown = styled.div(
     font-size: 1rem;
   };
   `
-)
 
-const DropdownList = styled.ul(
+
+const DropdownList = styled('ul')
   `
   width: 100vw;
   list-style: none; 
   padding: 0;
   background: ${mainTheme.background};
-  font-weight: 700;
+  font-family: 'proxima-nova';
+  font-weight: 100;
   position: absolute;
   z-index: 1;
   right: 0;
@@ -55,16 +55,14 @@ const DropdownList = styled.ul(
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08);
   margin: 1px 0 0 1px;
   `
-)
 
-const DropdownListItem = styled.li(
+const DropdownListItem = styled('li')
   `
   padding: .5rem 1rem 1rem .5rem;
   margin-bottom: 0;
   background: ${mainTheme.accent};
   text-align: center;
   `
-)
 
 
 class GatsbyButton extends React.Component{
