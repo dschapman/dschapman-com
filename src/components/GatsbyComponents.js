@@ -13,7 +13,8 @@ const Button = styled('button')`
   &:active {
     
   };
-  font-weight: 700;
+  font-family: 'proxima-nova';
+  font-weight: 100;
   font-size: 1.125rem;
   outline: none;
   border-style: none;
@@ -45,7 +46,8 @@ const DropdownList = styled('ul')
   list-style: none; 
   padding: 0;
   background: ${mainTheme.background};
-  font-weight: 700;
+  font-family: 'proxima-nova';
+  font-weight: 100;
   position: absolute;
   z-index: 1;
   right: 0;

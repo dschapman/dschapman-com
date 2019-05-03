@@ -3,29 +3,11 @@ import {mainTheme} from "./styles"
 
 const typography = new Typography({
     baseFontSize: '20px',
-    baseLineHeight: '1.45',
+    baseLineHeight: '1.4',
     scaleRatio: '1',
-    googleFonts: [
-        {
-            name: 'Cormorant Upright',
-            styles: ['400'],
-        },
-        {
-            name: 'Playfair Display',
-            styles: ['400', '700', '400i', '700i'],
-        },
-        {
-            name: 'Playfair Display SC',
-            styles: ['400', '700', '400i', '700i'],
-        },
-        {
-            name: 'EB Garamond',
-            styles: ['400', '400i']
-        }
-    ],
-    headerFontFamily: ['Playfair Display SC', 'Playfair Display', 'Cormorant Upright',  'georgia', 'serif'],
+    headerFontFamily: ['adobe-garamond-pro', 'serif'],
     headerWeight: 400,
-    bodyFontFamily: ['EB Garamond', 'serif'],
+    bodyFontFamily: ['adobe-garamond-pro', 'serif'],
     bodyWeight: 400,
     overrideStyles: ({rhythm}, options) => ({
         'a': {
