@@ -74,6 +74,9 @@ const H2 = styled('h2')(
   ${mq[3]} {
     text-align:left;
   }
+  a {
+    color: ${mainTheme.primaryDarkest};
+  }
    `,
   props => ({color: props.color})
 )
