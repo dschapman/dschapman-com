@@ -16,8 +16,8 @@ const Layout = () => {
                     <div><a href="https://twitter.com/ds_chapman"><img src={withPrefix('/images/avatar.jpg')} css={css`border-radius:9999px;${mq[0]}{max-width:10rem}${mq[1]}{max-width:11rem}${mq[3]}{max-width:10rem}`} alt="Follow D.S. Chapman on Twitter." title="Follow D.S. Chapman on Twitter." /></a></div>
                     <div css={css(tw` w-4 xs:w-0 sm:w-0 md:w-0 lg:w-16 xl:w-16`)} /> 
                     <div>
-                        <p>D.S. Chapman is a writer and poet from the Pacific Northwest, currently living and working in Northern Virgina. Explore this site to view some samples of his work, including excerpts from his upcoming poetry collection &mdash; <Link to="/poetry/seasons-of-thought">Seasons of Thought</Link>. </p>
-                        <p>If you are interested in receiving updates when he releases major projects, enter your email below.</p>
+                        <p>D.S. Chapman is a writer and poet from the Pacific Northwest, currently living and working in Northern Virgina. Explore this site for more information about him and his projects, including his upcoming poetry collection &mdash; <Link to="/poetry/seasons-of-thought">Seasons of Thought</Link>. </p>
+                        <p>Enter your email to receive occasional</p>
                     </div>
                 </div>
 

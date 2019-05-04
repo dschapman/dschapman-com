@@ -1,9 +1,10 @@
+/** @jsx jsx */
 import React from "react"
 import Header from '../components/Header'
 import {graphql, Link} from 'gatsby'
 import {Body,Content, H2} from '../components/StyledComponents'
 import styled from '@emotion/styled'
-import {css} from 'emotion'
+import {jsx,css} from '@emotion/core'
 
 const Post = styled('div')(
     tw`pt-4 flex flex-col`
@@ -40,9 +41,9 @@ const MainPage = ({data}) => {
                 const type = node.frontmatter.type
                     return (
                         <Post key={index}>
-                            <Link to={post.path} className={css(tw`hover:no-underline`)}><H2>
+                            <H2><Link to={post.path}>
                                 {post.title}
-                            </H2></Link>
+                            </Link></H2>
                             <div className="excerpt">{post.excerpt} <Link to={post.path}>(read more...)</Link></div>
                             <PostFooter>
                             

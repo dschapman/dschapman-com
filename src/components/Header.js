@@ -57,7 +57,7 @@ const TitleAndDescription = ({data}) => {
     return (
         
         <Title>
-            <Link css={css`color: ${mainTheme.primaryDarkest}; &:hover: text-decoration:none;`} to="/"><H1 css={css`hover:text-decoration:none;`}>{title}</H1></Link>
+            <Link css={css`color: ${mainTheme.primaryDarkest}; &:hover { text-decoration:none;}`} to="/"><H1>{title}</H1></Link>
         </Title>
     )
 }
