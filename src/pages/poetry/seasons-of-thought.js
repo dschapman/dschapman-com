@@ -3,7 +3,8 @@ import React from "react"
 import {H2,Content,Body} from '../../components/StyledComponents'
 import Header from 'components/Header'
 import EmailForm from '../../components/EmailForm'
-import cover from './seasons-of-thought.png'
+import cover from './seasons-of-thought-cover.png'
+import card from './seasons-of-thought-card.png'
 import {jsx,css} from "@emotion/core"
 import Poem from "../../components/Poem"
 
@@ -11,7 +12,7 @@ import Poem from "../../components/Poem"
 const Layout = () => {
     return (
         <Body>
-        <Header title="Seasons of Thought - D.S. Chapman - Poetry Collection" description="A collection of poems by D.S. Chapman, coming soon!" image="/poetry/seasons-of-thought/card.png" path="/poetry/seasons-of-thought/"/> 
+        <Header title="Seasons of Thought - D.S. Chapman - Poetry Collection" description="A collection of poems by D.S. Chapman, coming soon!" image={card} path="/poetry/seasons-of-thought/"/> 
             <Content>
             
                     <H2 css={css(tw`xs:text-center sm:text-center md:text-center lg:text-left xl:text-left`)}>Seasons of Thought</H2>
