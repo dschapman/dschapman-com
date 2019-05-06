@@ -17,7 +17,6 @@ const DisplayToggle = (props) => {
     margin-top: 1rem;
     padding:0;
     justify-content: center;
-    
     `
     const [display,setDisplay]=useState(true);
     function toggle(){
@@ -25,9 +24,9 @@ const DisplayToggle = (props) => {
     }
     return(
     <div className='ToggleContainer' css={css`display:flex; flex-direction: column;`}><Button css={css`
-        &:hover{text-decoration: overline underline;};
-        text-decoration:${display ? `underline` : `overline`};`
-    } onClick={toggle}>{props.children}</Button>
+        &:hover{text-decoration: overline underline ${display ? `${mainTheme.primaryDarkest}` : `${mainTheme.primaryDark}`};};
+        text-decoration:${display ? `underline ${mainTheme.primaryDarkest}` : `overline ${mainTheme.primaryDark}`};`
+    } onClick={toggle}><H2 css={css`margin-bottom: 0; padding:0; color: ${display ? `${mainTheme.primaryDarkest}`:`${mainTheme.primaryDark}`};`}>{props.children}</H2></Button>
     <GetContent data={props.data} display={display}/>
     </div>)
 }
@@ -98,8 +97,8 @@ const MainPage = ({data}) => {
         <Body>
         <Header title="Home - D.S. Chapman - Poetry, Blog, Guides" />
             <Content>
-            <DisplayToggle data={data.blogs}><H2 css={css`margin-bottom: 0; padding:0;`}>Recent Blog Posts</H2></DisplayToggle>
-            <DisplayToggle data={data.guides}><H2 css={css`margin-bottom: 0; padding: 0;`}>Recent Guides</H2></DisplayToggle>
+            <DisplayToggle data={data.blogs}>Recent Blog Posts</DisplayToggle>
+            <DisplayToggle data={data.guides}>Recent Guides</DisplayToggle>
             </Content>
         </Body>
     )     
