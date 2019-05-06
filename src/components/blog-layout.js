@@ -2,7 +2,6 @@ import React from 'react'
 import Header from './Header'
 import {MDXProvider} from "@mdx-js/tag"
 import {Body,Content,H2,Poem,Stanza} from './StyledComponents'
-import { S_Link } from './GatsbyComponents';
 
 
 const Template = ({ children, pageContext}) => {
