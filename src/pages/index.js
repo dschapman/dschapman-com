@@ -16,10 +16,9 @@ const DisplayToggle = (props) => {
     background: ${mainTheme.background};
     outline: none;
     border: none;
-    
     margin-top: 1rem;
     padding:0;
-    
+    justify-content: center;
     
     `
     const [display,setDisplay]=useState(true);
@@ -27,7 +26,7 @@ const DisplayToggle = (props) => {
         display ? setDisplay(false) : setDisplay(true);
     }
     return(
-    <div className='DisplayToggle'><Button css={css`
+    <div className='BlogPosts' css={css`display:flex; flex-direction: column;`}><Button css={css`
         &:hover{text-decoration: overline underline;};
         text-decoration:${display ? `underline` : `overline`};`
     } onClick={toggle}>{props.children}</Button>
