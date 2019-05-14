@@ -16,6 +16,7 @@ const Layout = () => {
             and the difference is stark, <br />
             I hope you won't think me a con.
             </Poem>
+            <Social/>
         </Content>
         </Body>
     )

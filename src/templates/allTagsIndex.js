@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from 'gatsby'
 import Header from '../components/Header'
 import {H2, Content, Body} from "../components/StyledComponents"
+import {Social} from "../components/social/social"
 
 const allTagsTemplate = ({data, pageContext}) => {
     const {tags} = pageContext
@@ -22,6 +23,7 @@ const allTagsTemplate = ({data, pageContext}) => {
                     )
                 })}
             </div>
+            <Social/>
         </Content>
         </Body>
     )

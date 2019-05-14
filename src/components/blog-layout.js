@@ -1,7 +1,11 @@
+/** @jsx jsx */
 import React from 'react'
 import Header from './Header'
 import {MDXProvider} from "@mdx-js/tag"
 import {Body,Content,H2,Poem,Stanza} from './StyledComponents'
+import EmailForm from './EmailForm'
+import {Social} from './social/social'
+import {jsx,css} from "@emotion/core"
 
 
 const Template = ({ children, pageContext}) => {
@@ -13,7 +17,10 @@ const Template = ({ children, pageContext}) => {
             <Content>
             <H2>{frontmatter.title}</H2>
             <div>{children}</div>
-            
+            <div css={css(`display:flex; justify-content:center;`)}>
+                <EmailForm />
+            </div>
+            <Social/>
             </Content>
         </Body>
     </MDXProvider>
