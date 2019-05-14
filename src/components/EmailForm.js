@@ -9,6 +9,7 @@ const Form = styled('form')(
   flex-direction: column;
   border-style: none;
   max-width: 18rem;
+  margin-bottom: 0.5rem;
   `
 )
 
@@ -20,9 +21,9 @@ const Submit = styled('input')(
   background: ${mainTheme.background};
   &:hover{
     color: ${mainTheme.background};
-    background:${mainTheme.secondaryDark};
+    background:${mainTheme.secondaryLight};
   };
-  border-color:${mainTheme.secondaryDark};
+  border-color:${mainTheme.secondaryLight};
   border-style:solid;
   border-width:2px;
   color: ${props => (props.color || mainTheme.secondaryLight)};
@@ -38,7 +39,7 @@ const Email = styled('input')(
   border-radius: .25rem;
   border-color: transparent;
   text-align: center;
-  margin-bottom: 1 rem;
+  margin-bottom: .5 rem;
   outline: 0;
   background: ${mainTheme.accent};
   &:focus{

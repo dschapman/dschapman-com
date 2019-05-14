@@ -6,6 +6,7 @@ import {Body,Content, H2, H3} from '../components/StyledComponents'
 import styled from '@emotion/styled'
 import {jsx,css} from '@emotion/core'
 import {mainTheme} from '../styles/styles'
+import {Social} from '../components/social/social'
 
 
 
@@ -19,11 +20,12 @@ const DisplayToggle = (props) => {
     justify-content: center;
     `
     const [display,setDisplay]=useState(true);
+
     function toggle(){
         display ? setDisplay(false) : setDisplay(true);
     }
     return(
-    <div className='ToggleContainer' css={css`display:flex; flex-direction: column;`}><Button css={css`
+    <div css={css`display:flex; flex-direction: column;`}><Button css={css`
         &:hover{text-decoration: overline underline ${display ? `${mainTheme.primaryDarkest}` : `${mainTheme.primaryDark}`};};
         text-decoration:${display ? `underline ${mainTheme.primaryDarkest}` : `overline ${mainTheme.primaryDark}`};`
     } onClick={toggle}><H2 css={css`margin-bottom: 0; padding:0; color: ${display ? `${mainTheme.primaryDarkest}`:`${mainTheme.primaryDark}`};`}>{props.children}</H2></Button>
@@ -99,6 +101,7 @@ const MainPage = ({data}) => {
             <Content>
             <DisplayToggle data={data.blogs}>Recent Blog Posts</DisplayToggle>
             <DisplayToggle data={data.guides}>Recent Guides</DisplayToggle>
+            <Social/>
             </Content>
         </Body>
     )     
