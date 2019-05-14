@@ -1,7 +1,8 @@
 import React from "react"
 import {H3,H2,P,Content,Body} from '../components/StyledComponents'
-import Poem from 'components/Poem'
-import Header from 'components/Header'
+import Poem from '../components/Poem'
+import Header from '../components/Header'
+import {Social} from '../components/social/social'
 
 const Layout = () => {
     return(
