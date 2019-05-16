@@ -1,6 +1,6 @@
 const path = require('path')
 
-const componentWithMDXScope = require("gatsby-mdx/component-with-mdx-scope");
+
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
@@ -99,7 +99,7 @@ exports.createPages = ({ graphql, actions }) => {
           posts.forEach(({ node }, index) => {
             createPage({
               path: `${node.parent.sourceInstanceName}/${node.parent.name}`,
-              component: componentWithMDXScope(
+              component: (
                 path.resolve("./src/components/blog-layout.js"),
                 node.code.scope
               ),
