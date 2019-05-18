@@ -9,7 +9,6 @@ import {jsx,css} from "@emotion/core"
 
 
 const Template = ({ children, pageContext}) => {
-    console.log(pageContext)
     const {frontmatter} = pageContext
     return( 
         <Body>
