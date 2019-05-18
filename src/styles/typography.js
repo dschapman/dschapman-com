@@ -39,6 +39,7 @@ const typography = new Typography({
             padding: '1em',
             overflow: 'auto'
         },
+        
     }),
 
 })

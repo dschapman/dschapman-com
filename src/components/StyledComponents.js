@@ -62,6 +62,7 @@ const H2 = styled('h2')(
   padding-top: 1rem;
   font-size: 1.5 rem;
   text-align: left;
+  line-height: 1.4;
   ${mq[0]} {
     text-align:center;
   }
