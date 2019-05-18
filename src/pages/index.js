@@ -19,15 +19,15 @@ const DisplayToggle = (props) => {
     padding:0;
     justify-content: center;
     `
-    const [display,setDisplay]=useState(true);
+    const [display,setDisplay]=useState(false);
 
     function toggle(){
         display ? setDisplay(false) : setDisplay(true);
     }
     return(
     <div css={css`display:flex; flex-direction: column;`}><Button css={css`
-        &:hover{text-decoration: overline underline ${display ? `${mainTheme.primaryDarkest}` : `${mainTheme.primaryDark}`};};
-        text-decoration:${display ? `underline ${mainTheme.primaryDarkest}` : `overline ${mainTheme.primaryDark}`};`
+        &:hover{text-decoration-line: underline overline; text-decoration-color:${display ? `${mainTheme.primaryDarkest}` : `${mainTheme.primaryDark}`};};
+        text-decoration-line:${display ? `underline`:`overline`}; text-decoration-color:${display ? `${mainTheme.primaryDarkest}` : `${mainTheme.primaryDark}`};`
     } onClick={toggle}><H2 css={css`margin-bottom: 0; padding:0; color: ${display ? `${mainTheme.primaryDarkest}`:`${mainTheme.primaryDark}`};`}>{props.children}</H2></Button>
     <GetContent data={props.data} display={display}/>
     </div>)
@@ -74,23 +74,40 @@ const GetContent = (props) => {
 }
 
 const Post = styled('div')(
-    tw`pt-0 flex flex-col`
+    `
+    padding-top: 0;
+    display: flex;
+    flex-direction: column; 
+    `
 )
 
 const PostFooter = styled('div')(
-    tw`pt-4 flex justify-between`
+    `
+    padding-top: .25rem;
+    display: flex;
+    justify-content: space-between;
+    `
 )
 
 const Tags = styled('div')(
-    tw`flex`
+    `
+    display:flex;
+   
+
+    `
 )
 
 const Tag = styled('div')(
-    tw`pr-2 text-xs`
+    `
+    margin-right: .5rem;
+    font-size: .75rem;
+    `
 )
 
 const Date = styled('div')(
-    tw`text-sm`
+    `
+    font-size: .75rem;
+    `
 )
 
 const MainPage = ({data}) => {
