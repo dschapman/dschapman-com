@@ -7,7 +7,7 @@ import styled from '@emotion/styled'
 import {jsx,css} from '@emotion/core'
 import {mainTheme} from '../styles/styles'
 import {Social} from '../components/social/social'
-
+import Avatar from '../components/Avatar'
 
 
 const DisplayToggle = (props) => {
@@ -19,7 +19,7 @@ const DisplayToggle = (props) => {
     padding:0;
     justify-content: center;
     `
-    const [display,setDisplay]=useState(false);
+    const [display,setDisplay]=useState(props.display);
 
     function toggle(){
         display ? setDisplay(false) : setDisplay(true);
@@ -116,8 +116,8 @@ const MainPage = ({data}) => {
         <Body>
         <Header title="Home - D.S. Chapman - Poetry, Blog, Guides" />
             <Content>
-            <DisplayToggle data={data.blogs}>Recent Blog Posts</DisplayToggle>
-            <DisplayToggle data={data.guides}>Recent Guides</DisplayToggle>
+            <DisplayToggle data={data.blogs} display={true}>Recent Blog Posts</DisplayToggle>
+            <DisplayToggle data={data.guides} display={false}>Recent Guides</DisplayToggle>
             <Social/>
             </Content>
         </Body>
