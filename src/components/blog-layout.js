@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from 'react'
 import Header from './Header'
-import {MDXProvider} from "@mdx-js/tag"
+import {MDXRenderer} from 'gatsby-mdx/mdx-renderer'
 import {Body,Content,H2,Poem,Stanza} from './StyledComponents'
 import EmailForm from './EmailForm'
 import {Social} from './social/social'
@@ -9,9 +9,9 @@ import {jsx,css} from "@emotion/core"
 
 
 const Template = ({ children, pageContext}) => {
+    console.log(pageContext)
     const {frontmatter} = pageContext
     return( 
-    <MDXProvider>
         <Body>
             <Header title={`${frontmatter.title} - D.S. Chapman`} description={frontmatter.description} image={frontmatter.image} path={frontmatter.path}/>
             <Content>
@@ -23,7 +23,6 @@ const Template = ({ children, pageContext}) => {
             <Social/>
             </Content>
         </Body>
-    </MDXProvider>
 
     )
 }
