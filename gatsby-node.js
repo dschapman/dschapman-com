@@ -99,10 +99,8 @@ exports.createPages = ({ graphql, actions }) => {
           posts.forEach(({ node }, index) => {
             createPage({
               path: `${node.parent.sourceInstanceName}/${node.parent.name}`,
-              component: (
+              component: 
                 path.resolve("./src/components/blog-layout.js"),
-                node.code.scope
-              ),
               context: { 
                   id: node.id,
                   frontmatter:node.frontmatter,

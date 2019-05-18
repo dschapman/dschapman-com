@@ -82,11 +82,11 @@ const mainTheme = {
 
     primaryDarkest : colors.blueDarkest,
     primaryLight : colors.blueLight,
-    secondary : colors.teal,
-    secondaryDark : colors.tealDark,
-    secondaryDarker : colors.tealDarker,
-    secondaryDarkest : colors.tealDarkest,
-    secondaryLight : colors.tealLight,
+    secondary : colors.tealLight,
+    secondaryDark : colors.teal,
+    secondaryDarker : colors.tealDark,
+    secondaryDarkest : colors.tealDarker,
+    secondaryLight : colors.tealLighter,
     text : colors.black,
     link : colors.blue,
     linkHover: colors.blueDark
