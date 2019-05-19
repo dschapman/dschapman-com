@@ -13,9 +13,10 @@ exports.onCreateWebpackConfig = ({ actions }) => {
 const createTagPages = (createPage, posts) => {
     const allTagsIndexTemplate = path.resolve('src/templates/allTagsIndex.js')
     const singleTagIndexTemplate = path.resolve('src/templates/singleTagIndex.js')
-
+    const allBlogIndex = path.resolve('src/templates/allBlogIndex.js')
     const postsByTag = {}
-
+    const allPosts = {}
+    
     posts.forEach(({node}) => {
         if (node.frontmatter.tags) {
             node.frontmatter.tags.forEach(tag => {
@@ -29,6 +30,23 @@ const createTagPages = (createPage, posts) => {
     })
 
     const tags = Object.keys(postsByTag)
+
+    posts.forEach(({node}) => {
+      
+          
+
+      allPosts[node.frontmatter.title] = node
+
+  })
+    const titles = Object.keys(allPosts)
+    createPage({
+      path: 'blog',
+      component: allBlogIndex,
+      context: {
+        allPosts,
+        titles,
+      }
+    })
 
     createPage({
         path: 'blog/tags',
