@@ -6,6 +6,7 @@ import {Social} from "../components/social/social"
 
 const singleTagsTemplate = ({data, pageContext}) => {
     const { posts, tagName} = pageContext
+    console.log(posts)
     return (
     <Body>
     <Header title={`Posts About ${tagName} - D.S. Chapman`} path={`/blog/posts/${tagName}`} />
