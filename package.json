@@ -38,11 +38,7 @@
     "react-simple-dropdown": "^3.2.3",
     "react-spring": "^9.0.0-beta.6",
     "react-typography": "^0.16.18",
-    "typography": "^0.16.18",
-    "typography-theme-bootstrap": "^0.16.18",
-    "typography-theme-lawton": "^0.15.10",
-    "typography-theme-st-annes": "^0.15.10",
-    "typography-theme-twin-peaks": "^0.15.11"
+    "typography": "^0.16.18"
   },
   "devDependencies": {
     "babel-preset-gatsby": "^0.1.11",

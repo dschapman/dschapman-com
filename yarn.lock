@@ -3232,7 +3232,7 @@ commondir@^1.0.1:
   resolved "https://registry.yarnpkg.com/commondir/-/commondir-1.0.1.tgz#ddd800da0c66127393cca5950ea968a3aaf1253b"
   integrity sha1-3dgA2gxmEnOTzKWVDqloo6rxJTs=
 
-compass-vertical-rhythm@^1.2.1, compass-vertical-rhythm@^1.4.5:
+compass-vertical-rhythm@^1.4.5:
   version "1.4.5"
   resolved "https://registry.yarnpkg.com/compass-vertical-rhythm/-/compass-vertical-rhythm-1.4.5.tgz#4baa8d7068fda164d3675d706775d7547e8750f5"
   integrity sha512-bJo3IYX7xmmZCDYjrT2XolaiNjGZ4E2JvUGxpdU0ecbH4ZLK786wvc8aHKVrGrKct9JlkmJbUi8YLrQWvOc+uA==
@@ -12954,48 +12954,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typography-breakpoint-constants@^0.15.10:
-  version "0.15.10"
-  resolved "https://registry.yarnpkg.com/typography-breakpoint-constants/-/typography-breakpoint-constants-0.15.10.tgz#bd5308dd57250e7f28a8c6e1c0e668ddf1178c5c"
-  integrity sha1-vVMI3VclDn8oqMbhwOZo3fEXjFw=
-
 typography-normalize@^0.16.19:
   version "0.16.19"
   resolved "https://registry.yarnpkg.com/typography-normalize/-/typography-normalize-0.16.19.tgz#58e0cf12466870c5b27006daa051fe7307780660"
   integrity sha512-vtnSv/uGBZVbd4e/ZhZB9HKBgKKlWQUXw74+ADIHHxzKp27CEf8PSR8TX1zF2qSyQ9/qMdqLwXYz8yRQFq9JLQ==
-
-typography-theme-bootstrap@^0.16.18:
-  version "0.16.19"
-  resolved "https://registry.yarnpkg.com/typography-theme-bootstrap/-/typography-theme-bootstrap-0.16.19.tgz#17b999dc2c322b3eaacc829dba52ed54e2141fbe"
-  integrity sha512-Ls7aAqSUkQj7GY5FzMZcyjUtJbHH721JYEFN0kY8e+onDe0HFNuJ8jmg3fCX2ujFxEUmf1RJ4in9X0RkTv+suw==
-  dependencies:
-    gray-percentage "^2.0.0"
-
-typography-theme-lawton@^0.15.10:
-  version "0.15.10"
-  resolved "https://registry.yarnpkg.com/typography-theme-lawton/-/typography-theme-lawton-0.15.10.tgz#f4969235ae9cdefaa8237377af056bf8a6be0da9"
-  integrity sha1-9JaSNa6c3vqoI3N3rwVr+Ka+Dak=
-  dependencies:
-    compass-vertical-rhythm "^1.2.1"
-    gray-percentage "^2.0.0"
-    typography-breakpoint-constants "^0.15.10"
-
-typography-theme-st-annes@^0.15.10:
-  version "0.15.10"
-  resolved "https://registry.yarnpkg.com/typography-theme-st-annes/-/typography-theme-st-annes-0.15.10.tgz#8c96d875536d817484ae3d2da6e264085d16fa0e"
-  integrity sha1-jJbYdVNtgXSErj0tpuJkCF0W+g4=
-  dependencies:
-    compass-vertical-rhythm "^1.2.1"
-    gray-percentage "^2.0.0"
-    typography-breakpoint-constants "^0.15.10"
-
-typography-theme-twin-peaks@^0.15.11:
-  version "0.15.11"
-  resolved "https://registry.yarnpkg.com/typography-theme-twin-peaks/-/typography-theme-twin-peaks-0.15.11.tgz#3d0b9e57d9725bad5730e898cc47a89c3ffcca2e"
-  integrity sha512-km8JzjI3uwmd9o3qBUfnrLhw0wOYBPq1CkM45VHv3S7O2WlUixqY8Tv8pBkvI5iMUJttWzEUNjSO6LGfq65NaQ==
-  dependencies:
-    gray-percentage "^2.0.0"
-    typography-breakpoint-constants "^0.15.10"
 
 typography@^0.16.18:
   version "0.16.19"
