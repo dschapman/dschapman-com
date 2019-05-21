@@ -7,7 +7,6 @@ import {withPrefix, Link} from "gatsby"
 import {jsx,css} from '@emotion/core'
 import {mq, mainTheme} from "../styles/styles"
 import {Social} from '../components/social/social'
-import avatar from '../components/Avatar'
 import Avatar from "../components/Avatar";
 
 const Layout = () => {
