@@ -20,7 +20,7 @@ const Layout = () => {
                     <Avatar />
                     <div css={css(tw` w-4 xs:w-0 sm:w-0 md:w-0 lg:w-16 xl:w-16`)} /> 
                     <div>
-                        <p>D.S. Chapman is a writer and poet from the Pacific Northwest, currently living and working in Northern Virgina. Explore this site for more information about him and his projects, including his upcoming poetry collection &mdash; <Link to="/poetry/seasons-of-thought">Seasons of Thought</Link>. </p>
+                        <p>D.S. Chapman is a writer and poet from the Pacific Northwest, currently living and working in Northern Virginia. Explore this site for more information about him and his projects, including his upcoming poetry collection &mdash; <Link to="/poetry/seasons-of-thought">Seasons of Thought</Link>. </p>
                         <p>Enter your email to receive occasional newsletters and announcements.</p>
                     </div>
                 </div>
