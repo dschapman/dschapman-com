@@ -8,6 +8,7 @@ import {jsx,css} from '@emotion/core'
 import {mainTheme} from '../styles/styles'
 import {Social} from '../components/social/social'
 import Avatar from '../components/Avatar'
+import banner from '../images/SoT-Banner.png'
 
 
 const DisplayToggle = (props) => {
@@ -116,6 +117,7 @@ const MainPage = ({data}) => {
         <Body>
         <Header title="Home - D.S. Chapman - Poetry, Blog, Guides" />
             <Content>
+            <div css={css``}><a href="https://www.amazon.com/Seasons-Thought-D-S-Chapman/dp/0578504359"><img css={css`height:auto; width:auto; max-height: 20rem; display:flex; margin-top:1rem; margin-left:auto; margin-right:auto; &:hover{box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);};`} src={banner}></img></a></div>
             <DisplayToggle data={data.blogs} display={true}>Recent Blog Posts</DisplayToggle>
             <DisplayToggle data={data.guides} display={false}>Recent Guides</DisplayToggle>
             <Social/>
