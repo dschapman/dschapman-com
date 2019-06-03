@@ -14,7 +14,7 @@ import {Social} from "../../components/social/social"
 const Layout = () => {
     return (
         <Body>
-        <Header title="Seasons of Thought - D.S. Chapman - Poetry Collection" description="A collection of poems by D.S. Chapman, coming soon!" image={card} path="/poetry/seasons-of-thought/"/> 
+        <Header title="Seasons of Thought - D.S. Chapman - Poetry Collection" description="A collection of poems by D.S. Chapman, available now on Amazon!" image={card} path="/poetry/seasons-of-thought/"/> 
             <Content>
                     <H2 css={css(tw`xs:text-center sm:text-center md:text-center lg:text-left xl:text-left`)}>Seasons of Thought</H2>
                     <div css={css(tw` flex xs:flex-wrap sm:flex-wrap md:flex-wrap lg:flex-no-wrap xl:flex-no-wrap`)}>
