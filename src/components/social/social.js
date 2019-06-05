@@ -3,7 +3,7 @@ import {useSpring, animated} from 'react-spring'
 import styled from '@emotion/styled'
 import {mainTheme} from '../../styles/styles'
 
-const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 2) / 20, 1.4]
+const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 2) / 20, 1.2]
 const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
 function AnimatedLogo({children})  {
@@ -69,8 +69,9 @@ render(){
 const SocialWrapper = styled('div')
 `
     display:flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     padding-top:1rem;
+    overflow-y:visible;
 
 `
 
