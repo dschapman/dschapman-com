@@ -20,6 +20,18 @@ const CanonList = [
         text:"The first book to teach me that there can be more to great stories than fun plot. Prose that demands to be read aloud, a world that lives on beyond the page, and a vision of the good in the world that's worth fighting for.",
         link:"https://www.goodreads.com/book/show/33.The_Lord_of_the_Rings",
     },
+    {
+        title:"Saint George and the Dragon",
+        medium:"📖",
+        text: "A picture book dedicated to artistry. The story of Saint George's legendary battle against a dragon is told in parallel with the story of a ship sailing out to sea in side panels. There's a reason this story won the Caldecott Medal.",
+        link:"https://www.goodreads.com/book/show/10118.Saint_George_and_the_Dragon"
+    },
+    {
+        title:"Test Title",
+        medium:"📖",
+        text: "Description about Text",
+        link:"dschapman.com"
+    }
 
 ]
 
@@ -27,6 +39,8 @@ function Canon(props) {
     const Container = styled.div(
         `
         display:flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
         `
     )
     const {list} = props
@@ -61,6 +75,8 @@ function CanonItem(props) {
         border-radius: 5px;
         transition: all .25s;
         width: 30%;
+        min-width: 275px;
+        min-height:300px;
         &: hover {
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         };
@@ -121,7 +137,7 @@ const Layout = () => {
             <Content>
                 <H2>Personal Canon</H2>
                 <p>These are the things that influence how I think and work.
-                    The giants whose shoulders I try to stand on (unsuccessfully). 
+                    The giants whose shoulders I clamber onto. 
                     The melodies I don't ever want to stop humming.
                 </p>
                 <Canon list={CanonList}/>

@@ -14,9 +14,9 @@ const Content = styled('div')`
   flex: 1;
   width: 100vw;
   margin: 0 auto 0;
-  overflow-y: auto;
+  overflow-y: visible;
   -webkit-overflow-scrolling: touch;
-  -webkit-overflow-scrolling: auto;
+  -webkit-overflow-scrolling: visible;
   ${mq[0]} { 
     padding: 0 1rem 0;
     max-width: 20rem;
