@@ -27,10 +27,16 @@ const CanonList = [
         link:"https://www.goodreads.com/book/show/10118.Saint_George_and_the_Dragon"
     },
     {
-        title:"Test Title",
-        medium:"📖",
-        text: "Description about Text",
-        link:"dschapman.com"
+        title:"Farther Along",
+        medium:"🎵",
+        text: `"There's so much more to life than we've been told /
+        It's full of beauty that will unfold /
+        And shine like you struck gold my wayward son /
+        That deadweight burden weighs a ton /
+        Go down into the river and let it run /
+        And wash away all the things you've done /
+        Forgiveness alright."`,
+        link:"https://open.spotify.com/album/3jrVFS6lW7HvxOKN7QPQC8"
     }
 
 ]
@@ -140,7 +146,18 @@ const Layout = () => {
                     The giants whose shoulders I clamber onto. 
                     The melodies I don't ever want to stop humming.
                 </p>
-                <Canon list={CanonList}/>
+                <Canon list={CanonList.sort((a,b) =>{
+                    let titleA = a.title.toUpperCase(); // ignore upper and lowercase
+                    let titleB = b.title.toUpperCase(); // ignore upper and lowercase
+                    if (titleA < titleB) {
+                    return -1;
+                    }
+                    if (titleA > titleB) {
+                    return 1;
+                    }
+                
+                    // names must be equal
+                    return 0;})}/>
                 <p>This page was inspired by <a href="https://www.brendanschlagel.com/2017/11/05/canonize-creating-personal-canon-template/">this blog post</a> by Brendan Schlagel. 
                     I borrowed heavily from <a href="https://github.com/bschlagel/canonize/blob/master/webpage/style-light.css">his source code</a> in creating this page.
                 </p>
