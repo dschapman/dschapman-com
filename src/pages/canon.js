@@ -67,33 +67,12 @@ function Canon(props) {
         justify-content: space-around;
         `
     )
-    let {list} = props
-    list = list.sort((a,b) => SortTitle(a,b))
-    
-    const SelectSort = props => {
-        const [sort,setSort]= useState("title")
-        let {list} = props
-        
-        
-        useEffect(() => {
-            
-            switch(sort) {
-                case "title":
-                    list = list.sort((a,b) => SortTitle(a,b));
-                    console.log(sort);
-                    break;
-                case "medium":
-                    list = list.sort((a,b) => SortMedium(a,b));
-                    console.log(sort);
-                    break;
-                case "default":
-                    break;
-            }
-        })
-
+    const [sort, setSort] = useState()
+    let list = CanonList
+    const SelectSort = () => {
         return (
 
-            <div>
+
             <form>
                 <label>Sort By:</label>
                 <select onChange={e => setSort(e.target.value)}>
@@ -103,8 +82,31 @@ function Canon(props) {
                 </select>
                 
             </form>
+
+        )
+    }
+
+    switch(sort) {
+        case "title":
+            list = list.sort((a,b) => SortTitle(a,b));
+                break;
+        case "medium":
+            list = list.sort((a,b) => SortMedium(a,b));
+            break;
+        case "default":
+            break;
+        }
+
+    
+    return(
+       <div className="Canon">
+            <H2>Personal Canon</H2>
+            <p>These are the things that influence how I think and work.
+                The giants whose shoulders I clamber onto. 
+                The melodies I don't ever want to stop humming.
+            </p>
+            <SelectSort />
             <Container>
-                {useEffect}
                 {list.map((item, index) => 
                     <CanonItem 
                     key={index}
@@ -113,19 +115,13 @@ function Canon(props) {
                     text={item.text}
                     link={item.link}
                     />
-
-                )
-            }
+                )}
             </Container>
-            <p>Sorted by {sort}</p>
+            <p>This page was inspired by <a href="https://www.brendanschlagel.com/2017/11/05/canonize-creating-personal-canon-template/">this blog post</a> by Brendan Schlagel. 
+                    I borrowed heavily from <a href="https://github.com/bschlagel/canonize/blob/master/webpage/style-light.css">his source code</a> in creating this page.
+            </p>
             </div>
-        )
-    }
-
-    
-    return(
-
-        <SelectSort list={list} />
+        
 
     )
 }
@@ -248,16 +244,7 @@ const Layout = () => {
         <Body>
             <Header title={"Personal Canon - D.S. Chapman - The things that influence me"} path={"/canon/"} />
             <Content>
-                <H2>Personal Canon</H2>
-                <p>These are the things that influence how I think and work.
-                    The giants whose shoulders I clamber onto. 
-                    The melodies I don't ever want to stop humming.
-                </p>
-                
-                <Canon list={CanonList}/>
-                <p>This page was inspired by <a href="https://www.brendanschlagel.com/2017/11/05/canonize-creating-personal-canon-template/">this blog post</a> by Brendan Schlagel. 
-                    I borrowed heavily from <a href="https://github.com/bschlagel/canonize/blob/master/webpage/style-light.css">his source code</a> in creating this page.
-                </p>
+                <Canon />
                 <Social />
             </Content>
         </Body>
