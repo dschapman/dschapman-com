@@ -90,6 +90,7 @@ function Canon(props) {
                 <select onChange={e => {setSort(e.target.value)}} value={sort}>
                     <option value="none">-- Select --</option>
                     <option value="title">Title</option>
+                    <option value="author">Author</option>
                     <option value="medium">Medium</option>
                 </select>
                 
@@ -104,6 +105,9 @@ function Canon(props) {
                 break;
         case "medium":
             list = list.sort((a,b) => SortMedium(a,b));
+            break;
+        case "author":
+            list = list.sort((a,b) => SortAuthor(a,b));
             break;
         case "default":
             break;
@@ -243,6 +247,20 @@ function SortTitle (a,b){
     return -1;
     }
     if (titleA > titleB) {
+    return 1;
+    }
+
+    // names must be equal
+    return 0;
+}
+
+function SortAuthor (a,b){
+    let authorA = a.author.toUpperCase(); // ignore upper and lowercase
+    let authorB = b.author.toUpperCase(); // ignore upper and lowercase
+    if (authorA < authorB) {
+    return -1;
+    }
+    if (authorA > authorB) {
     return 1;
     }
 
