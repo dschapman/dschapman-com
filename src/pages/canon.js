@@ -75,7 +75,7 @@ function Canon(props) {
 
             <form>
                 <label>Sort By:</label>
-                <select onChange={e => setSort(e.target.value)}>
+                <select onChange={e => {setSort(e.target.value)}} value={sort}>
                     <option value="none">-- Select --</option>
                     <option value="title">Title</option>
                     <option value="medium">Medium</option>
