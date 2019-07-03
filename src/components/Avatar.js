@@ -2,7 +2,7 @@
 import React from "react"
 import {jsx,css} from '@emotion/core'
 import avatar from '../images/avatar.jpg'
-import {mq} from "../styles/styles"
+import {mq} from "./styles"
 
 const Avatar = () => {
 

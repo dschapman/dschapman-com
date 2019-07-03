@@ -1,11 +1,6 @@
 import React, {Component} from 'react'
-import {css} from "emotion"
 import styled from "@emotion/styled"
-
-const PoemCard = styled('div')(
-    tw`max-w-sm rounded overflow-hidden shadow-lg mx-auto mb-8`,
-    props => ({background: props.background})
-)
+import {mq} from "./styles"
 
 class Poem extends React.Component {
 
@@ -23,16 +18,66 @@ class Poem extends React.Component {
     render (){
             return(
             <PoemCard background={this.state.bg}>
-
-                <div className={css(tw` px-6 pt-4 xs:px-2 xs:pt-1 xs:pb-2 sm:px-4 sm:pt-2 sm:pb-4 md:px-6 md:pt-4 md:pb-8 `)}>
-                <div className={css(tw` font-bold text-center text-2xl pb-4`)}>{this.state.title}</div>
-                <div className={css(tw` text-base xs:text-xs sm:text-sm md:text-base lg:text-base xl:text-base`)} style={{textAlign: this.state.align}}>{this.state.children}</div>
-                
-                </div>
-            
+                <PoemTitle>{this.state.title}</PoemTitle>
+                <PoemText style={{textAlign: this.state.align}}>{this.state.children}</PoemText>
             </PoemCard>
         )
     }
 }
+
+const PoemCard = styled('div')`
+    max-width: 24rem;
+    border-radius: .25rem;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    ${mq[0]} {
+        padding-left: .5rem;
+        padding-right: .5rem;
+        padding-bottom:.5rem;
+        padding-top:.25rem;
+    }
+    ${mq[1]} {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top:.5rem;
+        padding-bottom:1rem;
+    }
+    ${mq[2]}{
+        padding-left: 1.5rem;
+        padding-right:1.5rem;
+        padding-bottom: 2rem;
+        padding-top: 1rem;
+    }
+    props : ${props => ({background: props.background})};
+`
+
+const PoemTitle = styled('div')`
+    font-weight: 700;
+    text-align: center;
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+`
+
+const PoemText = styled('div')`
+    font-size:1rem;
+    ${mq[0]}{
+        font-size: .75rem;
+    },
+    ${mq[1]}{
+        font-size: .875rem;
+    },
+    ${mq[2]}{
+        font-size: 1rem;
+    }
+`
+
+
 
 export default Poem

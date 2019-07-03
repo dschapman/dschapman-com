@@ -1,9 +1,9 @@
 import React from 'react'
 import {useSpring, animated} from 'react-spring'
 import styled from '@emotion/styled'
-import {mainTheme} from '../../styles/styles'
+import {mainTheme} from './styles'
 
-const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 2) / 20, 1.4]
+const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 2) / 20, 1.2]
 const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
 function AnimatedLogo({children})  {
@@ -69,20 +69,31 @@ render(){
 const SocialWrapper = styled('div')
 `
     display:flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     padding-top:1rem;
+    overflow-y:visible;
 
+`
+
+const Footer = styled('div')`
+padding-top:1rem;
+text-align:center;
+font-size: .75rem;
+padding-bottom:1rem;
 `
 
 class Social extends React.Component{
     
     render(){
         return(
+            <div>
             <SocialWrapper>
                 <FacebookLogo link="https://www.facebook.com/dschapmanbooks/" />
                 <InstagramLogo link="https://www.instagram.com/dschapmanbooks/" />
                 <TwitterLogo link="https://twitter.com/ds_chapman"/>
             </SocialWrapper>
+            <Footer>Source: <a href="https://github.com/dschapman/PersonalBlog">github.com/dschapman/PersonalBlog</a></Footer>
+            </div>
         );
     }
 

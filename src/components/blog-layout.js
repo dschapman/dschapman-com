@@ -4,7 +4,7 @@ import Header from './Header'
 import {MDXRenderer} from 'gatsby-mdx/mdx-renderer'
 import {Body,Content,H2,Poem,Stanza} from './StyledComponents'
 import EmailForm from './EmailForm'
-import {Social} from './social/social'
+import {Social} from './social'
 import {jsx,css} from "@emotion/core"
 
 

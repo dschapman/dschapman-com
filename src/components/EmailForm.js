@@ -1,7 +1,7 @@
 import React from 'react'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 import styled from '@emotion/styled';
-import {mainTheme} from '../styles/styles'
+import {mainTheme} from './styles'
 
 const Form = styled('form')(
   `
