@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import {mainTheme,mq} from './../styles/styles'
+import {mainTheme,mq} from './styles'
 
 const Body = styled('div')
   `
@@ -40,10 +40,6 @@ const Content = styled('div')`
   ${mq[5]} { 
     max-width: 70rem;
   }
-`
-
-const Div = styled('div')`
-  overflow-x: hidden
 `
 
 const H1 = styled('h1')(
@@ -108,4 +104,4 @@ const H3 = styled('h3')(
 
 )
 
-export {Div, H1, H2, H3, Content, Body}
+export {H1, H2, H3, Content, Body}

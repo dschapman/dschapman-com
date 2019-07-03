@@ -2,7 +2,7 @@ import React from "react"
 import {Link } from 'gatsby'
 import Header from '../components/Header'
 import {H2, Content, Body} from '../components/StyledComponents'
-import {Social} from "../components/social/social"
+import {Social} from "../components/social"
 
 const allBlogTemplate = ({data, pageContext}) => {
 

@@ -7,7 +7,7 @@ import {jsx,css} from "@emotion/core"
 import {H1} from "./StyledComponents"
 import Headroom from 'react-headroom'
 import SEO from './SEO'
-import {mainTheme,mq} from './../styles/styles'
+import {mainTheme,mq} from './styles'
 
 
 const NavBar = ({data}) => {

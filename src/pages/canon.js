@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import {React,useState,useEffect} from 'react'
-import {mq, mainTheme} from "../styles/styles"
+import {mq, mainTheme} from "../components/styles"
 import {H2,Content,Body} from '../components/StyledComponents'
 import Header from '../components/Header'
 import styled from '@emotion/styled'
 import {jsx,css} from '@emotion/core'
-import {Social} from '../components/social/social'
+import {Social} from '../components/social'
 import { format } from 'util';
 
 const CanonList = [

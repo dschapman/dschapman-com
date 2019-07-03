@@ -6,8 +6,8 @@ import EmailForm from '../../components/EmailForm'
 import cover from './seasons-of-thought-cover.png'
 import card from './seasons-of-thought-card.png'
 import {jsx,css} from "@emotion/core"
-import {mq} from "../../styles/styles"
-import {Social} from "../../components/social/social"
+import {mq} from "../../components/styles"
+import {Social} from "../../components/social"
 
 
 
