@@ -6,7 +6,6 @@ import Header from '../components/Header'
 import styled from '@emotion/styled'
 import {jsx,css} from '@emotion/core'
 import {Social} from '../components/social'
-import { format } from 'util';
 
 const CanonList = [
     {
@@ -51,10 +50,16 @@ const CanonList = [
         link: "https://open.spotify.com/track/5IdQEHgtmj9th3OkfQKhf8?si=IJl1ndjMTKCawYIr1AeJ_Q"
     },
     {
-        title:"The King's Speech",
-        medium:"movie",
-        text:`When King George cries out, "I have a voice" it somehow manages to be a declaration of his common humanity, and not the proclamation of a King.`,
-        link: "https://www.imdb.com/title/tt1504320/"
+        title:"The Wheel of Time",
+        medium:"book",
+        text: "This series is monolithic in many ways. One story slowly unveiled across 14 books, perhaps too slowly at times. Truly a masterclass in building a world and story together.",
+        link:"https://www.goodreads.com/series/41526-the-wheel-of-time"
+    },
+    {
+        title:"Star Trek: Deep Space Nine",
+        medium:"tv",
+        text: "A vibrant look at the frontier of space. Darker than other Star Trek series, but also full of life, complex heroes, and likable rogues. The first vision of the future that truly captured my imagination.",
+        link:"https://www.imdb.com/title/tt0106145/"
     }
 
 ]
@@ -138,6 +143,9 @@ function CanonItem(props) {
             break;
         case "movie":
             icon="🎥";
+            break;
+        case "tv":
+            icon="📺";
             break;
         default:
             icon="⁉️";
