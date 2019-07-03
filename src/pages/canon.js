@@ -10,24 +10,28 @@ import {Social} from '../components/social'
 const CanonList = [
     {
         title:"Four Quartets",
+        author:"T.S. Eliot",
         medium:"book",
         text:"Language and pure meaning interwoven as only T.S. Eliot can - incomprehensible in its clarity, as poignant when you don't understand it as when you think you do.",
         link:"www.goodreads.com/book/show/80410.Four_Quartets",
     },
     {
         title:"The Lord of the Rings",
+        author:"J.R.R. Tolkien",
         medium:"book", 
         text:"The first book to teach me that there can be more to great stories than fun plot. Prose that demands to be read aloud, a world that lives on beyond the page, and a vision of the good in the world that's worth fighting for.",
         link:"https://www.goodreads.com/book/show/33.The_Lord_of_the_Rings",
     },
     {
         title:"Saint George and the Dragon",
+        author:"Margaret Hodges",
         medium:"book",
         text: "A picture book dedicated to artistry. The story of Saint George's legendary battle against a dragon is told in parallel with the story of a ship sailing out to sea in side panels. There's a reason this story won the Caldecott Medal.",
         link:"https://www.goodreads.com/book/show/10118.Saint_George_and_the_Dragon"
     },
     {
         title:"Farther Along",
+        author:"Josh Garrels",
         medium:"song",
         text: `"There's so much more to life than we've been told /
         It's full of beauty that will unfold /
@@ -40,6 +44,7 @@ const CanonList = [
     },
     {
         title:"Blessings (ii)",
+        author:"Chance the Rapper",
         medium:"song",
         text: `"I speak of promised lands / 
         Soil as soft as momma's hands /
@@ -51,12 +56,14 @@ const CanonList = [
     },
     {
         title:"The Wheel of Time",
+        author:"Robert Jordan",
         medium:"book",
         text: "This series is monolithic in many ways. One story slowly unveiled across 14 books, perhaps too slowly at times. Truly a masterclass in building a world and story together.",
         link:"https://www.goodreads.com/series/41526-the-wheel-of-time"
     },
     {
         title:"Star Trek: Deep Space Nine",
+        author:"Rick Berman & Michael Piller",
         medium:"tv",
         text: "A vibrant look at the frontier of space. Darker than other Star Trek series, but also full of life, complex heroes, and likable rogues. The first vision of the future that truly captured my imagination.",
         link:"https://www.imdb.com/title/tt0106145/"
@@ -119,6 +126,7 @@ function Canon(props) {
                     medium={item.medium} 
                     text={item.text}
                     link={item.link}
+                    author={item.author}
                     />
                 )}
             </Container>
@@ -132,7 +140,7 @@ function Canon(props) {
 }
 
 function CanonItem(props) {
-    const {medium, title, text, category, link} = props
+    const {medium, title, text, category, link,author} = props
     let icon
     switch(medium){
         case "book":
@@ -169,6 +177,7 @@ function CanonItem(props) {
         &: hover {
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         };
+        padding-top:1rem;
         `
     )
 
@@ -183,6 +192,14 @@ function CanonItem(props) {
     const Title = styled.h3(
         `
         text-align: center;
+        margin-bottom:1rem;
+        `
+    )
+
+    const Author = styled.h4(
+        `
+        text-align: center;
+        margin-bottom: 0;
         `
     )
 
@@ -212,6 +229,7 @@ function CanonItem(props) {
             <ItemLink href={link}>
                 <Icon>{icon}</Icon>
                 <Title>{title}</Title>
+                <Author>{author}</Author>
                 <Description>{text}</Description>
             </ItemLink>
         </Item>
