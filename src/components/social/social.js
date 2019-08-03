@@ -79,11 +79,14 @@ class Social extends React.Component{
     
     render(){
         return(
+            <div className="Footer">
             <SocialWrapper>
                 <FacebookLogo link="https://www.facebook.com/dschapmanbooks/" />
                 <InstagramLogo link="https://www.instagram.com/dschapmanbooks/" />
                 <TwitterLogo link="https://twitter.com/ds_chapman"/>
             </SocialWrapper>
+            <a href="https://github.com/dschapman/PersonalBlog">Source Code</a>
+            </div>
         );
     }
 

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import {React,useState,useEffect} from 'react'
+import {React,useState} from 'react'
 import {mq, mainTheme} from "../styles/styles"
 import {H2,Content,Body} from '../components/StyledComponents'
 import Header from '../components/Header'
@@ -11,25 +11,29 @@ import { format } from 'util';
 const CanonList = [
     {
         title:"Four Quartets",
+        author:"T.S. Eliot",
         medium:"book",
         text:"Language and pure meaning interwoven as only T.S. Eliot can - incomprehensible in its clarity, as poignant when you don't understand it as when you think you do.",
         link:"www.goodreads.com/book/show/80410.Four_Quartets",
     },
     {
         title:"The Lord of the Rings",
+        author:"J.R.R. Tolkien",
         medium:"book", 
         text:"The first book to teach me that there can be more to great stories than fun plot. Prose that demands to be read aloud, a world that lives on beyond the page, and a vision of the good in the world that's worth fighting for.",
         link:"https://www.goodreads.com/book/show/33.The_Lord_of_the_Rings",
     },
     {
         title:"Saint George and the Dragon",
+        author:"Margaret Hodges",
         medium:"book",
-        text: "A picture book dedicated to artistry. The story of Saint George's legendary battle against a dragon is told in parallel with the story of a ship sailing out to sea in side panels. There's a reason this story won the Caldecott Medal.",
+        text: "A picture book dedicated to artistry. The story of Saint George's legendary battle against a dragon is told in parallel with the story of a ship sailing out to sea in side panels. From a young age this framed the way I see good and evil, heroes and villains. It also introduced me to layered stories, stories within stories that together manage to tell something more.",
         link:"https://www.goodreads.com/book/show/10118.Saint_George_and_the_Dragon"
     },
     {
         title:"Farther Along",
         medium:"song",
+        author: "Josh Garrels",
         text: `"There's so much more to life than we've been told /
         It's full of beauty that will unfold /
         And shine like you struck gold my wayward son /
@@ -42,6 +46,7 @@ const CanonList = [
     {
         title:"Blessings (ii)",
         medium:"song",
+        author:"Chance the Rapper",
         text: `"I speak of promised lands / 
         Soil as soft as momma's hands /
         Running water, standing still /
@@ -52,14 +57,22 @@ const CanonList = [
     },
     {
         title:"The King's Speech",
+        author:"Tom Hooper",
         medium:"movie",
-        text:`When King George cries out, "I have a voice" it somehow manages to be a declaration of his common humanity, and not the proclamation of a King.`,
+        text:`Perhaps it is very American of me to love a movie about the monarchy that does so much to show the common humanity we all share. `,
         link: "https://www.imdb.com/title/tt1504320/"
+    },
+    {
+        title:"Abide With Me",
+        author:"Henry Francis Lyte",
+        medium:"song",
+        text:"I have known since I was quite young that if I have any say in the matter this will be played at my funeral.",
+        link:"https://www.dschapman.com/404"
     }
 
 ]
 
-function Canon(props) {
+function Canon() {
     const Container = styled.div(
         `
         display:flex;
@@ -67,7 +80,7 @@ function Canon(props) {
         justify-content: space-around;
         `
     )
-    const [sort, setSort] = useState()
+    const [sort, setSort] = useState("title")
     let list = CanonList
     const SelectSort = () => {
         return (
@@ -75,10 +88,11 @@ function Canon(props) {
 
             <form>
                 <label>Sort By:</label>
-                <select onChange={e => setSort(e.target.value)}>
+                <select onChange={e => setSort(e.target.value)} value={sort}>
                     <option value="none">-- Select --</option>
                     <option value="title">Title</option>
                     <option value="medium">Medium</option>
+                    <option value="author">Author</option>
                 </select>
                 
             </form>
@@ -93,6 +107,9 @@ function Canon(props) {
         case "medium":
             list = list.sort((a,b) => SortMedium(a,b));
             break;
+        case "author":
+            list = list.sort((a,b) => SortAuthor(a,b));
+            break;
         case "default":
             break;
         }
@@ -103,7 +120,7 @@ function Canon(props) {
             <H2>Personal Canon</H2>
             <p>These are the things that influence how I think and work.
                 The giants whose shoulders I clamber onto. 
-                The melodies I don't ever want to stop humming.
+                The melodies I don't want to stop humming.
             </p>
             <SelectSort />
             <Container>
@@ -111,6 +128,7 @@ function Canon(props) {
                     <CanonItem 
                     key={index}
                     title={item.title}
+                    author={item.author}
                     medium={item.medium} 
                     text={item.text}
                     link={item.link}
@@ -127,7 +145,7 @@ function Canon(props) {
 }
 
 function CanonItem(props) {
-    const {medium, title, text, category, link} = props
+    const {medium, title, text, category, link, author} = props
     let icon
     switch(medium){
         case "book":
@@ -175,6 +193,15 @@ function CanonItem(props) {
     const Title = styled.h3(
         `
         text-align: center;
+        margin-bottom: .25rem;
+        `
+    )
+
+    const Author = styled.h4(
+        `
+        padding:0;
+        margin:0;
+        text-align:center;
         `
     )
 
@@ -204,6 +231,7 @@ function CanonItem(props) {
             <ItemLink href={link}>
                 <Icon>{icon}</Icon>
                 <Title>{title}</Title>
+                <Author>{author}</Author>
                 <Description>{text}</Description>
             </ItemLink>
         </Item>
@@ -227,6 +255,20 @@ function SortTitle (a,b){
 function SortMedium (a,b){
     let A = a.medium.toUpperCase(); // ignore upper and lowercase
     let B = b.medium.toUpperCase(); // ignore upper and lowercase
+    if (A < B) {
+    return -1;
+    }
+    if (A > B) {
+    return 1;
+    }
+
+    // names must be equal
+    return 0;
+}
+
+function SortAuthor (a,b){
+    let A = a.author.toUpperCase(); // ignore upper and lowercase
+    let B = b.author.toUpperCase(); // ignore upper and lowercase
     if (A < B) {
     return -1;
     }
