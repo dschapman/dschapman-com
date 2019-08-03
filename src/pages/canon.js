@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import {React,useState} from 'react'
-import {mq, mainTheme} from "../styles/styles"
+import {mq, mainTheme} from "../components/styles"
 import {H2,Content,Body} from '../components/StyledComponents'
 import Header from '../components/Header'
 import styled from '@emotion/styled'
@@ -276,20 +276,6 @@ function SortAuthor (a,b){
 function SortMedium (a,b){
     let A = a.medium.toUpperCase(); // ignore upper and lowercase
     let B = b.medium.toUpperCase(); // ignore upper and lowercase
-    if (A < B) {
-    return -1;
-    }
-    if (A > B) {
-    return 1;
-    }
-
-    // names must be equal
-    return 0;
-}
-
-function SortAuthor (a,b){
-    let A = a.author.toUpperCase(); // ignore upper and lowercase
-    let B = b.author.toUpperCase(); // ignore upper and lowercase
     if (A < B) {
     return -1;
     }
