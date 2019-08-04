@@ -38,7 +38,7 @@ const Content = styled('div')`
     padding: 0 6rem 0;
   }
   ${mq[5]} { 
-    max-width: 70rem;
+    max-width: 60rem;
   }
 `
 
