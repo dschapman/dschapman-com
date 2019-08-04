@@ -65,8 +65,8 @@ const TitleAndDescription = ({data}) => {
 const BlogLinks = ({data}) => {
     var blogLinks = []
 
-    if(data.blogPosts!=null){
-    const { edges } = data.blogPosts
+    if(data.blogs!=null){
+    const { edges } = data.blogs
     
     for (var i = 0; i < edges.length; i++) {
         blogLinks.push({"linkName":edges[i].node.frontmatter.title, "linkPath":edges[i].node.frontmatter.path})
@@ -80,8 +80,8 @@ const BlogLinks = ({data}) => {
 const GuideLinks = ({data}) => {
     var guideLinks = []
 
-    if(data.guidePosts!=null) {
-        const { edges } = data.guidePosts
+    if(data.guides!=null) {
+        const { edges } = data.guides
         
         for (var i = 0; i < edges.length; i++) {
             guideLinks.push({"linkName":edges[i].node.frontmatter.title, "linkPath":edges[i].node.frontmatter.path})
@@ -117,40 +117,41 @@ class Header extends Component{
         <StaticQuery
             query={graphql`
             query {
-                site {
-                  siteMetadata {
-                    title
-                    tagline
-                    description
-                  }
+              site {
+                siteMetadata {
+                  title
+                  tagline
+                  description
                 }
-                guidePosts: allMdx(limit:5, sort: {order: DESC, fields: [frontmatter___date]}, filter: {frontmatter: {published: {eq: true}, type: {eq: "guide"}}}) {
-                  edges {
-                    node {
-                      frontmatter {
-                        title
-                        path
-                        date
-                        type
-                        published
-                      }
-                    }
-                  }
-                }
-                blogPosts: allMdx(limit: 4, sort: {order: DESC, fields: [frontmatter___date]}, filter: {frontmatter: {published: {eq: true}, type: {eq: "blog"}}}) {
-                  edges {
-                    node {
-                      frontmatter {
-                        title
-                        path
-                        date
-                        type
-                        published
-                      }
+              }
+              guides: allMdx(limit:5, sort: {order: DESC, fields: [frontmatter___date]}, filter: {frontmatter: {published: {eq: true}, type: {eq: "guide"}}}) {
+                edges {
+                  node {
+                    frontmatter {
+                      title
+                      path
+                      date
+                      type
+                      published
                     }
                   }
                 }
               }
+              blogs: allMdx(limit: 4, sort: {order: DESC, fields: [frontmatter___date]}, filter: {frontmatter: {published: {eq: true}, type: {eq: "blog"}}}) {
+                edges {
+                  node {
+                    frontmatter {
+                      title
+                      path
+                      date
+                      type
+                      published
+                    }
+                  }
+                }
+              }
+            }
+
             `}
             render={data =>
             <Head>

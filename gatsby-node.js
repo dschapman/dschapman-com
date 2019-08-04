@@ -83,23 +83,21 @@ exports.createPages = ({ graphql, actions }) => {
                 node {
                   frontmatter {
                     tags
-                    title
-                    path
-                    published
-                    type
+                    date
                     description
-                    image
+                    title
+                    type
+                    path
                   }
                   id
                   parent {
                     ... on File {
+                      id
                       name
                       sourceInstanceName
                     }
                   }
-                  code {
-                    scope
-                  }
+                  body
                 }
               }
             }

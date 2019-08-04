@@ -118,8 +118,8 @@ const MainPage = ({data}) => {
         <Header title="Home - D.S. Chapman - Poetry, Blog, Guides" />
             <Content>
             <div css={css``}><a href="https://www.amazon.com/Seasons-Thought-D-S-Chapman/dp/0578504359"><img css={css`height:auto; width:auto; max-height: 20rem; display:flex; margin-top:1rem; margin-left:auto; margin-right:auto; &:hover{box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);};`} src={banner}></img></a></div>
-            <DisplayToggle data={data.blogs} display={true}>Recent Blog Posts</DisplayToggle>
-            <DisplayToggle data={data.guides} display={false}>Recent Guides</DisplayToggle>
+            <DisplayToggle data={data.blogPosts} display={true}>Recent Blog Posts</DisplayToggle>
+            <DisplayToggle data={data.guidePosts} display={false}>Recent Guides</DisplayToggle>
             <Social/>
             </Content>
         </Body>
@@ -128,7 +128,7 @@ const MainPage = ({data}) => {
 
 export const query = graphql`
     query getContent {
-        blogs: allMdx (
+        blogPosts: allMdx (
             limit: 10,
             sort: {order: DESC, fields: [frontmatter___date]},
             filter: {frontmatter: {published:{eq: true}, type:{eq:"blog"}}}
@@ -147,7 +147,7 @@ export const query = graphql`
                 }
             }
         }
-        guides: allMdx (
+        guidePosts: allMdx (
             limit: 10,
             sort: {order: DESC, fields: [frontmatter___date]},
             filter: {frontmatter: {published:{eq: true}, type:{eq:"guide"}}}
