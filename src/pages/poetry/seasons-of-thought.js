@@ -21,12 +21,7 @@ const Layout = () => {
                     <a css={css(``)} href="https://www.amazon.com/Seasons-Thought-D-S-Chapman/dp/0578504359"><img css={css(`width:auto; max-width:16rem; height:auto; ${mq[0]}{padding-right: 0;};${mq[2]}{padding-right: 2rem;};`)} src={cover}/></a>
                     <div css={css(``)}>
                         <p>Seasons of Thought is a collection of poetry that traces its themes across the changing seasons. The poems in the collection use the passage of time as a canvas to explore nature, family, childhood, faith, and other aspects of the human condition. Seasons of Thought is D.S. Chapman’s first collection of poetry. Available for purchase from Amazon now!</p>
-                        <p>Sign up for the email list to be notified when this and other projects release.</p>
                     </div>
-                    </div>
-
-                    <div css={css(`display:flex; justify-content:center;`)}>
-                    <EmailForm />
                     </div>
                     <Social/>
             </Content>
