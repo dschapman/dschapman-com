@@ -133,7 +133,6 @@ function Canon() {
                     medium={item.medium} 
                     text={item.text}
                     link={item.link}
-                    author={item.author}
                     />
                 )}
             </Container>
