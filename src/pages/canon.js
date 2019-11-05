@@ -94,7 +94,6 @@ function Canon() {
                     <option value="title">Title</option>
                     <option value="author">Author</option>
                     <option value="medium">Medium</option>
-                    <option value="author">Author</option>
                 </select>
                 
             </form>
