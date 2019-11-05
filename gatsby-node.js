@@ -40,7 +40,7 @@ const createTagPages = (createPage, posts) => {
   })
     const titles = Object.keys(allPosts)
     createPage({
-      path: 'blog',
+      path: 'articles',
       component: allBlogIndex,
       context: {
         allPosts,
@@ -49,7 +49,7 @@ const createTagPages = (createPage, posts) => {
     })
 
     createPage({
-        path: 'blog/tags',
+        path: 'articles/tags',
         component: allTagsIndexTemplate,
         context: {
             tags: tags.sort()
@@ -60,7 +60,7 @@ const createTagPages = (createPage, posts) => {
         const posts = postsByTag[tagName]
 
         createPage({
-            path: `blog/tags/${tagName}`,
+            path: `articles/tags/${tagName}`,
             component: singleTagIndexTemplate,
             context: {
                 posts,
@@ -78,7 +78,7 @@ exports.createPages = ({ graphql, actions }) => {
         graphql(
           `
           {
-            allMdx(sort: {order: ASC, fields: [frontmatter___date]}, filter: {frontmatter: {published: {eq: true}, type: {eq: "blog"}}}) {
+            allMdx(sort: {order: ASC, fields: [frontmatter___date]}, filter: {frontmatter: {published: {eq: true}}}) {
               edges {
                 node {
                   frontmatter {

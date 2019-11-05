@@ -29,8 +29,7 @@ const NavBar = ({data}) => {
         <Navbar>
             <GatsbyButton buttonName={"About"} buttonLink={'/about'} />
             <GatsbyDropdown dropdownName={"Poetry"} dropdownLinks={[{"linkName":"Seasons of Thought","linkPath":"/poetry/seasons-of-thought"}]} />
-            <GatsbyDropdown dropdownName={"Guides"} dropdownLinks={GuideLinks({data})} />
-            <GatsbyDropdown dropdownName={"Blog"} dropdownLinks={BlogLinks({data})} />
+            <GatsbyDropdown dropdownName={"Recent Articles"} dropdownLinks={BlogLinks({data})} />
         </Navbar>
         
     )
@@ -71,29 +70,12 @@ const BlogLinks = ({data}) => {
     for (var i = 0; i < edges.length; i++) {
         blogLinks.push({"linkName":edges[i].node.frontmatter.title, "linkPath":edges[i].node.frontmatter.path})
     }}
-    blogLinks.push({"linkName":"All Posts by Tag","linkPath":"/blog/tags"})
+    blogLinks.push({"linkName":"All Posts by Tag","linkPath":"/articles/tags"})
     return (
         blogLinks
       )
 }
 
-const GuideLinks = ({data}) => {
-    var guideLinks = []
-
-    if(data.guides!=null) {
-        const { edges } = data.guides
-        
-        for (var i = 0; i < edges.length; i++) {
-            guideLinks.push({"linkName":edges[i].node.frontmatter.title, "linkPath":edges[i].node.frontmatter.path})
-        }}
-    if(guideLinks == []) {
-        guideLinks.push({"linkName":" ", "linkPath":" "})
-    }
-    //guideLinks.push({"linkName":"All Posts by Tag","linkPath":"/tags"})
-    return (
-        guideLinks
-      )
-}
 
 const Head = styled('div')`
     background: ${mainTheme.background};
@@ -137,7 +119,7 @@ class Header extends Component{
                   }
                 }
               }
-              blogs: allMdx(limit: 4, sort: {order: DESC, fields: [frontmatter___date]}, filter: {frontmatter: {published: {eq: true}, type: {eq: "blog"}}}) {
+              blogs: allMdx(limit: 4, sort: {order: DESC, fields: [frontmatter___date]}, filter: {frontmatter: {published: {eq: true}}}) {
                 edges {
                   node {
                     frontmatter {

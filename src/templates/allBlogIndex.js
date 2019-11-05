@@ -10,10 +10,10 @@ const allBlogTemplate = ({data, pageContext}) => {
 
     return (
     <Body>
-    <Header title={`All Blog Posts - D.S. Chapman`} path={`/blog`} />
+    <Header title={`All Articles - D.S. Chapman`} path={`/articles`} />
     <Content>
             <H2>
-                Blog Posts
+                Articles
             </H2>
             <div>
                 <ul>

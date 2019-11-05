@@ -9,18 +9,18 @@ const singleTagsTemplate = ({data, pageContext}) => {
     console.log(posts)
     return (
     <Body>
-    <Header title={`Posts About ${tagName} - D.S. Chapman`} path={`/blog/posts/${tagName}`} />
+    <Header title={`Articles About ${tagName} - D.S. Chapman`} path={`/articles/tags/${tagName}`} />
     <Content>
             <H2>
-                Posts about { `${tagName}`}
+                Articles about { `${tagName}`}
             </H2>
             <div>
                 <ul>
                     {posts.map((post, index) => {
                         return ( 
-                            <li key={index}>
+                            <div key={index}>
                                 <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link> &mdash; {post.frontmatter.description}
-                            </li>
+                            </div>
                         )
                     })}
                 </ul>

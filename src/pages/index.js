@@ -56,7 +56,7 @@ const GetContent = (props) => {
                             if(type == "blog"){
                                 return (
                                     <Tag key={index}>
-                                        <Link to={`/blog/tags/${tagName}`}>
+                                        <Link to={`/articles/tags/${tagName}`}>
                                             {tagName}
                                         </Link>
                                     </Tag>
@@ -117,9 +117,10 @@ const MainPage = ({data}) => {
         <Body>
         <Header title="Home - D.S. Chapman - Poetry, Blog, Guides" />
             <Content>
-            <div css={css``}><a href="https://www.amazon.com/Seasons-Thought-D-S-Chapman/dp/0578504359"><img css={css`height:auto; width:auto; max-height: 20rem; display:flex; margin-top:1rem; margin-left:auto; margin-right:auto; &:hover{box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);};`} src={banner}></img></a></div>
-            <DisplayToggle data={data.blogPosts} display={true}>Recent Blog Posts</DisplayToggle>
-            <DisplayToggle data={data.guidePosts} display={false}>Recent Guides</DisplayToggle>
+            <p css={css`padding-top:1.5rem; margin-bottom:0;`}>Welcome to my website. Here you can learn more <Link to="/about">about me</Link>, <Link to="/canon">the creative works</Link> that influence how I think and work, and find my articles and poems - including my first published collection of poetry <Link to="/poetry/seasons-of-thought">Seasons of Thought</Link> </p>
+            <DisplayToggle data={data.recentArticles} display={true}>Recent Articles</DisplayToggle>
+            <DisplayToggle data={data.poetryArticles} display={false}>Articles on Poetry</DisplayToggle>
+            <DisplayToggle data={data.writingArticles} display={false}>Articles on Writing</DisplayToggle>
             <Social/>
             </Content>
         </Body>
@@ -128,10 +129,10 @@ const MainPage = ({data}) => {
 
 export const query = graphql`
     query getContent {
-        blogPosts: allMdx (
-            limit: 10,
+        recentArticles: allMdx (
+            limit: 3,
             sort: {order: DESC, fields: [frontmatter___date]},
-            filter: {frontmatter: {published:{eq: true}, type:{eq:"blog"}}}
+            filter: {frontmatter: {published:{eq: true}}}
         ) {
             edges {
                 node {
@@ -147,10 +148,29 @@ export const query = graphql`
                 }
             }
         }
-        guidePosts: allMdx (
-            limit: 10,
-            sort: {order: DESC, fields: [frontmatter___date]},
-            filter: {frontmatter: {published:{eq: true}, type:{eq:"guide"}}}
+        poetryArticles: allMdx (
+            limit: 5,
+            sort: {order: ASC, fields: [frontmatter___title]},
+            filter: {frontmatter: {published:{eq: true}, tags:{eq:"poetry"}}}
+        ) {
+            edges {
+                node {
+                    frontmatter {
+                        path
+                        date
+                        title
+                        tags
+                        excerpt
+                        published
+                        type
+                    }
+                }
+            }
+        }
+        writingArticles: allMdx (
+            limit: 5,
+            sort: {order: ASC, fields: [frontmatter___title]},
+            filter: {frontmatter: {published:{eq: true}, tags:{eq:"writing"}}}
         ) {
             edges {
                 node {

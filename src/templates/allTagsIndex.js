@@ -8,18 +8,18 @@ const allTagsTemplate = ({data, pageContext}) => {
     const {tags} = pageContext
     return (
         <Body>
-        <Header title="All Posts by Tag - D.S. Chapman" path="/blog/tags" />
+        <Header title="All Articles by Tag - D.S. Chapman" path="/articles/tags" />
         <Content>
             
             <H2>
-                Tags
+                Find Articles About
             </H2>
             <div>
                 {tags.map((tagName, index) => {
                     return (
-                        <li key={index}>
-                            <Link to={`blog/tags/${tagName}`}>{tagName}</Link> 
-                        </li>
+                        <div key={index}>
+                            <Link to={`articles/tags/${tagName}`}>{tagName}</Link> 
+                        </div>
                     )
                 })}
             </div>
