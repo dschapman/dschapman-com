@@ -48,7 +48,6 @@ const H1 = styled('h1')(
   margin-top:1rem; 
   margin-bottom:1.25rem;
   font-size:1.75rem;
-  text-align: center;
   `,
   props => ({color: props.color})
 )
