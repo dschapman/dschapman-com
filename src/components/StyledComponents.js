@@ -45,9 +45,10 @@ const Content = styled('div')`
 const H1 = styled('h1')(
   `
   color: ${mainTheme.primaryDarkest};
-  margin-top:2rem; 
-  margin-bottom:0.25rem;
-  font-size:2.25rem;
+  margin-top:1rem; 
+  margin-bottom:1.25rem;
+  font-size:1.75rem;
+  text-align: center;
   `,
   props => ({color: props.color})
 )

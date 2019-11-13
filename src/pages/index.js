@@ -53,17 +53,14 @@ const GetContent = (props) => {
                         <PostFooter>
                         
                         <Tags>{tags.map((tagName, index) => {
-                            if(type == "blog"){
+    
                                 return (
                                     <Tag key={index}>
                                         <Link to={`/articles/tags/${tagName}`}>
                                             {tagName}
                                         </Link>
                                     </Tag>
-                                )}
-                                else {
-                                    return (<div key={index}/>)
-                                }
+                                )
                                 })}
                         </Tags>
                         <Date>{post.date}</Date>
@@ -108,6 +105,7 @@ const Tag = styled('div')(
 const Date = styled('div')(
     `
     font-size: .75rem;
+    font-weight: bold;
     `
 )
 
