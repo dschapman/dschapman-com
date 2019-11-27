@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from "react"
-import {H2,H3,Content,Body} from '../../components/StyledComponents'
+import {H1,H2,H3,Content,Body} from '../../components/StyledComponents'
 import Header from 'components/Header'
 import EmailForm from '../../components/EmailForm'
 import cover from './seasons-of-thought-cover.png'
@@ -16,7 +16,7 @@ const Layout = () => {
         <Body>
         <Header title="Seasons of Thought - D.S. Chapman - Poetry Collection" description="A collection of poems by D.S. Chapman, available now on Amazon!" image={card} path="/poetry/seasons-of-thought/"/> 
             <Content>
-                    <H2 css={css(tw`xs:text-center sm:text-center md:text-center lg:text-left xl:text-left`)}>Seasons of Thought</H2>
+                    <H1 css={css(tw`xs:text-center sm:text-center md:text-center lg:text-left xl:text-left`)}>Seasons of Thought</H1>
                     <div css={css(tw` flex xs:flex-wrap sm:flex-wrap md:flex-wrap lg:flex-no-wrap xl:flex-no-wrap`)}>
                     <a css={css(``)} href="https://www.amazon.com/Seasons-Thought-D-S-Chapman/dp/0578504359"><img css={css(`width:auto; max-width:16rem; height:auto; ${mq[0]}{padding-right: 0;};${mq[2]}{padding-right: 2rem;};`)} src={cover}/></a>
                     <div css={css(``)}>

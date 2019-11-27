@@ -87,7 +87,7 @@ class EmailForm extends React.Component {
 
         return (
           <Form ref={this.form} name="email-submit" onSubmit={this.handleSubmit}>
-            <Email type="email" name="email" value={this.state.value} onChange={this.handleChange} placeholder="Enter your Email" autoComplete="off"/>
+            <Email type="email" name="email" value={this.state.value} onChange={this.handleChange} placeholder="Join the Email List" autoComplete="off"/>
             <Submit type="submit" value="Submit" color={this.state.color} />
           </Form>
         );

@@ -39,6 +39,9 @@ const typography = new Typography({
             padding: '1em',
             overflow: 'auto'
         },
+        'li': {
+          marginBottom: '5px'
+        }
         
     }),
 

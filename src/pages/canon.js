@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import {React,useState} from 'react'
 import {mq, mainTheme} from "../components/styles"
-import {H2,Content,Body} from '../components/StyledComponents'
+import {H1,Content,Body} from '../components/StyledComponents'
 import Header from '../components/Header'
 import styled from '@emotion/styled'
 import {jsx,css} from '@emotion/core'
@@ -54,10 +54,10 @@ function Canon(props) {
     
     return(
        <div className="Canon">
-            <H2>Personal Canon</H2>
+            <H1>Personal Canon</H1>
             <p>These are the things that influence how I think and work.
                 The giants whose shoulders I clamber onto. 
-                The melodies I don't want to stop humming.
+                The melodies I don't want to stop humming. This list is far from exhaustive, but tries to identify some of my influences in my poetry, storytelling, and thought. Most authors are represented only once, although most, especially the poets, could be represented multiple times.
             </p>
             <SelectSort />
             <Container>
