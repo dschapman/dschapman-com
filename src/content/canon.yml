@@ -1,15 +1,17 @@
 
 - title: "Four Quartets"
   author: "T.S. Eliot"
-  medium: "book"
+  medium: "poem"
   text: "Language and pure meaning interwoven as only T.S. Eliot can - incomprehensible in its clarity, as poignant when you don't understand it as when you think you do."
   link: "www.goodreads.com/book/show/80410.Four_Quartets"
+  category: "words,truth"
 
 - title: "The Lord of the Rings"
   author: "J.R.R. Tolkien"
   medium: "book"
   text: "The first book to teach me that there can be more to great stories than fun plot. Prose that demands to be read aloud, a world that lives on beyond the page, and a vision of the good in the world that's worth fighting for."
   link: "https://www.goodreads.com/book/show/33.The_Lord_of_the_Rings"
+  category: "words,story"
 
 - title: "Saint George and the Dragon"
   author: "Margaret Hodges"
@@ -28,6 +30,7 @@ Go down into the river and let it run /
 And wash away all the things you've done /
 Forgiveness alright."
   link: "https://open.spotify.com/album/3jrVFS6lW7HvxOKN7QPQC8"
+  category: "words"
 
 - title: "Blessings (ii)"
   author: "Chance the Rapper"
@@ -39,21 +42,32 @@ Endless fields of daffodils and chamomile ...
 I speak to God in public, I speak to God in public /
 He keep my rhymes in couplets"
   link: "https://open.spotify.com/track/5IdQEHgtmj9th3OkfQKhf8?si=IJl1ndjMTKCawYIr1AeJ_Q"
+  category: "words"
 
 - title: "The Wheel of Time"
   author: "Robert Jordan"
   medium: "book"
   text: "This series is monolithic in many ways. One story slowly unveiled across 14 books, perhaps too slowly at times. Truly a masterclass in building a world and story together."
   link: "https://www.goodreads.com/series/41526-the-wheel-of-time"
+  category: "story"
 
 - title: "Star Trek: Deep Space Nine"
   author: "Rick Berman & Michael Piller"
   medium: "tv"
   text: "A vibrant look at the frontier of space. Darker than other Star Trek series, but also full of life, complex heroes, and likable rogues. The first vision of the future that truly captured my imagination."
   link: "https://www.imdb.com/title/tt0106145/"
+  category: "story"
 
 - title: "The Dark is Rising"
   author: "Susan Cooper"
   medium: "book"
   text: "\"When the dark comes rising, six shall turn it back, three from the circle, three from the track...\" A world that unfurled legend and wonder as it was read aloud to me."
   link: "https://www.goodreads.com/book/show/210329.The_Dark_Is_Rising"
+  category: "story"
+
+- title: "As Kingfishers Catch Fire"
+  author: "Gerard Manley Hopkins"
+  medium: "poem"
+  text: "No one uses language as beautifully as Hopkins. His images well inside of oyou - beautiful but hard to reconcile with each other until they crystalize around some truth he's planted at the end of the poem."
+  link: "https://www.poetryfoundation.org/poems/44389/as-kingfishers-catch-fire"
+  category: "words,truth"

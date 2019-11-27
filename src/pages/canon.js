@@ -98,6 +98,9 @@ function CanonItem(props) {
         case "tv":
             icon="📺";
             break;
+        case "poem":
+            icon="📝";
+            break;
         default:
             icon="⁉️";
             break;
