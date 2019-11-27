@@ -76,6 +76,19 @@ module.exports = {
                 // Setting this parameter is optional
               }
             },
+            {
+                resolve: `gatsby-transformer-yaml`,
+                options: {
+                  typeName: `canon`
+                }
+              },
+              {
+                resolve: `gatsby-source-filesystem`,
+                options: {
+                  name: `content`,
+                  path: `./src/content`,
+                },
+              },
             
         
         
