@@ -8,12 +8,11 @@ import {jsx,css} from '@emotion/core'
 import {mq, mainTheme} from "../components/styles"
 import {Social} from '../components/social'
 import Avatar from "../components/Avatar";
+import Layout from '../components/Layout'
 
-const Layout = () => {
+const About = () => {
     return (
-        <Body>
-        <Header title="About - D.S. Chapman - Poet, Writer" path="/about/"/> 
-            <Content>
+        <Layout title="About - D.S. Chapman - Poet, Writer" path="/about/">
                 <H1 css={css`${mq[0]}{text-align: center}${mq[2]}{text-align:left}`}>About</H1>
                 <div css={css(tw`flex xs:flex-wrap sm:flex-wrap md:flex-wrap lg:flex-no-wrap xl:flex-no-wrap xs:justify-center sm:justify-center md:justify-center`)}>
                     <Avatar />
@@ -32,10 +31,9 @@ const Layout = () => {
                 <div css={css`display:flex; justify-content:center;`}>
                     <EmailForm />
                 </div>
-                <Social/>
-            </Content>
-        </Body>
+                
+        </Layout>
     )     
 }
 
-export default Layout
+export default About

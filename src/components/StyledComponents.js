@@ -104,4 +104,30 @@ const H3 = styled('h3')(
 
 )
 
-export {H1, H2, H3, Content, Body}
+const H4 = styled('h4')(
+  `
+  color: ${mainTheme.primaryDarkest};
+  padding-top: 1rem;
+  font-size: 1.1 rem;
+  text-align: left;
+  ${mq[0]} {
+    text-align:center;
+  }
+  ${mq[1]} {
+    text-align:center;
+  }
+  ${mq[2]} {
+    text-align:center;
+  }
+  ${mq[3]} {
+    text-align:left;
+  }
+  a {
+    color: ${mainTheme.primaryDarkest};
+  }
+   `,
+  props => ({color: props.color})
+
+)
+
+export {H1, H2, H3, H4, Content, Body}

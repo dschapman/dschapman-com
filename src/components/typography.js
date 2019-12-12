@@ -41,6 +41,9 @@ const typography = new Typography({
         },
         'li': {
           marginBottom: '5px'
+        },
+        'h4': {
+          marginBottom: '10px'
         }
         
     }),
