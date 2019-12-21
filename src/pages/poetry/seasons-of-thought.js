@@ -22,10 +22,11 @@ const Seasons = () => {
                         <h4><b>Contains the Poems</b></h4>
                     <ul>
                         
-                        <li><Link to="/poetry/seasons-of-thought/advent">Advent</Link></li>
-                        <li><Link to="/poetry/seasons-of-thought/the-top">The Top</Link></li>
-                        <li><Link to="/poetry/seasons-of-thought/another">Another</Link></li>
-                        <li><Link to="/poetry/seasons-of-thought/sunset">Sunset</Link></li>
+                        <li><Link to="/poetry/seasons-of-thought/advent/">Advent</Link></li>
+                        <li><Link to="/poetry/seasons-of-thought/jazz-quartet-on-christmas-eve/">Jazz Quartet on Christmas Eve</Link></li>
+                        <li><Link to="/poetry/seasons-of-thought/the-top/">The Top</Link></li>
+                        <li><Link to="/poetry/seasons-of-thought/another/">Another</Link></li>
+                        <li><Link to="/poetry/seasons-of-thought/sunset/">Sunset</Link></li>
                     </ul>
                     </div>
                     
