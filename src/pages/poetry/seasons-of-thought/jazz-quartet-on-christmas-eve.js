@@ -2,10 +2,11 @@ import React from 'react'
 import Poem from 'components/Poem'
 import {Link} from 'gatsby'
 import Layout from 'components/Layout'
+import card from './holly.jpg'
 
 const Jazz = () => {
     return(
-<Layout title='Jazz Quartet on Christmas Eve  | Seasons of Thought | D.S. Chapman' path="/poetry/seasons-of-thought/jazz-quartet-on-christmas-eve/">
+<Layout title='Jazz Quartet on Christmas Eve  | Seasons of Thought | D.S. Chapman' path="/poetry/seasons-of-thought/jazz-quartet-on-christmas-eve/" image={card} description="The rain snapped a snare drum beat on the thatch. It's steady tip tap echoed from the top.">
     <Poem title='Jazz Quartet on Christmas Eve'>
         {`The rain snapped a snare drum beat on the thatch.
 Its steady tip tap echoed from the top
