@@ -19,7 +19,7 @@ const singleTagsTemplate = ({data, pageContext}) => {
                     {posts.map((post, index) => {
                         return ( 
                             <div key={index}>
-                                <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link> &mdash; {post.frontmatter.description}
+                                <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
                             </div>
                         )
                     })}
