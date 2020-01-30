@@ -39,14 +39,7 @@ const createTagPages = (createPage, posts) => {
 
   })
     const titles = Object.keys(allPosts)
-    createPage({
-      path: 'articles',
-      component: allBlogIndex,
-      context: {
-        allPosts,
-        titles,
-      }
-    })
+    
 
     createPage({
         path: 'articles/tags',

@@ -96,13 +96,14 @@ const Date = styled('div')(
     `
 )
 
-const MainPage = ({data}) => {
+const Articles = ({data}) => {
     
     return (
         <Body>
-        <Header title="Home - D.S. Chapman - Poetry, Blog, Guides" />
+        <Header title="Articles - D.S. Chapman - Poetry, Blog, Guides" />
             <Content>
-            <DisplayToggle data={data.recentArticles} display={true}></DisplayToggle>
+            <DisplayToggle data={data.writingArticles} display={false}>Posts about Writing</DisplayToggle>
+            <DisplayToggle data={data.poetryArticles} display={false}>Posts about Poetry</DisplayToggle>
             <Social/>
             </Content>
         </Body>
@@ -110,28 +111,9 @@ const MainPage = ({data}) => {
 }
 
 export const query = graphql`
-    query getContent {
-        recentArticles: allMdx (
-            limit: 10,
-            sort: {order: DESC, fields: [frontmatter___date]},
-            filter: {frontmatter: {published:{eq: true}}}
-        ) {
-            edges {
-                node {
-                    frontmatter {
-                        path
-                        date
-                        title
-                        tags
-                        excerpt
-                        published
-                        type
-                    }
-                }
-            }
-        }
+    query getContentAndGetContent {
+        
         poetryArticles: allMdx (
-            limit: 5,
             sort: {order: ASC, fields: [frontmatter___title]},
             filter: {frontmatter: {published:{eq: true}, tags:{eq:"poetry"}}}
         ) {
@@ -150,7 +132,6 @@ export const query = graphql`
             }
         }
         writingArticles: allMdx (
-            limit: 5,
             sort: {order: ASC, fields: [frontmatter___title]},
             filter: {frontmatter: {published:{eq: true}, tags:{eq:"writing"}}}
         ) {
@@ -172,4 +153,4 @@ export const query = graphql`
     
 `
 
-export default MainPage
+export default Articles
