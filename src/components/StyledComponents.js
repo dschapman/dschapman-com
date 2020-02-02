@@ -72,7 +72,7 @@ const H2 = styled('h2')(
     text-align:left;
   }
   a {
-    color: ${mainTheme.primaryDarkest};
+    color: ${mainTheme.primaryDarker};
   }
    `,
   props => ({color: props.color})
@@ -97,7 +97,7 @@ const H3 = styled('h3')(
     text-align:left;
   }
   a {
-    color: ${mainTheme.primaryDarkest};
+    color: ${mainTheme.primary};
   }
    `,
   props => ({color: props.color})

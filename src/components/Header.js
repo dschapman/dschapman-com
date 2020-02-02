@@ -28,7 +28,7 @@ const NavBar = ({data}) => {
     return (
         <Navbar>
             <GatsbyButton buttonName={"About"} buttonLink={'/about/'} />
-            <GatsbyDropdown dropdownName={"Poetry"} dropdownLinks={[{"linkName":"Seasons of Thought","linkPath":"/poetry/seasons-of-thought"}]} />
+            <GatsbyButton buttonName={"Poetry"} buttonLink={"/poetry/seasons-of-thought"} />
             <GatsbyButton buttonName={"Articles"} buttonLink={'/articles/'} />
         </Navbar>
         

@@ -41,15 +41,16 @@ const GetContent = (props) => {
     const display = props.display
     return(
         <div className='ToggleContent'>{posts.map(({node}, index) => {
-            const post = node.frontmatter
+            const post = node
             const tags = node.frontmatter.tags
             const type = node.frontmatter.type
                 return (
                     <Post css={css`display:${display ? `flex` : `none`};`} key={index}>
-                        <H2><Link to={post.path}>
-                            {post.title}
-                        </Link></H2>
-                        <div className="excerpt">{post.excerpt} <Link to={post.path}>(read more...)</Link></div>
+                        <H3 css={css`margin-bottom:0;`}><Link css={css`color: ${mainTheme.primaryDark};`} to={post.frontmatter.path}>
+                            {post.frontmatter.title}
+                        </Link></H3>
+                        <Date>{post.frontmatter.date} - {post.timeToRead} minute read</Date>
+                        <div className="description">{post.frontmatter.description}</div>
                         <PostFooter>
                         </PostFooter>
                     </Post>
@@ -92,7 +93,6 @@ const Tag = styled('div')(
 const Date = styled('div')(
     `
     font-size: .75rem;
-    font-weight: bold;
     `
 )
 
@@ -102,8 +102,8 @@ const Articles = ({data}) => {
         <Body>
         <Header title="Articles - D.S. Chapman - Poetry, Blog, Guides" />
             <Content>
+            <DisplayToggle data={data.poetryArticles} display={true}>Posts about Poetry</DisplayToggle>
             <DisplayToggle data={data.writingArticles} display={false}>Posts about Writing</DisplayToggle>
-            <DisplayToggle data={data.poetryArticles} display={false}>Posts about Poetry</DisplayToggle>
             <Social/>
             </Content>
         </Body>
@@ -125,9 +125,11 @@ export const query = graphql`
                         title
                         tags
                         excerpt
+                        description
                         published
                         type
                     }
+                    timeToRead
                 }
             }
         }
@@ -144,8 +146,9 @@ export const query = graphql`
                         tags
                         excerpt
                         published
-                        type
+                        description
                     }
+                    timeToRead
                 }
             }
         }
