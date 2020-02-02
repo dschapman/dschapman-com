@@ -79,6 +79,8 @@ const MainPage = ({data}) => {
         <Body>
         <Header title="Home - D.S. Chapman - Poetry, Blog, Guides" />
             <Content>
+            <div css={css`padding-top:1rem;padding-bottom:.5rem;`}>Website of <Link to="/about/">D.S. Chapman</Link> - writer and poet. Articles on poetry, writing, and technology.</div>
+            <H2 css={css`padding:0;margin-bottom:-.5rem;`}>Articles</H2>
             <GetContent data={data.recentArticles} />
             <Social/>
             </Content>
