@@ -2,7 +2,7 @@
 import React, { useState } from "react"
 import Header from '../components/Header'
 import {graphql, Link} from 'gatsby'
-import {Body,Content, H2, H3} from '../components/StyledComponents'
+import {Body,Content, H1, H3} from '../components/StyledComponents'
 import styled from '@emotion/styled'
 import {jsx,css} from '@emotion/core'
 import {mainTheme} from '../components/styles'
@@ -80,7 +80,7 @@ const MainPage = ({data}) => {
         <Header title="Home - D.S. Chapman - Poetry, Blog, Guides" />
             <Content>
             <div css={css`padding-top:1rem;padding-bottom:.5rem;`}>Website of <Link to="/about/">D.S. Chapman</Link> - writer and poet. Articles on poetry, writing, and technology.</div>
-            <H2 css={css`padding:0;margin-bottom:-.5rem;`}>Articles</H2>
+            <H1 css={css`padding:0;margin-bottom:-.5rem;margin-top:0;`}>Articles</H1>
             <GetContent data={data.recentArticles} />
             <Social/>
             </Content>
