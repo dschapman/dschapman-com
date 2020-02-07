@@ -9,6 +9,7 @@ import {mq, mainTheme} from "../components/styles"
 import {Social} from '../components/social'
 import Avatar from "../components/Avatar";
 import Layout from '../components/Layout'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 const About = () => {
     return (
@@ -24,8 +25,8 @@ const About = () => {
                 </div>
                 <H3 css={css`margin-bottom: .75rem;;`}>Additional Links</H3>
                 <ul>
-                    <li><a href="https://www.goodreads.com/author/show/19228078.D_S_Chapman">Follow on Goodreads</a></li>
-                    <li><a href="https://www.amazon.com/D-S-Chapman/e/B07SJQ89R1/">Amazon Author Page</a></li>
+                    <li><OutboundLink href="https://www.goodreads.com/author/show/19228078.D_S_Chapman">Follow on Goodreads</OutboundLink></li>
+                    <li><OutboundLink href="https://www.amazon.com/D-S-Chapman/e/B07SJQ89R1/">Amazon Author Page</OutboundLink></li>
                     <li><Link to="/canon">Personal Canon</Link></li>
                 </ul>
                 <div css={css`display:flex; justify-content:center;`}>
