@@ -1,0 +1,53 @@
+{
+  "private": true,
+  "name": "basic-with-config",
+  "version": "0.0.2",
+  "author": "John Otander",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "clean": "gatsby clean",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.js{,on}\" \"**/*.md\"  \"**/*.mdx\"",
+    "lint": "eslint . --fix --ext .js,.md,.mdx",
+    "start": "gatsby develop",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@mdx-js/mdx": "^1.5.8",
+    "@mdx-js/react": "^1.5.8",
+    "gatsby": "^2.20.12",
+    "gatsby-plugin-google-analytics": "^2.2.2",
+    "gatsby-plugin-react-helmet": "^3.2.1",
+    "gatsby-plugin-theme-ui": "^0.3.0",
+    "gatsby-theme-austere": "^0.1.0",
+    "gatsby-theme-blog-core": "^1.3.22",
+    "gatsby-theme-blog-tags": "^0.0.11",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-helmet": "^5.2.1",
+    "theme-ui": "^0.3.1"
+  },
+  "devDependencies": {
+    "@iconify/icons-mdi": "^1.0.91",
+    "@iconify/react": "^1.1.3",
+    "@testing-library/react": "^10.0.2",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-mdx": "^1.6.8",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.19.0",
+    "husky": "^4.2.3",
+    "jest": "^25.2.7",
+    "lint-staged": "^10.1.1",
+    "prettier": "^2.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
