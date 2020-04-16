@@ -1,1 +1,3 @@
-Gatsby starter built on top of [gatsby-theme-austere](https://github.com/johno/gatsby-theme-austere).
+Pages are all in .mdx files
+
+Make sure to import a layout. Eventually hope to move that information to the top of the markdown file but for now 🤷🏼‍♂️
