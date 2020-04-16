@@ -1,0 +1,6 @@
+.cache
+
+dist
+public
+node_modules
+package.json
