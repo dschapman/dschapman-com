@@ -1,12 +1,11 @@
 ---
 slug: '/articles/which-poetic-form-is-best'
 date: '2019-11-12'
-description: 'How to choose which form to use to write a poem.'
+excerpt: 'How to choose which form to use to write a poem.'
 tags: ['poetry', 'writing']
 title: 'Which Poetic Form is Best?'
 type: 'blog'
 published: true
-excerpt: 'A friend recently asked me which four stanzas poetry form was the best. It’s not a question with an easy or definitive answer, but it is worth considering - since it gets at the broader question of how poetry works and how we can write it.'
 ---
 
 A friend recently asked me which four stanzas poetry form was the best. It’s not a question with an easy or definitive answer, but it is worth considering - since it gets at the broader question of how poetry works and how we can write it.

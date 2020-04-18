@@ -1,10 +1,10 @@
 ---
 slug: '/articles/how-i-coded-this-website'
 date: '2020-02-07'
-description: 'A little bit about how I coded this website with GatsbyJS.'
+excerpt: 'A little bit about how I coded this website with GatsbyJS.'
 title: 'How I Coded This Website'
 tags: ['gatsby', 'tech', 'resource list']
-excerpt: 'There are many reasons I enjoy coding — problem solving,  creativity, learning new technologies and new systems. I also love coding because its a bit like magic. Lines of code are the incantation, symbols arranged just so or else the magic fizzles.'
+
 type: 'guide'
 published: true
 image: '/articles/how-i-coded-this-website/gatsby-website-js.jpg'

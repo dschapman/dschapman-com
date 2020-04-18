@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: 'D.S. Chapman',
+    twitter: '@ds_chapman',
+    description: 'The website and digital home of writer and poet D.S. Chapman',
   },
   plugins: [
     {
