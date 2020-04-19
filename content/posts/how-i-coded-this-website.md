@@ -24,6 +24,8 @@ Gatsby is a static site generator which means that instead of generating pages w
 
 What this means practically is that I can design and code my website using javascript. Telling it what I want it to do with my content programmatically. Then instead of recreating that for each page of my website I can just tell it to take content (like a markdown file containing this article) and turn it into a page on my website complete with the appropriate tags, links to similar content, and updates to my [front page](/) — all by adding a single file to a folder.
 
+For me this means that its super easy to write something on my website. I just create a markdown file and then push that file to [my repository on Github](https://github.com/dschapman/PersonalBlog). I can also add on to an article I previously wrote _like this one_ and add information as I go.
+
 ## Resources for Building Your Own Website
 
 I have always enjoyed computers and had a broad understanding of programming (I took 4 classes in college) before I built my website. But if you don’t have much of a technical background, but are interested in learning to code your own website these are some of the resources I’d recommend:
@@ -34,3 +36,4 @@ I have always enjoyed computers and had a broad understanding of programming (I 
 - [Build a Blog with React and Markdown — Egghead.io](https://egghead.io/courses/build-a-blog-with-react-and-markdown-using-gatsby): Egghead.io is a great source for video learning content on web technologies. They are aimed at tech professionals so there’s some assumed knowledge, but I found this video series easy to follow and by the end you will have a blog of your own built on Gatsby.
 - [Gatsby.js Tutorials ](https://www.gatsbyjs.org/tutorial/): Once you’ve followed the egghead video (or maybe simultaneously) you can also check out the Gatsby documentation.
 - [Gatsby.js Plugin Library](https://www.gatsbyjs.org/plugins/): Once your site is up and running, try adding plugins to add more features. If it doesn’t work figure out why or try something else.
+- [Gatsby Theme Austere](https://github.com/johno/gatsby-theme-austere): I recently rewrote my blog to use [Gatsby Themes](https://www.gatsbyjs.org/docs/themes/what-are-gatsby-themes/). This theme by [John Otander](https://johno.com) is cool and is what my site is now based on.
