@@ -2,7 +2,8 @@ module.exports = {
   siteMetadata: {
     title: 'D.S. Chapman',
     twitter: '@ds_chapman',
-    description: 'The website and digital home of writer and poet D.S. Chapman',
+    description:
+      'The website and digital home of writer and poet D.S. Chapman. Explore for articles, poetry, and other projects including my recent book - Seasons of Thought.',
   },
   plugins: [
     {

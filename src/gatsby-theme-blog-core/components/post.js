@@ -8,10 +8,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 export default ({ data, pageContext }) => {
   return (
-    <Layout>
-      <SEO
-        title={data.blogPost.title}
-        description={data.blogPost.excerpt}></SEO>
+    <Layout title={data.blogPost.title} description={data.blogPost.excerpt}>
       <PostTitle>{data.blogPost.title}</PostTitle>
       <MDXRenderer>{data.blogPost.body}</MDXRenderer>
     </Layout>

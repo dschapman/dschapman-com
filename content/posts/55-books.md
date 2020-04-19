@@ -4,12 +4,13 @@ date: '2020-01-04'
 title: 'Books as Places'
 slug: '/articles/55-books'
 tags: ['writing', 'self-publishing', 'books']
-excerpt: 'Books are not only physical objects, they take up space and so they are places.'
+excerpt: 'Books are not only physical objects. They take up space and so they are places.'
 type: 'guide'
 published: true
 ---
 
 ## 55 Books
+
 In June I self published [my book](/poetry/seasons-of-thought/). By the end of 2019 I had sold 55 copies. 55 copies of poetry kindly bought by friends and friends of friends.
 
 I recently watched the new adaptation of Little Women. One of my favorite scenes was Jo March watching the first copies of her book being made. I have always loved the physicality of books, although I own a kindle now, when I was younger I was quite vocal about my preference for physical books, and I still prefer reading the printed word on pages I can put my finger in-between and mark with a pen.
