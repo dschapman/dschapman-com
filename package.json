@@ -28,7 +28,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
-    "theme-ui": "^0.3.1"
+    "theme-ui": "^0.3.1",
+    "yarn": "^1.22.4"
   },
   "devDependencies": {
     "@iconify/icons-mdi": "^1.0.91",
