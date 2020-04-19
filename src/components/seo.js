@@ -27,7 +27,7 @@ export default ({ title, description, timeToRead }) => {
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
       <link rel="stylesheet" href="https://use.typekit.net/osf8fyt.css"></link>
-      <meta name="twitter:card" content={seoDescription} />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content={'@ds_chapman'} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
