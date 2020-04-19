@@ -37,3 +37,7 @@ I have always enjoyed computers and had a broad understanding of programming (I 
 - [Gatsby.js Tutorials ](https://www.gatsbyjs.org/tutorial/): Once you’ve followed the egghead video (or maybe simultaneously) you can also check out the Gatsby documentation.
 - [Gatsby.js Plugin Library](https://www.gatsbyjs.org/plugins/): Once your site is up and running, try adding plugins to add more features. If it doesn’t work figure out why or try something else.
 - [Gatsby Theme Austere](https://github.com/johno/gatsby-theme-austere): I recently rewrote my blog to use [Gatsby Themes](https://www.gatsbyjs.org/docs/themes/what-are-gatsby-themes/). This theme by [John Otander](https://johno.com) is cool and is what my site is now based on.
+
+### More Advanced Resources
+
+- [Building an OpenGraph Image Generation API](https://egghead.io/playlists/building-an-opengraph-image-generation-api-with-cloudinary-netlify-functions-and-react-914e): I used this video collection on egghead.io (along with copying code from [Ian Jones](https://twitter.com/_jonesian)) to create a system that automatically generates the images that appear when you share my website via twitter or services like imessage. [You can see my implementation of this on Github](https://github.com/dschapman/egghead-opengraph-images).
