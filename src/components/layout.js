@@ -3,9 +3,9 @@ import { Styled, jsx } from 'theme-ui'
 
 import Header from './header'
 
-export default ({ children, title }) => (
+export default ({ children, title, description }) => (
   <Styled.root>
-    <Header title={title} />
+    <Header title={title} description={description} />
     <div
       sx={{
         maxWidth: 'container',
