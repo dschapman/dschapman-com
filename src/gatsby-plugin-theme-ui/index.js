@@ -95,7 +95,7 @@ export default {
     },
     a: {
       color: 'primary',
-      textDecorationColor: '#7297A6',
+      textDecorationColor: '#BFE4F2',
       '&:hover': {
         color: 'text',
         textDecorationColor: '#354F59',
