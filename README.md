@@ -1,6 +1,8 @@
 Pages are all in .mdx files
 
 Make sure to import a layout if you're creating an .mdx page in src/pages
+
+```
 .
 ├── LICENSE
 ├── README.md
@@ -15,5 +17,5 @@ Make sure to import a layout if you're creating an .mdx page in src/pages
 │   ├── gatsby-theme-blog-core
 │   ├── gatsby-theme-blog-tags
 │   └── pages <-- Pages go here
-
 └── yarn.lock
+```
