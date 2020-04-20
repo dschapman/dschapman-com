@@ -28,5 +28,12 @@ module.exports = {
         basePath: `/articles/tags`,
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'poetry',
+        path: `${__dirname}/content/poems/`,
+      },
+    },
   ],
 }
