@@ -1,5 +1,4 @@
 import React from 'react'
-import SEO from '../../components/seo'
 
 import Layout from '../../components/posts-layout'
 import PostList from '../../components/post-list'
