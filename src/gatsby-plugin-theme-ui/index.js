@@ -113,12 +113,13 @@ export default {
       },
     },
     code: {
+      color: 'text',
       fontFamily: 'monospace',
       fontSize: 1,
     },
     inlineCode: {
       fontFamily: 'monospace',
-      color: 'secondary',
+      color: 'text',
       bg: 'muted',
       fontSize: 1,
     },
