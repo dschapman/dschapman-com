@@ -6,7 +6,6 @@ import { graphql } from 'gatsby'
 import { Styled, jsx } from 'theme-ui'
 
 const PoemIndex = ({ data }) => {
-  console.log(data)
   return (
     <Layout title="All Poems" excerpt="All the poems posted on my website.">
       <Styled.ul
