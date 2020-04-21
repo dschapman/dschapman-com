@@ -35,5 +35,14 @@ module.exports = {
         path: `${__dirname}/content/poems/`,
       },
     },
+    {
+      resolve: '@aengusm/gatsby-theme-brain',
+      options: {
+        notesDirectory: 'content/notes/',
+        rootPath: 'notes',
+        rootNote: 'notes',
+        mdxOtherwiseConfigured: true,
+      },
+    },
   ],
 }
