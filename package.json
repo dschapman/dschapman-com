@@ -7,7 +7,7 @@
   "scripts": {
     "build": "gatsby build",
     "clean": "gatsby clean",
-    "develop": "gatsby develop",
+    "develop": "python3 ./parse-md.py && gatsby develop",
     "format": "prettier --write \"**/*.js{,on}\" \"**/*.md\"  \"**/*.mdx\"",
     "lint": "eslint . --fix --ext .js,.md,.mdx",
     "start": "gatsby develop",

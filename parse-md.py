@@ -10,7 +10,7 @@ for path in pathlib.Path(directory).iterdir():
         rest_of_file = current_file.read()
         current_file.close()
         if first_line[0] == '#':
-            title = first_line[1:-1]
+            title = first_line[2:-1]
             current_file = open(path, "w")
             current_file.write("---\ntitle: \"" + title + "\"\n---\n")
             current_file.write(rest_of_file)
