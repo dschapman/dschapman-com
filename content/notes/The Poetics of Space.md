@@ -1,5 +1,6 @@
 ---
-title: ' The Poetics of Space'
+title: 'The Poetics of Space'
+slug: 'the-poetics-of-space'
 ---
 
 Tags:[[Books]]  

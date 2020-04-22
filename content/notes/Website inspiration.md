@@ -1,3 +1,8 @@
+---
+title: 'Website Inspiration'
+slug: 'website-inspiration'
+---
+
 Tags: [[website]] [[digital garden]]
 
 - [Maggie Appleton on Twitter: “Nerding hard on digital gardens, personal wikis, and experimental knowledge systems with @\_jonesian today.We have an epic collection going, check these out…1. @tomcritchlow’s Wikifolders: https://t.co/QnXw0vzbMG… https://t.co/KxJV0sBhLU”](https://twitter.com/mappletons/status/1250532315459194880?s=21)
