@@ -10,3 +10,5 @@ This is an experiment so if this system doesn't work it can be refined or discar
 
 - [[Books]]
 - [[Poetry]]
+
+If you're curious, check out [[How I write these notes]]!
