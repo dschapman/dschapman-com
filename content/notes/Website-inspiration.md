@@ -1,6 +1,5 @@
 ---
 title: 'Website Inspiration'
-slug: 'website-inspiration'
 ---
 
 Tags: [[website]] [[digital garden]]

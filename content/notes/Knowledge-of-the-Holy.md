@@ -1,6 +1,5 @@
 ---
 title: 'Knowledge of the Holy'
-slug: 'knowledge-of-the-holy'
 ---
 
 Tags: [[Books]]
