@@ -1,6 +1,7 @@
-Pages are all in .mdx files
-
+## 📝 Notes
 Make sure to import a layout if you're creating an .mdx page in src/pages
+
+## 📁 Directory Structure
 
 ```
 .
@@ -8,6 +9,7 @@ Make sure to import a layout if you're creating an .mdx page in src/pages
 ├── README.md
 ├── content
 │   ├── assets
+│   ├── notes <-- Note .md files go here
 │   ├── poems <-- Poem .mdx files go here
 │   │   └── seasons-of-thought
 │   └── posts <-- Article .mdx files go here
@@ -16,6 +18,6 @@ Make sure to import a layout if you're creating an .mdx page in src/pages
 │   ├── gatsby-plugin-theme-ui
 │   ├── gatsby-theme-blog-core
 │   ├── gatsby-theme-blog-tags
-│   └── pages <-- Pages go here
+│   └── pages <-- Pages (often .mdx) go here
 └── yarn.lock
 ```
