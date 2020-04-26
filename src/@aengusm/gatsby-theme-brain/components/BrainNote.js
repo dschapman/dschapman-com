@@ -1,7 +1,10 @@
+/** @jsx jsx */
 import React from 'react'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import Layout from '../../../components/layout'
 import { Styled, jsx } from 'theme-ui'
+import components from '../../../components/note-mdx-components.js'
+import { MDXProvider } from '@mdx-js/react'
 
 const BrainNote = ({ note, nodes }) => {
   let references = []
@@ -46,7 +49,18 @@ const BrainNote = ({ note, nodes }) => {
   if (note.inboundReferences != null) {
     references = note.inboundReferences.map((ref) => (
       <Styled.li key={ref}>
-        <Styled.a href={ref}>{ref}</Styled.a>
+        <Styled.a
+          href={ref}
+          sx={{
+            bg: 'lightblue',
+            textDecoration: 'none',
+            '&:hover': {
+              color: 'text',
+              bg: 'white',
+            },
+          }}>
+          {ref}
+        </Styled.a>
       </Styled.li>
     ))
   }
@@ -77,12 +91,14 @@ const BrainNote = ({ note, nodes }) => {
   }
 
   return (
-    <Layout title={note.title}>
-      <MDXRenderer>{note.childMdx.body}</MDXRenderer>
-      {referenceBlock}
-      {relatedArticlesBlock}
-      {relatedPoemsBlock}
-    </Layout>
+    <MDXProvider components={components}>
+      <Layout title={note.title}>
+        <MDXRenderer>{note.childMdx.body}</MDXRenderer>
+        {referenceBlock}
+        {relatedArticlesBlock}
+        {relatedPoemsBlock}
+      </Layout>
+    </MDXProvider>
   )
 }
 

@@ -9,6 +9,7 @@ That being said my thoughts are often incomplete and should be viewed and used a
 This is an experiment so if this system doesn't work it can be refined or discarded. Here are a couple of central notes:
 
 - [[Books]]
+- [[Writing]]
 - [[Poetry]]
 
 If you're curious, check out [[How I write these notes]]!

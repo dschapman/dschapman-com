@@ -2,7 +2,7 @@
 title: 'Inflamation of the Heart'
 ---
 
-Tags: [[COVID-19]] [[Articles]][[Faith]]
+Tags: [[COVID-19]] [[Articles]] [[Faith]]
 
 [Inflammation of the Heart - Curt Thompson MD](https://curtthompsonmd.com/inflammation-of-the-heart/)
 

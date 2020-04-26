@@ -2,7 +2,8 @@ export default {
   useCustomProperties: true,
   initialColorMode: 'system',
   colors: {
-    dschapmanPrimary: '#7297A6',
+    blue: '#7297A6',
+    lightblue: '#BFE4F2',
     text: '#000',
     background: '#fff',
     primary: '#272727',
@@ -95,7 +96,7 @@ export default {
     },
     a: {
       color: 'primary',
-      textDecorationColor: '#BFE4F2',
+      textDecorationColor: 'lightblue',
       '&:hover': {
         color: 'text',
         textDecorationColor: '#354F59',
