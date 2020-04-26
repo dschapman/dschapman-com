@@ -2,10 +2,10 @@
 title: 'Website Redesign'
 ---
 
-Redesigning [[website]]]. Goal is to make it easier to create content, and to make content a) rich and b) discoverable.
+Redesigning my [[website]]. Goal is to make it easier to create content, and to make content a) rich and b) discoverable.
 
 - [ ] Implement [Blogchains](bear://x-callback-url/open-note?id=2D0DEC71-82A7-4349-B1CB-5BE86CC599A6-47334-000073C9A72581ED)
-- [ ] Add notes section - maybe in the form of a writing desk
+- [x] Add notes section - maybe in the form of a writing desk
 - [ ] Implement Link previews with Tippy.js
 - [ ] Have tags from poems and other places get referenced in the brain
 
