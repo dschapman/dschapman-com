@@ -1,3 +1,5 @@
+const slugify = require('slugify')
+const path = require('path')
 module.exports = {
   siteMetadata: {
     title: 'D.S. Chapman',
@@ -42,6 +44,13 @@ module.exports = {
         rootPath: 'notes',
         rootNote: 'notes',
         mdxOtherwiseConfigured: true,
+        generateSlug: (filename) => {
+          const filenameWithExtension = path.parse(filename).name
+
+          return slugify(filenameWithExtension, {
+            lower: true,
+          })
+        },
       },
     },
   ],

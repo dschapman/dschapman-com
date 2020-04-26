@@ -16,7 +16,7 @@ const BrainNote = ({ note, nodes }) => {
   let relatedPoems = []
   nodes.map((post) => {
     if (
-      post.frontmatter.tags.indexOf(note.title) > -1 &&
+      post.frontmatter.tags.indexOf(note.title.toLowerCase()) > -1 &&
       post.frontmatter.slug.includes('/articles/')
     ) {
       relatedArticles.push(
@@ -31,7 +31,7 @@ const BrainNote = ({ note, nodes }) => {
 
   nodes.map((post) => {
     if (
-      post.frontmatter.tags.indexOf(note.title) > -1 &&
+      post.frontmatter.tags.indexOf(note.title.toLowerCase()) > -1 &&
       post.frontmatter.slug.includes('/poetry/')
     ) {
       console.log(post.frontmatter.tags)

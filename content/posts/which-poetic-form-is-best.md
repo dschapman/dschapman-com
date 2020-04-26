@@ -4,7 +4,6 @@ date: '2019-11-12'
 excerpt: 'How to choose which form to use to write a poem.'
 tags: ['poetry', 'writing']
 title: 'Which Poetic Form is Best?'
-type: 'blog'
 published: true
 ---
 
