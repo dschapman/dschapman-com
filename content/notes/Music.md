@@ -12,6 +12,16 @@ https://open.spotify.com/playlist/7xcFqdfdy0UBkBfdnarOdv?si=ilhDrpvARwmVx4xMefd-
 
 https://open.spotify.com/playlist/58fJUkr0Mw2ETMv3AbILCS?si=tQZfiuUfR3e8RchtwWYyWQ
 
+## 2019
+
+https://open.spotify.com/playlist/5lvEE49S4ymCubGNFzQzLl?si=MPYdOEbYTX-2zo0wWd8ruQ
+
+https://open.spotify.com/playlist/6SD53pxdLhXFLKgWhPn60g?si=hfN5gdh4RgeRLKjRkEy8lA
+
+https://open.spotify.com/playlist/6xx0NOUWAtSSlsBjAAY3yh?si=mWp05VqHSsK8tsECOQd-UA
+
+https://open.spotify.com/playlist/2NdoI5ANwz0jGcZNkDgKNe?si=YgNYrOoIQDCTX2kAJ12DRw
+
 ## Other Favorites
 
 Something in the lyrics was neat or beautiful
