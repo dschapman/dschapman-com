@@ -92,7 +92,7 @@ const BrainNote = ({ note, nodes }) => {
 
   return (
     <MDXProvider components={components}>
-      <Layout title={note.title}>
+      <Layout title={`${note.title} | Daniel's Notes`}>
         <MDXRenderer>{note.childMdx.body}</MDXRenderer>
         {referenceBlock}
         {relatedArticlesBlock}
