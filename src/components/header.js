@@ -5,7 +5,12 @@ import Logo from './logo'
 import HeaderLinks from './header-links'
 import { useStaticQuery, graphql } from 'gatsby'
 
-export default ({ title, description }) => {
+export default ({
+  title,
+  description,
+  seoTitleAddition1,
+  seoTitleAddition2,
+}) => {
   const {
     site: { siteMetadata },
   } = useStaticQuery(graphql`
@@ -28,7 +33,11 @@ export default ({ title, description }) => {
       }}>
       <Logo />
       <HeaderLinks title={title} />
-      <SEO title={title} description={description}></SEO>
+      <SEO
+        title={title}
+        seoTitleAddition1={seoTitleAddition1}
+        seoTitleAddition2={seoTitleAddition2}
+        description={description}></SEO>
     </header>
   )
 }

@@ -3,7 +3,13 @@ import { Helmet } from 'react-helmet'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 
-export default ({ title, description, timeToRead }) => {
+export default ({
+  title,
+  description,
+  timeToRead,
+  seoTitleAddition1,
+  seoTitleAddition2,
+}) => {
   const {
     site: { siteMetadata },
   } = useStaticQuery(graphql`
@@ -11,16 +17,21 @@ export default ({ title, description, timeToRead }) => {
       site {
         siteMetadata {
           title
+          seoTitleAddition1
+          seoTitleAddition2
           description
           twitter
         }
       }
     }
   `)
-  const seoTitle = title || siteMetadata.title
+  const pageTitle = title || siteMetadata.title
+  const seoTitle = `${title || siteMetadata.title} | ${
+    seoTitleAddition1 || siteMetadata.seoTitleAddition1
+  } | ${seoTitleAddition2 || siteMetadata.seoTitleAddition2}`
   const seoDescription = description || siteMetadata.description
   const author = 'D.S. Chapman'
-  const ogImage = `https://quizzical-liskov-0bc7e1.netlify.app/opengraph?title=${seoTitle}&author=${author}&description=${seoDescription}&timeToRead=${timeToRead}&v=0.0.4`
+  const ogImage = `https://quizzical-liskov-0bc7e1.netlify.app/opengraph?title=${pageTitle}&author=${author}&description=${seoDescription}&timeToRead=${timeToRead}&v=0.0.4`
   return (
     <Helmet title={seoTitle} description={seoDescription}>
       <meta property="og:title" content={seoTitle} />

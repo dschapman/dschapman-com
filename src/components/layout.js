@@ -3,9 +3,20 @@ import { Styled, jsx } from 'theme-ui'
 
 import Header from './header'
 
-export default ({ children, title, description }) => (
+export default ({
+  children,
+  title,
+  description,
+  seoTitleAddition1,
+  seoTitleAddition2,
+}) => (
   <Styled.root>
-    <Header title={title} description={description} />
+    <Header
+      title={title}
+      seoTitleAddition1={seoTitleAddition1}
+      seoTitleAddition2={seoTitleAddition2}
+      description={description}
+    />
     <div
       sx={{
         maxWidth: 'container',

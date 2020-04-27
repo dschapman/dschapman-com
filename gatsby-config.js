@@ -2,7 +2,9 @@ const slugify = require('slugify')
 const path = require('path')
 module.exports = {
   siteMetadata: {
-    title: 'D.S. Chapman',
+    title: 'Website and Digital Home',
+    seoTitleAddition1: 'D.S. Chapman',
+    seoTitleAddition2: 'Articles, Poetry, & Musings',
     twitter: '@ds_chapman',
     description:
       'The website and digital home of writer and poet D.S. Chapman. Explore for articles, poetry, and other projects including my recent book - Seasons of Thought.',
