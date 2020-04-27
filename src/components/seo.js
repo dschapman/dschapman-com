@@ -26,8 +26,8 @@ export default ({
     }
   `)
   const pageTitle = title || siteMetadata.title
-  const seoTitle = `${title || siteMetadata.title} | ${
-    seoTitleAddition1 || siteMetadata.seoTitleAddition1
+  const seoTitle = `${title || siteMetadata.seoTitleAddition1} | ${
+    seoTitleAddition1 || siteMetadata.title
   } | ${seoTitleAddition2 || siteMetadata.seoTitleAddition2}`
   const seoDescription = description || siteMetadata.description
   const author = 'D.S. Chapman'
