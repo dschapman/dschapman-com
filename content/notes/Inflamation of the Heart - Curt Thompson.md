@@ -1,10 +1,12 @@
 ---
-title: 'Inflamation of the Heart'
+title: 'Inflamation of the Heart - Curt Thompson'
 ---
 
 Tags: [[COVID-19]] [[Articles]] [[Faith]]
 
-[Inflammation of the Heart - Curt Thompson MD](https://curtthompsonmd.com/inflammation-of-the-heart/)
+Author: [[Curt Thompson]]
+
+**Notes on:**[Inflammation of the Heart - Curt Thompson MD](https://curtthompsonmd.com/inflammation-of-the-heart/)
 
 “Just as the inflammatory response of the body mobilizes in the same way whether you have a minor abrasion, a sprained ankle or a life-threatening infection, so will our grief emerge unbidden and progress, albeit often subtly and not in a neat, linear fashion, through the stages of denial, anger, bargaining, depression and acceptance. “
 
