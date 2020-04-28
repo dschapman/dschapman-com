@@ -78,5 +78,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-twitter',
+    'gatsby-plugin-sitemap',
   ],
 }
