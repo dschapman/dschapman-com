@@ -5,7 +5,6 @@ import TagListItem from './list-item'
 
 export default ({ tags }) => {
   let newTags = tags.filter((tag) => tag.totalCount > 1) //filter out any tags with only one item
-  console.log(newTags)
   return (
     <Styled.ul
       sx={{

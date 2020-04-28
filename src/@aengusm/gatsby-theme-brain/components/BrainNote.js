@@ -34,7 +34,6 @@ const BrainNote = ({ note, nodes }) => {
       post.frontmatter.tags.indexOf(note.title.toLowerCase()) > -1 &&
       post.frontmatter.slug.includes('/poetry/')
     ) {
-      console.log(post.frontmatter.tags)
       relatedPoems.push(
         <Styled.li key={post.id}>
           <Styled.a key={post.id} href={post.frontmatter.slug}>
@@ -44,7 +43,6 @@ const BrainNote = ({ note, nodes }) => {
       )
     }
   })
-  console.log(relatedPoems)
 
   if (note.inboundReferences != null) {
     references = note.inboundReferences.map((ref) => (
