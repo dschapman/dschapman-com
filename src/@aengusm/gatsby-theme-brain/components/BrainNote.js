@@ -5,9 +5,9 @@ import Layout from '../../../components/note-layout'
 import { Styled, jsx } from 'theme-ui'
 import components from '../../../components/note-mdx-components.js'
 import { MDXProvider } from '@mdx-js/react'
-import { Link } from 'gatsby'
+import { Link, Router } from 'gatsby'
 
-const BrainNote = ({ note, nodes }) => {
+const BrainNote = ({ note, nodes, location }) => {
   let references = []
   let referenceBlock
   let relatedPoemsBlock
@@ -22,7 +22,11 @@ const BrainNote = ({ note, nodes }) => {
     ) {
       relatedArticles.push(
         <Styled.li key={post.id}>
-          <Styled.a as={Link} key={post.id} to={post.frontmatter.slug}>
+          <Styled.a
+            as={Link}
+            key={post.id}
+            to={post.frontmatter.slug}
+            state={state}>
             {post.frontmatter.title}
           </Styled.a>
         </Styled.li>

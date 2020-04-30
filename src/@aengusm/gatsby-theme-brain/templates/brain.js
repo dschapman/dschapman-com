@@ -4,7 +4,11 @@ import BrainNote from '../components/BrainNote'
 
 export default (props) => {
   return (
-    <BrainNote note={props.data.brainNote} nodes={props.data.allMdx.nodes} />
+    <BrainNote
+      note={props.data.brainNote}
+      nodes={props.data.allMdx.nodes}
+      location={location}
+    />
   )
 }
 
