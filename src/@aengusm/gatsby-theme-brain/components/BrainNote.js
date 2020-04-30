@@ -1,10 +1,11 @@
 /** @jsx jsx */
 import React from 'react'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
-import Layout from '../../../components/layout'
+import Layout from '../../../components/note-layout'
 import { Styled, jsx } from 'theme-ui'
 import components from '../../../components/note-mdx-components.js'
 import { MDXProvider } from '@mdx-js/react'
+import { Link } from 'gatsby'
 
 const BrainNote = ({ note, nodes }) => {
   let references = []
@@ -21,7 +22,7 @@ const BrainNote = ({ note, nodes }) => {
     ) {
       relatedArticles.push(
         <Styled.li key={post.id}>
-          <Styled.a key={post.id} href={post.frontmatter.slug}>
+          <Styled.a as={Link} key={post.id} to={post.frontmatter.slug}>
             {post.frontmatter.title}
           </Styled.a>
         </Styled.li>
@@ -36,7 +37,7 @@ const BrainNote = ({ note, nodes }) => {
     ) {
       relatedPoems.push(
         <Styled.li key={post.id}>
-          <Styled.a key={post.id} href={post.frontmatter.slug}>
+          <Styled.a as={Link} key={post.id} to={post.frontmatter.slug}>
             {post.frontmatter.title}
           </Styled.a>
         </Styled.li>
@@ -47,8 +48,10 @@ const BrainNote = ({ note, nodes }) => {
   if (note.inboundReferences != null) {
     references = note.inboundReferences.map((ref) => (
       <Styled.li key={ref}>
+        {console.log(ref)}
         <Styled.a
-          href={ref}
+          as={Link}
+          to={`/notes/${ref}`}
           sx={{
             bg: 'lightblue',
             textDecoration: 'none',
@@ -91,9 +94,11 @@ const BrainNote = ({ note, nodes }) => {
   return (
     <MDXProvider components={components}>
       <Layout
-        title={`${note.title}`}
+        title={note.title}
         seoTitleAddition1="Notes"
-        seoTitleAddition2="D.S. Chapman">
+        seoTitleAddition2="D.S. Chapman"
+        location={location}
+        crumbLabel={note.title}>
         <MDXRenderer>{note.childMdx.body}</MDXRenderer>
         {referenceBlock}
         {relatedArticlesBlock}

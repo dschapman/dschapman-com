@@ -1,5 +1,6 @@
 # Convert markdown files from bear so that they're ready to be used by gatsby-theme-brain 
 import pathlib
+import io
 
 directory="./content/notes"
 count = 0
@@ -16,4 +17,5 @@ for path in pathlib.Path(directory).iterdir():
             current_file.write(rest_of_file)
             current_file.close()
             count = count+1
+            print(path)
 print("Modified " + str(count) + " .md files")
