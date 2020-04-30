@@ -22,11 +22,7 @@ const BrainNote = ({ note, nodes, location }) => {
     ) {
       relatedArticles.push(
         <Styled.li key={post.id}>
-          <Styled.a
-            as={Link}
-            key={post.id}
-            to={post.frontmatter.slug}
-            state={state}>
+          <Styled.a as={Link} key={post.id} to={post.frontmatter.slug}>
             {post.frontmatter.title}
           </Styled.a>
         </Styled.li>
