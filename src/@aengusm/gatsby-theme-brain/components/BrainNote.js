@@ -95,7 +95,7 @@ const BrainNote = ({ note, nodes, location }) => {
     <MDXProvider components={components}>
       <Layout
         title={note.title}
-        seoTitleAddition1="Notes"
+        seoTitleAddition1="Digital Notes"
         seoTitleAddition2="D.S. Chapman"
         location={location}
         crumbLabel={note.title}>
