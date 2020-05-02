@@ -3,7 +3,7 @@ slug: '/articles/how-i-coded-this-website'
 date: '2020-02-07'
 excerpt: 'A little bit about how I coded this website with GatsbyJS.'
 title: 'How I Coded This Website'
-tags: ['gatsby', 'resource list', 'website']
+tags: ['gatsby', 'resource-list', 'website']
 ---
 
 Fun Fact: I coded this website myself. The source code for everything you see lives on my computer [(you can also browse it on Github)](https://github.com/dschapman/PersonalBlog) .

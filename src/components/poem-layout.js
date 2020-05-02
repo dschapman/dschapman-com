@@ -1,5 +1,7 @@
+/** @jsx jsx */
 import React from 'react'
-import { graphql } from 'gatsby'
+import { Styled, jsx } from 'theme-ui'
+import { graphql, Link } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Layout from './layout'
@@ -8,6 +10,11 @@ export default function PageTemplate({ data: { mdx } }) {
   return (
     <Layout title={mdx.frontmatter.title} description={mdx.frontmatter.excerpt}>
       <MDXRenderer>{mdx.body}</MDXRenderer>
+      <div>
+        <Styled.a as={Link} to="/poetry/all">
+          All Poems &rarr;{' '}
+        </Styled.a>
+      </div>
     </Layout>
   )
 }

@@ -17,6 +17,7 @@ const Avatar = () => {
           marginRight: '2rem',
         }}
         src={avatar}
+        alt="D.S. Chapman"
       />
     </div>
   )
