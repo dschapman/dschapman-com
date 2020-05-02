@@ -44,6 +44,7 @@
     "react-helmet": "^6.0.0",
     "slugify": "^1.4.0",
     "theme-ui": "^0.3.1",
+    "tippy.js": "^6.2.3",
     "yarn": "^1.22.4"
   },
   "devDependencies": {
