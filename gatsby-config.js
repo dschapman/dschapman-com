@@ -11,6 +11,8 @@ module.exports = {
       'The website and digital home of writer and poet D.S. Chapman. Explore for articles, poetry, and other projects including my recent book - Seasons of Thought.',
   },
   plugins: [
+    'gatsby-plugin-sharp',
+    'gatsby-remark-images',
     {
       resolve: `gatsby-plugin-mdx`,
       options: {

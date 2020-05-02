@@ -10,7 +10,7 @@ https://twitter.com/ds_chapman/status/1254455345885388802
 
 ## Inspiration
 
-- [[how the blog broke the internet - amy hoy]]
+- [[How the Blog Broke the Internet - Amy Hoy]]
 - https://joelhooks.com/digital-garden
 - [[building a digital garden - tom critchlow]]
--
+- [About This Website · Gwern.net](https://www.gwern.net/About)
