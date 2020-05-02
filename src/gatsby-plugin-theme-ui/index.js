@@ -124,6 +124,9 @@ export default {
       bg: 'muted',
       fontSize: 1,
     },
+    img: {
+      align: 'left',
+    },
     table: {
       width: '100%',
       my: 4,

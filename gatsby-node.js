@@ -5,8 +5,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
   const result = await graphql(`
-    query MyQuery {
-      allMdx(filter: { fileAbsolutePath: { regex: "/content/poems/" } }) {
+    query {
+      poems: allMdx(
+        filter: { fileAbsolutePath: { regex: "/content/poems/" } }
+      ) {
         edges {
           node {
             frontmatter {
@@ -22,9 +24,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   if (result.errors) {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query')
   }
-
+  console.log(result)
   // Create blog post pages.
-  const poems = result.data.allMdx.edges
+  const poems = result.data.poems.edges
 
   // you'll call `createPage` for each result
   poems.forEach(({ node }) => {

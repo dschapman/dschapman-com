@@ -6748,6 +6748,15 @@ gatsby-graphiql-explorer@^0.4.0:
   dependencies:
     "@babel/runtime" "^7.9.2"
 
+gatsby-image@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.4.0.tgz#25bfefed7a046184c44cf2cb5edd2a03be822594"
+  integrity sha512-VkGZ5SiIi0eC1tt45rIWqu19ZA2P1lMmNgCIqM4AK4q+ib1x0WhiGOeIEsIYk7udlfLXEy7A0uzadsv8EZSy/w==
+  dependencies:
+    "@babel/runtime" "^7.9.2"
+    object-fit-images "^3.2.4"
+    prop-types "^15.7.2"
+
 gatsby-link@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-2.4.0.tgz#9de5851bdab0f9a92c4d91ca6d78514670e3f28a"
@@ -7117,7 +7126,7 @@ gatsby-theme-blog-core@1.1.0:
     gatsby-transformer-sharp "^2.2.6"
     remark-slug "^5.1.2"
 
-gatsby-theme-blog-core@^1.3.22:
+gatsby-theme-blog-core@^1.4.9:
   version "1.4.9"
   resolved "https://registry.yarnpkg.com/gatsby-theme-blog-core/-/gatsby-theme-blog-core-1.4.9.tgz#04e8392e8c0da49a376516c97db2f89aaccdd7f6"
   integrity sha512-599yAiSqrkM6hRUJjpJqw3cPRXS97qvwJm15SZaoj9Cu/UIpCz6qM+TP9JiH27Q+wKKrAMWKasADeFr40RdBtQ==
@@ -11245,6 +11254,11 @@ object-copy@^0.1.0:
     copy-descriptor "^0.1.0"
     define-property "^0.2.5"
     kind-of "^3.0.3"
+
+object-fit-images@^3.2.4:
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/object-fit-images/-/object-fit-images-3.2.4.tgz#6c299d38fdf207746e5d2d46c2877f6f25d15b52"
+  integrity sha512-G+7LzpYfTfqUyrZlfrou/PLLLAPNC52FTy5y1CBywX+1/FkxIloOyQXBmZ3Zxa2AWO+lMF0JTuvqbr7G5e5CWg==
 
 object-hash@^1.1.4:
   version "1.3.1"

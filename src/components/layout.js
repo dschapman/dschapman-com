@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { Styled, jsx } from 'theme-ui'
-
+import { MDXProvider } from '@mdx-js/react'
 import Header from './header'
 
 export default ({
@@ -23,7 +23,7 @@ export default ({
         px: [3, 4, 5],
       }}>
       <h1 sx={{ fontFamily: 'heading', fontWeight: 'heading' }}>{title}</h1>
-      {children}
+      <MDXProvider>{children}</MDXProvider>
     </div>
   </Styled.root>
 )

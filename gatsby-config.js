@@ -11,6 +11,7 @@ module.exports = {
       'The website and digital home of writer and poet D.S. Chapman. Explore for articles, poetry, and other projects including my recent book - Seasons of Thought.',
   },
   plugins: [
+    'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-remark-images',
     {
@@ -35,9 +36,18 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-theme-austere`,
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'assets',
+        path: `${__dirname}/content/assets/`,
+      },
+    },
+    {
+      resolve: `gatsby-theme-blog-core`,
       options: {
         basePath: '/articles/all',
+        contentPath: 'content/posts/',
+        assetPath: 'content/assets',
         mdxOtherwiseConfigured: true,
       },
     },
@@ -62,6 +72,13 @@ module.exports = {
       options: {
         name: 'poetry',
         path: `${__dirname}/content/poems/`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'pages',
+        path: `${__dirname}/src/pages/`,
       },
     },
     {
