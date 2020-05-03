@@ -50,11 +50,9 @@ const BrainNote = ({ note, nodes, location }) => {
       )
     }
   })
-  console.log(note.inboundReferenceNotes)
   if (note.inboundReferenceNotes != null) {
     references = note.inboundReferenceNotes.map((ref) => (
       <Styled.li key={ref.id}>
-        {console.log(ref)}
         <Tippy content={`Notes on ${ref.title}`}>
           <Styled.a
             as={Link}

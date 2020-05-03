@@ -14,7 +14,6 @@ const AnchorTag = (props) => {
     renderedLink = props.children.replace(/\[\[(.*?)\]\]/g, '$1')
   }
   if (isInternallLink) {
-    console.log(props)
     return (
       <Tippy content={`Notes on ${renderedLink}`}>
         <Styled.a

@@ -24,7 +24,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   if (result.errors) {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query')
   }
-  console.log(result)
   // Create blog post pages.
   const poems = result.data.poems.edges
 
