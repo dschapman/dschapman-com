@@ -17,9 +17,23 @@ export const query = graphql`
     brainNote(slug: { eq: $slug }) {
       slug
       title
-      inboundReferences
+      inboundReferenceNotes {
+        id
+        title
+        slug
+        childMdx {
+          excerpt
+        }
+      }
       childMdx {
         body
+      }
+      outboundReferenceNotes {
+        title
+        slug
+        childMdx {
+          excerpt
+        }
       }
     }
     allMdx(filter: { fileAbsolutePath: { regex: "/content/", ne: "notes" } }) {

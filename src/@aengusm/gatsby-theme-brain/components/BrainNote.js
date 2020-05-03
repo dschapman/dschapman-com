@@ -6,6 +6,8 @@ import { Styled, jsx } from 'theme-ui'
 import components from '../../../components/note-mdx-components.js'
 import { MDXProvider } from '@mdx-js/react'
 import { Link, Router } from 'gatsby'
+import Tippy from '@tippyjs/react'
+import 'tippy.js/dist/tippy.css'
 
 const BrainNote = ({ note, nodes, location }) => {
   let references = []
@@ -22,9 +24,11 @@ const BrainNote = ({ note, nodes, location }) => {
     ) {
       relatedArticles.push(
         <Styled.li key={post.id}>
-          <Styled.a as={Link} key={post.id} to={post.frontmatter.slug}>
-            {post.frontmatter.title}
-          </Styled.a>
+          <Tippy content={`Link to my article "${post.frontmatter.title}"`}>
+            <Styled.a as={Link} key={post.id} to={post.frontmatter.slug}>
+              {post.frontmatter.title}
+            </Styled.a>
+          </Tippy>
         </Styled.li>
       )
     }
@@ -37,31 +41,35 @@ const BrainNote = ({ note, nodes, location }) => {
     ) {
       relatedPoems.push(
         <Styled.li key={post.id}>
-          <Styled.a as={Link} key={post.id} to={post.frontmatter.slug}>
-            {post.frontmatter.title}
-          </Styled.a>
+          <Tippy content={`Link to my poem "${post.frontmatter.title}"`}>
+            <Styled.a as={Link} key={post.id} to={post.frontmatter.slug}>
+              {post.frontmatter.title}
+            </Styled.a>
+          </Tippy>
         </Styled.li>
       )
     }
   })
-
-  if (note.inboundReferences != null) {
-    references = note.inboundReferences.map((ref) => (
-      <Styled.li key={ref}>
+  console.log(note.inboundReferenceNotes)
+  if (note.inboundReferenceNotes != null) {
+    references = note.inboundReferenceNotes.map((ref) => (
+      <Styled.li key={ref.id}>
         {console.log(ref)}
-        <Styled.a
-          as={Link}
-          to={`/notes/${ref}`}
-          sx={{
-            bg: 'lightblue',
-            textDecoration: 'none',
-            '&:hover': {
-              color: 'text',
-              bg: 'white',
-            },
-          }}>
-          {ref}
-        </Styled.a>
+        <Tippy content={`Notes on ${ref.title}`}>
+          <Styled.a
+            as={Link}
+            to={`/notes/${ref.slug}`}
+            sx={{
+              bg: 'lightblue',
+              textDecoration: 'none',
+              '&:hover': {
+                color: 'text',
+                bg: 'white',
+              },
+            }}>
+            {ref.title}
+          </Styled.a>
+        </Tippy>
       </Styled.li>
     ))
   }

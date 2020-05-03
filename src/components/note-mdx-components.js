@@ -3,6 +3,8 @@ import React from 'react'
 import { Styled, jsx } from 'theme-ui'
 import { isString, isEmpty } from 'lodash'
 import { Link } from 'gatsby'
+import Tippy from '@tippyjs/react'
+import 'tippy.js/dist/tippy.css'
 
 const INTERNAL_LINK_REGEX = /^\/notes/g
 const AnchorTag = (props) => {
@@ -14,7 +16,7 @@ const AnchorTag = (props) => {
   if (isInternallLink) {
     console.log(props)
     return (
-      <>
+      <Tippy content={`Notes on ${renderedLink}`}>
         <Styled.a
           as={Link}
           to={props.href}
@@ -28,13 +30,13 @@ const AnchorTag = (props) => {
           }}>
           {renderedLink}
         </Styled.a>
-      </>
+      </Tippy>
     )
   } else {
     return (
-      <>
+      <Tippy content={`Link to ${props.href}`}>
         <Styled.a {...props}>{renderedLink}</Styled.a>
-      </>
+      </Tippy>
     )
   }
 }
