@@ -18,6 +18,7 @@
     "@emotion/core": "^10.0.28",
     "@mdx-js/mdx": "^1.5.8",
     "@mdx-js/react": "^1.5.8",
+    "@tippyjs/react": "^4.0.2",
     "gatsby": "^2.20.12",
     "gatsby-image": "^2.4.0",
     "gatsby-plugin-breadcrumb": "^9.0.2",
