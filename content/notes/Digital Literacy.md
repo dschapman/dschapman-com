@@ -8,9 +8,9 @@ Do you use the Internet or does the internet use you?
 
 - [[What we lost when we stopped reading]] by George Will
 - [[Reclaiming Conversation]] by Shery Turkle
+- [[On Reading Well]] by Karen Swallow Prior
 
-* [[On Reading Well]] by Karen Swallow Prior
-  Other names that come to mind when I think about this conversation are [[Neil Postman]], [[Wendell Berry]], [[Cal Newport]], and the dystopic writers - especially [[Aldous Huxley]] in Brave New World and [[Ray Bradbury]] in Fahrenheit 451.
+Other names that come to mind when I think about this conversation are [[Neil Postman]], [[Wendell Berry]], [[Cal Newport]], and the dystopic writers - especially [[Aldous Huxley]] in Brave New World and [[Ray Bradbury]] in Fahrenheit 451.
 
 ## The Solution
 
