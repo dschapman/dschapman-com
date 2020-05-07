@@ -12,6 +12,16 @@ kids are not emotionally developed - “They make acquaintances, but their conne
 
 “computers offer the illusion of companionship without the demands of friendship…the illusion of friendship without the demands of intimacy.” (7)
 
+“We slip into thinking that always being connected is going to make us less lonely. But we are at risk because it is actually the reverse: If we are unable to be alone we will be more lonely.” (23)
+
+Turkle’s argument is: Technology inherently prevents us from being alone, and we need to be alone to think.
+
+- Twitch culture
+- Social Media
+- Tweeting
+
+The very thing that allows the internet to be such a powerful tool for connection is also the inherent flaw in that tool. Makes me think about [[Socrates]] talking about [[Writing Changes the Way We Think.]]
+
 Tags: [[Books]]
 
 ## Citation

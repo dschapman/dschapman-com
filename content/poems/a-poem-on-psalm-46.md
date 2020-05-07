@@ -2,7 +2,7 @@
 title: 'A Poem on Psalm 46'
 excerpt: 'A poem based on Psalm 46, written by D.S. Chapman'
 slug: '/poetry/a-poem-on-psalm-46'
-tags: ['psalm', 'peace', 'war', 'poems on the psalms']
+tags: ['psalm', 'peace', 'war', 'poems on the psalms', 'incarnation']
 ---
 
 War whispers and shouts until fear creeps in.  
