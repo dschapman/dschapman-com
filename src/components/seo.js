@@ -32,7 +32,11 @@ export default ({
   } | ${seoTitleAddition2 || siteMetadata.seoTitleAddition2}`
   const seoDescription = description || siteMetadata.description
   const author = 'D.S. Chapman'
-  const ogImage = `https://quizzical-liskov-0bc7e1.netlify.app/opengraph?title=${pageTitle}&author=${author}&type=${type}&v=0.0.7`
+  const ogImage = `https://quizzical-liskov-0bc7e1.netlify.app/opengraph?title=${encodeURIComponent(
+    pageTitle
+  )}&author=${encodeURIComponent(author)}&type=${encodeURIComponent(
+    type
+  )}&v=0.0.7`
   return (
     <Helmet title={seoTitle} description={seoDescription}>
       <meta property="og:title" content={seoTitle} />
