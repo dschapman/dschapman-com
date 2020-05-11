@@ -26,6 +26,7 @@ export default ({
         seoTitleAddition1={seoTitleAddition1}
         seoTitleAddition2={seoTitleAddition2}
         description={description}
+        type="Note 📝"
       />
       <div
         sx={{

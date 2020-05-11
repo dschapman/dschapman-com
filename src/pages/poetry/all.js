@@ -7,7 +7,10 @@ import { Styled, jsx } from 'theme-ui'
 
 const PoemIndex = ({ data }) => {
   return (
-    <Layout title="All Poems" excerpt="All the poems posted on my website.">
+    <Layout
+      title="All Poems"
+      excerpt="All the poems posted on my website."
+      type="📚">
       <Styled.ul
         sx={{
           variant: 'styles.postlist',

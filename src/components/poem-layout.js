@@ -8,7 +8,10 @@ import Layout from './layout'
 
 export default function PageTemplate({ data: { mdx } }) {
   return (
-    <Layout title={mdx.frontmatter.title} description={mdx.frontmatter.excerpt}>
+    <Layout
+      title={mdx.frontmatter.title}
+      description={mdx.frontmatter.excerpt}
+      type="Poem 📜">
       <MDXRenderer>{mdx.body}</MDXRenderer>
       <div>
         <Styled.a as={Link} to="/poetry/all">

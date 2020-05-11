@@ -9,6 +9,7 @@ export default ({
   timeToRead,
   seoTitleAddition1,
   seoTitleAddition2,
+  type,
 }) => {
   const {
     site: { siteMetadata },
@@ -31,7 +32,7 @@ export default ({
   } | ${seoTitleAddition2 || siteMetadata.seoTitleAddition2}`
   const seoDescription = description || siteMetadata.description
   const author = 'D.S. Chapman'
-  const ogImage = `https://quizzical-liskov-0bc7e1.netlify.app/opengraph?title=${pageTitle}&author=${author}&description=${seoDescription}&timeToRead=${timeToRead}&v=0.0.4`
+  const ogImage = `https://quizzical-liskov-0bc7e1.netlify.app/opengraph?title=${pageTitle}&author=${author}&type=${type}&v=0.0.5`
   return (
     <Helmet title={seoTitle} description={seoDescription}>
       <meta property="og:title" content={seoTitle} />

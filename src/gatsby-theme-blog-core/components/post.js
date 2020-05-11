@@ -5,7 +5,10 @@ import Layout from '../../components/post-layout'
 
 export default ({ data, pageContext }) => {
   return (
-    <Layout title={data.blogPost.title} description={data.blogPost.excerpt}>
+    <Layout
+      title={data.blogPost.title}
+      description={data.blogPost.excerpt}
+      type="Article 📄">
       <MDXRenderer>{data.blogPost.body}</MDXRenderer>
     </Layout>
   )
