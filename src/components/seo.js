@@ -36,7 +36,7 @@ export default ({
     pageTitle
   )}&author=${encodeURIComponent(author)}&type=${encodeURIComponent(
     type
-  )}&v=0.0.7`
+  )}&v=0.0.8`
   return (
     <Helmet title={seoTitle} description={seoDescription}>
       <meta property="og:title" content={seoTitle} />
