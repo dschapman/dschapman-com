@@ -10,6 +10,7 @@ export default ({
   description,
   seoTitleAddition1,
   seoTitleAddition2,
+  type,
 }) => {
   const {
     site: { siteMetadata },
@@ -37,7 +38,8 @@ export default ({
         title={title}
         seoTitleAddition1={seoTitleAddition1}
         seoTitleAddition2={seoTitleAddition2}
-        description={description}></SEO>
+        description={description}
+        type={type}></SEO>
     </header>
   )
 }
