@@ -6,7 +6,6 @@ import { useStaticQuery, graphql } from 'gatsby'
 export default ({
   title,
   description,
-  timeToRead,
   seoTitleAddition1,
   seoTitleAddition2,
   type,
@@ -32,11 +31,7 @@ export default ({
   } | ${seoTitleAddition2 || siteMetadata.seoTitleAddition2}`
   const seoDescription = description || siteMetadata.description
   const author = 'D.S. Chapman'
-  const ogImage = `https://quizzical-liskov-0bc7e1.netlify.app/opengraph?title=${encodeURIComponent(
-    pageTitle
-  )}&author=${encodeURIComponent(author)}&type=${encodeURIComponent(
-    type
-  )}&v=0.0.8`
+  const ogImage = `https://quizzical-liskov-0bc7e1.netlify.app/opengraph?title=${pageTitle}&author=${author}&type=${type}&v=0.1.0`
   return (
     <Helmet title={seoTitle} description={seoDescription}>
       <meta property="og:title" content={seoTitle} />
