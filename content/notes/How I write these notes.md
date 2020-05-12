@@ -23,3 +23,7 @@ title: “How I write these notes”
 so currently the plan is to edit in bear, export to the website repository, then run the script to standardize the title.
 
 I am interested in further optimizing this, potentially using something like an Alfred workflow or a modified version of [this export script](https://github.com/andymatuschak/Bear-Markdown-Export) but for now this flow seems to work.
+
+## Todo
+
+Add to script and use an [[Alfred]] snippet to build out a template note with space for aliases and tags.
