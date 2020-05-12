@@ -1,9 +1,10 @@
 import Layout from '../components/layout'
-export default (props) => (
+export default (props, { location }) => (
   <Layout
     title="Website and Digital Home"
     description="A short curated selection of articles I've written."
     type="🌱"
+    location={location}
     {...props}
   />
 )

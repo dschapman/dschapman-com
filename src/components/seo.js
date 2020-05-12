@@ -9,6 +9,7 @@ export default ({
   seoTitleAddition1,
   seoTitleAddition2,
   type,
+  location,
 }) => {
   const {
     site: { siteMetadata },
@@ -21,22 +22,31 @@ export default ({
           seoTitleAddition2
           description
           twitter
+          siteUrl
         }
       }
     }
   `)
+  const siteUrl = siteMetadata.siteUrl
   const pageTitle = title || siteMetadata.title
   const seoTitle = `${title || siteMetadata.seoTitleAddition1} | ${
     seoTitleAddition1 || siteMetadata.title
   } | ${seoTitleAddition2 || siteMetadata.seoTitleAddition2}`
   const seoDescription = description || siteMetadata.description
   const author = 'D.S. Chapman'
+
+  const url = `${siteUrl}${location.pathname}`
   const ogImage = `https://quizzical-liskov-0bc7e1.netlify.app/opengraph?title=${pageTitle}&author=${author}&type=${type}&v=0.1.0`
   return (
     <Helmet title={seoTitle} description={seoDescription}>
+      <title>{seoTitle}</title>
+      <meta name="description" content={seoDescription} />
+      <meta name="image" congent={ogImage} />
+      <meta name="url" content={url} />
       <meta property="og:title" content={seoTitle} />
       <meta property="og:description" content={seoDescription} />
       <meta property="og:image" content={ogImage} />
+      <meta property="og:url" content={url} />
       <link rel="stylesheet" href="https://use.typekit.net/osf8fyt.css"></link>
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content={siteMetadata.twitter} />

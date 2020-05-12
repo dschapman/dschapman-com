@@ -10,6 +10,7 @@ export default ({
   seoTitleAddition1,
   seoTitleAddition2,
   type,
+  location,
 }) => (
   <Styled.root>
     <Header
@@ -18,6 +19,7 @@ export default ({
       seoTitleAddition2={seoTitleAddition2}
       description={description}
       type={type}
+      location={location}
     />
     <div
       sx={{

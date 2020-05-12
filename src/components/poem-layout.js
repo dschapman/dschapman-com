@@ -6,12 +6,13 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Layout from './layout'
 
-export default function PageTemplate({ data: { mdx } }) {
+export default function PageTemplate({ data: { mdx }, location }) {
   return (
     <Layout
       title={mdx.frontmatter.title}
       description={mdx.frontmatter.excerpt}
-      type="Poem 📜">
+      type="Poem 📜"
+      location={location}>
       <MDXRenderer>{mdx.body}</MDXRenderer>
       <div>
         <Styled.a as={Link} to="/poetry/all">

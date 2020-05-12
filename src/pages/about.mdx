@@ -1,10 +1,11 @@
 import Layout from '../components/layout'
 import Avatar from '../components/avatar'
-export default (props) => (
+export default (props, location) => (
   <Layout
     title="About"
     description="A short introduction to who I am and what I'm all about."
     type="👋🏻"
+    location={location}
     {...props}
   />
 )

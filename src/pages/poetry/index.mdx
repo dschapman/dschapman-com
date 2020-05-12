@@ -3,11 +3,12 @@ slug: '/poetry'
 ---
 
 import Layout from '../../components/layout'
-export default (props) => (
+export default (props, location) => (
   <Layout
     title="Poetry"
     description="The homepage for and introduction to my poetry."
     type="📚"
+    location={location}
     {...props}
   />
 )

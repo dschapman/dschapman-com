@@ -1,10 +1,11 @@
 import Layout from '../../components/layout'
 import BookCard from '../../components/book-card'
-export default (props) => (
+export default (props, location) => (
   <Layout
     title="Seasons of Thought"
     description="A collection of poems traced across the changing seasons."
     type="Book 📖"
+    location={location}
     {...props}
   />
 )

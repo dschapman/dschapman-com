@@ -5,12 +5,13 @@ import { graphql } from 'gatsby'
 
 import { Styled, jsx } from 'theme-ui'
 
-const PoemIndex = ({ data }) => {
+const PoemIndex = ({ data, location }) => {
   return (
     <Layout
       title="All Poems"
       excerpt="All the poems posted on my website."
-      type="📚">
+      type="📚"
+      location={location}>
       <Styled.ul
         sx={{
           variant: 'styles.postlist',
