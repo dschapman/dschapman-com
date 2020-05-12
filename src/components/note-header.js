@@ -11,6 +11,7 @@ export default ({
   seoTitleAddition1,
   seoTitleAddition2,
   type,
+  location,
 }) => {
   const {
     site: { siteMetadata },
@@ -39,7 +40,8 @@ export default ({
         seoTitleAddition1={seoTitleAddition1}
         seoTitleAddition2={seoTitleAddition2}
         description={description}
-        type={type}></SEO>
+        type={type}
+        location={location}></SEO>
     </header>
   )
 }
