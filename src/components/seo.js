@@ -47,9 +47,13 @@ export default ({
       <meta property="og:title" content={seoTitle} />
       <meta property="og:description" content={seoDescription} />
       <meta property="og:image" content={ogImage} />
+      <meta property="og:image:type" content="image/png" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:width" content="1200" />
       <meta property="og:url" content={url} />
 
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@ds_chapman" />
       <meta name="twitter:creator" content={siteMetadata.twitter} />
       <meta name="twitter:title" content={seoTitle} />
       <meta name="twitter:description" content={seoDescription} />

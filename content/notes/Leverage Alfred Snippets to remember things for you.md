@@ -2,7 +2,7 @@
 title: 'Leverage Alfred Snippets to remember things for you'
 ---
 
-Tags: [[Tools]]
+Tags: [[Tools]] [[Alfred]]
 
 Instead of remembering all the letters of a link, or looking up a link whenever I need it, I’m starting to use [Alfred Snippets](https://www.alfredapp.com/extras/snippets/).
 
