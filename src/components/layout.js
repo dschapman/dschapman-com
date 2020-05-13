@@ -7,6 +7,7 @@ export default ({
   children,
   title,
   description,
+  seoTitle,
   seoTitleAddition1,
   seoTitleAddition2,
   type,
@@ -15,6 +16,7 @@ export default ({
   <Styled.root>
     <Header
       title={title}
+      seoTitle={seoTitle}
       seoTitleAddition1={seoTitleAddition1}
       seoTitleAddition2={seoTitleAddition2}
       description={description}

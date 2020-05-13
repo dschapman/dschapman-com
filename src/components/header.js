@@ -8,6 +8,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 export default ({
   title,
   description,
+  seoTitle,
   seoTitleAddition1,
   seoTitleAddition2,
   type,
@@ -24,6 +25,12 @@ export default ({
       }
     }
   `)
+
+  if (seoTitle) {
+    const title = seoTitle
+  } else {
+    const title = title
+  }
   return (
     <header
       sx={{
