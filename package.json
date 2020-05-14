@@ -5,7 +5,7 @@
   "author": "John Otander",
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
     "clean": "gatsby clean",
     "develop": "python3 ./parse-md.py && gatsby develop",
     "format": "prettier --write \"**/*.js{,on}\" \"**/*.md\"  \"**/*.mdx\"",
