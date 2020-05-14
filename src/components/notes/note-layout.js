@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 import Header from './note-header'
 import MyCustomBreadcrumb from './breadcrumb'
 import { useBreadcrumb } from 'gatsby-plugin-breadcrumb'
+import { Global } from '@emotion/core'
 
 export default ({
   children,
@@ -21,6 +22,16 @@ export default ({
 
   return (
     <Styled.root>
+      <Global
+        styles={(theme) => ({
+          '*': {
+            '::selection': {
+              color: '#ffffff',
+              backgroundColor: '#75B9BE',
+            },
+          },
+        })}
+      />
       <Header
         title={title}
         seoTitleAddition1={seoTitleAddition1}

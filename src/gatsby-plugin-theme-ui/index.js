@@ -9,7 +9,7 @@ export default {
     primary: '#272727',
     secondary: '#119',
     muted: '#f6f6f6',
-    highlight: '#efeffe',
+    bluegreen: '#75B9BE',
     gray: '#777',
     accent: '#609',
   },
