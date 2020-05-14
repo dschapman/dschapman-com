@@ -1,6 +1,6 @@
 import React from 'react'
-import Layout from '../../components/layout'
-import PostLink from '../../components/post-link'
+import Layout from '../../components/layout/layout'
+import PostLink from '../../components/posts/post-link'
 import { graphql } from 'gatsby'
 
 import { Styled, jsx } from 'theme-ui'

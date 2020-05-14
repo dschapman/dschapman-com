@@ -1,8 +1,8 @@
 import React from 'react'
 import SEO from '../../components/seo'
 
-import Layout from '../../components/layout'
-import PostList from '../../components/post-list'
+import Layout from '../../components/layout/layout'
+import PostList from '../../components/posts/post-list'
 
 export default ({ data, pageContext, location }) => (
   <Layout

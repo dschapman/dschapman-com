@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import React from 'react'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
-import Layout from '../../../components/note-layout'
+import Layout from '../../../components/notes/note-layout'
 import { Styled, jsx } from 'theme-ui'
-import components from '../../../components/note-mdx-components.js'
+import components from '../../../components/notes/note-mdx-components.js'
 import { MDXProvider } from '@mdx-js/react'
 import { Link, Router } from 'gatsby'
 import Tippy from '@tippyjs/react'

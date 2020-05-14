@@ -4,7 +4,7 @@ import { Styled, jsx } from 'theme-ui'
 import { graphql, Link } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import Layout from './layout'
+import Layout from '../layout/layout'
 
 export default function PageTemplate({ data: { mdx }, location }) {
   return (

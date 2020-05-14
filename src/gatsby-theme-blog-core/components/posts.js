@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Layout from '../../components/posts-layout'
-import PostList from '../../components/post-list'
+import Layout from '../../components/posts/posts-layout'
+import PostList from '../../components/posts/post-list'
 
 export default ({ data, location }) => (
   <Layout

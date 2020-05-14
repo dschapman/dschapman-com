@@ -1,7 +1,7 @@
 import React from 'react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import Layout from '../../components/post-layout'
+import Layout from '../../components/posts/post-layout'
 
 export default ({ data, pageContext, location }) => {
   return (

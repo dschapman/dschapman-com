@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import SEO from './seo'
+import SEO from '../seo'
 import Logo from './logo'
 import HeaderLinks from './header-links'
 import { useStaticQuery, graphql } from 'gatsby'
