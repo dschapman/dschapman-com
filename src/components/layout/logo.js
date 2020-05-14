@@ -12,6 +12,6 @@ export default () => (
     sx={{
       height: 32,
     }}>
-    <Icon icon={sproutIcon} color="#354F59" />
+    <Icon icon={sproutIcon} color="#75B9BE" />
   </Link>
 )
