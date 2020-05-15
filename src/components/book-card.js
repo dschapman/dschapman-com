@@ -15,6 +15,7 @@ const BookCard = () => {
           height: 'auto',
           verticalAlign: 'top',
           marginRight: '1rem',
+          paddingRight: '1rem',
         }}
         alt="Cover for Seasons of Thought"
       />
