@@ -40,7 +40,7 @@ export default ({
         pt: [4, 5, 6],
       }}>
       <Logo />
-      <HeaderLinks title={title} />
+      <HeaderLinks notes={false} />
       <SEO
         title={title}
         seoTitleAddition1={seoTitleAddition1}

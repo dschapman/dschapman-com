@@ -103,7 +103,7 @@ const BrainNote = ({ note, nodes, location }) => {
         title={note.title}
         seoTitleAddition1="Digital Notes"
         seoTitleAddition2="D.S. Chapman"
-        description="A digital note."
+        description={note.childMdx.excerpt}
         location={location}
         crumbLabel={note.title}>
         <MDXRenderer>{note.childMdx.body}</MDXRenderer>

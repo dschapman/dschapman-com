@@ -64,6 +64,10 @@ export default {
       fontWeight: 'body',
       textTransform: 'uppercase',
       letterSpacing: '3px',
+      '&:hover': {
+        textDecoration: 'underline',
+        textDecorationThickness: '1px',
+      },
     },
     root: {
       fontFamily: 'body',

@@ -31,9 +31,10 @@ export default ({
         alignItems: 'center',
         variant: 'styles.header',
         pt: [4, 5, 6],
+        mb: '0',
       }}>
       <Logo />
-      <HeaderLinks title={title} />
+      <HeaderLinks notes={true} />
       <SEO
         title={title}
         seoTitleAddition1={seoTitleAddition1}
