@@ -18,7 +18,19 @@ const AnchorTag = (props) => {
       </Styled.a>
     )
   } else {
-    return <Styled.a {...props}>{renderedLink}</Styled.a>
+    return (
+      <Styled.a
+        sx={{
+          textDecorationColor: '#925C77',
+          '&:hover': {
+            color: 'text',
+            textDecorationColor: '#2E0219',
+          },
+        }}
+        {...props}>
+        {renderedLink}
+      </Styled.a>
+    )
   }
 }
 

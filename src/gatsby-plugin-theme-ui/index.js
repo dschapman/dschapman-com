@@ -4,12 +4,15 @@ export default {
   colors: {
     blue: '#7297A6',
     lightblue: '#BFE4F2',
+    bluegreen: '#75B9BE',
+    darksienna: '#2E0219',
+    purple: '#925C77',
     text: '#000',
     background: '#fff',
     primary: '#272727',
     secondary: '#119',
     muted: '#f6f6f6',
-    bluegreen: '#75B9BE',
+
     gray: '#777',
     accent: '#609',
   },

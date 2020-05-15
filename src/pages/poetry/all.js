@@ -1,3 +1,4 @@
+/** @jsx jsx */
 import React from 'react'
 import Layout from '../../components/layout/layout'
 import PostLink from '../../components/posts/post-link'

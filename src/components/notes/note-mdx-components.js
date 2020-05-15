@@ -7,13 +7,17 @@ import Tippy from '@tippyjs/react'
 import 'tippy.js/dist/tippy.css'
 
 const INTERNAL_LINK_REGEX = /^\/notes/g
+const INTERNAL_NON_NOTES_LINK_REGEX = /^\/(?!notes)/g
 const AnchorTag = (props) => {
-  const isInternallLink = !isEmpty(props.href.match(INTERNAL_LINK_REGEX))
+  const isInternalNotesLink = !isEmpty(props.href.match(INTERNAL_LINK_REGEX))
+  const isInternalLink = !isEmpty(
+    props.href.match(INTERNAL_NON_NOTES_LINK_REGEX)
+  )
   let renderedLink = props.children
   if (isString(props.children)) {
     renderedLink = props.children.replace(/\[\[(.*?)\]\]/g, '$1')
   }
-  if (isInternallLink) {
+  if (isInternalNotesLink) {
     return (
       <Tippy content={`Notes on ${renderedLink}`}>
         <Styled.a
@@ -31,10 +35,28 @@ const AnchorTag = (props) => {
         </Styled.a>
       </Tippy>
     )
+  } else if (isInternalLink) {
+    return (
+      <Tippy content={`Link to ${renderedLink}`}>
+        <Styled.a as={Link} to={props.href}>
+          {renderedLink}
+        </Styled.a>
+      </Tippy>
+    )
   } else {
     return (
       <Tippy content={`Link to ${props.href}`}>
-        <Styled.a {...props}>{renderedLink}</Styled.a>
+        <Styled.a
+          sx={{
+            textDecorationColor: '#925C77',
+            '&:hover': {
+              color: 'text',
+              textDecorationColor: '#2E0219',
+            },
+          }}
+          {...props}>
+          {renderedLink}
+        </Styled.a>
       </Tippy>
     )
   }

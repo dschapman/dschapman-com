@@ -2,7 +2,7 @@
 import { Styled, jsx, colors } from 'theme-ui'
 import { Global, css } from '@emotion/core'
 import { MDXProvider } from '@mdx-js/react'
-import components from '../mdx-components'
+import components from './mdx-components'
 import Header from './header'
 
 export default ({
