@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Styled, jsx, colors } from 'theme-ui'
+import { Styled, jsx, Box } from 'theme-ui'
 import { Global, css } from '@emotion/core'
 import { MDXProvider } from '@mdx-js/react'
 import components from './mdx-components'
@@ -38,7 +38,7 @@ export default ({
     <div
       sx={{
         maxWidth: 'container',
-        px: [3, 4, 5],
+        mx: 'auto',
       }}>
       <h1
         sx={{

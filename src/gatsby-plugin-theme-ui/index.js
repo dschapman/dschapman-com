@@ -12,7 +12,6 @@ export default {
     primary: '#272727',
     secondary: '#119',
     muted: '#f6f6f6',
-
     gray: '#777',
     accent: '#609',
   },
@@ -32,7 +31,7 @@ export default {
     heading: 1.25,
   },
   sizes: {
-    container: 864,
+    container: 868,
   },
   textStyles: {
     heading: {
@@ -51,6 +50,7 @@ export default {
     header: {
       maxWidth: 'container',
       mb: [4, 5, 6],
+      mx: 'auto',
     },
     postlist: {
       listStyleType: 'none',
