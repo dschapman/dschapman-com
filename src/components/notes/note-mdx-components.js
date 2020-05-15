@@ -5,6 +5,7 @@ import { isString, isEmpty } from 'lodash'
 import { Link } from 'gatsby'
 import Tippy from '@tippyjs/react'
 import 'tippy.js/dist/tippy.css'
+import 'tippy.js/themes/light.css'
 
 const INTERNAL_LINK_REGEX = /^\/notes/g
 const INTERNAL_NON_NOTES_LINK_REGEX = /^\/(?!notes)/g
@@ -19,16 +20,18 @@ const AnchorTag = (props) => {
   }
   if (isInternalNotesLink) {
     return (
-      <Tippy content={`Notes on ${renderedLink}`}>
+      <Tippy content={`Notes on ${renderedLink}`} theme="light">
         <Styled.a
           as={Link}
           to={props.href}
           sx={{
             bg: 'lightblue',
             textDecoration: 'none',
-            '&:hover': {
+            '&:hover,&:focus': {
               color: 'text',
               bg: 'white',
+              textDecoration: 'underline',
+              textDecorationColor: 'lightblue',
             },
           }}>
           {renderedLink}
@@ -37,7 +40,7 @@ const AnchorTag = (props) => {
     )
   } else if (isInternalLink) {
     return (
-      <Tippy content={`Link to ${renderedLink}`}>
+      <Tippy content={`Link to ${renderedLink}`} theme="light">
         <Styled.a as={Link} to={props.href}>
           {renderedLink}
         </Styled.a>
@@ -45,7 +48,7 @@ const AnchorTag = (props) => {
     )
   } else {
     return (
-      <Tippy content={`Link to ${props.href}`}>
+      <Tippy content={`Link to ${props.href}`} theme="light">
         <Styled.a
           sx={{
             textDecorationColor: '#925C77',

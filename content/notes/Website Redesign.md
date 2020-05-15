@@ -4,7 +4,8 @@ title: 'Website Redesign'
 
 Redesigning my [[website]]. Goal is to make it easier to create content, and to make content a) rich and b) discoverable.
 
-- [ ] Implement [Blogchains](bear://x-callback-url/open-note?id=2D0DEC71-82A7-4349-B1CB-5BE86CC599A6-47334-000073C9A72581ED)
+- [ ] Implement [[Blogchains]]
+- [ ] Implement [gatsby-redirect-from | GatsbyJS](https://www.gatsbyjs.org/packages/gatsby-redirect-from/) so that when a note gets turned into an article you can still redirect
 - [x] Add notes section - maybe in the form of a writing desk
 - [x] Implement [[OpenGraph]] images
 - [ ] Implement Link previews with Tippy.js

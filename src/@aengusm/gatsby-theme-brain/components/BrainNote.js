@@ -7,6 +7,7 @@ import components from '../../../components/notes/note-mdx-components.js'
 import { MDXProvider } from '@mdx-js/react'
 import { Link, Router } from 'gatsby'
 import Tippy from '@tippyjs/react'
+import 'tippy.js/themes/light.css'
 import 'tippy.js/dist/tippy.css'
 
 const BrainNote = ({ note, nodes, location }) => {
@@ -24,7 +25,9 @@ const BrainNote = ({ note, nodes, location }) => {
     ) {
       relatedArticles.push(
         <Styled.li key={post.id}>
-          <Tippy content={`Link to my article "${post.frontmatter.title}"`}>
+          <Tippy
+            content={`Link to my article "${post.frontmatter.title}"`}
+            theme="light">
             <Styled.a as={Link} key={post.id} to={post.frontmatter.slug}>
               {post.frontmatter.title}
             </Styled.a>
@@ -41,7 +44,9 @@ const BrainNote = ({ note, nodes, location }) => {
     ) {
       relatedPoems.push(
         <Styled.li key={post.id}>
-          <Tippy content={`Link to my poem "${post.frontmatter.title}"`}>
+          <Tippy
+            content={`Link to my poem "${post.frontmatter.title}"`}
+            theme="light">
             <Styled.a as={Link} key={post.id} to={post.frontmatter.slug}>
               {post.frontmatter.title}
             </Styled.a>
@@ -53,16 +58,18 @@ const BrainNote = ({ note, nodes, location }) => {
   if (note.inboundReferenceNotes != null) {
     references = note.inboundReferenceNotes.map((ref) => (
       <Styled.li key={ref.id}>
-        <Tippy content={`Notes on ${ref.title}`}>
+        <Tippy content={`Notes on ${ref.title}`} theme="light">
           <Styled.a
             as={Link}
             to={`/notes/${ref.slug}`}
             sx={{
               bg: 'lightblue',
               textDecoration: 'none',
-              '&:hover': {
+              '&:hover,&:focus': {
                 color: 'text',
                 bg: 'white',
+                textDecoration: 'underline',
+                textDecorationColor: 'lightblue',
               },
             }}>
             {ref.title}

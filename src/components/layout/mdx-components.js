@@ -23,9 +23,11 @@ const AnchorTag = (props) => {
         sx={{
           bg: 'lightblue',
           textDecoration: 'none',
-          '&:hover': {
+          '&:hover,&:focus': {
             color: 'text',
             bg: 'white',
+            textDecoration: 'underline',
+            textDecorationColor: 'lightblue',
           },
         }}>
         {renderedLink}
