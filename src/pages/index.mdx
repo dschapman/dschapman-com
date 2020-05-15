@@ -1,4 +1,5 @@
 import Layout from '../components/layout/layout'
+import Tooltip from '../components/tooltip'
 export default (props, { location }) => (
   <Layout
     seoTitle="Website and Digital Home"
@@ -13,12 +14,12 @@ export default (props, { location }) => (
 
 Welcome to my online home. Here's where you can find the latest information about me, my poetry, and what I'm working on and thinking about.
 
+This space is designed to be a [digital garden](/notes/digital-garden). The goal is to combine <Tooltip tiptext="Delineated by these blue highlights">[notes](/notes)</Tooltip> and more <Tooltip tiptext={<span>Like my <a href="/articles">Articles</a> or <a href="/poetry">Poetry</a></span>}>finished pieces</Tooltip> into an organic space that grows as I work and tend it.
+
 ---
 
 - [About Me](/about)
-- [Articles](/articles)
-- [I wrote a book of poetry](/poetry/seasons-of-thought)
-- [Notes](/notes)
+- [My book of poetry](/poetry/seasons-of-thought)
 
 ## Follow Me on Social Media
 

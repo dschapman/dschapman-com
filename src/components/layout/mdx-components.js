@@ -6,12 +6,32 @@ import { Link } from 'gatsby'
 import Tippy from '@tippyjs/react'
 import 'tippy.js/dist/tippy.css'
 
-const INTERNAL_LINK_REGEX = /^\//g
+const INTERNAL_LINK_REGEX = /^\/notes/g
+const INTERNAL_NON_NOTES_LINK_REGEX = /^\/(?!notes)/g
 const AnchorTag = (props) => {
-  const isInternallLink = !isEmpty(props.href.match(INTERNAL_LINK_REGEX))
+  const isInternalNotesLink = !isEmpty(props.href.match(INTERNAL_LINK_REGEX))
+  const isInternalLink = !isEmpty(
+    props.href.match(INTERNAL_NON_NOTES_LINK_REGEX)
+  )
   let renderedLink = props.children
 
-  if (isInternallLink) {
+  if (isInternalNotesLink) {
+    return (
+      <Styled.a
+        as={Link}
+        to={props.href}
+        sx={{
+          bg: 'lightblue',
+          textDecoration: 'none',
+          '&:hover': {
+            color: 'text',
+            bg: 'white',
+          },
+        }}>
+        {renderedLink}
+      </Styled.a>
+    )
+  } else if (isInternalLink) {
     return (
       <Styled.a as={Link} to={props.href}>
         {renderedLink}

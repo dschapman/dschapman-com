@@ -44,6 +44,7 @@ export default ({
         sx={{
           maxWidth: 'container',
           mx: 'auto',
+          px: [3, 2, 0],
         }}>
         <div
           sx={{

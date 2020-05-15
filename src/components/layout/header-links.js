@@ -16,7 +16,7 @@ export default ({ notes }) => {
   `)
   if (notes) {
     return (
-      <nav sx={{ display: 'flex', width: 'container' }}>
+      <nav sx={{ display: 'flex', maxWidth: 'container' }}>
         <Link to="/" sx={{ variant: 'styles.navlink', p: 2, paddingRight: 3 }}>
           {siteMetadata.title}
         </Link>
@@ -24,7 +24,7 @@ export default ({ notes }) => {
     )
   } else {
     return (
-      <nav sx={{ display: 'flex', width: 'container' }}>
+      <nav sx={{ display: 'flex', maxWidth: 'container' }}>
         <Link to="/" sx={{ variant: 'styles.navlink', p: 2, paddingRight: 3 }}>
           {siteMetadata.title}
         </Link>

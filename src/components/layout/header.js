@@ -38,6 +38,7 @@ export default ({
         alignItems: 'center',
         variant: 'styles.header',
         pt: [4, 5, 6],
+        px: [3, 2, 0],
       }}>
       <Logo />
       <HeaderLinks notes={false} />
