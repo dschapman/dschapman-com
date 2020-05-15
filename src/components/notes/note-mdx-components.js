@@ -3,9 +3,7 @@ import React from 'react'
 import { Styled, jsx } from 'theme-ui'
 import { isString, isEmpty } from 'lodash'
 import { Link } from 'gatsby'
-import Tippy from '@tippyjs/react'
-import 'tippy.js/dist/tippy.css'
-import 'tippy.js/themes/light.css'
+import Tooltip from '../tooltip'
 
 const INTERNAL_LINK_REGEX = /^\/notes/g
 const INTERNAL_NON_NOTES_LINK_REGEX = /^\/(?!notes)/g
@@ -20,7 +18,7 @@ const AnchorTag = (props) => {
   }
   if (isInternalNotesLink) {
     return (
-      <Tippy content={`Notes on ${renderedLink}`} theme="light">
+      <Tooltip tiptext={`Notes on ${renderedLink}`}>
         <Styled.a
           as={Link}
           to={props.href}
@@ -36,19 +34,19 @@ const AnchorTag = (props) => {
           }}>
           {renderedLink}
         </Styled.a>
-      </Tippy>
+      </Tooltip>
     )
   } else if (isInternalLink) {
     return (
-      <Tippy content={`Link to ${renderedLink}`} theme="light">
+      <Tooltip tiptext={`Link to ${renderedLink}`}>
         <Styled.a as={Link} to={props.href}>
           {renderedLink}
         </Styled.a>
-      </Tippy>
+      </Tooltip>
     )
   } else {
     return (
-      <Tippy content={`Link to ${props.href}`} theme="light">
+      <Tooltip tiptext={`Link to ${props.href}`}>
         <Styled.a
           sx={{
             textDecorationColor: '#925C77',
@@ -60,7 +58,7 @@ const AnchorTag = (props) => {
           {...props}>
           {renderedLink}
         </Styled.a>
-      </Tippy>
+      </Tooltip>
     )
   }
 }

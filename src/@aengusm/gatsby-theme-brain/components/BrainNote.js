@@ -6,9 +6,7 @@ import { Styled, jsx } from 'theme-ui'
 import components from '../../../components/notes/note-mdx-components.js'
 import { MDXProvider } from '@mdx-js/react'
 import { Link, Router } from 'gatsby'
-import Tippy from '@tippyjs/react'
-import 'tippy.js/themes/light.css'
-import 'tippy.js/dist/tippy.css'
+import Tooltip from '../../../components/tooltip'
 
 const BrainNote = ({ note, nodes, location }) => {
   let references = []
@@ -25,13 +23,11 @@ const BrainNote = ({ note, nodes, location }) => {
     ) {
       relatedArticles.push(
         <Styled.li key={post.id}>
-          <Tippy
-            content={`Link to my article "${post.frontmatter.title}"`}
-            theme="light">
+          <Tooltip tiptext={`Link to my article "${post.frontmatter.title}"`}>
             <Styled.a as={Link} key={post.id} to={post.frontmatter.slug}>
               {post.frontmatter.title}
             </Styled.a>
-          </Tippy>
+          </Tooltip>
         </Styled.li>
       )
     }
@@ -44,13 +40,11 @@ const BrainNote = ({ note, nodes, location }) => {
     ) {
       relatedPoems.push(
         <Styled.li key={post.id}>
-          <Tippy
-            content={`Link to my poem "${post.frontmatter.title}"`}
-            theme="light">
+          <Tooltip tiptext={`Link to my poem "${post.frontmatter.title}"`}>
             <Styled.a as={Link} key={post.id} to={post.frontmatter.slug}>
               {post.frontmatter.title}
             </Styled.a>
-          </Tippy>
+          </Tooltip>
         </Styled.li>
       )
     }
@@ -58,7 +52,7 @@ const BrainNote = ({ note, nodes, location }) => {
   if (note.inboundReferenceNotes != null) {
     references = note.inboundReferenceNotes.map((ref) => (
       <Styled.li key={ref.id}>
-        <Tippy content={`Notes on ${ref.title}`} theme="light">
+        <Tooltip tiptext={`Notes on ${ref.title}`}>
           <Styled.a
             as={Link}
             to={`/notes/${ref.slug}`}
@@ -74,7 +68,7 @@ const BrainNote = ({ note, nodes, location }) => {
             }}>
             {ref.title}
           </Styled.a>
-        </Tippy>
+        </Tooltip>
       </Styled.li>
     ))
   }
