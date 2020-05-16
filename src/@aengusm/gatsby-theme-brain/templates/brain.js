@@ -33,7 +33,7 @@ export const query = graphql`
         title
         slug
         childMdx {
-          excerpt
+          body
         }
       }
     }

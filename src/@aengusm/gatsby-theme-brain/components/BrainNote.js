@@ -3,7 +3,8 @@ import React from 'react'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import Layout from '../../../components/notes/note-layout'
 import { Styled, jsx, Theme } from 'theme-ui'
-import components from '../../../components/notes/note-mdx-components.js'
+import noteComponents from '../../../components/notes/note-mdx-components.js'
+import regularComponents from '../../../components/layout/mdx-components'
 import { MDXProvider } from '@mdx-js/react'
 import { Link, Router } from 'gatsby'
 import Tooltip from '../../../components/tooltip'
@@ -54,7 +55,7 @@ const BrainNote = ({ note, nodes, location }) => {
       <Styled.li key={ref.id}>
         <Tooltip
           tiptext={
-            <MDXRenderer components={components}>
+            <MDXRenderer components={regularComponents}>
               {ref.childMdx.body}
             </MDXRenderer>
           }>
@@ -103,8 +104,21 @@ const BrainNote = ({ note, nodes, location }) => {
     )
   }
 
+  const popups = {}
+  if (note.outboundReferenceNotes) {
+    note.outboundReferenceNotes
+      .filter((reference) => !!reference.childMdx.body)
+      .forEach((ln, i) => {
+        popups[ln.slug] = {
+          title: ln.title,
+          body: ln.childMdx.body,
+        }
+      })
+  }
+  const AnchorTag = (props) => <noteComponents.a {...props} popups={popups} />
+
   return (
-    <MDXProvider components={components}>
+    <MDXProvider components={{ a: AnchorTag }}>
       <Layout
         title={note.title}
         seoTitleAddition1="Digital Notes"

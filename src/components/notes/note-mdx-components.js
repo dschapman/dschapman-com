@@ -4,49 +4,77 @@ import { Styled, jsx } from 'theme-ui'
 import { isString, isEmpty } from 'lodash'
 import { Link } from 'gatsby'
 import Tooltip from '../tooltip'
+import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
+import components from '../layout/mdx-components'
 
 const INTERNAL_LINK_REGEX = /^\/notes/g
 const INTERNAL_NON_NOTES_LINK_REGEX = /^\/(?!notes)/g
-const AnchorTag = (props) => {
-  const isInternalNotesLink = !isEmpty(props.href.match(INTERNAL_LINK_REGEX))
-  const isInternalLink = !isEmpty(
-    props.href.match(INTERNAL_NON_NOTES_LINK_REGEX)
-  )
-  let renderedLink = props.children
-  if (isString(props.children)) {
-    renderedLink = props.children.replace(/\[\[(.*?)\]\]/g, '$1')
+const AnchorTag = ({ href, popups = {}, ...restProps }) => {
+  const isInternalNotesLink = !isEmpty(href.match(INTERNAL_LINK_REGEX))
+  const isInternalLink = !isEmpty(href.match(INTERNAL_NON_NOTES_LINK_REGEX))
+  let renderedLink = restProps.children
+  if (isString(restProps.children)) {
+    renderedLink = restProps.children.replace(/\[\[(.*?)\]\]/g, '$1')
   }
+
   if (isInternalNotesLink) {
-    return (
-      <Tooltip tiptext={`Notes on ${renderedLink}`}>
-        <Styled.a
-          as={Link}
-          to={props.href}
-          sx={{
-            bg: 'lightblue',
-            textDecoration: 'none',
-            '&:hover,&:focus': {
-              color: 'text',
-              bg: 'white',
-              textDecoration: 'underline',
-              textDecorationColor: 'lightblue',
-            },
-          }}>
-          {renderedLink}
-        </Styled.a>
-      </Tooltip>
-    )
+    if (isEmpty(popups[href.replace(/^\/notes\//, '')])) {
+      return (
+        <Tooltip tiptext={`Link to note on ${renderedLink}`}>
+          <Styled.a
+            as={Link}
+            to={href}
+            sx={{
+              bg: 'lightblue',
+              textDecoration: 'none',
+              '&:hover,&:focus': {
+                color: 'text',
+                bg: 'white',
+                textDecoration: 'underline',
+                textDecorationColor: 'lightblue',
+              },
+            }}>
+            {renderedLink}
+          </Styled.a>
+        </Tooltip>
+      )
+    } else {
+      return (
+        <Tooltip
+          tiptext={
+            <MDXRenderer>
+              {popups[href.replace(/^\/notes\//, '')].body}
+            </MDXRenderer>
+          }>
+          <Styled.a
+            as={Link}
+            to={href}
+            sx={{
+              bg: 'lightblue',
+              textDecoration: 'none',
+              '&:hover,&:focus': {
+                color: 'text',
+                bg: 'white',
+                textDecoration: 'underline',
+                textDecorationColor: 'lightblue',
+              },
+            }}>
+            {renderedLink}
+          </Styled.a>
+        </Tooltip>
+      )
+    }
   } else if (isInternalLink) {
     return (
       <Tooltip tiptext={`Link to ${renderedLink}`}>
-        <Styled.a as={Link} to={props.href}>
+        <Styled.a as={Link} to={href}>
           {renderedLink}
         </Styled.a>
       </Tooltip>
     )
   } else {
     return (
-      <Tooltip tiptext={`Link to ${props.href}`}>
+      <Tooltip tiptext={`Link to ${href}`}>
         <Styled.a
           sx={{
             textDecorationColor: '#925C77',
@@ -55,7 +83,7 @@ const AnchorTag = (props) => {
               textDecorationColor: '#2E0219',
             },
           }}
-          {...props}>
+          {...restProps}>
           {renderedLink}
         </Styled.a>
       </Tooltip>
