@@ -107,7 +107,7 @@ const BrainNote = ({ note, nodes, location }) => {
   const popups = {}
   if (note.outboundReferenceNotes) {
     note.outboundReferenceNotes
-      .filter((reference) => !!reference.childMdx.body)
+      .filter((reference) => !!reference.childMdx.excerpt)
       .forEach((ln, i) => {
         popups[ln.slug] = {
           title: ln.title,
