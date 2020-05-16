@@ -49,19 +49,19 @@ const BrainNote = ({ note, nodes, location }) => {
       )
     }
   })
-  if (note.inboundReferencePreviews != null) {
-    console.log(note.inboundReferencePreviews)
-    references = note.inboundReferencePreviews.map((ref) => (
-      <Styled.li key={ref.source}>
+  if (note.inboundReferenceNotes != null) {
+    console.log(note.inboundReferenceNotes)
+    references = note.inboundReferenceNotes.map((ref) => (
+      <Styled.li key={ref.id}>
         <Tooltip
           tiptext={
-            <MDXProvider components={components}>
-              {ref.previewMarkdown}
-            </MDXProvider>
+            <MDXRenderer components={components}>
+              {ref.childMdx.body}
+            </MDXRenderer>
           }>
           <Styled.a
             as={Link}
-            to={`/notes/${ref.source}`}
+            to={`/notes/${ref.slug}`}
             sx={{
               bg: 'lightblue',
               textDecoration: 'none',
@@ -72,7 +72,7 @@ const BrainNote = ({ note, nodes, location }) => {
                 textDecorationColor: 'lightblue',
               },
             }}>
-            {ref.source}
+            {ref.title}
           </Styled.a>
         </Tooltip>
       </Styled.li>
