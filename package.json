@@ -1,8 +1,8 @@
 {
   "private": true,
-  "name": "basic-with-config",
-  "version": "0.0.2",
-  "author": "John Otander",
+  "name": "dschapman-website",
+  "version": "0.0.5",
+  "author": "D.S. Chapman",
   "license": "MIT",
   "scripts": {
     "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
@@ -14,7 +14,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@aengusm/gatsby-theme-brain": "1.0.5",
+    "@aengusm/gatsby-theme-brain": "1.0.9",
     "@emotion/core": "^10.0.28",
     "@mdx-js/mdx": "^1.5.8",
     "@mdx-js/react": "^1.5.8",
