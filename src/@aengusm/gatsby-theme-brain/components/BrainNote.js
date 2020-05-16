@@ -50,7 +50,6 @@ const BrainNote = ({ note, nodes, location }) => {
     }
   })
   if (note.inboundReferenceNotes != null) {
-    console.log(note.inboundReferenceNotes)
     references = note.inboundReferenceNotes.map((ref) => (
       <Styled.li key={ref.id}>
         <Tooltip
