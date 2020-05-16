@@ -1,8 +1,8 @@
 {
   "private": true,
-  "name": "basic-with-config",
-  "version": "0.0.2",
-  "author": "John Otander",
+  "name": "dschapman-website",
+  "version": "0.0.5",
+  "author": "D.S. Chapman",
   "license": "MIT",
   "scripts": {
     "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
