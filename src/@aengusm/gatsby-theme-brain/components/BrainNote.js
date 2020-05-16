@@ -2,7 +2,7 @@
 import React from 'react'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import Layout from '../../../components/notes/note-layout'
-import { Styled, jsx } from 'theme-ui'
+import { Styled, jsx, Theme } from 'theme-ui'
 import components from '../../../components/notes/note-mdx-components.js'
 import { MDXProvider } from '@mdx-js/react'
 import { Link, Router } from 'gatsby'
@@ -49,13 +49,19 @@ const BrainNote = ({ note, nodes, location }) => {
       )
     }
   })
-  if (note.inboundReferenceNotes != null) {
-    references = note.inboundReferenceNotes.map((ref) => (
-      <Styled.li key={ref.id}>
-        <Tooltip tiptext={`Notes on ${ref.title}`}>
+  if (note.inboundReferencePreviews != null) {
+    console.log(note.inboundReferencePreviews)
+    references = note.inboundReferencePreviews.map((ref) => (
+      <Styled.li key={ref.source}>
+        <Tooltip
+          tiptext={
+            <MDXProvider components={components}>
+              {ref.previewMarkdown}
+            </MDXProvider>
+          }>
           <Styled.a
             as={Link}
-            to={`/notes/${ref.slug}`}
+            to={`/notes/${ref.source}`}
             sx={{
               bg: 'lightblue',
               textDecoration: 'none',
@@ -66,7 +72,7 @@ const BrainNote = ({ note, nodes, location }) => {
                 textDecorationColor: 'lightblue',
               },
             }}>
-            {ref.title}
+            {ref.source}
           </Styled.a>
         </Tooltip>
       </Styled.li>

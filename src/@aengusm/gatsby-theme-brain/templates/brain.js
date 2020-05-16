@@ -17,6 +17,10 @@ export const query = graphql`
     brainNote(slug: { eq: $slug }) {
       slug
       title
+      inboundReferencePreviews {
+        previewMarkdown
+        source
+      }
       inboundReferenceNotes {
         id
         title
