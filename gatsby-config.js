@@ -96,6 +96,7 @@ module.exports = {
             lower: true,
           })
         },
+        hideDoubleBrackets: true,
       },
     },
     'gatsby-plugin-twitter',
