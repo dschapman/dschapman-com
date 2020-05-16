@@ -16,6 +16,7 @@ const Tooltip = forwardRef((props, ref) => {
       interactive={true}
       animation="shift-away"
       content={props.tiptext}
+      maxWidth={868}
       sx={{
         padding: '0.2em',
         fontSize: '0.75em',
