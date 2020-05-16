@@ -63,7 +63,7 @@ export default {
       textDecoration: 'none',
       fontWeight: 'body',
       textTransform: 'uppercase',
-      letterSpacing: '3px',
+      letterSpacing: ['1px', '3px', '3px'],
       '&:hover': {
         textDecoration: 'underline',
         textDecorationThickness: '1px',
