@@ -58,7 +58,8 @@ const BrainNote = ({ note, nodes, location }) => {
             <MDXRenderer components={regularComponents}>
               {ref.childMdx.body}
             </MDXRenderer>
-          }>
+          }
+          placement="right">
           <Styled.a
             as={Link}
             to={`/notes/${ref.slug}`}
@@ -118,20 +119,20 @@ const BrainNote = ({ note, nodes, location }) => {
   const AnchorTag = (props) => <noteComponents.a {...props} popups={popups} />
 
   return (
-    <MDXProvider components={{ a: AnchorTag }}>
-      <Layout
-        title={note.title}
-        seoTitleAddition1="Digital Notes"
-        seoTitleAddition2="D.S. Chapman"
-        description={note.childMdx.excerpt}
-        location={location}
-        crumbLabel={note.title}>
+    <Layout
+      title={note.title}
+      seoTitleAddition1="Digital Notes"
+      seoTitleAddition2="D.S. Chapman"
+      description={note.childMdx.excerpt}
+      location={location}
+      crumbLabel={note.title}>
+      <MDXProvider components={{ a: AnchorTag }}>
         <MDXRenderer>{note.childMdx.body}</MDXRenderer>
-        {referenceBlock}
-        {relatedArticlesBlock}
-        {relatedPoemsBlock}
-      </Layout>
-    </MDXProvider>
+      </MDXProvider>
+      {referenceBlock}
+      {relatedArticlesBlock}
+      {relatedPoemsBlock}
+    </Layout>
   )
 }
 

@@ -50,7 +50,6 @@ export default {
     header: {
       maxWidth: 'container',
       mb: [4, 5, 6],
-      mx: 'auto',
     },
     postlist: {
       listStyleType: 'none',

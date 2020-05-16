@@ -7,6 +7,18 @@ import 'tippy.js/animations/shift-away.css'
 import 'tippy.js/themes/light.css'
 
 const Tooltip = forwardRef((props, ref) => {
+  let placement
+  let multiple
+  if (props.placement) {
+    placement = props.placement
+  } else {
+    placement = 'top'
+  }
+  if (props.multiple) {
+    multiple = props.multiple
+  } else {
+    multiple = true
+  }
   return (
     <Tippy
       duration="500"
@@ -17,6 +29,8 @@ const Tooltip = forwardRef((props, ref) => {
       animation="shift-away"
       content={props.tiptext}
       maxWidth={868}
+      placement={placement}
+      multiple={multiple}
       sx={{
         padding: '0.2em',
         fontSize: '0.75em',

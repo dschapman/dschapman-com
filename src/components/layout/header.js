@@ -39,6 +39,7 @@ export default ({
         variant: 'styles.header',
         pt: [4, 5, 6],
         px: [3, 2, 0],
+        mx: 'auto',
       }}>
       <Logo />
       <HeaderLinks notes={false} />

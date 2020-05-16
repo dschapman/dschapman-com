@@ -6,6 +6,7 @@ import { Link } from 'gatsby'
 import Tooltip from '../tooltip'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import components from '../layout/mdx-components'
+import { MDXProvider } from '@mdx-js/react'
 
 const INTERNAL_LINK_REGEX = /^\/notes/g
 const INTERNAL_NON_NOTES_LINK_REGEX = /^\/(?!notes)/g
@@ -42,10 +43,14 @@ const AnchorTag = ({ href, popups = {}, ...restProps }) => {
       return (
         <Tooltip
           tiptext={
-            <MDXRenderer>
-              {popups[href.replace(/^\/notes\//, '')].body}
-            </MDXRenderer>
-          }>
+            <MDXProvider components={components}>
+              <MDXRenderer>
+                {popups[href.replace(/^\/notes\//, '')].body}
+              </MDXRenderer>
+            </MDXProvider>
+          }
+          placement="right"
+          multiple={false}>
           <Styled.a
             as={Link}
             to={href}
