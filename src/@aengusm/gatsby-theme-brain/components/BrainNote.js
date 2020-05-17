@@ -83,7 +83,7 @@ const BrainNote = ({ note, nodes, location }) => {
   if (references.length > 0) {
     referenceBlock = (
       <>
-        <Styled.h2>Linked References</Styled.h2>
+        <Styled.h2>Referenced in</Styled.h2>
         <Styled.ul>{references}</Styled.ul>
       </>
     )
