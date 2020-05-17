@@ -82,6 +82,24 @@ module.exports = {
         path: `${__dirname}/src/pages/`,
       },
     },
+
+    'gatsby-plugin-sitemap',
+    {
+      resolve: `gatsby-plugin-breadcrumb`,
+      options: {
+        defaultCrumb: {
+          // location: required and must include the pathname property
+          location: {
+            pathname: '/notes',
+          },
+          // crumbLabel: required label for the default crumb
+          crumbLabel: 'Notes',
+          // all other properties optional
+          crumbSeparator: ' / ',
+        },
+      },
+    },
+    'gatsby-plugin-twitter',
     {
       resolve: '@aengusm/gatsby-theme-brain',
       options: {
@@ -98,23 +116,6 @@ module.exports = {
           })
         },
         hideDoubleBrackets: true,
-      },
-    },
-    'gatsby-plugin-twitter',
-    'gatsby-plugin-sitemap',
-    {
-      resolve: `gatsby-plugin-breadcrumb`,
-      options: {
-        defaultCrumb: {
-          // location: required and must include the pathname property
-          location: {
-            pathname: '/notes',
-          },
-          // crumbLabel: required label for the default crumb
-          crumbLabel: 'Notes',
-          // all other properties optional
-          crumbSeparator: ' / ',
-        },
       },
     },
   ],
