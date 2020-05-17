@@ -55,9 +55,9 @@ const BrainNote = ({ note, nodes, location }) => {
       <Styled.li key={ref.id}>
         <Tooltip
           tiptext={
-            <MDXRenderer components={regularComponents}>
-              {ref.childMdx.body}
-            </MDXRenderer>
+            <MDXProvider components={regularComponents}>
+              <MDXRenderer>{ref.childMdx.body}</MDXRenderer>
+            </MDXProvider>
           }
           placement="right">
           <Styled.a
