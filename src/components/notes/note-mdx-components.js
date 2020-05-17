@@ -21,7 +21,7 @@ const AnchorTag = ({ href, popups = {}, ...restProps }) => {
   if (isInternalNotesLink) {
     if (isEmpty(popups[href.replace(/^\/notes\//, '')])) {
       return (
-        <Tooltip tiptext={`Link to note on ${renderedLink}`}>
+        <Tooltip tiptext={`Link to note on ${renderedLink}`} link={true}>
           <Styled.a
             as={Link}
             to={href}
@@ -42,6 +42,7 @@ const AnchorTag = ({ href, popups = {}, ...restProps }) => {
     } else {
       return (
         <Tooltip
+          link={true}
           tiptext={
             <MDXProvider components={components}>
               <MDXRenderer>
@@ -71,7 +72,7 @@ const AnchorTag = ({ href, popups = {}, ...restProps }) => {
     }
   } else if (isInternalLink) {
     return (
-      <Tooltip tiptext={`Link to ${renderedLink}`}>
+      <Tooltip link={true} tiptext={`Link to ${renderedLink}`}>
         <Styled.a as={Link} to={href}>
           {renderedLink}
         </Styled.a>
@@ -79,9 +80,10 @@ const AnchorTag = ({ href, popups = {}, ...restProps }) => {
     )
   } else {
     return (
-      <Tooltip tiptext={`Link to ${href}`}>
+      <Tooltip link={true} tiptext={`Link to ${href}`}>
         <Styled.a
           sx={{
+            textDecoration: 'underline',
             textDecorationColor: '#925C77',
             '&:hover': {
               color: 'text',
