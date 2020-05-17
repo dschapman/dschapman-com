@@ -90,6 +90,7 @@ const AnchorTag = ({ href, popups = {}, ...restProps }) => {
               textDecorationColor: '#2E0219',
             },
           }}
+          href={href}
           {...restProps}>
           {renderedLink}
         </Styled.a>

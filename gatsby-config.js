@@ -99,7 +99,6 @@ module.exports = {
         },
       },
     },
-    'gatsby-plugin-twitter',
     {
       resolve: '@aengusm/gatsby-theme-brain',
       options: {
@@ -118,5 +117,6 @@ module.exports = {
         hideDoubleBrackets: true,
       },
     },
+    'gatsby-plugin-twitter',
   ],
 }
