@@ -89,6 +89,7 @@ module.exports = {
         rootPath: 'notes',
         rootNote: 'notes',
         mdxOtherwiseConfigured: true,
+        noteTemplate: `${__dirname}/src/@aengusm/gatsby-theme-brain/templates/brain`,
         generateSlug: (filename) => {
           const filenameWithExtension = path.parse(filename).name
 
