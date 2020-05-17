@@ -1,4 +1,6 @@
-# Learning in Public
+---
+title: 'Learning in Public'
+---
 
 Learning in Public is an interesting idea that I first heard on tech twitter with people talking about learning in public and conversations with [[Zac Jones]] about his work facilitating learning by design at [[egghead]].
 

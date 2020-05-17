@@ -1,4 +1,6 @@
-# Ian Jones
+---
+title: 'Ian Jones'
+---
 
 Works at [[egghead]]
 

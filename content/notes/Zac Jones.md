@@ -1,4 +1,6 @@
-# Zac Jones
+---
+title: 'Zac Jones'
+---
 
 Works at [[egghead]]
 
