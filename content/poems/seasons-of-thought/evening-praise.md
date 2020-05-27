@@ -10,7 +10,7 @@ Night skies, bright moon,
 stars that pierce the soul.  
 pricking a tear at each puncture—  
 sweet as well-spent sweat.  
-<span style="padding: 0 1em"/>For I forgot how good it is.  
-<span style="padding: 0 1em"/>to praise the Lord.
+ &emsp; For I forgot how good it is.  
+ &emsp; to praise the Lord.
 
 _Part of the Book [Seasons of Thought](/poetry/seasons-of-thought)_
