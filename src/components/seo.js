@@ -36,7 +36,7 @@ export default ({
   const author = 'D.S. Chapman'
 
   const url = `${siteUrl}${location.pathname}`
-  const ogImage = `https://quizzical-liskov-0bc7e1.netlify.app/opengraph?title=${pageTitle}&author=${author}&type=${type}&v=0.1.0`
+  const ogImage = `https://quizzical-liskov-0bc7e1.netlify.app/opengraph?title=${pageTitle}&author=${author}&type=${type}&v=0.1.1`
   return (
     <Helmet>
       <title>{seoTitle}</title>
