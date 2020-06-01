@@ -160,5 +160,10 @@ export default {
       borderBottom: '1px solid',
       borderColor: 'muted',
     },
+    blockquote: {
+      borderLeft: '10px solid #75b9be',
+      margin: '1.5em 10px',
+      padding: '0 20px',
+    },
   },
 }
