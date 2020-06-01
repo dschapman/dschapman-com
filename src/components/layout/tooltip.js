@@ -39,11 +39,10 @@ const Tooltip = forwardRef((props, ref) => {
         sx={{
           display: 'inline-block',
           color: '#75B9BE',
-          borderRadius: '4px',
           lineHeight: '1em',
           transition: 'all 0.5s',
           '&:hover, &:focus': {
-            textDecoration: 'underline',
+            color: 'text',
           },
         }}>
         <span ref={ref}>{props.children}</span>

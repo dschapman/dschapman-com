@@ -7,7 +7,7 @@ import noteComponents from '../../../components/notes/note-mdx-components.js'
 import regularComponents from '../../../components/layout/mdx-components'
 import { MDXProvider } from '@mdx-js/react'
 import { Link, Router } from 'gatsby'
-import Tooltip from '../../../components/tooltip'
+import Linktip from '../../../components/layout/linktip'
 
 const BrainNote = ({ note, nodes, location }) => {
   let references = []
@@ -24,11 +24,11 @@ const BrainNote = ({ note, nodes, location }) => {
     ) {
       relatedArticles.push(
         <Styled.li key={post.id}>
-          <Tooltip tiptext={`Link to my article "${post.frontmatter.title}"`}>
+          <Linktip tiptext={`Link to my article "${post.frontmatter.title}"`}>
             <Styled.a as={Link} key={post.id} to={post.frontmatter.slug}>
               {post.frontmatter.title}
             </Styled.a>
-          </Tooltip>
+          </Linktip>
         </Styled.li>
       )
     }
@@ -41,11 +41,11 @@ const BrainNote = ({ note, nodes, location }) => {
     ) {
       relatedPoems.push(
         <Styled.li key={post.id}>
-          <Tooltip tiptext={`Link to my poem "${post.frontmatter.title}"`}>
+          <Linktip tiptext={`Link to my poem "${post.frontmatter.title}"`}>
             <Styled.a as={Link} key={post.id} to={post.frontmatter.slug}>
               {post.frontmatter.title}
             </Styled.a>
-          </Tooltip>
+          </Linktip>
         </Styled.li>
       )
     }
@@ -53,7 +53,7 @@ const BrainNote = ({ note, nodes, location }) => {
   if (note.inboundReferenceNotes != null) {
     references = note.inboundReferenceNotes.map((ref) => (
       <Styled.li key={ref.id}>
-        <Tooltip
+        <Linktip
           tiptext={
             <MDXProvider components={regularComponents}>
               <MDXRenderer>{ref.childMdx.body}</MDXRenderer>
@@ -75,7 +75,7 @@ const BrainNote = ({ note, nodes, location }) => {
             }}>
             {ref.title}
           </Styled.a>
-        </Tooltip>
+        </Linktip>
       </Styled.li>
     ))
   }

@@ -3,7 +3,7 @@ import React from 'react'
 import { Styled, jsx } from 'theme-ui'
 import { isString, isEmpty } from 'lodash'
 import { Link } from 'gatsby'
-import Tooltip from '../tooltip'
+import Linktip from '../layout/linktip'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import components from '../layout/mdx-components'
 import { MDXProvider } from '@mdx-js/react'
@@ -21,7 +21,7 @@ const AnchorTag = ({ href, popups = {}, ...restProps }) => {
   if (isInternalNotesLink) {
     if (isEmpty(popups[href.replace(/^\/notes\//, '')])) {
       return (
-        <Tooltip tiptext={`Link to note on ${renderedLink}`} link={true}>
+        <Linktip tiptext={`Link to note on ${renderedLink}`} link={true}>
           <Styled.a
             as={Link}
             to={href}
@@ -37,11 +37,11 @@ const AnchorTag = ({ href, popups = {}, ...restProps }) => {
             }}>
             {renderedLink}
           </Styled.a>
-        </Tooltip>
+        </Linktip>
       )
     } else {
       return (
-        <Tooltip
+        <Linktip
           link={true}
           tiptext={
             <MDXProvider components={components}>
@@ -67,20 +67,20 @@ const AnchorTag = ({ href, popups = {}, ...restProps }) => {
             }}>
             {renderedLink}
           </Styled.a>
-        </Tooltip>
+        </Linktip>
       )
     }
   } else if (isInternalLink) {
     return (
-      <Tooltip link={true} tiptext={`Link to ${renderedLink}`}>
+      <Linktip link={true} tiptext={`Link to ${renderedLink}`}>
         <Styled.a as={Link} to={href}>
           {renderedLink}
         </Styled.a>
-      </Tooltip>
+      </Linktip>
     )
   } else {
     return (
-      <Tooltip link={true} tiptext={`Link to ${href}`}>
+      <Linktip link={true} tiptext={`Link to ${href}`}>
         <Styled.a
           sx={{
             textDecoration: 'underline',
@@ -94,7 +94,7 @@ const AnchorTag = ({ href, popups = {}, ...restProps }) => {
           {...restProps}>
           {renderedLink}
         </Styled.a>
-      </Tooltip>
+      </Linktip>
     )
   }
 }

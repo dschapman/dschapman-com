@@ -3,8 +3,10 @@ import React from 'react'
 import { Styled, jsx } from 'theme-ui'
 import { isString, isEmpty } from 'lodash'
 import { Link } from 'gatsby'
-import Tippy from '@tippyjs/react'
-import 'tippy.js/dist/tippy.css'
+import Tooltip from './tooltip'
+import Footnote from './footnote'
+import Linktip from './linktip'
+import { Callout } from './TextStyles'
 
 const INTERNAL_LINK_REGEX = /^\/notes/g
 const INTERNAL_NON_NOTES_LINK_REGEX = /^\/(?!notes)/g
@@ -58,4 +60,8 @@ const AnchorTag = (props) => {
 
 export default {
   a: AnchorTag,
+  Footnote: (props) => <Footnote {...props} />,
+  Tooltip: (props) => <Tooltip {...props} />,
+  Linktip: (props) => <Linktip {...props} />,
+  Callout: (props) => <Callout {...props} />,
 }
