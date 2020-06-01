@@ -51,6 +51,18 @@ export default {
       maxWidth: 'container',
       mb: [4, 5, 6],
     },
+    footer: {
+      background: '#75B9BE',
+      marginTop: '5',
+      left: '0',
+      bottom: '0',
+      width: '100%',
+      flexShrink: '0',
+      padding: [3, 4, 5],
+      fontFamily: 'heading',
+      fontWeight: '100',
+      fontSize: [4, 5, 6],
+    },
     postlist: {
       listStyleType: 'none',
       m: 0,
@@ -69,6 +81,8 @@ export default {
       },
     },
     root: {
+      disply: 'flex',
+      flexDirection: 'column',
       fontFamily: 'body',
       lineHeight: 'body',
       fontWeight: 'body',
@@ -76,6 +90,7 @@ export default {
       textRendering: 'optimizeLegibility',
       WebkitFontSmoothing: 'antialiased',
       mb: [4, 5, 6],
+      height: '100vh',
     },
     h1: {
       variant: 'textStyles.heading',

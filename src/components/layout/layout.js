@@ -4,6 +4,7 @@ import { Global, css } from '@emotion/core'
 import { MDXProvider } from '@mdx-js/react'
 import components from './mdx-components'
 import Header from './header'
+import Footer from './footer'
 
 export default ({
   children,
@@ -22,6 +23,7 @@ export default ({
           '::selection': {
             color: '#ffffff',
             backgroundColor: '#75B9BE',
+            height: '100%',
           },
         },
       })}
@@ -40,6 +42,7 @@ export default ({
         maxWidth: 'container',
         mx: 'auto',
         px: [3, 2, 0],
+        flex: '1 0 auto',
       }}>
       <h1
         sx={{
@@ -50,5 +53,6 @@ export default ({
       </h1>
       <MDXProvider components={components}>{children}</MDXProvider>
     </div>
+    <Footer />
   </Styled.root>
 )
