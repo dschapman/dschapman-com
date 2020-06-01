@@ -1,9 +1,9 @@
 ---
 title: "Art Doesn't Have to be Viral"
 date: '2020-05-31'
+excerpt: "The promise of the internet is one of instant fame, and if you play your cards right, fortune that can literally take you to the stars, but is that really art's purpose?"
 slug: "/articles/art-doesnt-have-to-be-viral"
 tags: ['art', 'culture care']
-excerpt: ''
 ---
 
 The promise of the internet is one of instant fame, and if you play your cards right, fortune that can literally take you to the stars<Footnote count={1}>[See the recent SpaceX launch](https://www.washingtonpost.com/technology/2020/05/30/elon-musk-spacex-pull-off-another-feat-few-thought-possible/) funded by the internet fortune of Elon Musk</Footnote>. Of course the reality is that the fame is short, fleeting, and hard to catch - the fortune even harder
