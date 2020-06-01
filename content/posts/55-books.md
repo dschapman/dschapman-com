@@ -15,6 +15,8 @@ In June I self published [my book](/poetry/seasons-of-thought/). By the end of 2
 
 I recently watched the new adaptation of Little Women. One of my favorite scenes was Jo March watching the first copies of her book being made. I have always loved the physicality of books, although I own a kindle now, when I was younger I was quite vocal about my preference for physical books, and I still prefer reading the printed word on pages I can put my finger in-between and mark with a pen.
 
+<Callout>Books are places</Callout>
+
 Books are not only physical objects; they take up space and so they are places. They are small places. A copy of my book has a volume of around 10.8 cubic inches; it takes up roughly the same amount of space as a tennis ball. But the surface area of a book is much larger.
 
 ![Jo laying out the pages of her book](../assets/little-women-pages.png)
