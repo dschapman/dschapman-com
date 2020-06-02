@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Link } from 'gatsby'
 import { Styled, jsx } from 'theme-ui'
-import Linktip from '../layout/linktip'
+import { Linktip } from '../layout/linktip'
 
 export default ({ slug, title, excerpt }) => (
   <Styled.li

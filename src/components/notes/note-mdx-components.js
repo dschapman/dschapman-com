@@ -3,7 +3,7 @@ import React from 'react'
 import { Styled, jsx } from 'theme-ui'
 import { isString, isEmpty } from 'lodash'
 import { Link } from 'gatsby'
-import Linktip from '../layout/linktip'
+import { Linktip, LinktipPreview } from '../layout/linktip'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import components from '../layout/mdx-components'
 import { MDXProvider } from '@mdx-js/react'
@@ -41,7 +41,7 @@ const AnchorTag = ({ href, popups = {}, ...restProps }) => {
       )
     } else {
       return (
-        <Linktip
+        <LinktipPreview
           link={true}
           tiptext={
             <MDXProvider components={components}>
@@ -67,7 +67,7 @@ const AnchorTag = ({ href, popups = {}, ...restProps }) => {
             }}>
             {renderedLink}
           </Styled.a>
-        </Linktip>
+        </LinktipPreview>
       )
     }
   } else if (isInternalLink) {

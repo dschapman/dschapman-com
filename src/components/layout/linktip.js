@@ -28,6 +28,49 @@ const Linktip = forwardRef((props, ref) => {
       interactive={true}
       animation="shift-away"
       content={props.tiptext}
+      placement={placement}
+      multiple={multiple}
+      sx={{
+        padding: '0.2em',
+        fontSize: '0.75em',
+      }}>
+      <div
+        sx={{
+          display: 'inline-block',
+          lineHeight: '1em',
+          transition: 'all 0.5s',
+          '&:hover, &:focus': {
+            color: 'text',
+          },
+        }}>
+        <span ref={ref}>{props.children}</span>
+      </div>
+    </Tippy>
+  )
+})
+
+const LinktipPreview = forwardRef((props, ref) => {
+  let placement
+  let multiple
+  if (props.placement) {
+    placement = props.placement
+  } else {
+    placement = 'top'
+  }
+  if (props.multiple) {
+    multiple = props.multiple
+  } else {
+    multiple = true
+  }
+  return (
+    <Tippy
+      duration="500"
+      distance="10"
+      theme="light"
+      arrow={true}
+      interactive={true}
+      animation="shift-away"
+      content={props.tiptext}
       maxWidth={868}
       placement={placement}
       multiple={multiple}
@@ -50,4 +93,4 @@ const Linktip = forwardRef((props, ref) => {
   )
 })
 
-export default Linktip
+export { Linktip, LinktipPreview }

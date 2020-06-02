@@ -7,7 +7,7 @@ import noteComponents from '../../../components/notes/note-mdx-components.js'
 import regularComponents from '../../../components/layout/mdx-components'
 import { MDXProvider } from '@mdx-js/react'
 import { Link, Router } from 'gatsby'
-import Linktip from '../../../components/layout/linktip'
+import { LinktipPreview, Linktip } from '../../../components/layout/linktip'
 
 const BrainNote = ({ note, nodes, location }) => {
   let references = []
@@ -53,7 +53,7 @@ const BrainNote = ({ note, nodes, location }) => {
   if (note.inboundReferenceNotes != null) {
     references = note.inboundReferenceNotes.map((ref) => (
       <Styled.li key={ref.id}>
-        <Linktip
+        <LinktipPreview
           tiptext={
             <MDXProvider components={regularComponents}>
               <MDXRenderer>{ref.childMdx.body}</MDXRenderer>
@@ -75,7 +75,7 @@ const BrainNote = ({ note, nodes, location }) => {
             }}>
             {ref.title}
           </Styled.a>
-        </Linktip>
+        </LinktipPreview>
       </Styled.li>
     ))
   }
