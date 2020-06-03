@@ -17,6 +17,7 @@ const BrainNote = ({ note, nodes, location }) => {
 
   let relatedArticles = []
   let relatedPoems = []
+  const popups = {}
   nodes.map((post) => {
     if (
       post.frontmatter.tags.indexOf(note.title.toLowerCase()) > -1 &&
@@ -27,6 +28,7 @@ const BrainNote = ({ note, nodes, location }) => {
           <LinktipPreview
             tiptext={
               <MDXProvider components={regularComponents}>
+                <Styled.h1>{post.frontmatter.title}</Styled.h1>
                 <MDXRenderer>{post.body}</MDXRenderer>
               </MDXProvider>
             }
@@ -37,11 +39,7 @@ const BrainNote = ({ note, nodes, location }) => {
           </LinktipPreview>
         </Styled.li>
       )
-    }
-  })
-
-  nodes.map((post) => {
-    if (
+    } else if (
       post.frontmatter.tags.indexOf(note.title.toLowerCase()) > -1 &&
       post.frontmatter.slug.includes('/poetry/')
     ) {
@@ -50,6 +48,7 @@ const BrainNote = ({ note, nodes, location }) => {
           <LinktipPreview
             tiptext={
               <MDXProvider components={regularComponents}>
+                <Styled.h1>{post.frontmatter.title}</Styled.h1>
                 <MDXRenderer>{post.body}</MDXRenderer>
               </MDXProvider>
             }
@@ -61,13 +60,22 @@ const BrainNote = ({ note, nodes, location }) => {
         </Styled.li>
       )
     }
+
+    if (post) {
+      popups[`${post.frontmatter.slug}`] = {
+        title: post.frontmatter.title,
+        body: post.body,
+      }
+    }
   })
+
   if (note.inboundReferenceNotes != null) {
     references = note.inboundReferenceNotes.map((ref) => (
       <Styled.li key={ref.id}>
         <LinktipPreview
           tiptext={
             <MDXProvider components={regularComponents}>
+              <Styled.h1>{ref.title}</Styled.h1>
               <MDXRenderer>{ref.childMdx.body}</MDXRenderer>
             </MDXProvider>
           }
@@ -117,12 +125,11 @@ const BrainNote = ({ note, nodes, location }) => {
     )
   }
 
-  const popups = {}
   if (note.outboundReferenceNotes) {
     note.outboundReferenceNotes
       .filter((reference) => !!reference.childMdx.excerpt)
       .forEach((ln, i) => {
-        popups[ln.slug] = {
+        popups[`/notes/${ln.slug}`] = {
           title: ln.title,
           body: ln.childMdx.body,
         }

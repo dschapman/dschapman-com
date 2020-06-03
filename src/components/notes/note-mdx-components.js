@@ -7,6 +7,9 @@ import { Linktip, LinktipPreview } from '../layout/linktip'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import components from '../layout/mdx-components'
 import { MDXProvider } from '@mdx-js/react'
+import Tooltip from '../layout/tooltip'
+import Footnote from '../layout/footnote'
+import { Callout } from '../layout/TextStyles'
 
 const INTERNAL_LINK_REGEX = /^\/notes/g
 const INTERNAL_NON_NOTES_LINK_REGEX = /^\/(?!notes)/g
@@ -17,9 +20,8 @@ const AnchorTag = ({ href, popups = {}, ...restProps }) => {
   if (isString(restProps.children)) {
     renderedLink = restProps.children.replace(/\[\[(.*?)\]\]/g, '$1')
   }
-
   if (isInternalNotesLink) {
-    if (isEmpty(popups[href.replace(/^\/notes\//, '')])) {
+    if (isEmpty(popups[`${href}`])) {
       return (
         <Linktip tiptext={`Link to note on ${renderedLink}`} link={true}>
           <Styled.a
@@ -45,9 +47,8 @@ const AnchorTag = ({ href, popups = {}, ...restProps }) => {
           link={true}
           tiptext={
             <MDXProvider components={components}>
-              <MDXRenderer>
-                {popups[href.replace(/^\/notes\//, '')].body}
-              </MDXRenderer>
+              <Styled.h1>{popups[`${href}`].title}</Styled.h1>
+              <MDXRenderer>{popups[`${href}`].body}</MDXRenderer>
             </MDXProvider>
           }
           placement="right"
@@ -71,13 +72,30 @@ const AnchorTag = ({ href, popups = {}, ...restProps }) => {
       )
     }
   } else if (isInternalLink) {
-    return (
-      <Linktip link={true} tiptext={`Link to ${renderedLink}`}>
+    if (isEmpty(popups[`${href}`])) {
+      return (
         <Styled.a as={Link} to={href}>
           {renderedLink}
         </Styled.a>
-      </Linktip>
-    )
+      )
+    } else {
+      return (
+        <LinktipPreview
+          link={true}
+          tiptext={
+            <MDXProvider components={components}>
+              <Styled.h1>{popups[`${href}`].title}</Styled.h1>
+              <MDXRenderer>{popups[`${href}`].body}</MDXRenderer>
+            </MDXProvider>
+          }
+          placement="right"
+          multiple={false}>
+          <Styled.a as={Link} to={href}>
+            {renderedLink}
+          </Styled.a>
+        </LinktipPreview>
+      )
+    }
   } else {
     return (
       <Linktip link={true} tiptext={`Link to ${href}`}>
@@ -101,4 +119,8 @@ const AnchorTag = ({ href, popups = {}, ...restProps }) => {
 
 export default {
   a: AnchorTag,
+  Footnote: (props) => <Footnote {...props} />,
+  Tooltip: (props) => <Tooltip {...props} />,
+  Linktip: (props) => <Linktip {...props} />,
+  Callout: (props) => <Callout {...props} />,
 }
