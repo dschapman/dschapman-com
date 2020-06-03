@@ -50,7 +50,6 @@ const FooterContent = ({ children }) => {
   return (
     <div
       sx={{
-        mx: 'auto',
         width: 'container',
         a: {
           textDecoration: 'underline',

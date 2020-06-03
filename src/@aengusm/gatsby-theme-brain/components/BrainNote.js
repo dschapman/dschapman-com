@@ -24,11 +24,17 @@ const BrainNote = ({ note, nodes, location }) => {
     ) {
       relatedArticles.push(
         <Styled.li key={post.id}>
-          <Linktip tiptext={`Link to my article "${post.frontmatter.title}"`}>
+          <LinktipPreview
+            tiptext={
+              <MDXProvider components={regularComponents}>
+                <MDXRenderer>{post.body}</MDXRenderer>
+              </MDXProvider>
+            }
+            placement="right">
             <Styled.a as={Link} key={post.id} to={post.frontmatter.slug}>
               {post.frontmatter.title}
             </Styled.a>
-          </Linktip>
+          </LinktipPreview>
         </Styled.li>
       )
     }
@@ -41,11 +47,17 @@ const BrainNote = ({ note, nodes, location }) => {
     ) {
       relatedPoems.push(
         <Styled.li key={post.id}>
-          <Linktip tiptext={`Link to my poem "${post.frontmatter.title}"`}>
+          <LinktipPreview
+            tiptext={
+              <MDXProvider components={regularComponents}>
+                <MDXRenderer>{post.body}</MDXRenderer>
+              </MDXProvider>
+            }
+            placement="right">
             <Styled.a as={Link} key={post.id} to={post.frontmatter.slug}>
               {post.frontmatter.title}
             </Styled.a>
-          </Linktip>
+          </LinktipPreview>
         </Styled.li>
       )
     }

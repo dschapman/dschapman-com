@@ -5,6 +5,7 @@ import Header from './note-header'
 import MyCustomBreadcrumb from './breadcrumb'
 import { useBreadcrumb } from 'gatsby-plugin-breadcrumb'
 import { Global } from '@emotion/core'
+import Footer from './note-footer'
 
 export default ({
   children,
@@ -56,6 +57,7 @@ export default ({
         </h1>
         {children}
       </div>
+      <Footer />
     </Styled.root>
   )
 }
