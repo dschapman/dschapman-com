@@ -1,5 +1,5 @@
 ---
-title: 'Using TippyJS to implement link previews'
+title: Using TippyJS to implement link previews
 ---
 
 On May 16 I implemented link previews on the [[notes]] section of my [[website]]. Hopefully you can see what I mean just by hovering over those links. I did this using [[Tippy]] and modifying the query on the [[gatsby-theme-brain]] I use for my notes.

@@ -1,5 +1,5 @@
 ---
-title: 'building a digital garden - tom critchlow'
+title: building a digital garden - tom critchlow
 ---
 
 Author: [[Tom Critchlow]]

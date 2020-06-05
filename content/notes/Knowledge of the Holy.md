@@ -1,5 +1,5 @@
 ---
-title: 'Knowledge of the Holy'
+title: Knowledge of the Holy
 ---
 
 Tags: [[Books]]

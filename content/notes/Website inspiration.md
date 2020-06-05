@@ -1,5 +1,5 @@
 ---
-title: 'Website inspiration'
+title: Website inspiration
 ---
 
 https://twitter.com/mappletons/status/1250532315459194880?s=21

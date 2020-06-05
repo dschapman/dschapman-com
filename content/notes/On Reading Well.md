@@ -1,5 +1,5 @@
 ---
-title: 'On Reading Well'
+title: On Reading Well
 ---
 
 Reading Literature can cultivate virtue in us.

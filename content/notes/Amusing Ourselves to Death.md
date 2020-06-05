@@ -1,5 +1,5 @@
 ---
-title: 'Amusing Ourselves to Death'
+title: Amusing Ourselves to Death
 ---
 
 Author: [[Neil Postman]]

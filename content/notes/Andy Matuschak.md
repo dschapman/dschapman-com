@@ -1,5 +1,5 @@
 ---
-title: 'Andy Matuschak'
+title: Andy Matuschak
 ---
 
 Patreon funded researcher on information systems. Formerly from Apple and Khan Academy.

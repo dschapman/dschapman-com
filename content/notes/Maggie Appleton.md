@@ -1,5 +1,5 @@
 ---
-title: 'Maggie Appleton'
+title: Maggie Appleton
 ---
 
 - [Website](https://maggieappleton.com)

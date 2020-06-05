@@ -1,5 +1,5 @@
 ---
-title: 'OpenGraph'
+title: OpenGraph
 ---
 
 OpenGraph images are the handy images that appear when you share a link on Facebook, twitter, or a messaging platform. They make a website feel professional and like something worth being shared.

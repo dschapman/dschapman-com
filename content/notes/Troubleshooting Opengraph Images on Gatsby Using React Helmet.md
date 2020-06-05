@@ -1,5 +1,5 @@
 ---
-title: 'Troubleshooting Opengraph Images on Gatsby Using React Helmet'
+title: Troubleshooting Opengraph Images on Gatsby Using React Helmet
 ---
 
 Had some trouble getting my [[OpenGraph]] images set up on this [[GatsbyJS]] site. They were working and all of a sudden just stopped working when I was updating other things on my site. Spent a good bit of time troubleshooting. The meta tags all showed up in the source but websites weren’t reading them.

@@ -1,5 +1,5 @@
 ---
-title: 'Blogchains'
+title: Blogchains
 ---
 
 [Tom Critchlow. Move. Think. Create.](https://tomcritchlow.com/blogchains/)

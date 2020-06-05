@@ -1,5 +1,5 @@
 ---
-title: 'Culture Care'
+title: Culture Care
 ---
 
 Notes on a [[book]] by [[Makoto Fujimura]]

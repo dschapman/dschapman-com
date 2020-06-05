@@ -1,5 +1,6 @@
 ---
-title: 'Books'
+title: Books
+roam_alias: "book" "Book" "books"
 aliases: ['book']
 ---
 

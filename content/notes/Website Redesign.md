@@ -1,5 +1,5 @@
 ---
-title: 'Website Redesign'
+title: Website Redesign
 ---
 
 Redesigning my [[website]]. Goal is to make it easier to create content, and to make content a) rich and b) discoverable.

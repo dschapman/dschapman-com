@@ -1,5 +1,5 @@
 ---
-title: 'digital garden'
+title: digital garden
 ---
 
 ## What is a Digital Garden?

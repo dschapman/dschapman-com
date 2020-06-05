@@ -1,5 +1,5 @@
 ---
-title: 'The Common Rule'
+title: The Common Rule
 ---
 
 Author: [[Justin Earley]]

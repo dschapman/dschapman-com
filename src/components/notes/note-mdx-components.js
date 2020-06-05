@@ -23,23 +23,21 @@ const AnchorTag = ({ href, popups = {}, ...restProps }) => {
   if (isInternalNotesLink) {
     if (isEmpty(popups[`${href}`])) {
       return (
-        <Linktip tiptext={`Link to note on ${renderedLink}`} link={true}>
-          <Styled.a
-            as={Link}
-            to={href}
-            sx={{
-              bg: 'lightblue',
-              textDecoration: 'none',
-              '&:hover,&:focus': {
-                color: 'text',
-                bg: 'white',
-                textDecoration: 'underline',
-                textDecorationColor: 'lightblue',
-              },
-            }}>
-            {renderedLink}
-          </Styled.a>
-        </Linktip>
+        <Styled.a
+          as={Link}
+          to={href}
+          sx={{
+            bg: 'lightblue',
+            textDecoration: 'none',
+            '&:hover,&:focus': {
+              color: 'text',
+              bg: 'white',
+              textDecoration: 'underline',
+              textDecorationColor: 'lightblue',
+            },
+          }}>
+          {renderedLink}
+        </Styled.a>
       )
     } else {
       return (
@@ -98,21 +96,19 @@ const AnchorTag = ({ href, popups = {}, ...restProps }) => {
     }
   } else {
     return (
-      <Linktip link={true} tiptext={`Link to ${href}`}>
-        <Styled.a
-          sx={{
-            textDecoration: 'underline',
-            textDecorationColor: '#925C77',
-            '&:hover': {
-              color: 'text',
-              textDecorationColor: '#2E0219',
-            },
-          }}
-          href={href}
-          {...restProps}>
-          {renderedLink}
-        </Styled.a>
-      </Linktip>
+      <Styled.a
+        sx={{
+          textDecoration: 'underline',
+          textDecorationColor: '#925C77',
+          '&:hover': {
+            color: 'text',
+            textDecorationColor: '#2E0219',
+          },
+        }}
+        href={href}
+        {...restProps}>
+        {renderedLink}
+      </Styled.a>
     )
   }
 }

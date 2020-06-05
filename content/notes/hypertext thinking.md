@@ -1,5 +1,5 @@
 ---
-title: 'hypertext thinking'
+title: hypertext thinking
 ---
 
 Part of [[Digital Literacy]] is knowing the strengths of the medium you’re working in. There are considerable strengths inherent to a digital, web-based, way of thinking - first and foremost is the sheer amount of interactivity and connections you can make.

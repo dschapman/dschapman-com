@@ -1,5 +1,5 @@
 ---
-title: 'Selected Writings of Meister Eckhart'
+title: Selected Writings of Meister Eckhart
 ---
 
 Author: [[Meister Eckhart]]  

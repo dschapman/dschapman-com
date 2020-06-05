@@ -1,5 +1,5 @@
 ---
-title: 'Aravind Balla'
+title: Aravind Balla
 ---
 
 - [Notes](https://notes.aravindballa.com)

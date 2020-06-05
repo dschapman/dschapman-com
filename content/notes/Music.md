@@ -1,5 +1,5 @@
 ---
-title: 'Music'
+title: Music
 ---
 
 Here are some of my Spotify playlists.

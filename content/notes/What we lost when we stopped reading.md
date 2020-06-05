@@ -1,5 +1,5 @@
 ---
-title: 'What we lost when we stopped reading'
+title: What we lost when we stopped reading
 ---
 
 [What we lost when we stopped reading - The Washington Post](https://www.washingtonpost.com/opinions/what-we-lost-when-we-stopped-binge-reading/2020/04/16/d440d7ba-8005-11ea-9040-68981f488eed_story.html)

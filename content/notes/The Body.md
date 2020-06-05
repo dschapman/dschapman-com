@@ -1,5 +1,5 @@
 ---
-title: 'The Body'
+title: The Body
 ---
 
 Author: [[Bill Bryson]]

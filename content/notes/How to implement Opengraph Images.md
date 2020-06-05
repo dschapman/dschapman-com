@@ -1,5 +1,5 @@
 ---
-title: 'How to implement Opengraph Images'
+title: How to implement Opengraph Images
 ---
 
 These are the resources I used to implement [[Opengraph]] Images on this website. These resources were provided by [[egghead]] or by people who work for egghead.

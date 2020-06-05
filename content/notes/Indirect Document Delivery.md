@@ -1,5 +1,5 @@
 ---
-title: 'Indirect Document Delivery'
+title: Indirect Document Delivery
 ---
 
 **Notes on:**

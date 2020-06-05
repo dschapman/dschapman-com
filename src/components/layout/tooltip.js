@@ -24,6 +24,7 @@ const Tooltip = forwardRef((props, ref) => {
       duration="500"
       distance="10"
       theme="light"
+      tag={'span'}
       arrow={true}
       interactive={true}
       animation="shift-away"

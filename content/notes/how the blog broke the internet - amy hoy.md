@@ -1,5 +1,5 @@
 ---
-title: 'how the blog broke the internet - amy hoy'
+title: how the blog broke the internet - amy hoy
 ---
 
 Tags:[[Articles]] [[Digital Literacy]] [[Content]]

@@ -1,5 +1,5 @@
 ---
-title: 'Ted Nelson'
+title: Ted Nelson
 ---
 
 Internet pioneer and thinker. Creator of the term hyperlink. Mind behind the semi-mythical [[Xanadu]] Project.

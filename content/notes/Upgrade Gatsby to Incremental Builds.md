@@ -1,5 +1,5 @@
 ---
-title: 'Upgrade Gatsby to Incremental Builds'
+title: Upgrade Gatsby to Incremental Builds
 ---
 
 On May 13, 2020 I upgraded my [[GatsbyJS]] to Incremental Builds using this guide: [Enable Gatsby Incremental Builds on Netlify](https://www.netlify.com/blog/2020/04/23/enable-gatsby-incremental-builds-on-netlify/)

@@ -1,5 +1,5 @@
 ---
-title: 'How to Code and Setup a Twitter Bot using a Raspberry Pi'
+title: How to Code and Setup a Twitter Bot using a Raspberry Pi
 ---
 
 Tags: [[Twitter]] [[TwitJS]] [[Tech]]

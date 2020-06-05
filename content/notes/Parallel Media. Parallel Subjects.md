@@ -1,5 +1,5 @@
 ---
-title: 'Parallel Media. Parallel Subjects'
+title: Parallel Media. Parallel Subjects
 ---
 
 **Notes on:**

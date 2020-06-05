@@ -1,5 +1,6 @@
 ---
-title: 'Digital Literacy'
+title: Digital Literacy
+roam_alias: "digital literacy"
 ---
 
 ## The Problem

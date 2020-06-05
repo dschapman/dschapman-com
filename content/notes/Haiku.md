@@ -1,5 +1,5 @@
 ---
-title: 'Haiku'
+title: Haiku
 ---
 
 Haiku is perhaps one of the most well known forms of [[poetry]] and one that most people have probably tried their hand at in elementary school.

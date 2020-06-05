@@ -1,5 +1,5 @@
 ---
-title: 'How to Edit Mailchimp Templates'
+title: How to Edit Mailchimp Templates
 ---
 
 [[Mailchimp]] has a variety of drag and drop email templates that you can use for email marketing. The problem comes when you want to create your own template that will closely align with your [[brand]]. Mailchimp has some ability to customize, or code your own template, but that comes at higher price points and higher technical ranges.

@@ -1,5 +1,5 @@
 ---
-title: 'Inflamation of the Heart - Curt Thompson'
+title: Inflamation of the Heart - Curt Thompson
 ---
 
 Tags: [[COVID-19]] [[Articles]] [[Faith]]

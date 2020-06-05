@@ -1,5 +1,5 @@
 ---
-title: 'Mailchimp'
+title: Mailchimp
 ---
 
 Email Marketing Provider: [website](https://mailchimp.com/)

@@ -1,5 +1,5 @@
 ---
-title: 'Divisions of Content'
+title: Divisions of Content
 ---
 
 When I think about producing prose [[content]], I think about it in three lengths:

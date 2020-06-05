@@ -64,3 +64,5 @@ yarn-error.log
 \.vscode/settings\.json
 
 \.DS_Store
+content/notes/org-roam.db
+content/notes/.dir-locals.el

@@ -1,5 +1,5 @@
 ---
-title: 'Xanadu'
+title: Xanadu
 ---
 
 ## Ted Nelson

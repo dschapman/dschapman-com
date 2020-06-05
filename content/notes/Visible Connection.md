@@ -1,5 +1,5 @@
 ---
-title: 'Visible Connection'
+title: Visible Connection
 ---
 
 **Notes on:**

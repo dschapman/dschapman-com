@@ -1,6 +1,8 @@
 ---
-title: 'How I write these notes'
+title: How I write these notes
 ---
+
+
 
 I write most of my notes currently using [Bear](bear.app). The good thing about this is that it can export to markdown. The difficult thing is that it makes it difficult to keep a single source of truth. Do I edit in my GitHub repository? If I do then my bear is out of date and I can no longer easily edit on my phone.
 

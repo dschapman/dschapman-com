@@ -1,5 +1,5 @@
 ---
-title: 'The Curse of Xanadu'
+title: The Curse of Xanadu
 ---
 
 Source: https://www.wired.com/1995/06/xanadu/ Tags: [[hypertext thinking]] [[Ted Nelson]] [[Xanadu]] [[Articles]]

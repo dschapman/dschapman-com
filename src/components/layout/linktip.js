@@ -74,11 +74,12 @@ const LinktipPreview = forwardRef((props, ref) => {
       maxWidth={868}
       placement={placement}
       multiple={multiple}
+      tag={'span'}
       sx={{
         padding: '0.2em',
         fontSize: '0.75em',
       }}>
-      <div
+      <span
         sx={{
           display: 'inline-block',
           lineHeight: '1em',
@@ -88,7 +89,7 @@ const LinktipPreview = forwardRef((props, ref) => {
           },
         }}>
         <span ref={ref}>{props.children}</span>
-      </div>
+      </span>
     </Tippy>
   )
 })

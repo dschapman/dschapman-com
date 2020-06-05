@@ -1,5 +1,5 @@
 ---
-title: 'Writing Changes the Way We Think.'
+title: Writing Changes the Way We Think.
 ---
 
 Argument of [[Socrates]]/(Plato?)

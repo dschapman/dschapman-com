@@ -1,5 +1,5 @@
 ---
-title: 'Leverage Alfred Snippets to remember things for you'
+title: Leverage Alfred Snippets to remember things for you
 ---
 
 Tags: [[Tools]] [[Alfred]]

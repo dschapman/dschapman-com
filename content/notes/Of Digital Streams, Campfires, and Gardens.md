@@ -1,5 +1,5 @@
 ---
-title: 'Of Digital Streams, Campfires, and Gardens'
+title: Of Digital Streams, Campfires, and Gardens
 ---
 
 Tags: [[digital garden]]

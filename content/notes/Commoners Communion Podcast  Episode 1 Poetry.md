@@ -1,5 +1,5 @@
 ---
-title: 'Commoners Communion Podcast: Episode 1 Poetry'
+title: Commoners Communion Podcast Episode 1 Poetry
 ---
 
 Tags:[[poetry]] [[dialogue]]  
