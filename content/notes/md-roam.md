@@ -4,7 +4,7 @@ title: md-roam
 
 - [website](https://github.com/nobiot/md-roam)
 
-md-roam is an extension of [[Org-Roam]] that allows you to implement [[bidirectional links]] in markdown files. I installed in my [[Doom]] [[Emacs]] setup.
+md-roam is an extension of [[Org-Roam]] that allows you to implement [[bidirectional links]] in markdown files. I installed in my [[Doom Emacs]] setup.
 
 ## Installation
 
