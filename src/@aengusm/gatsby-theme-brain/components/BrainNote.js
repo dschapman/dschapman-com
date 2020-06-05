@@ -8,6 +8,9 @@ import regularComponents from '../../../components/layout/mdx-components'
 import { MDXProvider } from '@mdx-js/react'
 import { Link, Router } from 'gatsby'
 import { LinktipPreview, Linktip } from '../../../components/layout/linktip'
+import Tooltip from '../../../components/layout/tooltip'
+import Footnote from '../../../components/layout/footnote'
+import { Callout } from '../../../components/layout/TextStyles'
 
 const BrainNote = ({ note, nodes, location }) => {
   let references = []
@@ -145,7 +148,14 @@ const BrainNote = ({ note, nodes, location }) => {
       description={note.childMdx.excerpt}
       location={location}
       crumbLabel={note.title}>
-      <MDXProvider components={{ a: AnchorTag }}>
+      <MDXProvider
+        components={{
+          a: AnchorTag,
+          Footnote: (props) => <Footnote {...props} />,
+          Tooltip: (props) => <Tooltip {...props} />,
+          Linktip: (props) => <Linktip {...props} />,
+          Callout: (props) => <Callout {...props} />,
+        }}>
         <MDXRenderer>{note.childMdx.body}</MDXRenderer>
       </MDXProvider>
       {referenceBlock}

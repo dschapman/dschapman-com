@@ -4,7 +4,7 @@ title: The Common Rule
 
 Author: [[Justin Earley]]
 
-Tags: [[Books]] [[Digital Literacy]][[Habits]]
+Tags: [[Books]] [[Digital Literacy]] [[Habits]]
 
 ## Introduction: Discovering the Freedom of Limitations
 
