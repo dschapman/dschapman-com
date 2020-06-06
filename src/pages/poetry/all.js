@@ -17,9 +17,14 @@ const PoemIndex = ({ data, location }) => {
         sx={{
           variant: 'styles.postlist',
         }}>
-        {data.allMdx.edges.map(({ node: post }) => (
-          <PostLink key={post.frontmatter.slug} {...post.frontmatter} />
-        ))}
+        {data.allMdx.edges.map(({ node: post }) => {
+          let newPost = {
+            slug: post.frontmatter.slug,
+            title: post.frontmatter.title,
+            body: post.body,
+          }
+          return <PostLink key={newPost.slug} {...newPost} />
+        })}
       </Styled.ul>
     </Layout>
   )
@@ -36,6 +41,7 @@ export const pageQuery = graphql`
             title
             slug
           }
+          body
         }
       }
     }

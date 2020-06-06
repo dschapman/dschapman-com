@@ -48,7 +48,6 @@ export default ({
     }
   `)
   const popups = {}
-  console.log(data)
   const notes = data.allBrainNote.nodes
   const posts = data.allMdx.nodes
   posts.map((post) => {

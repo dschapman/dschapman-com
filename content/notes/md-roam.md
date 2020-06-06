@@ -20,7 +20,7 @@ I set up md-roam as a second [[Org-Roam]] folder - which means that it has its o
 
 In order to get a second org-roam database configured I needed to add a `.dir-locals.el` file to the folder where I keep my notes. In my case - content/notes in my git repository. 
 
-This is the content of the file:
+This is the content of the file: 
 ```lisp
 ((nil . ((eval . (setq-local org-roam-directory (expand-file-name "./"))))))
 ```
