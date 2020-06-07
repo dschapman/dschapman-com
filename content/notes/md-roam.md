@@ -18,14 +18,7 @@ Notice that the package is installed _before_ org-roam is.
 
 I set up md-roam as a second [[Org-Roam]] folder - which means that it has its own database file separate from my "main" one. The md-roam are _almost_ formatted the same as [[gatsby-theme-brain]] files and so my existing public notes folder on my website did not need to change much.<Footnote count={1}>I did have to remove quotation marks from the title in the frontmatter of my markdown notes. md-roam doesn't expect a quote delineated string.</Footnote>
 
-In order to get a second org-roam database configured I needed to add a `.dir-locals.el` file to the folder where I keep my notes. In my case - content/notes in my git repository. 
-
-This is the content of the file: 
-```lisp
-((nil . ((eval . (setq-local org-roam-directory (expand-file-name "./"))))))
-```
-
-This folder lets emacs know that this folder is an org-roam-directory. 
+[[How to install a second org-roam directory]]
 
 I also added the following lines to my `config.el` file.
 
