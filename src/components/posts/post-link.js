@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Link } from 'gatsby'
 import { Styled, jsx } from 'theme-ui'
-import { LinktipPreview } from '../layout/linktip'
+import LinktipPreview from '../layout/linktip-preview'
 import { MDXProvider } from '@mdx-js/react'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import components from '../layout/mdx-components'

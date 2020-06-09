@@ -7,7 +7,7 @@ import Header from './header'
 import Footer from './footer'
 import Tooltip from './tooltip'
 import Footnote from './footnote'
-import { Linktip } from './linktip'
+import Linktip from './linktip'
 import { Callout } from './TextStyles'
 import { useStaticQuery, graphql } from 'gatsby'
 

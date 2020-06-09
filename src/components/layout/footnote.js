@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from 'react'
-import { Linktip } from './linktip'
+import Linktip from './linktip'
 import { Styled, jsx } from 'theme-ui'
 
 const Footnote = ({ count, children }) => {

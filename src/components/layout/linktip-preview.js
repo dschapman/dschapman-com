@@ -5,8 +5,9 @@ import { Styled, jsx } from 'theme-ui'
 import 'tippy.js/dist/tippy.css'
 import 'tippy.js/animations/shift-away.css'
 import 'tippy.js/themes/light.css'
+import './tippyBox.css'
 
-const Linktip = forwardRef((props, ref) => {
+const LinktipPreview = forwardRef((props, ref) => {
   let placement
   let multiple
   if (props.placement) {
@@ -24,17 +25,22 @@ const Linktip = forwardRef((props, ref) => {
       duration="500"
       distance="10"
       theme="light"
-      arrow={true}
+      arrow={false}
       interactive={true}
       animation="shift-away"
       content={props.tiptext}
+      maxWidth={868}
       placement={placement}
       multiple={multiple}
+      tag="span"
       sx={{
         padding: '0.2em',
         fontSize: '0.75em',
+        'tippy-box': {
+          overflowY: 'auto',
+        },
       }}>
-      <div
+      <span
         sx={{
           display: 'inline-block',
           lineHeight: '1em',
@@ -44,9 +50,8 @@ const Linktip = forwardRef((props, ref) => {
           },
         }}>
         <span ref={ref}>{props.children}</span>
-      </div>
+      </span>
     </Tippy>
   )
 })
-
-export default Linktip
+export default LinktipPreview
