@@ -3,15 +3,15 @@ import React from 'react'
 import { Styled, jsx } from 'theme-ui'
 import { graphql, Link } from 'gatsby'
 import Layout from '../layout/layout'
-import PostList from './post-list'
+import PostList from '../posts/post-list'
 import { MDXProvider } from '@mdx-js/react'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import components from '../layout/mdx-components'
 import LinktipPreview from '../layout/linktip-preview'
 
-const ArticleTag = ({ data, pageContext, location }) => {
+const PoemTag = ({ data, pageContext, location }) => {
   const { tag } = pageContext
-  const { edges, totalCount } = data.articles
+  const { edges, totalCount } = data.poems
   let note = data.notes
   if (note != null) {
     let references = []
@@ -48,7 +48,7 @@ const ArticleTag = ({ data, pageContext, location }) => {
     }
     return (
       <Layout
-        title={'Articles tagged with ' + tag}
+        title={'Poems tagged with ' + tag}
         titleTagName="h1"
         type="📚"
         location={location}>
@@ -78,16 +78,16 @@ const ArticleTag = ({ data, pageContext, location }) => {
             }}>
             my notes on {tag}
           </Styled.a>
+          <Styled.a as={Link} to="/articles/tags">
+            See all tags &rarr;
+          </Styled.a>
         </LinktipPreview>
-        <Styled.a as={Link} to="/articles/tags">
-          See all tags &rarr;
-        </Styled.a>
       </Layout>
     )
   } else {
     return (
       <Layout
-        title={'Articles tagged with ' + tag}
+        title={'Poems tagged with ' + tag}
         titleTagName="h1"
         type="📚"
         location={location}>
@@ -100,16 +100,16 @@ const ArticleTag = ({ data, pageContext, location }) => {
   }
 }
 
-export default ArticleTag
+export default PoemTag
 
 export const pageQuery = graphql`
-  query ArticleTag($tag: String) {
-    articles: allMdx(
+  query PoemTag($tag: String) {
+    poems: allMdx(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
         frontmatter: { tags: { in: [$tag] } }
-        fileAbsolutePath: { regex: "/content/posts/" }
+        fileAbsolutePath: { regex: "/content/poems/" }
       }
     ) {
       totalCount

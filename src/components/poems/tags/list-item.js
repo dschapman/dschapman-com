@@ -19,7 +19,7 @@ export default ({ tag, tagCount }) => {
       <span>
         <Styled.a
           as={Link}
-          to={'/articles/tag/' + slug}
+          to={'/poetry/tag/' + slug}
           sx={{
             variant: 'styles.tagLink',
           }}>

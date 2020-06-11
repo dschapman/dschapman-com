@@ -70,6 +70,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const poems = result.data.poems.edges
   const articles = result.data.articles.edges
   const articleTags = result.data.articleTagsGroup.group
+  const poemTags = result.data.poemTagsGroup.group
   // you'll call `createPage` for each result
   poems.forEach(({ node }) => {
     createPage({
@@ -112,8 +113,30 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       context: { tag: tag },
     })
   })
+  poemTags.forEach((poemTag) => {
+    let tag = poemTag.fieldValue
+    let slug = tag
+      .toString()
+      .toLowerCase()
+      .replace(/\s+/g, '-') // Replace spaces with -
+      .replace(/[^\w\-]+/g, '') // Remove all non-word chars
+      .replace(/\-\-+/g, '-') // Replace multiple - with single -
+      .replace(/^-+/, '') // Trim - from start of text
+      .replace(/-+$/, '') // Trim - from end of text
+
+    createPage({
+      path: `poetry/tag/${slug}`,
+      component: path.resolve(`./src/components/poems/poem-tag.js`),
+      context: { tag: tag },
+    })
+  })
 
   //Create article tags index
+  createPage({
+    path: 'poetry/tags',
+    component: path.resolve(`./src/components/poems/poem-tags.js`),
+    context: { tags: poemTags },
+  })
   createPage({
     path: 'articles/tags',
     component: path.resolve(`./src/components/posts/post-tags.js`),
