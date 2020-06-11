@@ -78,11 +78,11 @@ const PoemTag = ({ data, pageContext, location }) => {
             }}>
             my notes on {tag}
           </Styled.a>
-          <br />
-          <Styled.a as={Link} to="/articles/tags">
-            See all tags &rarr;
-          </Styled.a>
         </LinktipPreview>
+        <br />
+        <Styled.a as={Link} to="/articles/tags">
+          See all tags &rarr;
+        </Styled.a>
       </Layout>
     )
   } else {
