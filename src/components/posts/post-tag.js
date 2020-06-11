@@ -79,6 +79,7 @@ const ArticleTag = ({ data, pageContext, location }) => {
             my notes on {tag}
           </Styled.a>
         </LinktipPreview>
+        <br />
         <Styled.a as={Link} to="/articles/tags">
           See all tags &rarr;
         </Styled.a>
@@ -92,6 +93,7 @@ const ArticleTag = ({ data, pageContext, location }) => {
         type="📚"
         location={location}>
         <PostList posts={edges} />
+        <br />
         <Styled.a as={Link} to="/articles/tags">
           See all tags &rarr;
         </Styled.a>
