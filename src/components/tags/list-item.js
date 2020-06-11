@@ -2,11 +2,15 @@
 import { Link } from 'gatsby'
 import { Styled, jsx } from 'theme-ui'
 
-import useBasePath from 'gatsby-theme-blog-tags/src/use-base-path'
-
 export default ({ tag }) => {
-  const basePath = useBasePath()
-
+  const slug = tag
+    .toString()
+    .toLowerCase()
+    .replace(/\s+/g, '-') // Replace spaces with -
+    .replace(/[^\w\-]+/g, '') // Remove all non-word chars
+    .replace(/\-\-+/g, '-') // Replace multiple - with single -
+    .replace(/^-+/, '') // Trim - from start of text
+    .replace(/-+$/, '') // Trim - from end of text
   return (
     <Styled.li
       sx={{
@@ -14,7 +18,7 @@ export default ({ tag }) => {
       }}>
       <Styled.a
         as={Link}
-        to={basePath + '/' + tag}
+        to={'/articles/tag/' + slug}
         sx={{
           variant: 'styles.tagLink',
         }}>

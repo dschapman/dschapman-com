@@ -9,7 +9,11 @@ export default ({ posts }) => (
       variant: 'styles.postlist',
     }}>
     {posts.map(({ node: post }) => (
-      <PostLink key={post.slug} {...post} />
+      <PostLink
+        key={post.frontmatter.slug}
+        title={post.frontmatter.title}
+        body={post.body}
+      />
     ))}
   </Styled.ul>
 )

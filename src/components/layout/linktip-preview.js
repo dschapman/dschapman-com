@@ -25,7 +25,7 @@ const LinktipPreview = forwardRef((props, ref) => {
       duration="500"
       distance="10"
       theme="light"
-      arrow={false}
+      arrow={true}
       interactive={true}
       animation="shift-away"
       content={props.tiptext}

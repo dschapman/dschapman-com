@@ -7,7 +7,7 @@
   "scripts": {
     "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
     "clean": "gatsby clean",
-    "develop": "python3 ./parse-md.py && gatsby develop",
+    "develop": "gatsby develop",
     "format": "prettier --write \"**/*.js{,on}\" \"**/*.md\"  \"**/*.mdx\"",
     "lint": "eslint . --fix --ext .js,.md,.mdx",
     "start": "gatsby develop",
@@ -34,9 +34,7 @@
     "gatsby-remark-images": "^3.3.3",
     "gatsby-remark-numbered-footnotes": "^1.0.1",
     "gatsby-remark-smartypants": "^2.3.1",
-    "gatsby-theme-austere": "^0.1.0",
-    "gatsby-theme-blog-core": "^1.5.8",
-    "gatsby-theme-blog-tags": "^0.0.11",
+    "gatsby-source-filesystem": "^2.3.11",
     "gatsby-transformer-sharp": "^2.5.2",
     "lodash": "^4.17.15",
     "path": "^0.12.7",
@@ -44,6 +42,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.0.0",
+    "remark-slug": "^6.0.0",
     "slugify": "^1.4.0",
     "theme-ui": "^0.3.1",
     "yarn": "^1.22.4"

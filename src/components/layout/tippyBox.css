@@ -6,3 +6,6 @@
 .tippy-box:hover {
     overflow-y: auto;
 }
+.tippy-box:focus {
+    overflow-y: auto;
+}

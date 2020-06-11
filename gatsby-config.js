@@ -44,12 +44,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-theme-blog-core`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        basePath: '/articles/all',
-        contentPath: 'content/posts/',
-        assetPath: 'content/assets',
-        mdxOtherwiseConfigured: true,
+        name: 'assets',
+        path: `${__dirname}/content/posts/`,
       },
     },
     'gatsby-plugin-theme-ui',
@@ -60,12 +58,6 @@ module.exports = {
         // Puts tracking script in the head instead of the body
         head: true,
         // Setting this parameter is optional
-      },
-    },
-    {
-      resolve: `gatsby-theme-blog-tags`,
-      options: {
-        basePath: `/articles/tags`,
       },
     },
     {
