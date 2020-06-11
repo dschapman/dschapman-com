@@ -14,6 +14,38 @@ const ArticleTag = ({ data, pageContext, location }) => {
   const { edges, totalCount } = data.articles
   let note = data.notes
   if (note != null) {
+    let references = []
+    let referenceBlock
+    if (note.inboundReferenceNotes != null) {
+      references = note.inboundReferenceNotes.map((ref) => (
+        <Styled.li key={ref.id}>
+          <Styled.a
+            as={Link}
+            to={`/notes/${ref.slug}`}
+            sx={{
+              bg: 'lightblue',
+              textDecoration: 'none',
+              '&:hover,&:focus': {
+                color: 'text',
+                bg: 'white',
+                textDecoration: 'underline',
+                textDecorationColor: 'lightblue',
+              },
+            }}>
+            {ref.title}
+          </Styled.a>
+        </Styled.li>
+      ))
+    }
+
+    if (references.length > 0) {
+      referenceBlock = (
+        <>
+          <Styled.h2>Referenced in</Styled.h2>
+          <Styled.ul>{references}</Styled.ul>
+        </>
+      )
+    }
     return (
       <Layout
         title={'Articles on ' + tag}
@@ -28,6 +60,7 @@ const ArticleTag = ({ data, pageContext, location }) => {
             <MDXProvider components={components}>
               <Styled.h1>{note.title}</Styled.h1>
               <MDXRenderer>{note.childMdx.body}</MDXRenderer>
+              {referenceBlock}
             </MDXProvider>
           }>
           <Styled.a
@@ -81,11 +114,20 @@ export const pageQuery = graphql`
         }
       }
     }
-    notes: brainNote(title: { eq: $tag }) {
+    notes: brainNote(slug: { eq: $tag }) {
       slug
       title
       childMdx {
         body
+      }
+      inboundReferenceNotes {
+        id
+        title
+        slug
+        childMdx {
+          excerpt
+          body
+        }
       }
     }
   }
