@@ -35,7 +35,7 @@ const Tooltip = forwardRef((props, ref) => {
         padding: '0.2em',
         fontSize: '0.75em',
       }}>
-      <div
+      <span
         sx={{
           display: 'inline-block',
           color: '#75B9BE',
@@ -46,7 +46,7 @@ const Tooltip = forwardRef((props, ref) => {
           },
         }}>
         <span ref={ref}>{props.children}</span>
-      </div>
+      </span>
     </Tippy>
   )
 })

@@ -1,16 +1,39 @@
+/** @jsx jsx */
 import React from 'react'
+import { Styled, jsx } from 'theme-ui'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-
+import Tooltip from '../layout/tooltip'
 import Layout from './post-layout'
 import { graphql } from 'gatsby'
 
 export default ({ data, pageContext, location }) => {
+  const wordCount = data.mdx.wordCount.words
+  let emoji
+  if (wordCount < 500) {
+    emoji = '📄'
+  } else if (wordCount < 1000) {
+    emoji = '📄📄'
+  } else if (wordCount < 1500) {
+    emoji = '📄📄📄'
+  } else if (wordCount < 2000) {
+    emoji = '📄📄📄📄'
+  } else if (wordCount < 2500) {
+    emoji = '📄📄📄📄📄'
+  } else {
+    emoji = '📄📄📄📄📄📄'
+  }
+
   return (
     <Layout
       title={data.mdx.frontmatter.title}
       description={data.mdx.frontmatter.excerpt}
       type="Article 📄"
       location={location}>
+      <Tooltip
+        sx={{ paddingTop: '20px' }}
+        tiptext={`${data.mdx.wordCount.words} words`}>
+        {emoji}
+      </Tooltip>
       <MDXRenderer>{data.mdx.body}</MDXRenderer>
     </Layout>
   )
@@ -24,6 +47,10 @@ export const pageQuery = graphql`
       frontmatter {
         title
         excerpt
+      }
+      timeToRead
+      wordCount {
+        words
       }
     }
   }
