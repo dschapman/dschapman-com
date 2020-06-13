@@ -18,6 +18,6 @@ A Link is a table of connections and files to be sent for = EDL
 
 Bridges to Sources:
 
-- Transclusions/Live quotes from an original source chosen by the author.
+- [[Transclusions]]/Live quotes from an original source chosen by the author.
 
 Next Video: [[Parallel Media. Parallel Subjects]]
