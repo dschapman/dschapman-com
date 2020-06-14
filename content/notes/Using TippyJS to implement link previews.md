@@ -12,5 +12,5 @@ The tricky thing is that you can get into an infinite loop of tooltips in densel
 
 ## Credit
 
-- I looked at [[Ian Jones]]’s notes site and [[Aravind Balla]]’s notes site for some inspiration on how to pass more information. Aravind Balla’s notes site was particularly helpful since he was passing
+- I looked at [[Ian Jones]]’s notes site and [[Aravind Balla]]’s notes site for some inspiration on how to pass more information. Aravind Balla’s notes site was particularly helpful since he was [passing additional values along with the link](https://github.com/dschapman/my-website/blob/bffe1f13295fcd07f9e48b64a082145ecbda80ca/src/%40aengusm/gatsby-theme-brain/components/BrainNote.js#L142) through the mdx components. This concept was key for my implementation.
 - I borrowed my Tooltip setup from [[Maggie Appleton]]’s website.
