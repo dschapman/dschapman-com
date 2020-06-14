@@ -1,7 +1,7 @@
 ---
 title: Tea ☕
 aliases: ['tea']
-roam_alias: ['tea' 'Tea']
+roam_alias: ['tea', 'Tea']
 ---
 Here are the teas that I like to have on hand at any given time.
 
