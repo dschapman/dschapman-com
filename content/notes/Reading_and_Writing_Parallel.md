@@ -22,4 +22,8 @@ Recommends [Structure](https://www.newyorker.com/magazine/2013/01/14/structure) 
 
 [[Writing]] is dividing up into flying pages - like indivdual notes - and then condensing. You don't have to cut so much because you can put the more obscure things in pages for people to read if they're interested. -- *like footnotes on steroids*
 
+Soon after watching this, I came across this demo on twitter:
+
+https://twitter.com/azlenelza/status/1272600877493137408?s=21
+
 Next Video: [[Five Working Xanadu Systems]]
