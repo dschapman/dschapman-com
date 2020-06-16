@@ -9,7 +9,7 @@ const Footnote = ({ count, children }) => {
       <span
         sx={{
           verticalAlign: 'super',
-          fontSize: '80%',
+          fontSize: '90%',
           color: '#75B9BE',
         }}>
         {count}

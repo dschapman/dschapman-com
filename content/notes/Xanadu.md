@@ -14,4 +14,6 @@ title: Xanadu
 
 ## My Notes
 
-Very in line with the concept of a [[digital garden]] — highly linked, meant to be explored — and similar to the note system built by [[Andy Matuschak]]
+Very in line with the concept of a [[digital garden]] — highly linked, meant to be explored — and similar to the note system built by [[Andy Matuschak]]. 
+
+Also see: [[hypertext thinking]]
