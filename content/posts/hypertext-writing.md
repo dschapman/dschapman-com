@@ -23,7 +23,7 @@ Links interrupt the flow of your reader's thought -- that is their inherent stre
 This is an extreme example, but <Tooltip tiptext="Project Xanadu: The culmination of Ted Nelson's vision for what the World Wide Web should have been - featuring bidirectional links, transclusion, and more.">Project Xanadu</Tooltip>'s promise of visual connection to every source referenced in a text sounds great in theory, but the reality is an interconnected web of colored lines that is difficult to interpret. It is cool technology, but does it <Tooltip tiptext={<span>Of course this will vary from reader to reader. Project Xanadu, indeed the very concept of hypertext was created by Ted Nelson to help channel his Attention Deficit Disorder.<Footnote count={3}>See <a href="https://www.wired.com/1995/06/xanadu/">"The Curse of Xanadu"</a>, Wired</Footnote></span>}>help you become a better reader?</Tooltip> 
 
 <figure style="display: flex; flex-direction: column; margin:0;">
-<img style="width: 100%" src="http://xanadu.com/9a%20XUSP.png" alt="Screenshot from XanaduSpace - a 3D implementation of project Xanadu."/>
+<img style="width: 100%" src="/9a-XUSP.png" alt="Screenshot from XanaduSpace - a 3D implementation of project Xanadu."/>
 <figcaption style="font-size: 75%; text-align: center; font-style: italic; max-width: 500px; margin: auto;">Screenshot from XanaduSpace - a 3D implementation of project Xanadu, with visual links connecting an essay with the source texts it references.</figcaption>
 </figure>
 
