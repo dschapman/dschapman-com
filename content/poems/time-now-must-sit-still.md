@@ -6,5 +6,5 @@ tags: ['haiku', 'ayop']
 ---
 
 Time now must sit still  
-Birds sings with the wind chimes  
+Birds sing with the wind chimes  
 Frozen in the breeze
