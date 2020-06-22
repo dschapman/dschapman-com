@@ -18,7 +18,7 @@ These are the points Will says that Garfinkle makes:
 
 My thoughts:
 
-- Maybe this shows how little I read opinion pieces but are they just short you should read pieces?
+- Maybe this shows how little I read opinion pieces but are they just short "you should read" pieces?
 - Very in line with [[Reclaiming Conversation]]
 
 Tags: [[Articles]]

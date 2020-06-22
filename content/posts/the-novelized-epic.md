@@ -3,7 +3,7 @@ title: "The Novelized Epic: Dialogue and Laughter in The Lord of the Rings"
 slug: "/articles/the-novelized-epic"
 date: "2014-12-09"
 excerpt: 'In The Lord of the Rings the combined elements of the epic and the novel do not result in an unapproachable epic; instead, The Lord of the Rings as a novel liberates the epic genre from “all that serves as a brake on [its] unique development," creating an amalgamation of the two forms in dialogue with one another, a novelized epic.'
-tags: ['Bakhtin', 'The Lord of the Rings', 'dialogue', 'literary criticism', 'laughter', 'books']
+tags: ['Bakhtin', 'The-Lord-of-the-Rings', 'dialogue', 'literary-criticism', 'laughter', 'books']
 ---
 
 The Russian philosopher and literary critic [Mikhail Bakhtin](https://en.wikipedia.org/wiki/Mikhail_Bakhtin) differentiates between the novel and the epic. The novel by its very nature is “ever questing, ever examining itself and subjecting its established forms to review”.<Footnote count={1}>Bakhtin, 39</Footnote> In contrast, the epic is a static genre; its development is completed, and its setting is distant and unapproachable to both the author and the reader. While _The Lord of the Rings_ is full of Mikhail Bakhtin’s markers for an epic, it also has several elements in common with the novel.   In The Lord of the Rings the combined elements of the epic and the novel do not result in an unapproachable epic; instead, _The Lord of the Rings_ as a novel liberates the epic genre from “all that serves as a brake on [its] unique development,”<Footnote count={2}>Bakhtin, 39</Footnote> creating an amalgamation of the two forms in dialogue with one another, a novelized epic. 

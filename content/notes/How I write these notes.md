@@ -11,3 +11,6 @@ I also recently discovered [[md-roam]] an extension of org-roam that allows you 
 My private notes are fully featured Org-Mode at the moment, but this public notes can be easily browsed and edited on my local machine in markdown.
 
 When I read books I still prefer to do it with a hard copy that I underline and markup. If the book is particularly impactful I'll do some work to go back and enter my reflections in individual [[book notes]]. Sometimes I do read on my kindle and will highlight passages which I can then copy and paste into markdown notes. *This workflow could use some work*
+
+Currently I take more notes privately than public. Most of my [[learning in public]] has been focused on web-development. In general whenever I solve a problem I try to document the problem and my solution so that I can share if anyone else comes across a similar problem. 
+

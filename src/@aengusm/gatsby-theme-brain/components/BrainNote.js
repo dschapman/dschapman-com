@@ -24,7 +24,7 @@ const BrainNote = ({ note, nodes, location }) => {
   const popups = {}
   nodes.map((post) => {
     if (
-      post.frontmatter.tags.indexOf(note.title.toLowerCase()) > -1 &&
+      post.frontmatter.tags.indexOf(note.slug) > -1 &&
       post.frontmatter.slug.includes('/articles/')
     ) {
       relatedArticles.push(
@@ -44,7 +44,7 @@ const BrainNote = ({ note, nodes, location }) => {
         </Styled.li>
       )
     } else if (
-      post.frontmatter.tags.indexOf(note.title.toLowerCase()) > -1 &&
+      post.frontmatter.tags.indexOf(note.slug) > -1 &&
       post.frontmatter.slug.includes('/poetry/')
     ) {
       relatedPoems.push(
