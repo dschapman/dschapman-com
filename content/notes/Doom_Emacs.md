@@ -8,3 +8,4 @@ Emacs is a text editor that is highly extensible and has been around for a long 
 ## Resources
 - [I used this guide](https://www.ianjones.us/2020-05-05-doom-emacs) by [[Ian Jones]] to install both Doom Emacs and [[org-roam]]
 - [My doom.d configuration files](https://github.com/dschapman/.dot_files/tree/master/.doom.d)
+- [[How to use Emacs as a git client]]
