@@ -18,6 +18,7 @@ Notice that the package is installed _before_ org-roam is.
 
 I set up md-roam as a second [[Org-Roam]] folder - which means that it has its own database file separate from my "main" one. The md-roam are _almost_ formatted the same as [[gatsby-theme-brain]] files and so my existing public notes folder on my website did not need to change much.<Footnote count={1}>I did have to remove quotation marks from the title in the frontmatter of my markdown notes. md-roam doesn't expect a quote delineated string.</Footnote>
 
+## Installation
 First I [[setup a second org-roam directory]] by creating a `.dir-locals.el` file.
 
 I also added the following lines to my `config.el` file:
