@@ -18,7 +18,7 @@ export default {
   fonts: {
     body: 'adobe-garamond-pro, serif',
     heading: 'proxima-nova, sans-serif',
-    monospace: 'Menlo, monospace',
+    monospace: 'Fira Mono, monospace',
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
   fontWeights: {
@@ -86,7 +86,7 @@ export default {
       fontFamily: 'body',
       lineHeight: 'body',
       fontWeight: 'body',
-      fontSize: [2, 3, 4],
+      fontSize: [2, 2, 3],
       textRendering: 'optimizeLegibility',
       WebkitFontSmoothing: 'antialiased',
       mb: [4, 5, 6],
@@ -137,13 +137,13 @@ export default {
     code: {
       color: 'text',
       fontFamily: 'monospace',
-      fontSize: 1,
+      fontSize: [1, 1, 2],
     },
     inlineCode: {
       fontFamily: 'monospace',
       color: 'text',
       bg: 'muted',
-      fontSize: 1,
+      fontSize: [1, 1, 2],
     },
     img: {
       align: 'left',

@@ -60,6 +60,9 @@ export default ({
       <meta name="twitter:image" content={ogImage} />
 
       <link rel="stylesheet" href="https://use.typekit.net/osf8fyt.css"></link>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap"
+        rel="stylesheet"></link>
     </Helmet>
   )
 }
