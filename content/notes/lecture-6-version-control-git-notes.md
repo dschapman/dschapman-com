@@ -2,16 +2,8 @@
 title: "Lecture 6: Version Control (git) Notes"
 ---
 
-## Table of Contents
-
-1.  [Summary of Git](#org56f1eb5)
-    1.  [Git structures explained in pseudo code](#orgb070bcd)
-2.  [Git Commands explained](#orgea1aebd)
-3.  [Additional Resources](#orgf657072)
-
 Notes on: https://www.youtube.com/watch?v=2sjqTHE0zok
 
-<a id="org56f1eb5"></a>
 
 # Summary of Git
 
@@ -24,18 +16,17 @@ Git uses a directed acyclic graph to model history.
 
 Each snapshot has some number of parents and they can be m
 
-
-<a id="orgb070bcd"></a>
-
 ## Git structures explained in pseudo code
 
--   type blob = array < byte >
--   type tree = map < string, tree | blob  >
--   type commit = struct {
-    parents: array < commit >
-    author: string
-    message: string
-    snapshot: tree
+-   `type blob = array < byte >`
+-   `type tree = map < string, tree | blob  >`
+```
+type commit =  struct {
+        parents: array < commit >
+        author: string
+        message: string
+        snapshot: tree 
+```
 
 Any one of these three things is an object.
 
@@ -44,7 +35,6 @@ Any one of these three things is an object.
 -   **references:** mappings of human readable and non-readable strings.
 
 
-<a id="orgea1aebd"></a>
 
 # Git Commands explained
 
@@ -59,8 +49,6 @@ Any one of these three things is an object.
 -   `git add -p` allows you to add changes in parts interactively
 -   `git bisect` takes in a script and binary searches to find the first commit that this test stopped working.
 
-
-<a id="orgf657072"></a>
 
 # Additional Resources
 
