@@ -29,10 +29,10 @@ Each snapshot has some number of parents and they can be m
 
 ## Git structures explained in pseudo code
 
--   type blob = array <byte>
+-   type blob = array < byte >
 -   type tree = map < string, tree | blob  >
 -   type commit = struct {
-    parents: array <commit>
+    parents: array < commit >
     author: string
     message: string
     snapshot: tree
