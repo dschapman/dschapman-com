@@ -1,10 +1,11 @@
 /** @jsx jsx */
+import React from 'react'
 import { jsx } from 'theme-ui'
 import { css } from '@emotion/core'
 import { bpMaxLG } from '../../lib/breakpoints'
 import { useThemeUI } from 'theme-ui'
 
-const Footnote = ({ idName, children }) => {
+const Footnote = ({ count, children }) => {
   const { theme } = useThemeUI()
 
   const footnoteStyles = css`
@@ -21,8 +22,8 @@ const Footnote = ({ idName, children }) => {
       line-height: 1.3;
       vertical-align: baseline;
       position: relative;
-      border-left: 2px solid ${theme.colors.lightestGray};
-      padding-left: 10px;
+      border-left: 2px solid ${theme.colors.lightestGrey};
+      padding-left: 1em;
     }
     label {
       cursor: pointer;
@@ -96,9 +97,9 @@ const Footnote = ({ idName, children }) => {
   `
 
   return (
-    <span sx={footnoteStyles}>
-      <label htmlFor={idName} className="margin-toggle sidenote-number"></label>
-      <input type="checkbox" id={idName} className="margin-toggle" />
+    <span css={footnoteStyles}>
+      <label htmlFor={count} className="sidenote-number margin-toggle"></label>
+      <input type="checkbox" id={count} className="margin-toggle" />
       <span className="sidenote">{children}</span>
     </span>
   )
