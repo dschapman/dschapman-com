@@ -78,6 +78,9 @@ export default ({
               backgroundColor: '#75B9BE',
               height: '100%',
             },
+            body: {
+              counterReset: 'sidenote-counter',
+            },
           },
         })}
       />
