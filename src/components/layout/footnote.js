@@ -25,9 +25,6 @@ const Footnote = ({ count, children }) => {
       border-left: 2px solid ${theme.colors.lightestGrey};
       padding-left: 1em;
     }
-    label {
-      cursor: pointer;
-    }
 
     .sidenote-number {
       counter-increment: sidenote-counter;
@@ -92,6 +89,9 @@ const Footnote = ({ count, children }) => {
         margin: 1rem 2.5%;
         vertical-align: baseline;
         position: relative;
+      }
+      label {
+        cursor: pointer;
       }
     }
   `
