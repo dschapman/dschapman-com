@@ -10,6 +10,7 @@ import components from '../layout/mdx-components'
 import { MDXProvider } from '@mdx-js/react'
 import Tooltip from '../layout/tooltip'
 import { Footnote, Marginnote } from '../layout/sidenote'
+import { Figure } from '../layout/figure'
 import { Callout } from '../layout/TextStyles'
 
 const INTERNAL_LINK_REGEX = /^\/notes/g
@@ -121,4 +122,5 @@ export default {
   Linktip: (props) => <Linktip {...props} />,
   Callout: (props) => <Callout {...props} />,
   Marginnote: (props) => <Marginnote {...props} />,
+  Figure: (props) => <Figure {...props} />,
 }

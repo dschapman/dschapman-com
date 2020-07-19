@@ -6,7 +6,7 @@ title: digital garden
 
 A digital garden is a style of [[website]], distinct from a blog and meant to encourage exploration through connections, curated content that is worth extended thought, and exposes both thoughts in progress and thoughts that are more developed.
 
-<img style="width: 100%" src="/What-is-a-digital-garden.png" alt="Digital Gardens are big enough to hold any content"/>
+<Figure src="/What-is-a-digital-garden.png" alt="Digital Gardens are big enough to hold any content" fullwidth="true"></Figure>
 
 One of the concepts I’ve been thinking a lot about as I’ve designed my website is of a digital garden. A lot of the way we consume content online is linear - your twitter timeline is a great example of that. The advantage is that it’s fast and easy; all you have to do is scroll.
 

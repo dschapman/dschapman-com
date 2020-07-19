@@ -5,6 +5,7 @@ import { isString, isEmpty } from 'lodash'
 import { Link } from 'gatsby'
 import Tooltip from './tooltip'
 import { Footnote, Marginnote } from './sidenote'
+import { Figure } from './figure'
 import Linktip from './linktip'
 import { Callout } from './TextStyles'
 
@@ -65,4 +66,5 @@ export default {
   Linktip: (props) => <Linktip {...props} />,
   Callout: (props) => <Callout {...props} />,
   Marginnote: (props) => <Marginnote {...props} />,
+  Figure: (props) => <Figure {...props} />,
 }

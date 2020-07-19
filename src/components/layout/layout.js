@@ -7,6 +7,7 @@ import Header from './header'
 import Footer from './footer'
 import Tooltip from './tooltip'
 import { Footnote, Marginnote } from './sidenote'
+import { Figure } from './figure'
 import Linktip from './linktip'
 import { Callout } from './TextStyles'
 import { useStaticQuery, graphql } from 'gatsby'
@@ -115,6 +116,7 @@ export default ({
             Linktip: (props) => <Linktip {...props} />,
             Callout: (props) => <Callout {...props} />,
             Marginnote: (props) => <Marginnote {...props} />,
+            Figure: (props) => <Figure {...props} />,
           }}>
           {children}
         </MDXProvider>

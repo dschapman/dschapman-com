@@ -11,6 +11,7 @@ import Linktip from '../../../components/layout/linktip'
 import LinktipPreview from '../../../components/layout/linktip-preview'
 import Tooltip from '../../../components/layout/tooltip'
 import { Footnote, Marginnote } from '../../../components/layout/sidenote'
+import { Figure } from '../../../components/layout/figure'
 import { Callout } from '../../../components/layout/TextStyles'
 
 const BrainNote = ({ note, nodes, location }) => {
@@ -157,6 +158,7 @@ const BrainNote = ({ note, nodes, location }) => {
           Linktip: (props) => <Linktip {...props} />,
           Callout: (props) => <Callout {...props} />,
           Marginnote: (props) => <Marginnote {...props} />,
+          Figure: (props) => <Figure {...props} />,
         }}>
         <MDXRenderer>{note.childMdx.body}</MDXRenderer>
       </MDXProvider>
