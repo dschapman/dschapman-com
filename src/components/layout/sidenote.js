@@ -15,8 +15,8 @@ const Footnote = ({ count, children }) => {
       clear: right;
       margin-right: -45%;
       width: 40%;
-      margin-top: 0;
-      margin-bottom: 0;
+      margin-top: 6px;
+      margin-bottom: 6px;
       font-size: 0.82em;
       opacity: 85%;
       line-height: 1.3;
@@ -116,8 +116,8 @@ const Marginnote = ({ count, children }) => {
       clear: right;
       margin-right: -45%;
       width: 40%;
-      margin-top: 0;
-      margin-bottom: 0;
+      margin-top: 6px;
+      margin-bottom: 6px;
       font-size: 0.82em;
       opacity: 85%;
       line-height: 1.3;
