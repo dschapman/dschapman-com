@@ -10,7 +10,7 @@ import { Link, Router } from 'gatsby'
 import Linktip from '../../../components/layout/linktip'
 import LinktipPreview from '../../../components/layout/linktip-preview'
 import Tooltip from '../../../components/layout/tooltip'
-import Footnote from '../../../components/layout/footnote'
+import { Footnote, Marginnote } from '../../../components/layout/sidenote'
 import { Callout } from '../../../components/layout/TextStyles'
 
 const BrainNote = ({ note, nodes, location }) => {
@@ -156,6 +156,7 @@ const BrainNote = ({ note, nodes, location }) => {
           Tooltip: (props) => <Tooltip {...props} />,
           Linktip: (props) => <Linktip {...props} />,
           Callout: (props) => <Callout {...props} />,
+          Marginnote: (props) => <Marginnote {...props} />,
         }}>
         <MDXRenderer>{note.childMdx.body}</MDXRenderer>
       </MDXProvider>

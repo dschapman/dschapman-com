@@ -12,7 +12,7 @@ Art in the internet age wants to be instantly famous. Artists look for high traf
 
 Whatever your medium, the internet provides unparallelled tools to self-publish. Youtube, Instagram, and Twitter all allow you to build your following and have algorithms that may one day smile upon you. The muse of old has become an algorithm, but they are no longer a personal muse, unique to every artist but a single impersonal algorithm -- trading the strict demands of absolute beauty for the shifting sands of popularity.<Footnote count={2}>It is certainly true that good and beautiful things are often popular but it is also false that all popular things are good and beautiful.</Footnote>
 
-<Callout>It is not all bad - not even close.</Callout>
+## It is not all bad - not even close
 
 The internet has also given us unparallelled tools for creation. In my computer or even my iPhone I have limitless tools for creation. There is paid and free software for <Tooltip tiptext={<span>I tried <a href="/articles/typesetting-poems-with-latex-i">LaTeX</a> before settling on InDesign for typsetting my book.</span>}> typsetting</Tooltip>, drawing, photo editing, design, and writing. Less than a century ago many of these things required entire rooms of equipment and years of experience -- now they sit at our fingertips.
 
@@ -22,7 +22,7 @@ Earlier this year I wrote a piece reflecting on the [55 books I sold in 2019](/a
 
 <Callout>Art is better if its not viral</Callout>
 
-Viral art must appeal to all people everywhere, a task that is always difficult. But art that has to appeal to everyone also loses its punch. It is hard to critique, nuance, or issue a call to action that will appeal to everyone. More importantly as artist Makoto Fujimura articulates in Culture Care -- great art is written in and for specific communities<Footnote count={3}>See particularly Chapters 2-4 of Culture Care</Footnote> and artists are often <Tooltip tiptext="Fujimura uses the anglosaxon term mearcstapasm or border-walkers, to describe artists">on the border</Tooltip> of these communities, seeing the world and their culture from a very specific, relational point of view.
+Viral art must appeal to all people everywhere, a task that is always difficult. But art that has to appeal to everyone also loses its punch. It is hard to critique, nuance, or issue a call to action that will appeal to everyone. More importantly as artist Makoto Fujimura articulates in Culture Care -- great art is written in and for specific communities<Footnote count={3}>See particularly Chapters 2-4 of Culture Care</Footnote> and artists are often on the border of these communities<Marginnote count={1}>Fujimura uses the anglosaxon term mearcstapasm or border-walkers, to describe artists</Marginnote>, seeing the world and their culture from a very specific, relational point of view.
 
 Perhaps in this internet age all our art should be created with the people we know in mind. Hand crafted websites for the person we love, cinematic family videos of the <Linktip tiptext="This video was shot entirely on an iPhone!">[ family trip to Disney World](https://www.youtube.com/watch?v=unGFQaxFUWU)</Linktip>, a beautifully designed family cookbook that will only ever sell 10 copies, or a thousand other small projects made to cultivate our communities into better places; to make our friends smile, laugh, or cry; or to make our small connected worlds into a better world.
 

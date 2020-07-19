@@ -2,7 +2,7 @@
     "plugins": ["emotion"],
     "presets": [
         [
-          "babel-preset-gatsby",
+          "babel-preset-gatsby"
         ]
     ]
 } 

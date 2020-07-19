@@ -9,7 +9,7 @@ import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import components from '../layout/mdx-components'
 import { MDXProvider } from '@mdx-js/react'
 import Tooltip from '../layout/tooltip'
-import Footnote from '../layout/footnote'
+import { Footnote, Marginnote } from '../layout/sidenote'
 import { Callout } from '../layout/TextStyles'
 
 const INTERNAL_LINK_REGEX = /^\/notes/g
@@ -120,4 +120,5 @@ export default {
   Tooltip: (props) => <Tooltip {...props} />,
   Linktip: (props) => <Linktip {...props} />,
   Callout: (props) => <Callout {...props} />,
+  Marginnote: (props) => <Marginnote {...props} />,
 }

@@ -6,7 +6,7 @@ import components from '../notes/note-mdx-components'
 import Header from './header'
 import Footer from './footer'
 import Tooltip from './tooltip'
-import Footnote from './footnote'
+import { Footnote, Marginnote } from './sidenote'
 import Linktip from './linktip'
 import { Callout } from './TextStyles'
 import { useStaticQuery, graphql } from 'gatsby'
@@ -114,6 +114,7 @@ export default ({
             Tooltip: (props) => <Tooltip {...props} />,
             Linktip: (props) => <Linktip {...props} />,
             Callout: (props) => <Callout {...props} />,
+            Marginnote: (props) => <Marginnote {...props} />,
           }}>
           {children}
         </MDXProvider>

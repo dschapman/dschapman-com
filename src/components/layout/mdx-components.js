@@ -4,7 +4,7 @@ import { Styled, jsx } from 'theme-ui'
 import { isString, isEmpty } from 'lodash'
 import { Link } from 'gatsby'
 import Tooltip from './tooltip'
-import Footnote from './footnote'
+import { Footnote, Marginnote } from './sidenote'
 import Linktip from './linktip'
 import { Callout } from './TextStyles'
 
@@ -64,4 +64,5 @@ export default {
   Tooltip: (props) => <Tooltip {...props} />,
   Linktip: (props) => <Linktip {...props} />,
   Callout: (props) => <Callout {...props} />,
+  Marginnote: (props) => <Marginnote {...props} />,
 }
