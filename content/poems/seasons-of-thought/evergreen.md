@@ -2,7 +2,7 @@
 title: "Evergreen"
 excerpt: "🌲 A poem by D.S. Chapman"
 slug: "/poetry/seasons-of-thought/evergreen"
-tags: ["nature", "tree", "Northwest", "autumn', "fall", "home", "ayop"]
+tags: ["nature", "tree", "Northwest", "autumn", "fall", "home", "ayop"]
 ---
 
 <p class="verse">

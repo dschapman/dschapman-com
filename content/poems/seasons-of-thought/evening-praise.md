@@ -6,6 +6,10 @@ tags: ['evening', 'praise', 'ayop', 'spring']
 collection: 'Seasons of Thought'
 ---
 
+<audio controls>
+<source src="/evening-praise.mp3"></source>
+</audio>
+
 Night skies, bright moon,  
 stars that pierce the soul.  
 pricking a tear at each puncture—  
