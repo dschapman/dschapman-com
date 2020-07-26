@@ -9,10 +9,10 @@ import Layout from '../layout/layout'
 export default function PageTemplate({ data: { mdx }, location }) {
   return (
     <Layout
-      title={mdx.frontmatter.title}
       description={mdx.frontmatter.excerpt}
       type="Poem 📜"
       location={location}>
+      <Styled.h1>{mdx.frontmatter.title}</Styled.h1>
       <MDXRenderer>{mdx.body}</MDXRenderer>
       <div>
         <Styled.a as={Link} to="/poetry/all">
