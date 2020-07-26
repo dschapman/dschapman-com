@@ -2,7 +2,7 @@
 title: "Evergreen"
 excerpt: "🌲 A poem by D.S. Chapman"
 slug: "/poetry/seasons-of-thought/evergreen"
-tags: ["nature", "tree", "Northwest"]
+tags: ["nature", "tree", "Northwest", "autumn', "fall", "home", "ayop"]
 ---
 
 <p class="verse">
@@ -22,3 +22,5 @@ as mine does,<br />
 for I, like him,<br />
 remember home.<br />
 </p>
+
+_Part of the Book [Seasons of Thought](/poetry/seasons-of-thought)_
