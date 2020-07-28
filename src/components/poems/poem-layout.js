@@ -9,7 +9,6 @@ import Layout from '../layout/layout'
 
 export default function PageTemplate({ data: { mdx }, location }) {
   let recording = mdx.frontmatter.recording
-  console.log(recording)
   return (
     <Layout
       title={mdx.frontmatter.title}

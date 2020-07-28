@@ -2,7 +2,6 @@ import React from 'react'
 
 const Audio = ({ src }) => {
   let recording
-  console.log({ src })
   if (src == null) {
     recording = false
   } else {
