@@ -3,16 +3,20 @@ import React from 'react'
 import { Styled, jsx } from 'theme-ui'
 import { graphql, Link } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+import Audio from '../audio'
 
 import Layout from '../layout/layout'
 
 export default function PageTemplate({ data: { mdx }, location }) {
+  let recording = mdx.frontmatter.recording
+  console.log(recording)
   return (
     <Layout
       title={mdx.frontmatter.title}
       description={mdx.frontmatter.excerpt}
       type="Poem 📜"
       location={location}>
+      <Audio src={recording} />
       <MDXRenderer>{mdx.body}</MDXRenderer>
       <div>
         <Styled.a as={Link} to="/poetry/all">
@@ -31,6 +35,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         excerpt
+        recording
       }
     }
   }
