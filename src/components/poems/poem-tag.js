@@ -80,7 +80,7 @@ const PoemTag = ({ data, pageContext, location }) => {
           </Styled.a>
         </LinktipPreview>
         <br />
-        <Styled.a as={Link} to="/articles/tags">
+        <Styled.a as={Link} to="/poetry/tags">
           See all tags &rarr;
         </Styled.a>
       </Layout>
@@ -94,7 +94,7 @@ const PoemTag = ({ data, pageContext, location }) => {
         location={location}>
         <PostList posts={edges} />
         <br />
-        <Styled.a as={Link} to="/articles/tags">
+        <Styled.a as={Link} to="/poetry/tags">
           See all tags &rarr;
         </Styled.a>
       </Layout>

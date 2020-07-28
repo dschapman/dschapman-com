@@ -4,7 +4,6 @@ import { Styled, jsx } from 'theme-ui'
 import TagListItem from './list-item'
 
 export default ({ tags }) => {
-  console.log(tags)
   let newTags = tags.filter((tag) => tag.totalCount > 0) //filter out any tags with only one item
   return (
     <Styled.ul
