@@ -76,5 +76,5 @@ or
         (+ 1 3))
 ```
 
-Next Chapter: [How to Use Emacs, an Excellent Clojure Editor | Clojure for the Brave and True](how_to_use_emacs_an_excellent_clojure_editor_clojure_for_the_brave_and_true.md)
+Next Chapter: [[How to Use Emacs, an Excellent Clojure Editor]]
 
