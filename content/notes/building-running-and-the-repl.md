@@ -1,6 +1,9 @@
 ---
-title: Building, Running, and the REPL
+title: "Chapter 1: Building, Running, and the REPL"
+alias: ["Building, Running, and the REPL"]
 ---
+
+*These are my notes on the book [[Clojure for the Brave and True]]*
 
 -   Set up [[Clojure]]
 -   Learn to run code using the [[REPL]]

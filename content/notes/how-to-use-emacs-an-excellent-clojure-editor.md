@@ -2,6 +2,7 @@
 title: How to Use Emacs, an Excellent Clojure Editor 
 ---
 
+*These are my notes on the book [[Clojure for the Brave and True]]*
 
 I didn&rsquo;t use this chapter to get my [[Emacs]] editor set up since I just use [[Doom]] and am learning Emacs seperately by reading the book Mastering Emacs. Instead I installed Cider by uncommenting the clojure language in my `init.el` Doom configuration file. I also added `(setq org-babel-clojure-backend 'cider)` to my `config.el` file.
 

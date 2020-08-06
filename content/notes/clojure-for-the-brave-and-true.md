@@ -2,6 +2,8 @@
 title: Clojure for the Brave and True
 ---
 
+*These are my notes on the book [Clojure for the Brave and True](https://www.braveclojure.com)*
+
 ## Table of Contents
 
 1.  [[Building, Running, and the REPL]]
