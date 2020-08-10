@@ -2,6 +2,7 @@
 title: To the Green Rock
 slug: /poetry/to-the-green-rock
 tags: ['nature', 'rock', 'time']
+recording: "/to-the-green-rock.mp3"
 ---
 
 O Green Rock cracked, riven in ages past,  
