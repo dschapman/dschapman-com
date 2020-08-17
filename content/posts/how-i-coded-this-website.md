@@ -10,7 +10,7 @@ Fun Fact: I coded this website myself. The source code for everything you see li
 
 There are many reasons I enjoy coding — problem solving, creativity, learning new technologies and new systems. I also love coding because its a bit like magic. Lines of code are the incantation, symbols arranged just so or else the magic fizzles.
 
-The problem is that a website is no easy spell, at least for this dabbler in code. There are multiple files that work to accomplish different things. Some of the files define what my (about page)[/about/] looks like others work to convert markdown files into web pages like the one you’re reading now. There are multiple languages at work - javascript, HTML, CSS, and GraphQL.
+The problem is that a website is no easy spell, at least for this dabbler in code. There are multiple files that work to accomplish different things. Some of the files define what my [about page](/about) looks like others work to convert markdown files into web pages like the one you’re reading now. There are multiple languages at work - javascript, HTML, CSS, and GraphQL.
 
 Luckily, I don’t have to reinvent the wheel (or the spell book). Other mages have travelled this way before and left their notes and tools behind which I have used as I’ve coded my site. The most helpful has been [Gatsby](https://www.gatsbyjs.org).
 
