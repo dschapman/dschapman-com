@@ -45,6 +45,7 @@ export default ({
       <HeaderLinks notes={false} />
       <SEO
         title={title}
+        seoTitle={seoTitle}
         seoTitleAddition1={seoTitleAddition1}
         seoTitleAddition2={seoTitleAddition2}
         description={description}

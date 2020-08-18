@@ -10,6 +10,6 @@ Here are a couple key topical notes:
 
 - [[Books]]
 - [[Writing]]
-- [[Poetry]]
+- [[Website]]
 
 If you're curious, check out [[How I write these notes]]!

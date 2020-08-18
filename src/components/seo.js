@@ -6,6 +6,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 export default ({
   title,
   description,
+  seoTitle,
   seoTitleAddition1,
   seoTitleAddition2,
   type,
@@ -28,8 +29,10 @@ export default ({
     }
   `)
   const siteUrl = siteMetadata.siteUrl
-  const pageTitle = title || siteMetadata.title
-  const seoTitle = `${title || siteMetadata.seoTitleAddition1} | ${
+
+  const pageTitle = title || seoTitle || siteMetadata.title
+
+  const seoLongTitle = `${title || siteMetadata.seoTitleAddition1} | ${
     seoTitleAddition1 || siteMetadata.title
   } | ${seoTitleAddition2 || siteMetadata.seoTitleAddition2}`
   const seoDescription = description || siteMetadata.description
@@ -39,12 +42,12 @@ export default ({
   const ogImage = `https://dschapman-functions.netlify.app/opengraph?title=${pageTitle}&author=${author}&type=${type}&v=1.0.0`
   return (
     <Helmet>
-      <title>{seoTitle}</title>
+      <title>{seoLongTitle}</title>
       <meta name="description" content={seoDescription} />
       <meta name="image" congent={ogImage} />
       <meta name="url" content={url} />
 
-      <meta property="og:title" content={seoTitle} />
+      <meta property="og:title" content={seoLongTitle} />
       <meta property="og:description" content={seoDescription} />
       <meta property="og:image" content={ogImage} />
       <meta property="og:image:type" content="image/png" />
@@ -55,7 +58,7 @@ export default ({
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@ds_chapman" />
       <meta name="twitter:creator" content={siteMetadata.twitter} />
-      <meta name="twitter:title" content={seoTitle} />
+      <meta name="twitter:title" content={seoLongTitle} />
       <meta name="twitter:description" content={seoDescription} />
       <meta name="twitter:image" content={ogImage} />
 
