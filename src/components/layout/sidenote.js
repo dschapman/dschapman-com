@@ -123,7 +123,7 @@ const Marginnote = ({ count, children }) => {
       line-height: 1.3;
       vertical-align: baseline;
       position: relative;
-      border-left: 2px solid ${theme.colors.bluegreen};
+      border-left: 2px solid ${theme.colors.red};
       padding-left: 1em;
     }
 
