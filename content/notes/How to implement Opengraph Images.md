@@ -14,7 +14,7 @@ https://codesandbox.io/s/happy-mendel-uiesy?file=/src/App.js
 
 This then is sent to cloudinary and cached there so that it doesn't have to be regenerated every time the image is requested.
 
-The end product means that I don't need to do work to find images for each post that I do!
+The end product means that I don't need to do extra work to find images I like for every note or post that I do.
 
 You can browse the code that generates my Opengraph Images on Github
 
