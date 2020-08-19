@@ -39,7 +39,7 @@ export default ({
   const author = 'D.S. Chapman'
 
   const url = `${siteUrl}${location.pathname}`
-  const ogImage = `https://dschapman-functions.netlify.app/opengraph?title=${pageTitle}&author=${author}&type=${type}&v=1.0.0`
+  const ogImage = `https://dschapman-functions.netlify.app/opengraph?title=${pageTitle}&author=${author}&type=${type}&v=1.0.1`
   return (
     <Helmet>
       <title>{seoLongTitle}</title>
