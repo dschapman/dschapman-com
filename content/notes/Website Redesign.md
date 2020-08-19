@@ -2,7 +2,7 @@
 title: Website Redesign
 ---
 
-Redesigning my [[website]]. Goal is to make it easier to create content, and to make content a) rich and b) discoverable.
+Notes from redesigning my [[website]]. Goal is to make it easier to create content, and to make content a) rich and b) discoverable.
 
 - [ ] Implement [[Blogchains]]
 - [ ] Implement [gatsby-redirect-from | GatsbyJS](https://www.gatsbyjs.org/packages/gatsby-redirect-from/) so that when a note gets turned into an article you can still redirect
