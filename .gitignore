@@ -66,3 +66,6 @@ yarn-error.log
 \.DS_Store
 content/notes/org-roam.db
 content/notes/.dir-locals.el
+content/notes/.obsidian/cache
+content/notes/.obsidian/config
+content/notes/.obsidian/workspace

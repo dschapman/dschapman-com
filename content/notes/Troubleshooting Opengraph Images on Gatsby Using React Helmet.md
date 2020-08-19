@@ -6,7 +6,7 @@ Had some trouble getting my [[OpenGraph]] images set up on this [[GatsbyJS]] sit
 
 ## Solution
 
-What ultimately solved the problem was including gatsby-plugin-react-helmet in the gatsby-config.js file of my website. I had it working at one point before without it, but adding that seemed to have solved my problem.
+What ultimately solved the problem was including gatsby-plugin-react-helmet in the gatsby-config.js file of my website. It was probably a dependency that wasn't explicitly installed.
 
 ### Places to test your unfurled OpenGraph image
 
