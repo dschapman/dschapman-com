@@ -1,6 +1,6 @@
 ---
 title: 'Create a Basic Svelte Site'
-slug: '/create-a-svelte-site'
+slug: '/articles/create-a-svelte-site'
 date: '2020-08-24'
 excerpt: ''
 tags: ['svelte']
