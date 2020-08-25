@@ -2,8 +2,8 @@
 title: 'Create a Basic Svelte Site'
 slug: '/articles/create-a-svelte-site'
 date: '2020-08-24'
-excerpt: ''
-tags: ['svelte']
+excerpt: 'A short guide to creating a simple Svelte site with animations and transitions.'
+tags: ['svelte', 'website', 'animation']
 ---
 
 I recently used SvelteJS to create [a portfolio of websites I've built](https://danielchapman.dev). <Marginnote count={1}>Right now there's only two websites listed, but I'm sure it will expand over time.</Marginnote> The process of writing the website was fun -- figuring out the syntax of Svelte, using the lovely transition and animation libraries, and playing with event handlers. Here's a quick guide for how you can get started with Svelte.
@@ -198,4 +198,4 @@ In the top-level div you'll see there is a style tag. Animating the CSS in Svelt
 
 ## Conclusion
 
-All in all it took less than a weekend from the moment I started learning Svelte watching [this 19 minute Egghead collection](https://egghead.io/playlists/getting-started-with-svelte-3-05a8541a) to when I finished the rough draft of my website. It might not have taken long, but it was long enough to show me that Svelte is a unique, fun language with powerful functionality.
+All in all it took less than a weekend from the moment I started learning Svelte watching [this 19 minute Egghead collection](https://egghead.io/playlists/getting-started-with-svelte-3-05a8541a) to when I finished the rough draft of [my Svelte website](https://danielchapman.dev). It might not have taken long, but it was long enough to show me that Svelte is a unique, fun language with powerful functionality.
