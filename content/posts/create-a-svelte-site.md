@@ -198,4 +198,4 @@ In the top-level div you'll see there is a style tag. Animating the CSS in Svelt
 
 ## Conclusion
 
-All in all it took less than a weekend from the moment I started learning Svelte watching [this 19 minute Egghead collection](https://egghead.io/playlists/getting-started-with-svelte-3-05a8541a) to when I finished the rough draft of [my Svelte website](https://danielchapman.dev). It might not have taken long, but it was long enough to show me that Svelte is a unique, fun language with powerful functionality.
+All in all it took less than a weekend from the moment I started learning Svelte watching [this 26 minute Egghead collection](https://egghead.io/playlists/getting-started-with-svelte-3-05a8541a) to when I finished the rough draft of [my Svelte website](https://danielchapman.dev). It might not have taken long, but it was long enough to show me that Svelte is a unique, fun language with powerful functionality.
