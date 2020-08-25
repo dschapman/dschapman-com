@@ -137,13 +137,13 @@ export default {
     code: {
       color: 'text',
       fontFamily: 'monospace',
-      fontSize: [1, 1, 2],
+      fontSize: '12px',
     },
     inlineCode: {
       fontFamily: 'monospace',
       color: 'text',
       bg: 'muted',
-      fontSize: [1, 1, 2],
+      fontSize: '12px',
     },
     img: {
       align: 'left',
