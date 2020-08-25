@@ -114,7 +114,7 @@ Transitions are super easy, you just import the transition from svelte and attac
 </div>
 ```
 
-You'll see a couple things here. First the `on:click` handler which just toggles the `visible` variable. You'll also see that there's an if block that will only display if `visible` is true. Finally in the `div` with the "about" class you'll see the `transition:slide` attribute this tells Svelte how to transition the element when it gets attached to or removed from the DOM.
+You'll see a couple things here. First the `on:click` handler which just toggles the `visible` variable. You'll also see that there's an if block that will only display if `visible` is true. Finally in the `div` with the "about" class you'll see the `transition:slide` attribute this tells Svelte how to transition the element when it gets attached to or removed from the [DOM](/notes/dom).
 
 This is where the magic of Svelte started shining through for me. Svelte has 7 built in transitions to choose from and all you have to do to implement them is import them and add the `transition:transition-name` attribute to the component.
 
