@@ -12,7 +12,7 @@ I recently used SvelteJS to create [a portfolio of websites I've built](https://
 
 Svelte is a tool for building fast web applications. It's a bit similar to other frontend frameworks like React and Vue. Like React, Svelte constructs components, but unlike React which does its work in the browser at run time, Svelte compiles your app into optimized Javascript code.
 
-I found that writing Svelte code is fun -- it's more like writing vanilla HTML or CSS than writing React -- but the syntax feels different, logic syntax in line, and it has really easy support for animations.
+I found that writing Svelte code is fun -- it's more like writing vanilla HTML or CSS than writing React -- and animations and transitions have first class support.
 
 ## Creating a Project with Svelte 3
 
@@ -22,7 +22,7 @@ There is a template that you can use as a starting point to create your Svelte p
 npx degit sveltejs/template my-svelte-project
 ```
 
-This will use npx to run <Tooltip tiptext="Degit is a tool that makes copies of git repositories. If you run `degit some-user/some-repo` it will find the latest commit on https://github.com/some-user/some-repo and download the associated tar file. This is faster than git clone because you're not downloading the entire git history">degit</Tooltip> to create your svelte project.
+This will use npx to run <Tooltip tiptext="Degit is a tool that makes copies of git repositories. If you run `degit some-user/some-repo` it will find the latest commit on https://github.com/some-user/some-repo and download the associated tar file. This is faster than git clone because you're not downloading the entire git history.">degit</Tooltip> to create your svelte project.
 
 Next go into the directory and run npm install.
 
@@ -30,13 +30,13 @@ Next go into the directory and run npm install.
 cd my-svelte-project && npm install
 ```
 
-Now that all the packages are installed you can start up the development server using `npm run dev` and see your website at <http://localhost:5000>. The information for your file is stored in the file `src/App.svelte`.
+Now that all the packages are installed you can start up the development server using `npm run dev` and see your website at <http://localhost:5000>. Your Svelte component is stored in the file `src/App.svelte`, although you can easily create additional components and import them into `App.svelte`.
 
 ## Basic Svelte Structure
 
-The basic structure of a svelte file has a `script` tag, a `style` tag, and the svelte component. The `script` tags are where the brains of your Svelte component go -- variable and function declarations. The `style` tag is where you can write the CSS to style your component and the syntax is vanilla CSS. And finally the svelte component -- for the most part you compose this like you would with HTML or JSX, but there are some exceptions.
+A svelte file typically has a `script` tag, a `style` tag, and the svelte component. The `script` tags are where the brains of your Svelte component go -- variable and function declarations. The `style` tag is contains the CSS to style your component. And finally there's the svelte component, which for the most part you compose like you would with HTML or JSX, but there are some exceptions.
 
-The most obvious exception are the if block, each block, and await block which appear in the svelte component.
+The most obvious exception are the if block, each block, and await block which are written in-line in the svelte component.
 
 ### If block
 
@@ -84,7 +84,7 @@ The real star of my experience with Svelte has been the transitions and animatio
 
 <img src="../assets/svelte-animations.gif" alt="Svelte Animations from danielchapman.dev" style="width:100%;"/>
 
-Transitions are super easy, you just import the transition from svelte and attach it to the element you want to transition. For my website I created a `Bio` component so that if my name is clicked a short introduction will drop down. Implementing this in Svelte was simple. Here's my component with the styles removed:
+Transitions have first class support in Svelte, you just import the transition from svelte and attach it to the element you want to transition. For my website I created a `Bio` component so that if my name is clicked a short introduction will drop down. Implementing this in Svelte was straightforward. Here's my `Bio` component with the styles removed:
 
 ```jsx
 <script>
@@ -114,11 +114,11 @@ Transitions are super easy, you just import the transition from svelte and attac
 </div>
 ```
 
-You'll see a couple things here. First the `on:click` handler which just toggles the `visible` variable. You'll also see that there's an if block that will only display if `visible` is true. Finally in the `div` with the "about" class you'll see the `transition:slide` attribute this tells Svelte how to transition the element when it gets attached to or removed from the [DOM](/notes/dom).
+You'll see a few things here. First the `on:click` handler which toggles the `visible` variable. You'll also see that there's an if block whose contents will only display if `visible` is true. And finally in the `div` with the "about" class you'll see the `transition:slide` attribute; this tells Svelte how to transition the element when it gets attached to or removed from the DOM -- in other words whenever my name is clicked.
 
-This is where the magic of Svelte started shining through for me. Svelte has 7 built in transitions to choose from and all you have to do to implement them is import them and add the `transition:transition-name` attribute to the component.
+This is where the magic of Svelte started shining through for me. All I hd to do to add a fancy slide tranisition was to add the `transition:slide` attribute to a component.
 
-Animations are a little bit more tricky but still intuitive when you get the hang of it. I wanted a hover effect on the website cards I created so I created `on:mouseenter` and `on:mouseleave` handlers that use Svelte's [`tweened`](https://svelte.dev/docs#svelte_motion) function from `svelte/motion`. `tweened` is a function that starts at an initial value, then when you call `set(newvalue)`, it gradually moves from that value to the new value taking into consideration a `duration` in milliseconds and an `easing` function that effects how the value is incremented. I used this in combination with a style attribute to gradually animate CSS `box-shadow` when the mouse hovers over a website card.
+Animations are a little trickier. I wanted a hover effect on the website cards I created so I created `on:mouseenter` and `on:mouseleave` handlers that use Svelte's [`tweened`](https://svelte.dev/docs#svelte_motion) function from `svelte/motion`. `tweened` is a function that starts at an initial value, then when you call `set(newvalue)`, it gradually moves from its initial value to the new value taking into consideration a `duration` in milliseconds and an `easing` function that effects how the value is incremented. I used this in combination with a style attribute to gradually animate CSS `box-shadow` when the mouse hovers over a website card.
 
 The relevant code for the animation is below.
 
@@ -199,3 +199,5 @@ In the top-level div you'll see there is a style tag. Animating the CSS in Svelt
 ## Conclusion
 
 All in all it took less than a weekend from the moment I started learning Svelte watching [this 26 minute Egghead collection](https://egghead.io/playlists/getting-started-with-svelte-3-05a8541a) to when I finished the rough draft of [my Svelte website](https://danielchapman.dev). It might not have taken long, but it was long enough to show me that Svelte is a unique, fun language with powerful functionality.
+
+The code for [my website is open source](https://github.com/dschapman/danielchapman-dev) and you are welcome to browse it, copy it, and tinker with it.
