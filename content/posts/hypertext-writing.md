@@ -2,7 +2,15 @@
 title: 'Hypertext Writing'
 date: '2020-06-16'
 slug: '/articles/hypertext-writing'
-tags: ['writing', 'hypertext-thinking', 'xanadu', 'ted-nelson']
+tags:
+  [
+    'writing',
+    'hypertext-thinking',
+    'xanadu',
+    'ted-nelson',
+    'website',
+    'digital thinking',
+  ]
 excerpt: 'Every medium has its strengths. There are considerable strengths inherent to a digital, web-based, way of thinking -- first and foremost is the sheer amount of interactivity and connections you can make.'
 ---
 
