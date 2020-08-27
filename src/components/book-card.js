@@ -5,7 +5,7 @@ import book from '../../content/assets/seasons-of-thought-cover.png'
 
 const BookCard = () => {
   return (
-    <div>
+    <a href="https://www.amazon.com/Seasons-Thought-D-S-Chapman/dp/0578504359">
       <img
         src={book}
         sx={{
@@ -19,7 +19,7 @@ const BookCard = () => {
         }}
         alt="Cover for Seasons of Thought"
       />
-    </div>
+    </a>
   )
 }
 
