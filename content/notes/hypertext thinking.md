@@ -1,5 +1,4 @@
 ---
 title: Hypertext Thinking
-aliases: ["networked thinking"]
-roam_alias: ["networked thinking", "hypertext-thinking"]
+roam_alias: ["hypertext-thinking"]
 ---
