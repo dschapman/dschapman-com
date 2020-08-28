@@ -46,6 +46,6 @@ Make sure to import a layout if you're creating an .mdx page in src/pages
 └── yarn.lock
 ```
 
-## Bidirectional Links / Link Previews
+## ↔️ Bidirectional Links / Link Previews
 
 Link Previews are implemented using Tippy JS Tooltips. gatsby-theme-brain provides native bidirectional linking and the information to easily implement link previews (with a slightly modified GraphQL query); however, in order to get this working across the site I added an MDX component that cycles through every single mdx page and puts the childMdx.body value inside of a tooltip if the slugs match.
