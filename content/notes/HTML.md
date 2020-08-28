@@ -1,4 +1,4 @@
 ---
-title: 'Hypertext Markup Language'
+title: Hypertext Markup Language
 aliases: ['HTML']
 ---

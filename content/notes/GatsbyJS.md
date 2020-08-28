@@ -1,6 +1,7 @@
 ---
-title: "Gatsby JS"
+title: Gatsby JS
 aliases: ['gatsby']
+roam_alias: ['gatsby', 'Gatsby']
 ---
 
-A [[React]] framework
+A [[file:React.md][react]] framework
