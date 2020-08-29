@@ -1,5 +1,5 @@
 ---
-title: Lecture 6: Version Control (git) Notes
+title: 'Lecture 6: Version Control (git) Notes'
 ---
 
 Notes on: https://www.youtube.com/watch?v=2sjqTHE0zok
