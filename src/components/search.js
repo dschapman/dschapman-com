@@ -6,13 +6,13 @@ import { Styled, jsx } from 'theme-ui'
 function Search({ data }) {
   const [searchTerm, setSearchTerm] = React.useState('')
   const [tagsVisible, setTagsVisible] = React.useState(false)
-  let allTags = {}
+  let allTags = new Object()
   data.allMdx.edges.map(({ node }) => {
     node.frontmatter.tags.map((tag) => {
       allTags[tag] = (allTags[tag] || 0) + 1
     })
   })
-
+  let tags = Object.keys(allTags)
   function handleChange(event) {
     setSearchTerm(event.target.value)
   }
@@ -42,7 +42,10 @@ function Search({ data }) {
             tags: post.frontmatter.tags,
           }
           console.log(newPost.tags.find((str) => str === searchTerm))
-          if (newPost.tags.find((str) => str === searchTerm)) {
+          if (
+            newPost.tags.find((str) => str.match(`${searchTerm}`, 'i')) ||
+            newPost.title.match(`${searchTerm}`, 'i')
+          ) {
             return <PostLink key={newPost.slug} {...newPost} />
           } else return
         })}
