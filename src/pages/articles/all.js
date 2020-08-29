@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../../components/posts/posts-layout'
-import PostList from '../../components/posts/post-list'
+import Search from '../../components/search'
 
 const PostsIndex = ({ data, location }) => (
   <Layout
@@ -10,7 +10,7 @@ const PostsIndex = ({ data, location }) => (
     type="📚"
     titleTagName="h1"
     location={location}>
-    <PostList posts={data.allMdx.edges} />
+    <Search data={data} />
   </Layout>
 )
 export const pageQuery = graphql`
