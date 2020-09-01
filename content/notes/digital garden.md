@@ -20,9 +20,11 @@ I added a [[notes]] section to do exactly that: think, make connections, and dev
 
 I’ve also developed curated pages like my [Articles](/articles) page or my [Poetry](/Poetry) that intentionally directs people towards certain content. It’s my website, what ideas do I want people to interact with?
 
+One idea that's key to the digital garden is the idea that one website can hold anything I want to share. For me that means that my technical content, and my poetry live hand in hand -- each at the same level of prominence. The key to this is providing plenty of pathways in the garden for people to veer off into different corners <Marginnote count={1}>This is where [[marginalia]] come in handy. They can send you off down all sorts of interesting rabbit holes.</Marginnote>
+
 ## Inspiration
 
 - [[How the Blog Broke the Internet - Amy Hoy]]
-- https://joelhooks.com/digital-garden
+- [My blog is a digital garden, not a blog](https://joelhooks.com/digital-garden)
 - [[building a digital garden - tom critchlow]]
 - [About This Website · Gwern.net](https://www.gwern.net/About)
