@@ -7,7 +7,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(`
     query {
       poems: allMdx(
-        filter: { fileAbsolutePath: { regex: "/content/poems/" } }
+        filter: {
+          fileAbsolutePath: { regex: "/content/dschapman-com-content/poems/" }
+        }
       ) {
         edges {
           node {
@@ -26,7 +28,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         }
       }
       articles: allMdx(
-        filter: { fileAbsolutePath: { regex: "/content/posts/" } }
+        filter: {
+          fileAbsolutePath: { regex: "/content/dschapman-com-content/posts/" }
+        }
       ) {
         edges {
           node {
@@ -45,7 +49,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         }
       }
       articleTagsGroup: allMdx(
-        filter: { fileAbsolutePath: { regex: "/content/posts/" } }
+        filter: {
+          fileAbsolutePath: { regex: "/content/dschapman-com-content/posts/" }
+        }
       ) {
         group(field: frontmatter___tags) {
           fieldValue
@@ -53,7 +59,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         }
       }
       poemTagsGroup: allMdx(
-        filter: { fileAbsolutePath: { regex: "/content/poems/" } }
+        filter: {
+          fileAbsolutePath: { regex: "/content/dschapman-com-content/poems/" }
+        }
       ) {
         group(field: frontmatter___tags) {
           fieldValue

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from 'react'
 import { jsx, Styled } from 'theme-ui'
-import avatar from '../../content/assets/avatar.jpg'
+import avatar from '../../content/dschapman-com-content/assets/avatar.jpg'
 
 const Avatar = () => {
   return (

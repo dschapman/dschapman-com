@@ -104,14 +104,14 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'assets',
-        path: `${__dirname}/content/assets/`,
+        path: `${__dirname}/content/dschapman-com-content/assets/`,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'assets',
-        path: `${__dirname}/content/posts/`,
+        path: `${__dirname}/content/dschapman-com-content/posts/`,
       },
     },
     'gatsby-plugin-theme-ui',
@@ -128,7 +128,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'poetry',
-        path: `${__dirname}/content/poems/`,
+        path: `${__dirname}/content/dschapman-com-content/poems/`,
       },
     },
     {
@@ -158,7 +158,7 @@ module.exports = {
     {
       resolve: '@aengusm/gatsby-theme-brain',
       options: {
-        notesDirectory: 'content/notes/',
+        notesDirectory: 'content/dschapman-com-content/notes/',
         rootPath: 'notes',
         rootNote: 'notes',
         mdxOtherwiseConfigured: true,

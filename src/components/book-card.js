@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from 'react'
 import { jsx, Styled } from 'theme-ui'
-import book from '../../content/assets/seasons-of-thought-cover.png'
+import book from '../../content/dschapman-com-content/assets/seasons-of-thought-cover.png'
 
 const BookCard = () => {
   return (
