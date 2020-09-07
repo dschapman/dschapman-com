@@ -1,4 +1,0 @@
----
-title: Javascript
-aliases: ['JS']
----
