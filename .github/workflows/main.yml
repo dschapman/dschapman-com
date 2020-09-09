@@ -22,13 +22,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: webfactory/ssh-agent
-        uses: webfactory/ssh-agent@v0.4.0
-
-
       # Runs a set of commands using the runners shell
       - name: Submodule Checkout
         uses: jwsi/submodule-checkout@v1
         with:
-          ssh-key: '${{ secrets.ACCESS_TOKEN }}'
+          ssh-key: '${{ secrets.SSH_PRIVATE_KEY }}'
