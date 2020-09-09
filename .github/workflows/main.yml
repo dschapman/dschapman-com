@@ -30,5 +30,6 @@ jobs:
       - name: Checkout submodules
         uses: textbook/git-checkout-submodule-action@2.1.1
         with:
+          token: ${{secrets.ACCESS_TOKEN}}
         # Set the --remote flag
           remote: true
