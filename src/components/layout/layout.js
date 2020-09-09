@@ -94,7 +94,7 @@ export default ({
         type={type}
         location={location}
       />
-      <div
+      <main
         sx={{
           maxWidth: 'container',
           mx: 'auto',
@@ -120,7 +120,7 @@ export default ({
           }}>
           {children}
         </MDXProvider>
-      </div>
+      </main>
       <Footer />
     </Styled.root>
   )

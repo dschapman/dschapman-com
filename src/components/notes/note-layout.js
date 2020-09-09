@@ -41,7 +41,7 @@ export default ({
         type="Note 📝"
         location={location}
       />
-      <div
+      <main
         sx={{
           maxWidth: 'container',
           px: [3, 4, 5],
@@ -56,7 +56,7 @@ export default ({
           {title}
         </h1>
         {children}
-      </div>
+      </main>
       <Footer />
     </Styled.root>
   )
