@@ -26,11 +26,9 @@ jobs:
           ssh-key: '${{ secrets.SSH_PRIVATE_KEY }}'
           submodules: 'true'
           ref: ${{ github.head_ref }}
-      - name: Add & Commit
-        uses: EndBug/add-and-commit@v4.4.0
+      - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          add: 'content/dschapman-com-content'
-          cwd: './'
-        env:
-          # This is necessary in order to push a commit to the repo
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged:
+          # Required
+          commit_message: bump content submodule
+          # Optional local file path to the repository
+          repository: .
