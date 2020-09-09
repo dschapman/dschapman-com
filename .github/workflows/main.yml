@@ -28,7 +28,4 @@ jobs:
           ref: ${{ github.head_ref }}
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          # Required
           commit_message: bump content submodule
-          # Optional local file path to the repository
-          repository: .
