@@ -21,13 +21,14 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      # Runs a set of commands using the runners shell
-      - name: Submodule Checkout
-        uses: jwsi/submodule-checkout@v1
         with: 
+          path: './'
           ssh-key: '${{ secrets.SSH_PRIVATE_KEY }}'
+          submodules: 'true'
       - name: Add & Commit
         uses: EndBug/add-and-commit@v4.4.0
+        with:
+          cwd: './'
         env:
           # This is necessary in order to push a commit to the repo
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged:
