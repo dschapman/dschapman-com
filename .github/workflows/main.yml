@@ -26,3 +26,9 @@ jobs:
         uses: jwsi/submodule-checkout@v1
         with: 
           ssh-key: '${{ secrets.SSH_PRIVATE_KEY }}'
+      - name: Git Commit and Push
+        # You may pin to the exact commit or the version.
+        # uses: github-actions-x/commit@3638e497fc2bda72d701660f4619cd0efaf0bcf3
+        uses: github-actions-x/commit@v2.6
+        with:
+          commit-message: "bump content"
