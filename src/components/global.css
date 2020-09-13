@@ -1,0 +1,21 @@
+@import url('https://p.typekit.net/p.css?s=1&k=osf8fyt&ht=tk&f=171.172.175.176.5474.5475.6768.6769.6770.6771.6772.6773&a=18424651&app=typekit&e=css');
+*::selection {
+  color: #ffffff;
+  background-color: #75b9be;
+  height: 100%;
+}
+* {
+  font-family: adobe-garamond-pro;
+}
+body {
+  counter-reset: 'sidenote-counter';
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'proxima-nova';
+  font-weight: 200;
+}

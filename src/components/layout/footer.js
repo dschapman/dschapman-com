@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import React from 'react'
-import { Styled, jsx } from 'theme-ui'
+import styled from '@emotion/styled'
+import { jsx } from 'theme-ui'
 
 const Footer = () => {
   return (
@@ -12,20 +13,20 @@ const Footer = () => {
         alignItems: 'center',
       }}>
       <FooterContent>
-        <Styled.h2 sx={{ color: 'white' }}>Contact</Styled.h2>
+        <h2 style={{ color: 'white' }}>Contact</h2>
         <div>
           <a
-            sx={{ paddingRight: [3, 4, 5] }}
+            style={{ paddingRight: '1rem' }}
             href="mailto:contact@dschapman.com">
             Email
           </a>
           <a
-            sx={{ paddingRight: [3, 4, 5] }}
+            style={{ paddingRight: '1rem' }}
             href="https://twitter.com/ds_chapman">
             Twitter
           </a>
           <a
-            sx={{ paddingRight: [3, 4, 5] }}
+            style={{ paddingRight: '1rem' }}
             href="https://github.com/dschapman">
             Github
           </a>
@@ -46,24 +47,17 @@ const Footer = () => {
   )
 }
 
-const FooterContent = ({ children }) => {
-  return (
-    <div
-      sx={{
-        mx: 'auto',
-        width: 'container',
-        a: {
-          textDecoration: 'underline',
-          textDecorationWidth: '1px',
-          color: 'white',
-          '&:hover': {
-            textDecoration: 'none',
-          },
-        },
-      }}>
-      {children}
-    </div>
-  )
-}
+const FooterContent = styled.footer`
+  margin: 0 auto;
+  width: 868px;
+  a {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    color: white;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+`
 
 export default Footer
