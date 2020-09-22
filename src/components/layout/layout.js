@@ -13,7 +13,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
 
 export const Root = styled.root`
-  display: flex;
+  ${'' /* display: flex;
   flex-direction: column;
   font-family: body;
   lineheight: body;
@@ -22,13 +22,10 @@ export const Root = styled.root`
   textrendering: 'optimizeLegibility';
   webkitfontsmoothing: 'antialiased';
   margin-bottom: [4, 5, 6];
-  height: '100vh';
+  height: '100vh'; */}
 `
 export const Main = styled.main`
-  max-width: 868px;
-  margin: 0 auto;
-  padding: 0;
-  flex: 1 0 auto;
+  padding: 5rem 0rem;
 `
 
 export default ({

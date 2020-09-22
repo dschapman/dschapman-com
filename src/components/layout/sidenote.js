@@ -2,28 +2,26 @@
 import React from 'react'
 import { jsx } from 'theme-ui'
 import { css } from '@emotion/core'
-import { bpMaxLG } from '../../lib/breakpoints'
-import { useThemeUI } from 'theme-ui'
+import { bpMaxLG, bpMaxSM } from '../../lib/breakpoints'
+import colors from '../../lib/colors'
 
 const Footnote = ({ count, children }) => {
-  const { theme } = useThemeUI()
-
   const footnoteStyles = css`
     .sidenote,
     .marginnote {
       float: right;
       clear: right;
-      margin-right: -45%;
-      width: 40%;
-      margin-top: 6px;
-      margin-bottom: 6px;
-      font-size: 0.82em;
+      margin-right: -60%;
+      width: 50%;
+      margin-top: 0.3rem;
+      margin-bottom: 0px;
+      font-size: 1.1rem;
       opacity: 85%;
       line-height: 1.3;
       vertical-align: baseline;
       position: relative;
-      border-left: 2px solid ${theme.colors.bluegreen};
-      padding-left: 1em;
+      border-left: 2px solid ${colors.bluegreen};
+      padding-left: 1rem;
     }
 
     .sidenote-number {
@@ -40,15 +38,15 @@ const Footnote = ({ count, children }) => {
       content: counter(sidenote-counter);
       font-size: 0.9em;
       top: -0.5rem;
-      left: 0em;
+      left: 0.1rem;
       padding-right: 3px;
-      color: ${theme.colors.gray};
+      color: ${colors.gray};
     }
 
     .sidenote:before {
       content: counter(sidenote-counter) ' ';
-      font-size: 0.9em;
-      top: -0.3rem;
+      font-size: 1rem;
+      top: -0.5rem;
       padding-right: 8px;
     }
 
@@ -69,7 +67,7 @@ const Footnote = ({ count, children }) => {
     input.margin-toggle {
       display: none;
     }
-    ${bpMaxLG} {
+    ${bpMaxSM} {
       label.margin-toggle:not(.sidenote-number) {
         display: inline;
       }
@@ -108,22 +106,20 @@ const Footnote = ({ count, children }) => {
 }
 
 const Marginnote = ({ count, children }) => {
-  const { theme } = useThemeUI()
-
   const marginnoteStyles = css`
     .marginnote {
       float: right;
       clear: right;
-      margin-right: -45%;
-      width: 40%;
-      margin-top: 6px;
-      margin-bottom: 6px;
-      font-size: 0.82em;
+      margin-right: -60%;
+      width: 50%;
+      margin-top: 0.3rem;
+      margin-bottom: 0;
+      font-size: 1.1rem;
       opacity: 85%;
       line-height: 1.3;
       vertical-align: baseline;
       position: relative;
-      border-left: 2px solid ${theme.colors.red};
+      border-left: 2px solid ${colors.red};
       padding-left: 1em;
     }
 
@@ -133,7 +129,7 @@ const Marginnote = ({ count, children }) => {
       left: 0em;
       padding-right: 3px;
       padding-left: 3px;
-      color: ${theme.colors.gray};
+      color: ${colors.gray};
     }
 
     .sidenote-number:after,
@@ -169,7 +165,7 @@ const Marginnote = ({ count, children }) => {
     input.margin-toggle {
       display: none;
     }
-    ${bpMaxLG} {
+    ${bpMaxSM} {
       label.margin-toggle:not(.sidenote-number) {
         display: inline;
       }

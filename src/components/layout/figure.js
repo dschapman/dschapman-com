@@ -3,7 +3,6 @@ import React from 'react'
 import { jsx } from 'theme-ui'
 import { css } from '@emotion/core'
 import { bpMaxLG } from '../../lib/breakpoints'
-import { useThemeUI } from 'theme-ui'
 import { Marginnote } from './sidenote'
 
 function getCaption(caption) {
@@ -15,7 +14,6 @@ function getCaption(caption) {
 }
 
 const Figure = ({ children, caption, src, alt, fullwidth }) => {
-  const { theme } = useThemeUI()
   let Caption = getCaption(caption)
   const figureStyles = css`
     img {
@@ -28,7 +26,7 @@ const Figure = ({ children, caption, src, alt, fullwidth }) => {
       font-size: 100%;
       font: inherit;
       vertical-align: baseline;
-      max-width: ${theme.sizes.container}px;
+      max-width: 768px;
       -webkit-margin-start: 0;
       -webkit-margin-end: 0;
       margin: 0 0 3em 0;

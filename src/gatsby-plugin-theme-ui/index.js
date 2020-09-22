@@ -16,12 +16,6 @@ export default {
     heading: 'proxima-nova, sans-serif',
     monospace: 'Fira Mono, monospace',
   },
-  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
-  fontWeights: {
-    body: 400,
-    heading: 200,
-    display: 900,
-  },
   lineHeights: {
     body: 1.5,
     heading: 1.25,
@@ -76,18 +70,7 @@ export default {
         textDecorationThickness: '1px',
       },
     },
-    root: {
-      disply: 'flex',
-      flexDirection: 'column',
-      fontFamily: 'body',
-      lineHeight: 'body',
-      fontWeight: 'body',
-      fontSize: [2, 2, 3],
-      textRendering: 'optimizeLegibility',
-      WebkitFontSmoothing: 'antialiased',
-      mb: [4, 5, 6],
-      height: '100vh',
-    },
+
     h1: {
       variant: 'textStyles.heading',
     },

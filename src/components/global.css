@@ -1,15 +1,27 @@
 @import url('https://p.typekit.net/p.css?s=1&k=osf8fyt&ht=tk&f=171.172.175.176.5474.5475.6768.6769.6770.6771.6772.6773&a=18424651&app=typekit&e=css');
+
 *::selection {
   color: #ffffff;
   background-color: #75b9be;
   height: 100%;
 }
-* {
+
+html {
+  font-size: 15px;
   font-family: adobe-garamond-pro;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
+
 body {
   counter-reset: 'sidenote-counter';
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 12.5%;
+  max-width: 1400px;
 }
+
 h1,
 h2,
 h3,
@@ -18,4 +30,12 @@ h5,
 h6 {
   font-family: 'proxima-nova';
   font-weight: 200;
+}
+
+@media (max-width: 768px) {
+  body {
+    width: 84%;
+    padding-left: 8%;
+    padding-right: 8%;
+  }
 }
