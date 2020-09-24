@@ -25,7 +25,7 @@ export const Root = styled.root`
   height: '100vh'; */}
 `
 export const Main = styled.main`
-  padding: 5rem 0rem;
+  padding: 1rem 0rem;
 `
 
 export default ({

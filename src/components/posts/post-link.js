@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Link } from 'gatsby'
+import { InternalLink } from '../layout/links'
 import { Styled, jsx } from 'theme-ui'
 import LinktipPreview from '../layout/linktip-preview'
 import { MDXProvider } from '@mdx-js/react'
@@ -7,10 +7,7 @@ import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import components from '../layout/mdx-components'
 
 export default ({ slug, title, body }) => (
-  <Styled.li
-    sx={{
-      variant: 'styles.postlistitem',
-    }}>
+  <li>
     <LinktipPreview
       tiptext={
         <MDXProvider components={components}>
@@ -19,14 +16,7 @@ export default ({ slug, title, body }) => (
         </MDXProvider>
       }
       placement="right">
-      <Styled.a
-        as={Link}
-        to={slug}
-        sx={{
-          variant: 'styles.postlink',
-        }}>
-        {title}
-      </Styled.a>
+      <InternalLink to={slug}>{title}</InternalLink>
     </LinktipPreview>
-  </Styled.li>
+  </li>
 )

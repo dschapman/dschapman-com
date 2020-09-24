@@ -4,10 +4,7 @@ import { Styled, jsx } from 'theme-ui'
 import PostLink from './post-link'
 
 export default ({ posts }) => (
-  <Styled.ul
-    sx={{
-      variant: 'styles.postlist',
-    }}>
+  <ul>
     {posts.map(({ node: post }) => (
       <PostLink
         key={post.frontmatter.slug}
@@ -16,5 +13,5 @@ export default ({ posts }) => (
         body={post.body}
       />
     ))}
-  </Styled.ul>
+  </ul>
 )

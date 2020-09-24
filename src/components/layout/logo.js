@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+import React from 'react'
 import { Link } from 'gatsby'
 
 // npm install --save-dev @iconify/react @iconify/icons-mdi
@@ -7,11 +6,7 @@ import { Icon, InlineIcon } from '@iconify/react'
 import sproutIcon from '@iconify/icons-mdi/sprout'
 
 export default () => (
-  <Link
-    to="/"
-    sx={{
-      height: [20, 26, 32],
-    }}>
-    <Icon icon={sproutIcon} color="#75B9BE" />
+  <Link to="/">
+    <Icon icon={sproutIcon} color="#75B9BE" height="1.5rem" />
   </Link>
 )

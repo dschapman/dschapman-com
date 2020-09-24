@@ -2,6 +2,7 @@
 import { jsx } from 'theme-ui'
 import SEO from '../seo'
 import Logo from '../layout/logo'
+import { Header } from '../layout/header'
 import HeaderLinks from '../layout/header-links'
 import { useStaticQuery, graphql } from 'gatsby'
 
@@ -25,15 +26,7 @@ export default ({
     }
   `)
   return (
-    <header
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        variant: 'styles.header',
-        pt: [4, 5, 6],
-        px: [3, 4, 5],
-        mb: '0',
-      }}>
+    <Header>
       <Logo />
       <HeaderLinks notes={true} />
       <SEO
@@ -43,6 +36,6 @@ export default ({
         description={description}
         type={type}
         location={location}></SEO>
-    </header>
+    </Header>
   )
 }

@@ -2,16 +2,26 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { jsx } from 'theme-ui'
+import colors from '../../lib/colors'
 
 const Footer = () => {
+  const FooterContainer = styled.footer`
+    display: flex;
+    position: absolute;
+    background: ${colors.bluegreen};
+    right: 0;
+    margin-top: 5px;
+    width: 100vw;
+    flex-shrink: 0;
+    padding: 3rem;
+    font-family: proxima-nova;
+    font-weight: 100;
+    font-size: 2rem;
+    margin: 0 auto;
+    align-items: center;
+  `
   return (
-    <footer
-      sx={{
-        display: 'flex',
-        variant: 'styles.footer',
-        mx: 'auto',
-        alignItems: 'center',
-      }}>
+    <FooterContainer>
       <FooterContent>
         <h2 style={{ color: 'white' }}>Contact</h2>
         <div>
@@ -43,13 +53,13 @@ const Footer = () => {
           <a href="https://github.com/dschapman/my-website">Github</a>
         </div>
       </FooterContent>
-    </footer>
+    </FooterContainer>
   )
 }
 
 const FooterContent = styled.footer`
   margin: 0 auto;
-  width: 868px;
+  padding-right: 12.5%;
   a {
     text-decoration: underline;
     text-decoration-thickness: 1px;

@@ -1,9 +1,17 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+import React from 'react'
 import SEO from '../seo'
 import Logo from './logo'
 import HeaderLinks from './header-links'
 import { useStaticQuery, graphql } from 'gatsby'
+import styled from '@emotion/styled'
+
+export const Header = styled.header`
+  display: flex;
+  align-items: center;
+  padding-top: 4rem;
+  padding-right: 12.5%;
+  margin: 0 auto;
+`
 
 export default ({
   title,
@@ -32,15 +40,7 @@ export default ({
     const title = title
   }
   return (
-    <header
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        variant: 'styles.header',
-        pt: [4, 5, 6],
-        px: [3, 2, 0],
-        mx: 'auto',
-      }}>
+    <Header>
       <Logo />
       <HeaderLinks notes={false} />
       <SEO
@@ -51,6 +51,6 @@ export default ({
         description={description}
         type={type}
         location={location}></SEO>
-    </header>
+    </Header>
   )
 }

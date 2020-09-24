@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import React from 'react'
 import { Styled, jsx } from 'theme-ui'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
+import { InternalLink, ExternalLink, InternalNotesLink } from '../layout/links'
 import Layout from '../layout/layout'
 import PostList from './post-list'
 import { MDXProvider } from '@mdx-js/react'
@@ -18,31 +19,19 @@ const ArticleTag = ({ data, pageContext, location }) => {
     let referenceBlock
     if (note.inboundReferenceNotes != null) {
       references = note.inboundReferenceNotes.map((ref) => (
-        <Styled.li key={ref.id}>
-          <Styled.a
-            as={Link}
-            to={`/notes/${ref.slug}`}
-            sx={{
-              bg: 'lightblue',
-              textDecoration: 'none',
-              '&:hover,&:focus': {
-                color: 'text',
-                bg: 'white',
-                textDecoration: 'underline',
-                textDecorationColor: 'lightblue',
-              },
-            }}>
+        <li key={ref.id}>
+          <InternalNotesLink to={`/notes/${ref.slug}`}>
             {ref.title}
-          </Styled.a>
-        </Styled.li>
+          </InternalNotesLink>
+        </li>
       ))
     }
 
     if (references.length > 0) {
       referenceBlock = (
         <>
-          <Styled.h2>Referenced in</Styled.h2>
-          <Styled.ul>{references}</Styled.ul>
+          <h2>Referenced in</h2>
+          <ul>{references}</ul>
         </>
       )
     }
@@ -63,26 +52,12 @@ const ArticleTag = ({ data, pageContext, location }) => {
               {referenceBlock}
             </MDXProvider>
           }>
-          <Styled.a
-            as={Link}
-            to={`/notes/${note.slug}`}
-            sx={{
-              bg: 'lightblue',
-              textDecoration: 'none',
-              '&:hover,&:focus': {
-                color: 'text',
-                bg: 'white',
-                textDecoration: 'underline',
-                textDecorationColor: 'lightblue',
-              },
-            }}>
+          <InternalNotesLink to={`/notes/${note.slug}`}>
             my notes on {tag}
-          </Styled.a>
+          </InternalNotesLink>
         </LinktipPreview>
         <br />
-        <Styled.a as={Link} to="/articles/tags">
-          See all tags &rarr;
-        </Styled.a>
+        <InternalLink to="/articles/tags">See all tags &rarr;</InternalLink>
       </Layout>
     )
   } else {
@@ -94,9 +69,7 @@ const ArticleTag = ({ data, pageContext, location }) => {
         location={location}>
         <PostList posts={edges} />
         <br />
-        <Styled.a as={Link} to="/articles/tags">
-          See all tags &rarr;
-        </Styled.a>
+        <InternalLink to="/articles/tags">See all tags &rarr;</InternalLink>
       </Layout>
     )
   }

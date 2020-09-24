@@ -13,6 +13,11 @@ import Tooltip from '../../../components/layout/tooltip'
 import { Footnote, Marginnote } from '../../../components/layout/sidenote'
 import { Figure } from '../../../components/layout/figure'
 import { Callout } from '../../../components/layout/TextStyles'
+import {
+  InternalLink,
+  ExternalLink,
+  InternalNotesLink,
+} from '../../../components/layout/links'
 
 const BrainNote = ({ note, nodes, location }) => {
   let references = []
@@ -29,20 +34,20 @@ const BrainNote = ({ note, nodes, location }) => {
       post.frontmatter.slug.includes('/articles/')
     ) {
       relatedArticles.push(
-        <Styled.li key={post.id}>
+        <li key={post.id}>
           <LinktipPreview
             tiptext={
               <MDXProvider components={regularComponents}>
-                <Styled.h1>{post.frontmatter.title}</Styled.h1>
+                <h1>{post.frontmatter.title}</h1>
                 <MDXRenderer>{post.body}</MDXRenderer>
               </MDXProvider>
             }
             placement="right">
-            <Styled.a as={Link} key={post.id} to={post.frontmatter.slug}>
+            <InternalLink key={post.id} to={post.frontmatter.slug}>
               {post.frontmatter.title}
-            </Styled.a>
+            </InternalLink>
           </LinktipPreview>
-        </Styled.li>
+        </li>
       )
     } else if (
       post.frontmatter.tags.indexOf(note.slug) > -1 &&
@@ -53,14 +58,14 @@ const BrainNote = ({ note, nodes, location }) => {
           <LinktipPreview
             tiptext={
               <MDXProvider components={regularComponents}>
-                <Styled.h1>{post.frontmatter.title}</Styled.h1>
+                <h1>{post.frontmatter.title}</h1>
                 <MDXRenderer>{post.body}</MDXRenderer>
               </MDXProvider>
             }
             placement="right">
-            <Styled.a as={Link} key={post.id} to={post.frontmatter.slug}>
+            <InternalLink key={post.id} to={post.frontmatter.slug}>
               {post.frontmatter.title}
-            </Styled.a>
+            </InternalLink>
           </LinktipPreview>
         </Styled.li>
       )
@@ -76,56 +81,44 @@ const BrainNote = ({ note, nodes, location }) => {
 
   if (note.inboundReferenceNotes != null) {
     references = note.inboundReferenceNotes.map((ref) => (
-      <Styled.li key={ref.id}>
+      <li key={ref.id}>
         <LinktipPreview
           tiptext={
             <MDXProvider components={regularComponents}>
-              <Styled.h1>{ref.title}</Styled.h1>
+              <h1>{ref.title}</h1>
               <MDXRenderer>{ref.childMdx.body}</MDXRenderer>
             </MDXProvider>
           }
           placement="right">
-          <Styled.a
-            as={Link}
-            to={`/notes/${ref.slug}`}
-            sx={{
-              bg: 'lightblue',
-              textDecoration: 'none',
-              '&:hover,&:focus': {
-                color: 'text',
-                bg: 'white',
-                textDecoration: 'underline',
-                textDecorationColor: 'lightblue',
-              },
-            }}>
+          <InternalNotesLink to={`/notes/${ref.slug}`}>
             {ref.title}
-          </Styled.a>
+          </InternalNotesLink>
         </LinktipPreview>
-      </Styled.li>
+      </li>
     ))
   }
 
   if (references.length > 0) {
     referenceBlock = (
       <>
-        <Styled.h2>Referenced in</Styled.h2>
-        <Styled.ul>{references}</Styled.ul>
+        <h2>Referenced in</h2>
+        <ul>{references}</ul>
       </>
     )
   }
   if (relatedArticles.length > 0) {
     relatedArticlesBlock = (
       <>
-        <Styled.h2>Related Articles</Styled.h2>
-        <Styled.ul>{relatedArticles}</Styled.ul>
+        <h2>Related Articles</h2>
+        <ul>{relatedArticles}</ul>
       </>
     )
   }
   if (relatedPoems.length > 0) {
     relatedPoemsBlock = (
       <>
-        <Styled.h2>Related Poems</Styled.h2>
-        <Styled.ul>{relatedPoems}</Styled.ul>
+        <h2>Related Poems</h2>
+        <ul>{relatedPoems}</ul>
       </>
     )
   }
