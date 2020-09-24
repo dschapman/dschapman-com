@@ -31,6 +31,7 @@ const AnchorTag = (props) => {
 export default {
   a: AnchorTag,
   blockquote: Blockquote,
+  img: (props) => <Figure {...props} />,
   Footnote: (props) => <Footnote {...props} />,
   Tooltip: (props) => <Tooltip {...props} />,
   Linktip: (props) => <Linktip {...props} />,

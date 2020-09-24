@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import { bpMaxLG } from '../../lib/breakpoints'
 
 export const Callout = styled.blockquote`
   ::before {
@@ -21,9 +22,12 @@ export const Callout = styled.blockquote`
   }
   width: 55%;
   text-align: center;
-  fontsize: 1.3rem;
+  font-size: 2rem;
   lineheight: 2rem;
   display: block;
+  ${bpMaxLG} {
+    margin: 0 auto;
+  }
 `
 export const Blockquote = styled.blockquote`
   border-left: 10px solid #75b9be;
