@@ -1,6 +1,5 @@
-/** @jsx jsx */
-import { Styled, jsx, Box } from 'theme-ui'
-import { Global, css } from '@emotion/core'
+import React from 'react'
+import '../global.css'
 import { MDXProvider } from '@mdx-js/react'
 import components from '../notes/note-mdx-components'
 import Header from './header'
@@ -11,6 +10,23 @@ import { Figure } from './figure'
 import Linktip from './linktip'
 import { Callout } from './TextStyles'
 import { useStaticQuery, graphql } from 'gatsby'
+import styled from '@emotion/styled'
+
+export const Root = styled.root`
+  ${'' /* display: flex;
+  flex-direction: column;
+  font-family: body;
+  lineheight: body;
+  fontweight: body;
+  fontsize: 2;
+  textrendering: 'optimizeLegibility';
+  webkitfontsmoothing: 'antialiased';
+  margin-bottom: [4, 5, 6];
+  height: '100vh'; */}
+`
+export const Main = styled.main`
+  padding: 1rem 0rem;
+`
 
 export default ({
   children,
@@ -70,21 +86,7 @@ export default ({
   })
   const AnchorTag = (props) => <components.a {...props} popups={popups} />
   return (
-    <Styled.root>
-      <Global
-        styles={(theme) => ({
-          '*': {
-            '::selection': {
-              color: '#ffffff',
-              backgroundColor: '#75B9BE',
-              height: '100%',
-            },
-            body: {
-              counterReset: 'sidenote-counter',
-            },
-          },
-        })}
-      />
+    <Root>
       <Header
         title={title}
         seoTitle={seoTitle}
@@ -94,20 +96,8 @@ export default ({
         type={type}
         location={location}
       />
-      <main
-        sx={{
-          maxWidth: 'container',
-          mx: 'auto',
-          px: [3, 2, 0],
-          flex: '1 0 auto',
-        }}>
-        <h1
-          sx={{
-            fontFamily: 'heading',
-            fontWeight: 'heading',
-          }}>
-          {title}
-        </h1>
+      <Main>
+        <h1>{title}</h1>
         <MDXProvider
           components={{
             a: AnchorTag,
@@ -120,8 +110,8 @@ export default ({
           }}>
           {children}
         </MDXProvider>
-      </main>
+      </Main>
       <Footer />
-    </Styled.root>
+    </Root>
   )
 }

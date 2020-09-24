@@ -1,10 +1,12 @@
 /** @jsx jsx */
 import React, { forwardRef } from 'react'
 import Tippy from '@tippyjs/react'
-import { Styled, jsx } from 'theme-ui'
 import 'tippy.js/dist/tippy.css'
 import 'tippy.js/animations/shift-away.css'
 import 'tippy.js/themes/light.css'
+
+import { jsx, css } from '@emotion/core'
+import colors from '../../lib/colors'
 
 const Tooltip = forwardRef((props, ref) => {
   let placement
@@ -31,20 +33,21 @@ const Tooltip = forwardRef((props, ref) => {
       content={props.tiptext}
       placement={placement}
       multiple={multiple}
-      sx={{
+      css={css`
         padding: '0.2em',
         fontSize: '0.75em',
-      }}>
+      `}>
       <span
-        sx={{
-          display: 'inline-block',
-          color: '#75B9BE',
-          lineHeight: '1em',
-          transition: 'all 0.5s',
-          '&:hover, &:focus': {
-            color: 'text',
-          },
-        }}>
+        css={css`
+          display: inline-block;
+          color: ${colors.hcbluegreen};
+          line-height: 1em;
+          transition: all 0.5s;
+          &:hover,
+          &:focus {
+            color: ${colors.text};
+          }
+        `}>
         <span ref={ref}>{props.children}</span>
       </span>
     </Tippy>

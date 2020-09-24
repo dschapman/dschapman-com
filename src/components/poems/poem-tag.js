@@ -1,6 +1,5 @@
-/** @jsx jsx */
 import React from 'react'
-import { Styled, jsx } from 'theme-ui'
+import { InternalLink, InternalNotesLink } from '../layout/links'
 import { graphql, Link } from 'gatsby'
 import Layout from '../layout/layout'
 import PostList from '../posts/post-list'
@@ -18,8 +17,8 @@ const PoemTag = ({ data, pageContext, location }) => {
     let referenceBlock
     if (note.inboundReferenceNotes != null) {
       references = note.inboundReferenceNotes.map((ref) => (
-        <Styled.li key={ref.id}>
-          <Styled.a
+        <li key={ref.id}>
+          <InternalLink
             as={Link}
             to={`/notes/${ref.slug}`}
             sx={{
@@ -33,16 +32,16 @@ const PoemTag = ({ data, pageContext, location }) => {
               },
             }}>
             {ref.title}
-          </Styled.a>
-        </Styled.li>
+          </InternalLink>
+        </li>
       ))
     }
 
     if (references.length > 0) {
       referenceBlock = (
         <>
-          <Styled.h2>Referenced in</Styled.h2>
-          <Styled.ul>{references}</Styled.ul>
+          <h2>Referenced in</h2>
+          <ul>{references}</ul>
         </>
       )
     }
@@ -58,12 +57,12 @@ const PoemTag = ({ data, pageContext, location }) => {
           placement="right"
           tiptext={
             <MDXProvider components={components}>
-              <Styled.h1>{note.title}</Styled.h1>
+              <h1>{note.title}</h1>
               <MDXRenderer>{note.childMdx.body}</MDXRenderer>
               {referenceBlock}
             </MDXProvider>
           }>
-          <Styled.a
+          <InternalNotesLink
             as={Link}
             to={`/notes/${note.slug}`}
             sx={{
@@ -77,12 +76,12 @@ const PoemTag = ({ data, pageContext, location }) => {
               },
             }}>
             my notes on {tag}
-          </Styled.a>
+          </InternalNotesLink>
         </LinktipPreview>
         <br />
-        <Styled.a as={Link} to="/poetry/tags">
+        <InternalLink as={Link} to="/poetry/tags">
           See all tags &rarr;
-        </Styled.a>
+        </InternalLink>
       </Layout>
     )
   } else {
@@ -94,9 +93,9 @@ const PoemTag = ({ data, pageContext, location }) => {
         location={location}>
         <PostList posts={edges} />
         <br />
-        <Styled.a as={Link} to="/poetry/tags">
+        <InternalLink as={Link} to="/poetry/tags">
           See all tags &rarr;
-        </Styled.a>
+        </InternalLink>
       </Layout>
     )
   }

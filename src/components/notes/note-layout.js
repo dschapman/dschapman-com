@@ -1,11 +1,11 @@
-/** @jsx jsx */
-import { Styled, jsx } from 'theme-ui'
-import { Link } from 'gatsby'
+import React from 'react'
+import '../global.css'
 import Header from './note-header'
 import MyCustomBreadcrumb from './breadcrumb'
 import { useBreadcrumb } from 'gatsby-plugin-breadcrumb'
-import { Global } from '@emotion/core'
+import styled from '@emotion/styled'
 import Footer from './note-footer'
+import { Root, Main } from '../layout/layout'
 
 export default ({
   children,
@@ -22,17 +22,7 @@ export default ({
   })
 
   return (
-    <Styled.root>
-      <Global
-        styles={(theme) => ({
-          '*': {
-            '::selection': {
-              color: '#ffffff',
-              backgroundColor: '#75B9BE',
-            },
-          },
-        })}
-      />
+    <Root>
       <Header
         title={title}
         seoTitleAddition1={seoTitleAddition1}
@@ -41,23 +31,14 @@ export default ({
         type="Note 📝"
         location={location}
       />
-      <main
-        sx={{
-          maxWidth: 'container',
-          px: [3, 4, 5],
-        }}>
-        <div
-          sx={{
-            fontSize: '3',
-          }}>
+      <Main>
+        <div>
           <MyCustomBreadcrumb crumbs={crumbs} />
         </div>
-        <h1 sx={{ fontFamily: 'heading', fontWeight: 'heading', mt: 0 }}>
-          {title}
-        </h1>
+        <h1>{title}</h1>
         {children}
-      </main>
+      </Main>
       <Footer />
-    </Styled.root>
+    </Root>
   )
 }

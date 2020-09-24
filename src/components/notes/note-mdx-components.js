@@ -3,6 +3,7 @@ import React from 'react'
 import { Styled, jsx } from 'theme-ui'
 import { isString, isEmpty } from 'lodash'
 import { Link } from 'gatsby'
+
 import Linktip from '../layout/linktip'
 import LinktipPreview from '../layout/linktip-preview'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
@@ -11,7 +12,8 @@ import { MDXProvider } from '@mdx-js/react'
 import Tooltip from '../layout/tooltip'
 import { Footnote, Marginnote } from '../layout/sidenote'
 import { Figure } from '../layout/figure'
-import { Callout } from '../layout/TextStyles'
+import { Blockquote, Callout } from '../layout/TextStyles'
+import { InternalLink, InternalNotesLink, ExternalLink } from '../layout/links'
 
 const INTERNAL_LINK_REGEX = /^\/notes/g
 const INTERNAL_NON_NOTES_LINK_REGEX = /^\/(?!notes)/g
@@ -24,99 +26,54 @@ const AnchorTag = ({ href, popups = {}, ...restProps }) => {
   }
   if (isInternalNotesLink) {
     if (isEmpty(popups[`${href}`])) {
-      return (
-        <Styled.a
-          as={Link}
-          to={href}
-          sx={{
-            bg: 'lightblue',
-            textDecoration: 'none',
-            '&:hover,&:focus': {
-              color: 'text',
-              bg: 'white',
-              textDecoration: 'underline',
-              textDecorationColor: 'lightblue',
-            },
-          }}>
-          {renderedLink}
-        </Styled.a>
-      )
+      return <InternalNotesLink to={href}>{renderedLink}</InternalNotesLink>
     } else {
       return (
         <LinktipPreview
           link={true}
           tiptext={
             <MDXProvider components={components}>
-              <Styled.h1>{popups[`${href}`].title}</Styled.h1>
+              <h1>{popups[`${href}`].title}</h1>
               <MDXRenderer>{popups[`${href}`].body}</MDXRenderer>
             </MDXProvider>
           }
           placement="right"
           multiple={false}>
-          <Styled.a
-            as={Link}
-            to={href}
-            sx={{
-              bg: 'lightblue',
-              textDecoration: 'none',
-              '&:hover,&:focus': {
-                color: 'text',
-                bg: 'white',
-                textDecoration: 'underline',
-                textDecorationColor: 'lightblue',
-              },
-            }}>
-            {renderedLink}
-          </Styled.a>
+          <InternalNotesLink to={href}>{renderedLink}</InternalNotesLink>
         </LinktipPreview>
       )
     }
   } else if (isInternalLink) {
     if (isEmpty(popups[`${href}`])) {
-      return (
-        <Styled.a as={Link} to={href}>
-          {renderedLink}
-        </Styled.a>
-      )
+      return <InternalLink to={href}>{renderedLink}</InternalLink>
     } else {
       return (
         <LinktipPreview
           link={true}
           tiptext={
             <MDXProvider components={components}>
-              <Styled.h1>{popups[`${href}`].title}</Styled.h1>
+              <h1>{popups[`${href}`].title}</h1>
               <MDXRenderer>{popups[`${href}`].body}</MDXRenderer>
             </MDXProvider>
           }
           placement="right"
           multiple={false}>
-          <Styled.a as={Link} to={href}>
-            {renderedLink}
-          </Styled.a>
+          <InternalLink to={href}>{renderedLink}</InternalLink>
         </LinktipPreview>
       )
     }
   } else {
     return (
-      <Styled.a
-        sx={{
-          textDecoration: 'underline',
-          textDecorationColor: '#925C77',
-          '&:hover': {
-            color: 'text',
-            textDecorationColor: '#2E0219',
-          },
-        }}
-        href={href}
-        {...restProps}>
+      <ExternalLink href={href} {...restProps}>
         {renderedLink}
-      </Styled.a>
+      </ExternalLink>
     )
   }
 }
 
 export default {
   a: AnchorTag,
+  blockquote: Blockquote,
   Footnote: (props) => <Footnote {...props} />,
   Tooltip: (props) => <Tooltip {...props} />,
   Linktip: (props) => <Linktip {...props} />,

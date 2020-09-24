@@ -114,7 +114,6 @@ module.exports = {
         path: `${__dirname}/content/dschapman-com-content/posts/`,
       },
     },
-    'gatsby-plugin-theme-ui',
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

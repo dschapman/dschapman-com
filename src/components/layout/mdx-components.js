@@ -1,13 +1,14 @@
-/** @jsx jsx */
 import React from 'react'
-import { Styled, jsx } from 'theme-ui'
+
 import { isString, isEmpty } from 'lodash'
-import { Link } from 'gatsby'
 import Tooltip from './tooltip'
 import { Footnote, Marginnote } from './sidenote'
 import { Figure } from './figure'
 import Linktip from './linktip'
-import { Callout } from './TextStyles'
+import { Callout, Blockquote } from './TextStyles'
+
+import { InternalLink, InternalNotesLink, ExternalLink } from './links'
+import styled from '@emotion/styled'
 
 const INTERNAL_LINK_REGEX = /^\/notes/g
 const INTERNAL_NON_NOTES_LINK_REGEX = /^\/(?!notes)/g
@@ -19,48 +20,17 @@ const AnchorTag = (props) => {
   let renderedLink = props.children
 
   if (isInternalNotesLink) {
-    return (
-      <Styled.a
-        as={Link}
-        to={props.href}
-        sx={{
-          bg: 'lightblue',
-          textDecoration: 'none',
-          '&:hover,&:focus': {
-            color: 'text',
-            bg: 'white',
-            textDecoration: 'underline',
-            textDecorationColor: 'lightblue',
-          },
-        }}>
-        {renderedLink}
-      </Styled.a>
-    )
+    return <InternalNotesLink to={props.href}>{renderedLink}</InternalNotesLink>
   } else if (isInternalLink) {
-    return (
-      <Styled.a as={Link} to={props.href}>
-        {renderedLink}
-      </Styled.a>
-    )
+    return <InternalLink to={props.href}>{renderedLink}</InternalLink>
   } else {
-    return (
-      <Styled.a
-        sx={{
-          textDecorationColor: '#925C77',
-          '&:hover': {
-            color: 'text',
-            textDecorationColor: '#2E0219',
-          },
-        }}
-        {...props}>
-        {renderedLink}
-      </Styled.a>
-    )
+    return <ExternalLink {...props}>{renderedLink}</ExternalLink>
   }
 }
 
 export default {
   a: AnchorTag,
+  blockquote: Blockquote,
   Footnote: (props) => <Footnote {...props} />,
   Tooltip: (props) => <Tooltip {...props} />,
   Linktip: (props) => <Linktip {...props} />,

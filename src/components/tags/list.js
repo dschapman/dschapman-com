@@ -6,10 +6,7 @@ import TagListItem from './list-item'
 export default ({ tags }) => {
   let newTags = tags.filter((tag) => tag.totalCount > 0) //filter out any tags with only one item
   return (
-    <Styled.ul
-      sx={{
-        variant: 'styles.tagList',
-      }}>
+    <ul>
       {newTags.map((tag) => (
         <TagListItem
           key={tag.fieldValue}
@@ -17,6 +14,6 @@ export default ({ tags }) => {
           tagCount={tag.totalCount}
         />
       ))}
-    </Styled.ul>
+    </ul>
   )
 }

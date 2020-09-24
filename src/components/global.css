@@ -1,0 +1,97 @@
+@import url('https://p.typekit.net/p.css?s=1&k=osf8fyt&ht=tk&f=171.172.175.176.5474.5475.6768.6769.6770.6771.6772.6773&a=18424651&app=typekit&e=css');
+
+*::selection {
+  color: #ffffff;
+  background-color: #75b9be;
+  height: 100%;
+}
+
+html {
+  font-size: 15px;
+  font-family: adobe-garamond-pro;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  counter-reset: sidenote-counter;
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 12.5%;
+  max-width: 1400px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'proxima-nova';
+  font-weight: 100;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1.5rem;
+  font-weight: 100;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+p,
+dl,
+ol,
+ul,
+div {
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+
+p {
+  margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
+  padding-right: 0;
+  vertical-align: baseline;
+}
+
+blockquote p {
+  width: 55%;
+  margin-right: 40px;
+}
+
+main > p,
+main > footer,
+main > table,
+main > ul {
+  width: 55%;
+}
+
+hr {
+  border: 0;
+  border-bottom: 1px solid;
+  border-color: #f6f6f6;
+}
+
+@media (max-width: 1199px) {
+  body {
+    width: 84%;
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+
+  hr,
+  main > p,
+  main > footer,
+  main > table {
+    width: 100%;
+  }
+}

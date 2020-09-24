@@ -1,31 +1,45 @@
 /** @jsx jsx */
 import React from 'react'
-import { Styled, jsx } from 'theme-ui'
+import styled from '@emotion/styled'
+import { jsx } from 'theme-ui'
+import colors from '../../lib/colors'
 
 const Footer = () => {
+  const FooterContainer = styled.footer`
+    display: flex;
+    position: absolute;
+    background: ${colors.bluegreen};
+    right: 0;
+    margin-top: 5px;
+
+    flex-shrink: 0;
+    padding: 3rem;
+    width: 84%;
+    padding-left: 8%;
+    padding-right: 8%;
+    font-family: proxima-nova;
+    font-weight: 100;
+    font-size: 2rem;
+    margin: 0 auto;
+    align-items: center;
+  `
   return (
-    <footer
-      sx={{
-        display: 'flex',
-        variant: 'styles.footer',
-        mx: 'auto',
-        alignItems: 'center',
-      }}>
+    <FooterContainer>
       <FooterContent>
-        <Styled.h2 sx={{ color: 'white' }}>Contact</Styled.h2>
+        <h2 style={{ color: 'white' }}>Contact</h2>
         <div>
           <a
-            sx={{ paddingRight: [3, 4, 5] }}
+            style={{ paddingRight: '1rem' }}
             href="mailto:contact@dschapman.com">
             Email
           </a>
           <a
-            sx={{ paddingRight: [3, 4, 5] }}
+            style={{ paddingRight: '1rem' }}
             href="https://twitter.com/ds_chapman">
             Twitter
           </a>
           <a
-            sx={{ paddingRight: [3, 4, 5] }}
+            style={{ paddingRight: '1rem' }}
             href="https://github.com/dschapman">
             Github
           </a>
@@ -42,28 +56,21 @@ const Footer = () => {
           <a href="https://github.com/dschapman/my-website">Github</a>
         </div>
       </FooterContent>
-    </footer>
+    </FooterContainer>
   )
 }
 
-const FooterContent = ({ children }) => {
-  return (
-    <div
-      sx={{
-        mx: 'auto',
-        width: 'container',
-        a: {
-          textDecoration: 'underline',
-          textDecorationWidth: '1px',
-          color: 'white',
-          '&:hover': {
-            textDecoration: 'none',
-          },
-        },
-      }}>
-      {children}
-    </div>
-  )
-}
+const FooterContent = styled.footer`
+  margin: 0 auto;
+  padding-right: 12.5%;
+  a {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    color: white;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+`
 
 export default Footer
