@@ -2,6 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import colors from '../../lib/colors'
+import { bpMaxLG, bpMaxSM } from '../../lib/breakpoints'
 const Nav = styled.nav`
   display: flex;
   width: 100%;
@@ -14,10 +15,18 @@ const NavLink = styled(Link)`
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 3px;
-   &:hover {
-        text-decoration: underline;
-        text-decoration-thickness: 1px;
-      },
+  &:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+  }
+
+  ${bpMaxLG} {
+    font-size: 1.25rem;
+  }
+  ${bpMaxSM} {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
 `
 
 export default () => {

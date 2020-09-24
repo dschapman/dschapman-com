@@ -4,6 +4,7 @@ import Logo from './logo'
 import HeaderLinks from './header-links'
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
+import { bpMaxLG } from '../../lib/breakpoints'
 
 export const Header = styled.header`
   display: flex;
@@ -11,6 +12,9 @@ export const Header = styled.header`
   padding-top: 4rem;
   padding-right: 12.5%;
   margin: 0 auto;
+  ${bpMaxLG} {
+    padding-top: 2rem;
+  }
 `
 
 export default ({
