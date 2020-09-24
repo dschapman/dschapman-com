@@ -81,6 +81,11 @@ hr {
   border-color: #f6f6f6;
 }
 
+img {
+  max-width: 55%;
+  width: 100%;
+}
+
 @media (max-width: 1199px) {
   body {
     width: 84%;
@@ -88,6 +93,9 @@ hr {
     padding-right: 8%;
   }
 
+  img {
+    max-width: 90%;
+  }
   hr,
   main > p,
   main > footer,
