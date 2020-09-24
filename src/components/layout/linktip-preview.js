@@ -1,11 +1,12 @@
 /** @jsx jsx */
 import React, { forwardRef } from 'react'
 import Tippy from '@tippyjs/react'
-import { Styled, jsx } from 'theme-ui'
+import { css, jsx } from '@emotion/core'
 import 'tippy.js/dist/tippy.css'
 import 'tippy.js/animations/shift-away.css'
 import 'tippy.js/themes/light.css'
 import './tippyBox.css'
+import { bpMaxLG } from '../../lib/breakpoints'
 
 const LinktipPreview = forwardRef((props, ref) => {
   let placement
@@ -33,22 +34,26 @@ const LinktipPreview = forwardRef((props, ref) => {
       placement={placement}
       multiple={multiple}
       tag="span"
-      sx={{
-        padding: '0.2em',
-        fontSize: '0.75em',
-        'tippy-box': {
-          overflowY: 'auto',
-        },
-      }}>
+      css={css`
+        padding: 0.2em;
+        fontsize: 0.75em;
+        tippy-box {
+          overflowy: auto;
+        }
+        ${bpMaxLG} {
+          display: none;
+        }
+      `}>
       <span
-        sx={{
-          display: 'inline-block',
-          lineHeight: '1em',
-          transition: 'all 0.5s',
-          '&:hover, &:focus': {
-            color: 'text',
-          },
-        }}>
+        css={css`
+          display: inline-block;
+          line-height: 1em;
+          transition: all 0.5s;
+          &:hover,
+          &:focus {
+            color: text;
+          }
+        `}>
         <span ref={ref}>{props.children}</span>
       </span>
     </Tippy>
