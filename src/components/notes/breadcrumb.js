@@ -15,20 +15,17 @@ const MyCustomBreadcrumb = ({ crumbs }) => {
           <div
             css={css`
               text-size: 1.3rem;
+              display: inline;
             `}
             key={crumb.pathname}>
-            <Tippy
-              content={`Notes on ${crumb.crumbLabel}`}
-              theme="light"
-              placement="bottom">
-              <InternalLink
-                to={crumb.pathname}
-                style={{ ...crumb.crumbStyle }}
-                activeStyle={{ ...crumb.crumbActiveStyle }}
-                key={crumb.pathname}>
-                {crumb.crumbLabel}
-              </InternalLink>
-            </Tippy>
+            <InternalLink
+              to={crumb.pathname}
+              style={{ ...crumb.crumbStyle }}
+              activeStyle={{ ...crumb.crumbActiveStyle }}
+              key={crumb.pathname}>
+              {crumb.crumbLabel}
+            </InternalLink>
+
             {crumb.crumbSeparator || ' / '}
           </div>
         )

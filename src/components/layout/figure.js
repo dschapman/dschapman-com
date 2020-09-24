@@ -26,7 +26,7 @@ const Figure = ({ children, caption, src, alt, fullwidth }) => {
       font-size: 100%;
       font: inherit;
       vertical-align: baseline;
-      max-width: ${bpMaxLG};
+      max-width: 55%;
       -webkit-margin-start: 0;
       -webkit-margin-end: 0;
       margin: 0 0 3em 0;
