@@ -2,7 +2,7 @@
 import React from 'react'
 import { jsx } from 'theme-ui'
 import { css } from '@emotion/core'
-import { bpMaxLG } from '../../lib/breakpoints'
+import { bpMaxMD, bpMaxSM, bpMaxLG } from '../../lib/breakpoints'
 import { Marginnote } from './sidenote'
 
 function getCaption(caption) {
@@ -26,7 +26,7 @@ const Figure = ({ children, caption, src, alt, fullwidth }) => {
       font-size: 100%;
       font: inherit;
       vertical-align: baseline;
-      max-width: 768px;
+      max-width: ${bpMaxLG};
       -webkit-margin-start: 0;
       -webkit-margin-end: 0;
       margin: 0 0 3em 0;

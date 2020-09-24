@@ -4,6 +4,7 @@ import { Styled, jsx } from 'theme-ui'
 import { graphql, Link } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Audio from '../audio'
+import { InternalLink } from '../layout/links'
 
 import Layout from '../layout/layout'
 
@@ -18,9 +19,7 @@ export default function PageTemplate({ data: { mdx }, location }) {
       <Audio src={recording} />
       <MDXRenderer>{mdx.body}</MDXRenderer>
       <div>
-        <Styled.a as={Link} to="/poetry/all">
-          All Poems &rarr;{' '}
-        </Styled.a>
+        <InternalLink to="/poetry/all">All Poems &rarr; </InternalLink>
       </div>
     </Layout>
   )

@@ -11,9 +11,12 @@ const Footer = () => {
     background: ${colors.bluegreen};
     right: 0;
     margin-top: 5px;
-    width: 100vw;
+
     flex-shrink: 0;
     padding: 3rem;
+    width: 84%;
+    padding-left: 8%;
+    padding-right: 8%;
     font-family: proxima-nova;
     font-weight: 100;
     font-size: 2rem;

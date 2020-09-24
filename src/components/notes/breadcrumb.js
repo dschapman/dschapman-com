@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import React from 'react'
+import { css, jsx } from '@emotion/core'
+import { InternalLink } from '../layout/links'
 import { Link } from 'gatsby'
-import { Styled, jsx } from 'theme-ui'
 import Tippy from '@tippyjs/react'
 import 'tippy.js/dist/tippy.css'
 import 'tippy.js/themes/light.css'
@@ -11,19 +12,22 @@ const MyCustomBreadcrumb = ({ crumbs }) => {
     <div>
       {crumbs.map((crumb) => {
         return (
-          <div style={{ display: 'inline' }} key={crumb.pathname}>
+          <div
+            css={css`
+              text-size: 1.3rem;
+            `}
+            key={crumb.pathname}>
             <Tippy
               content={`Notes on ${crumb.crumbLabel}`}
               theme="light"
               placement="bottom">
-              <Styled.a
-                as={Link}
+              <InternalLink
                 to={crumb.pathname}
                 style={{ ...crumb.crumbStyle }}
                 activeStyle={{ ...crumb.crumbActiveStyle }}
                 key={crumb.pathname}>
                 {crumb.crumbLabel}
-              </Styled.a>
+              </InternalLink>
             </Tippy>
             {crumb.crumbSeparator || ' / '}
           </div>

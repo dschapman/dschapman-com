@@ -1,8 +1,7 @@
 /** @jsx jsx */
 import React from 'react'
-import { jsx } from 'theme-ui'
-import { css } from '@emotion/core'
-import { bpMaxLG, bpMaxSM } from '../../lib/breakpoints'
+import { jsx, css } from '@emotion/core'
+import { bpMaxMD, bpMaxLG } from '../../lib/breakpoints'
 import colors from '../../lib/colors'
 
 const Footnote = ({ count, children }) => {
@@ -67,7 +66,7 @@ const Footnote = ({ count, children }) => {
     input.margin-toggle {
       display: none;
     }
-    ${bpMaxSM} {
+    ${bpMaxLG} {
       label.margin-toggle:not(.sidenote-number) {
         display: inline;
       }
@@ -165,7 +164,7 @@ const Marginnote = ({ count, children }) => {
     input.margin-toggle {
       display: none;
     }
-    ${bpMaxSM} {
+    ${bpMaxLG} {
       label.margin-toggle:not(.sidenote-number) {
         display: inline;
       }

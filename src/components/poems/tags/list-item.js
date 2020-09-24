@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { Link } from 'gatsby'
 import { Styled, jsx } from 'theme-ui'
+import { InternalLink } from '../../layout/links'
 
 export default ({ tag, tagCount }) => {
   const slug = tag
@@ -12,21 +13,11 @@ export default ({ tag, tagCount }) => {
     .replace(/^-+/, '') // Trim - from start of text
     .replace(/-+$/, '') // Trim - from end of text
   return (
-    <Styled.li
-      sx={{
-        variant: 'styles.tagListItem',
-      }}>
+    <li>
       <span>
-        <Styled.a
-          as={Link}
-          to={'/poetry/tag/' + slug}
-          sx={{
-            variant: 'styles.tagLink',
-          }}>
-          {tag}
-        </Styled.a>{' '}
-        ({tagCount})
+        <InternalLink to={'/poetry/tag/' + slug}>{tag}</InternalLink> (
+        {tagCount})
       </span>
-    </Styled.li>
+    </li>
   )
 }

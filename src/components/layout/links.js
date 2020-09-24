@@ -13,11 +13,13 @@ export const InternalNotesLink = styled(Link)`
     background: white;
     text-decoration: underline;
     text-decoration-color: ${colors.lightblue};
+    text-decoration-thickness: 1px;
   }
 `
 export const InternalLink = styled(Link)`
-  color: #75b9be;
-  text-decoration-color: #75b9be;
+  color: ${colors.hcbluegreen};
+  text-decoration-color: ${colors.bluegreen};
+  text-decoration-thickness: 1px;
   &:hover {
     color: black;
     text-decoration-color: #354f59;
@@ -26,6 +28,7 @@ export const InternalLink = styled(Link)`
 
 export const ExternalLink = styled(Link)`
   text-decoration-color: ${colors.red};
+  text-decoration-thickness: 1px;
   color: ${colors.red};
   &:hover {
     color: ${colors.text};

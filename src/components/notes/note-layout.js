@@ -1,10 +1,9 @@
-/** @jsx jsx */
-import { Styled, jsx } from 'theme-ui'
-import { Link } from 'gatsby'
+import React from 'react'
+import '../global.css'
 import Header from './note-header'
 import MyCustomBreadcrumb from './breadcrumb'
 import { useBreadcrumb } from 'gatsby-plugin-breadcrumb'
-import { Global } from '@emotion/core'
+import styled from '@emotion/styled'
 import Footer from './note-footer'
 import { Root, Main } from '../layout/layout'
 
@@ -33,10 +32,7 @@ export default ({
         location={location}
       />
       <Main>
-        <div
-          sx={{
-            fontSize: '3',
-          }}>
+        <div>
           <MyCustomBreadcrumb crumbs={crumbs} />
         </div>
         <h1>{title}</h1>

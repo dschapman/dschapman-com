@@ -19,9 +19,8 @@ export const Callout = styled.blockquote`
     border-top: 2px solid #75b9be;
     margin-top: 0.5em;
   }
-  width: 100%;
+  width: 55%;
   text-align: center;
-  margin: 0.8em auto;
   fontsize: 1.3rem;
   lineheight: 2rem;
   display: block;

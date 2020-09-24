@@ -14,7 +14,7 @@ html {
 }
 
 body {
-  counter-reset: 'sidenote-counter';
+  counter-reset: sidenote-counter;
   width: 87.5%;
   margin-left: auto;
   margin-right: auto;
@@ -38,32 +38,20 @@ h1 {
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 300;
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
-
-/* a {
- 
-
-
-
-}
-
-a:hover {
-  
-} */
-
-
-
 
 p,
 dl,
 ol,
-ul {
+ul,
+div,
+span {
   font-size: 1.4rem;
   line-height: 2rem;
 }
@@ -75,16 +63,14 @@ p {
   vertical-align: baseline;
 }
 
-
-
 blockquote p {
   width: 55%;
   margin-right: 40px;
 }
 
-main>p,
-main>footer,
-main>table {
+main > p,
+main > footer,
+main > table {
   width: 55%;
 }
 
@@ -94,7 +80,7 @@ hr {
   border-color: #f6f6f6;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1199px) {
   body {
     width: 84%;
     padding-left: 8%;
@@ -102,10 +88,9 @@ hr {
   }
 
   hr,
-  main>p,
-  main>footer,
-  main>table {
+  main > p,
+  main > footer,
+  main > table {
     width: 100%;
   }
-
 }
