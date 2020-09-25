@@ -95,3 +95,25 @@ hr {
     width: 100%;
   }
 }
+
+@media (max-width: 767px) {
+  p,
+  dl,
+  ol,
+  ul,
+  div {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media (max-width: 544px) {
+  p,
+  dl,
+  ol,
+  ul,
+  div {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+  }
+}
