@@ -1,10 +1,15 @@
-/** @jsx jsx */
-import { Styled, jsx } from 'theme-ui'
+import React from 'react'
+import styled from '@emotion/styled'
 
 import PostLink from './post-link'
 
+export const PostList = styled.ul`
+  list-style-type: none;
+  padding: 4px;
+`
+
 export default ({ posts }) => (
-  <ul>
+  <PostList>
     {posts.map(({ node: post }) => (
       <PostLink
         key={post.frontmatter.slug}
@@ -13,5 +18,5 @@ export default ({ posts }) => (
         body={post.body}
       />
     ))}
-  </ul>
+  </PostList>
 )

@@ -2,6 +2,7 @@
 import { Link } from 'gatsby'
 import { Styled, jsx } from 'theme-ui'
 import { InternalLink } from '../../layout/links'
+import { PostLink } from '../../posts/post-link'
 
 export default ({ tag, tagCount }) => {
   const slug = tag
@@ -13,11 +14,8 @@ export default ({ tag, tagCount }) => {
     .replace(/^-+/, '') // Trim - from start of text
     .replace(/-+$/, '') // Trim - from end of text
   return (
-    <li>
-      <span>
-        <InternalLink to={'/poetry/tag/' + slug}>{tag}</InternalLink> (
-        {tagCount})
-      </span>
-    </li>
+    <PostLink>
+      <InternalLink to={'/poetry/tag/' + slug}>{tag}</InternalLink> ({tagCount})
+    </PostLink>
   )
 }

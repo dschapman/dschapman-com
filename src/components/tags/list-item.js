@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { InternalLink } from '../layout/links'
 import { Styled, jsx } from 'theme-ui'
+import { PostList } from '../posts/post-list'
 
 export default ({ tag, tagCount }) => {
   const slug = tag
@@ -12,11 +13,11 @@ export default ({ tag, tagCount }) => {
     .replace(/^-+/, '') // Trim - from start of text
     .replace(/-+$/, '') // Trim - from end of text
   return (
-    <li>
+    <PostList>
       <span>
         <InternalLink to={'/articles/tag/' + slug}>{tag}</InternalLink> (
         {tagCount})
       </span>
-    </li>
+    </PostList>
   )
 }
