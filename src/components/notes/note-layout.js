@@ -4,7 +4,7 @@ import Header from './note-header'
 import MyCustomBreadcrumb from './breadcrumb'
 import { useBreadcrumb } from 'gatsby-plugin-breadcrumb'
 import styled from '@emotion/styled'
-import Footer from './note-footer'
+import Footer from '../layout/footer'
 import { Root, Main } from '../layout/layout'
 
 export default ({
