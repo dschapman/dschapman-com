@@ -14,6 +14,7 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-remark-images',
+    `gatsby-plugin-favicon`,
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-mdx`,
