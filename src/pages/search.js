@@ -6,7 +6,8 @@ const SearchPage = ({ location }) => (
   <Layout
     title="Search"
     description="Find the content on my site"
-    location={location}>
+    location={location}
+    type="🔍">
     <Search />
   </Layout>
 )
