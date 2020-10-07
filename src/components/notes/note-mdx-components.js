@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from 'react'
-import { Styled, jsx } from 'theme-ui'
+import { jsx } from '@emotion/core'
 import { isString, isEmpty } from 'lodash'
 import { Link } from 'gatsby'
 

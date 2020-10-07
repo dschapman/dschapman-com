@@ -4,7 +4,7 @@ import Layout from '../../components/layout/layout'
 import PostLink from '../../components/posts/post-link'
 import { graphql } from 'gatsby'
 import { PostList } from '../../components/posts/post-list'
-import { Styled, jsx } from 'theme-ui'
+import { jsx } from '@emotion/core'
 
 const PoemIndex = ({ data, location }) => {
   return (
@@ -13,10 +13,7 @@ const PoemIndex = ({ data, location }) => {
       excerpt="All the poems posted on my website."
       type="📚"
       location={location}>
-      <PostList
-        sx={{
-          variant: 'styles.postlist',
-        }}>
+      <PostList>
         {data.allMdx.edges.map(({ node: post }) => {
           let newPost = {
             slug: post.frontmatter.slug,

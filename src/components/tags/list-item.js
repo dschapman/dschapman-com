@@ -1,6 +1,5 @@
-/** @jsx jsx */
+import React from 'react'
 import { InternalLink } from '../layout/links'
-import { Styled, jsx } from 'theme-ui'
 import { PostList } from '../posts/post-list'
 
 export default ({ tag, tagCount }) => {

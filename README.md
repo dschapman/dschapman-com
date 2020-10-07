@@ -4,11 +4,11 @@ The website currently has three different types of posts - articles, poems, and 
 
 ## 📝 Notes
 
-This website uses gatsby-theme-brain to add a notes section. These notes use Bidirectional links and are aware when they are referenced by other notes or and when they are on the same topic as other articles and poems across this website. 
+This website uses gatsby-theme-brain to add a notes section. These notes use Bidirectional links and are aware when they are referenced by other notes or and when they are on the same topic as other articles and poems across this website.
 
 ## 📘 Articles
 
-Implemented in gatsby-plugin-mdx. The slug is drawn from slug in the frontmatter, title, and excerpt are also important values. A list of all tags used in articles can be viewed at /articles/tags. These tags will also list links to a note page with the same name as the tag if present. 
+Implemented in gatsby-plugin-mdx. The slug is drawn from slug in the frontmatter, title, and excerpt are also important values. A list of all tags used in articles can be viewed at /articles/tags. These tags will also list links to a note page with the same name as the tag if present.
 
 ## 📜 Poems
 
@@ -38,7 +38,6 @@ Make sure to import a layout if you're creating an .mdx page in src/pages
 │   │   ├── poems <-- Modified layout for poems
 │   │   ├── posts <-- Modified layout for articles
 │   │   └── tags <-- information on generating tags
-│   ├── gatsby-plugin-theme-ui <-- styles mostly go here
 │   └── pages <-- Pages (often .mdx) go here
 ├── static <-- It might not be optimized but its sometimes easier to link to images stored here.
 ├── gatsby-config.js
@@ -55,4 +54,3 @@ Link Previews only show up on larger screen size so make sure to check out the w
 ## 🕺🏼 Styling
 
 This site uses emotion for CSS in JS styling as well as some vanilla CSS. The CSS is inspired and adapted from [Tufte's CSS](https://github.com/edwardtufte/tufte-css).
-

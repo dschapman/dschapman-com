@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import React from 'react'
-import { jsx } from 'theme-ui'
-import { css } from '@emotion/core'
+import { jsx, css } from '@emotion/core'
 import { bpMaxMD, bpMaxSM, bpMaxLG } from '../../lib/breakpoints'
 import { Marginnote } from './sidenote'
 

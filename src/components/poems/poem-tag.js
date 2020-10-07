@@ -18,19 +18,7 @@ const PoemTag = ({ data, pageContext, location }) => {
     if (note.inboundReferenceNotes != null) {
       references = note.inboundReferenceNotes.map((ref) => (
         <li key={ref.id}>
-          <InternalLink
-            as={Link}
-            to={`/notes/${ref.slug}`}
-            sx={{
-              bg: 'lightblue',
-              textDecoration: 'none',
-              '&:hover,&:focus': {
-                color: 'text',
-                bg: 'white',
-                textDecoration: 'underline',
-                textDecorationColor: 'lightblue',
-              },
-            }}>
+          <InternalLink as={Link} to={`/notes/${ref.slug}`}>
             {ref.title}
           </InternalLink>
         </li>
@@ -62,19 +50,7 @@ const PoemTag = ({ data, pageContext, location }) => {
               {referenceBlock}
             </MDXProvider>
           }>
-          <InternalNotesLink
-            as={Link}
-            to={`/notes/${note.slug}`}
-            sx={{
-              bg: 'lightblue',
-              textDecoration: 'none',
-              '&:hover,&:focus': {
-                color: 'text',
-                bg: 'white',
-                textDecoration: 'underline',
-                textDecorationColor: 'lightblue',
-              },
-            }}>
+          <InternalNotesLink as={Link} to={`/notes/${note.slug}`}>
             my notes on {tag}
           </InternalNotesLink>
         </LinktipPreview>

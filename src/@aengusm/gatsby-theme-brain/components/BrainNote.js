@@ -2,7 +2,7 @@
 import React from 'react'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import Layout from '../../../components/notes/note-layout'
-import { Styled, jsx, Theme } from 'theme-ui'
+import { jsx } from '@emotion/core'
 import noteComponents from '../../../components/notes/note-mdx-components.js'
 import regularComponents from '../../../components/layout/mdx-components'
 import { MDXProvider } from '@mdx-js/react'
@@ -54,7 +54,7 @@ const BrainNote = ({ note, nodes, location }) => {
       post.frontmatter.slug.includes('/poetry/')
     ) {
       relatedPoems.push(
-        <Styled.li key={post.id}>
+        <li key={post.id}>
           <LinktipPreview
             tiptext={
               <MDXProvider components={regularComponents}>
@@ -67,7 +67,7 @@ const BrainNote = ({ note, nodes, location }) => {
               {post.frontmatter.title}
             </InternalLink>
           </LinktipPreview>
-        </Styled.li>
+        </li>
       )
     }
 

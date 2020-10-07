@@ -1,6 +1,4 @@
-/** @jsx jsx */
-import { Link } from 'gatsby'
-import { Styled, jsx } from 'theme-ui'
+import React from 'react'
 import { InternalLink } from '../../layout/links'
 import { PostLink } from '../../posts/post-link'
 

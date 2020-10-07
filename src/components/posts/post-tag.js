@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from 'react'
-import { Styled, jsx } from 'theme-ui'
+import { jsx } from '@emotion/core'
 import { graphql } from 'gatsby'
 import { InternalLink, ExternalLink, InternalNotesLink } from '../layout/links'
 import Layout from '../layout/layout'
@@ -47,7 +47,7 @@ const ArticleTag = ({ data, pageContext, location }) => {
           placement="right"
           tiptext={
             <MDXProvider components={components}>
-              <Styled.h1>{note.title}</Styled.h1>
+              <h1>{note.title}</h1>
               <MDXRenderer>{note.childMdx.body}</MDXRenderer>
               {referenceBlock}
             </MDXProvider>

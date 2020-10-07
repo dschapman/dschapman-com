@@ -1,21 +1,21 @@
 /** @jsx jsx */
 import React from 'react'
-import { jsx, Styled } from 'theme-ui'
+import { jsx, css } from '@emotion/core'
 import avatar from '../../content/dschapman-com-content/assets/avatar.jpg'
 
 const Avatar = () => {
   return (
     <div>
       <img
-        sx={{
-          float: 'left',
-          width: 'auto',
-          maxWidth: '10rem',
-          height: 'auto',
-          borderRadius: '99999px',
-          verticalAlign: 'top',
-          marginRight: '2rem',
-        }}
+        css={css`
+          float: left;
+          width: auto;
+          max-width: 10rem;
+          height: auto;
+          borderradius: 99999px;
+          vertical-align: top;
+          margin-right: 2rem;
+        `}
         src={avatar}
         alt="D.S. Chapman"
       />

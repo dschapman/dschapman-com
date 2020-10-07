@@ -1,6 +1,4 @@
-/** @jsx jsx */
 import React from 'react'
-import { Styled, jsx } from 'theme-ui'
 import { graphql, Link } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Audio from '../audio'

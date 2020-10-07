@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx } from '@emotion/core'
 import SEO from '../seo'
 import Logo from '../layout/logo'
 import { Header } from '../layout/header'

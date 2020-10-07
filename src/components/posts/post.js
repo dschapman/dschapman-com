@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from 'react'
-import { Styled, jsx } from 'theme-ui'
+import { css, jsx } from '@emotion/core'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Tooltip from '../layout/tooltip'
 import Layout from './post-layout'
@@ -30,7 +30,9 @@ export default ({ data, pageContext, location }) => {
       type="Article 📄"
       location={location}>
       <Tooltip
-        sx={{ paddingTop: '20px' }}
+        css={css`
+          padding-top: 20px;
+        `}
         tiptext={`${data.mdx.wordCount.words} words`}>
         {emoji}
       </Tooltip>
