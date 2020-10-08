@@ -101,7 +101,7 @@ const BrainNote = ({ note, nodes, location }) => {
   if (references.length > 0) {
     referenceBlock = (
       <>
-        <h2>This Note is Referenced in</h2>
+        <h2>Related Notes</h2>
         <ul>{references}</ul>
       </>
     )
