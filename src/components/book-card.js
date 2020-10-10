@@ -13,6 +13,7 @@ const Container = styled.div`
   width: 55%;
   ${bpMaxLG} {
     width: 100%;
+    justify-content: center;
   }
 `
 
