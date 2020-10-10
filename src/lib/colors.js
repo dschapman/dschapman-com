@@ -4,7 +4,7 @@ const colors = {
   hcbluegreen: '#1c6267',
   bluegreen: '#75B9BE',
   red: '#925C77',
-  text: '#000',
+  text: '#0a0a0a',
   background: '#fff',
   primary: '#272727',
 }

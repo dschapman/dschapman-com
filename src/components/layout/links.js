@@ -17,21 +17,21 @@ export const InternalNotesLink = styled(Link)`
   }
 `
 export const InternalLink = styled(Link)`
-  color: ${colors.hcbluegreen};
+  color: ${colors.text};
   text-decoration-color: ${colors.bluegreen};
   text-decoration-thickness: 1px;
   &:hover {
-    color: black;
-    text-decoration-color: #354f59;
+    color: ${colors.hcbluegreen};
+    text-decoration-color: ${colors.bluegreen};
   }
 `
 
 export const ExternalLink = styled(Link)`
   text-decoration-color: ${colors.red};
   text-decoration-thickness: 1px;
-  color: ${colors.red};
+  color: ${colors.text};
   &:hover {
-    color: ${colors.text};
-    text-decoration-color: #2e0219;
+    color: ${colors.red};
+    text-decoration-color: ${colors.red};
   }
 `
