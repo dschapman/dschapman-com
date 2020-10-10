@@ -12,7 +12,7 @@ const Avatar = () => {
           width: auto;
           max-width: 10rem;
           height: auto;
-          borderradius: 99999px;
+          border-radius: 99999px;
           vertical-align: top;
           margin-right: 2rem;
         `}
