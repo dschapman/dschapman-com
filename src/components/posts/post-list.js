@@ -6,6 +6,7 @@ import PostLink from './post-link'
 export const PostList = styled.ul`
   list-style-type: none;
   padding: 4px;
+  margin: 0;
 `
 
 export default ({ posts }) => (
