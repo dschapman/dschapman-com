@@ -51,6 +51,10 @@ const PostLink = styled.li`
   }
 `
 
+const Description = styled.div`
+  font-size: 1rem;
+`
+
 export default () => {
   const data = useStaticQuery(graphql`
     query {
@@ -81,6 +85,7 @@ export default () => {
             <InternalLink to={post.frontmatter.slug}>
               {post.frontmatter.title}
             </InternalLink>
+            <Description>{post.frontmatter.excerpt}</Description>
             <ul>
               {post.frontmatter.tags.map((tag) => (
                 <li key={tag}>{tag}</li>

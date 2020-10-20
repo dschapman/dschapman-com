@@ -3,7 +3,7 @@ import React from 'react'
 import Layout from '../../components/layout/layout'
 import PostLink from '../../components/posts/post-link'
 import { graphql } from 'gatsby'
-import { PostList } from '../../components/posts/post-list'
+import { PoemList } from '../../components/poems/poem-list'
 import { jsx } from '@emotion/core'
 
 const PoemIndex = ({ data, location }) => {
@@ -13,7 +13,7 @@ const PoemIndex = ({ data, location }) => {
       excerpt="All the poems posted on my website."
       type="📚"
       location={location}>
-      <PostList>
+      <PoemList>
         {data.allMdx.edges.map(({ node: post }) => {
           let newPost = {
             slug: post.frontmatter.slug,
@@ -22,7 +22,7 @@ const PoemIndex = ({ data, location }) => {
           }
           return <PostLink key={newPost.slug} {...newPost} />
         })}
-      </PostList>
+      </PoemList>
     </Layout>
   )
 }
