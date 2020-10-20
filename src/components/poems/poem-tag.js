@@ -95,6 +95,8 @@ export const pageQuery = graphql`
           frontmatter {
             title
             slug
+            excerpt
+            tags
           }
           body
         }

@@ -8,10 +8,13 @@ import PostList from './posts/post-list'
 export default () => {
   const data = useStaticQuery(graphql`
     query {
-      allMdx(
+      posts: allMdx(
         limit: 1000
         sort: { fields: frontmatter___date, order: DESC }
-        filter: { frontmatter: { tags: { in: "featured" } } }
+        filter: {
+          frontmatter: { tags: { in: "featured" } }
+          fileAbsolutePath: { regex: "/content/dschapman-com-content/posts/" }
+        }
       ) {
         edges {
           node {
@@ -24,12 +27,29 @@ export default () => {
           }
         }
       }
+      poems: allMdx(
+        limit: 1000
+        sort: { fields: frontmatter___date, order: DESC }
+        filter: {
+          frontmatter: { tags: { in: "featured" } }
+          fileAbsolutePath: { regex: "/content/dschapman-com-content/poems/" }
+        }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              title
+              slug
+            }
+          }
+        }
+      }
     }
   `)
   return (
     <>
       <h2>Featured Articles</h2>
-      <PostList posts={data.allMdx.edges} />
+      <PostList posts={data.posts.edges} />
     </>
   )
 }
