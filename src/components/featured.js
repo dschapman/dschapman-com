@@ -29,7 +29,7 @@ export default () => {
       }
       poems: allMdx(
         limit: 1000
-        sort: { fields: frontmatter___date, order: DESC }
+        sort: { fields: frontmatter___title, order: DESC }
         filter: {
           frontmatter: { tags: { in: "featured" } }
           fileAbsolutePath: { regex: "/content/dschapman-com-content/poems/" }
@@ -40,6 +40,8 @@ export default () => {
             frontmatter {
               title
               slug
+              excerpt
+              tags
             }
           }
         }
@@ -50,6 +52,8 @@ export default () => {
     <>
       <h2>Featured Articles</h2>
       <PostList posts={data.posts.edges} />
+      <h2>Featured Poems</h2>
+      <PostList posts={data.poems.edges} />
     </>
   )
 }
