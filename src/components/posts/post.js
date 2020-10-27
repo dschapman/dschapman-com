@@ -3,7 +3,7 @@ import React from 'react'
 import { css, jsx } from '@emotion/core'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Tooltip from '../layout/tooltip'
-import Layout from './post-layout'
+import Layout from '../layout/layout'
 import { graphql } from 'gatsby'
 
 export default ({ data, pageContext, location }) => {

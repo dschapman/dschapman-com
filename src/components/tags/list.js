@@ -3,7 +3,7 @@ import { PostList } from '../posts/post-list'
 import TagListItem from './list-item'
 
 export default ({ tags, type }) => {
-  let newTags = tags.filter((tag) => tag.totalCount > 0) //filter out any tags with only one item
+  let newTags = tags.filter((tag) => tag.totalCount > 1) //filter out any tags with only one item
   return (
     <PostList>
       {newTags.map((tag) => (

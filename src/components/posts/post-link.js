@@ -1,10 +1,6 @@
 import React from 'react'
 import { InternalLink } from '../layout/links'
-import LinktipPreview from '../layout/linktip-preview'
 import styled from '@emotion/styled'
-import { MDXProvider } from '@mdx-js/react'
-import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
-import components from '../layout/mdx-components'
 
 export const PostLink = styled.li`
   padding: 0.25rem;

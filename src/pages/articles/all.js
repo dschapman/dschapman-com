@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../../components/posts/posts-layout'
+import Layout from '../../components/layout/layout'
 import PostList from '../../components/posts/post-list'
 
 const PostsIndex = ({ data, location }) => (
