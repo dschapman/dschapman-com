@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 import { InternalLink } from '../layout/links'
 import { bpMaxLG, bpMaxSM } from '../../lib/breakpoints'
 import colors from '../../lib/colors'
+import { Link } from 'gatsby'
 
 export const PostList = styled.ul`
   list-style-type: none;
@@ -34,17 +35,23 @@ const PostLink = styled.li`
   }
   li {
     display: inline;
-    font-style: italic;
-    font-size: 1rem;
-    background: ${colors.lightblue};
+  }
+`
 
-    color: ${colors.gray};
-    border-radius: 5px;
-    padding: 4px;
-    margin-right: 1rem;
-    ${bpMaxSM} {
-      font-size: 0.75rem;
-    }
+const TagLink = styled(Link)`
+  font-style: italic;
+  font-size: 1rem;
+  background: ${colors.lightblue};
+  text-decoration: none;
+  color: ${colors.gray};
+  border-radius: 5px;
+  padding: 4px;
+  margin-right: 1rem;
+  ${bpMaxSM} {
+    font-size: 0.75rem;
+  }
+  &:hover {
+    background: white;
   }
 `
 
@@ -62,7 +69,9 @@ export default ({ posts }) => (
         <Description>{post.frontmatter.excerpt}</Description>
         <ul>
           {post.frontmatter.tags.map((tag) => (
-            <li key={tag}>{tag}</li>
+            <li key={tag}>
+              <TagLink to={`/tag/${tag}`}>{tag}</TagLink>
+            </li>
           ))}
         </ul>
       </PostLink>
