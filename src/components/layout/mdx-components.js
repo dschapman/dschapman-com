@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { isString, isEmpty } from 'lodash'
+import { isEmpty } from 'lodash'
 import Tooltip from './tooltip'
 import { Footnote, Marginnote } from './sidenote'
 import { Figure } from './figure'
@@ -8,7 +8,6 @@ import Linktip from './linktip'
 import { Callout, Blockquote } from './TextStyles'
 
 import { InternalLink, InternalNotesLink, ExternalLink } from './links'
-import styled from '@emotion/styled'
 
 const INTERNAL_LINK_REGEX = /^\/notes/g
 const INTERNAL_NON_NOTES_LINK_REGEX = /^\/(?!notes)/g

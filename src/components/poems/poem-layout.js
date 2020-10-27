@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Audio from '../audio'
 import { InternalLink } from '../layout/links'

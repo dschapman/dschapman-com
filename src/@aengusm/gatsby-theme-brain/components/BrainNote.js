@@ -6,7 +6,6 @@ import { jsx } from '@emotion/core'
 import noteComponents from '../../../components/notes/note-mdx-components.js'
 import regularComponents from '../../../components/layout/mdx-components'
 import { MDXProvider } from '@mdx-js/react'
-import { Link, Router } from 'gatsby'
 import Linktip from '../../../components/layout/linktip'
 import LinktipPreview from '../../../components/layout/linktip-preview'
 import Tooltip from '../../../components/layout/tooltip'
@@ -15,7 +14,6 @@ import { Figure } from '../../../components/layout/figure'
 import { Callout } from '../../../components/layout/TextStyles'
 import {
   InternalLink,
-  ExternalLink,
   InternalNotesLink,
 } from '../../../components/layout/links'
 

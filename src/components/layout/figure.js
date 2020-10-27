@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from 'react'
 import { jsx, css } from '@emotion/core'
-import { bpMaxMD, bpMaxSM, bpMaxLG } from '../../lib/breakpoints'
+import { bpMaxLG } from '../../lib/breakpoints'
 import { Marginnote } from './sidenote'
 
 function getCaption(caption) {

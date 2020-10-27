@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from 'react'
 import { jsx, css } from '@emotion/core'
-import { bpMaxMD, bpMaxLG } from '../../lib/breakpoints'
+import { bpMaxLG } from '../../lib/breakpoints'
 import colors from '../../lib/colors'
 
 const Footnote = ({ count, children }) => {

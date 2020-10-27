@@ -2,8 +2,7 @@
 import React from 'react'
 import { css, jsx } from '@emotion/core'
 import { InternalLink } from '../layout/links'
-import { Link } from 'gatsby'
-import Tippy from '@tippyjs/react'
+
 import 'tippy.js/dist/tippy.css'
 import 'tippy.js/themes/light.css'
 

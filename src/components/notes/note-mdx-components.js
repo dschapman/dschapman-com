@@ -2,7 +2,6 @@
 import React from 'react'
 import { jsx } from '@emotion/core'
 import { isString, isEmpty } from 'lodash'
-import { Link } from 'gatsby'
 
 import Linktip from '../layout/linktip'
 import LinktipPreview from '../layout/linktip-preview'

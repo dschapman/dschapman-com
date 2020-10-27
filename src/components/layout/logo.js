@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 // npm install --save-dev @iconify/react @iconify/icons-mdi
-import { Icon, InlineIcon } from '@iconify/react'
+import { Icon } from '@iconify/react'
 import sproutIcon from '@iconify/icons-mdi/sprout'
 
 export default () => (

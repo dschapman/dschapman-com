@@ -1,7 +1,6 @@
 import React from 'react'
 import algoliasearch from 'algoliasearch/lite'
 import { InstantSearch, SearchBox, connectHits } from 'react-instantsearch-dom'
-import PostLink from '../components/posts/post-link'
 import { InternalLink } from '../components/layout/links'
 import styled from '@emotion/styled'
 

@@ -11,7 +11,6 @@ import Linktip from './linktip'
 import { Callout } from './TextStyles'
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
-import Search from '../search'
 
 export const Root = styled.root``
 export const Main = styled.main`

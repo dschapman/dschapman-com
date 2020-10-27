@@ -2,7 +2,7 @@
 import React from 'react'
 import { jsx } from '@emotion/core'
 import { graphql } from 'gatsby'
-import { InternalLink, ExternalLink, InternalNotesLink } from '../layout/links'
+import { InternalLink, InternalNotesLink } from '../layout/links'
 import Layout from '../layout/layout'
 import PostList from './post-list'
 import { MDXProvider } from '@mdx-js/react'
