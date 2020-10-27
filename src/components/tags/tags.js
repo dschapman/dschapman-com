@@ -1,19 +1,19 @@
 import React from 'react'
 
 import Layout from '../layout/layout'
-import TagList from '../tags/list'
+import TagList from './list'
 
-const PoemTags = ({ pageContext, location }) => {
+const AllTags = ({ pageContext, location }) => {
   const { tags } = pageContext
   return (
     <Layout
-      title="Poem by Tags"
+      title="All Content by Tags"
       titleTagName="h1"
       type="📚"
       location={location}>
-      <TagList tags={tags} type="poem" />
+      <TagList tags={tags} type="all" />
     </Layout>
   )
 }
 
-export default PoemTags
+export default AllTags

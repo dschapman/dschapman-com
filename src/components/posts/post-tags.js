@@ -11,7 +11,7 @@ const ArticleTags = ({ pageContext, location }) => {
       titleTagName="h1"
       type="📚"
       location={location}>
-      <TagList tags={tags} />
+      <TagList tags={tags} type="article" />
     </Layout>
   )
 }

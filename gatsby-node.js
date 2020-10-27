@@ -68,6 +68,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           totalCount
         }
       }
+      allTagsGroup: allMdx {
+        group(field: frontmatter___tags) {
+          fieldValue
+          totalCount
+        }
+      }
     }
   `)
 
@@ -79,6 +85,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const articles = result.data.articles.edges
   const articleTags = result.data.articleTagsGroup.group
   const poemTags = result.data.poemTagsGroup.group
+  const allTags = result.data.allTagsGroup.group
   // you'll call `createPage` for each result
   poems.forEach(({ node }) => {
     createPage({
@@ -138,6 +145,23 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       context: { tag: tag },
     })
   })
+  allTags.forEach((allTag) => {
+    let tag = allTag.fieldValue
+    let slug = tag
+      .toString()
+      .toLowerCase()
+      .replace(/\s+/g, '-') // Replace spaces with -
+      .replace(/[^\w\-]+/g, '') // Remove all non-word chars
+      .replace(/\-\-+/g, '-') // Replace multiple - with single -
+      .replace(/^-+/, '') // Trim - from start of text
+      .replace(/-+$/, '') // Trim - from end of text
+
+    createPage({
+      path: `/tag/${slug}`,
+      component: path.resolve(`./src/components/tags/tag.js`),
+      context: { tag: tag },
+    })
+  })
 
   //Create article tags index
   createPage({
@@ -149,5 +173,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     path: 'articles/tags',
     component: path.resolve(`./src/components/posts/post-tags.js`),
     context: { tags: articleTags },
+  })
+  createPage({
+    path: '/tags',
+    component: path.resolve(`./src/components/tags/tags.js`),
+    context: { tags: allTags },
   })
 }
