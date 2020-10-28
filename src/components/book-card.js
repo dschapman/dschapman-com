@@ -24,7 +24,7 @@ const Links = styled.div`
 `
 
 const Button = styled(ExternalLink)`
-  padding: 1rem;
+  padding: .75rem;
   border: solid 2px ${colors.red};
   border-radius: 30px;
   text-decoration: none;
