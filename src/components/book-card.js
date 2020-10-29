@@ -15,6 +15,7 @@ const Container = styled.div`
     width: 100%;
     justify-content: center;
   }
+  padding-bottom: 15px;
 `
 
 const Links = styled.div`
@@ -24,7 +25,7 @@ const Links = styled.div`
 `
 
 const Button = styled(ExternalLink)`
-  padding: .75rem;
+  padding: .66rem;
   border: solid 2px ${colors.red};
   border-radius: 30px;
   text-decoration: none;
@@ -58,15 +59,10 @@ const BookCard = ({ description }) => {
           flex-direction: column;
         `}>
         <p>
-          Seasons of Thought is a collection of poetry that traces its themes
-          across the changing seasons. The poems in the collection use the
+          Seasons of Thought is a collection of poems about the beauty of human
+          experience in everyday life. The poems in the collection use the
           passage of time as a canvas to explore nature, family, childhood,
-          faith, and other aspects of the human condition. Seasons of Thought is
-          my first collection of poetry which came out of a year-long project{' '}
-          <InternalLink to="/articles/on-writing-poems-daily">
-            where I wrote a poem every day
-          </InternalLink>
-          .
+          faith, and the changing seasons.
         </p>
         <Links>
           <Button to="https://www.amazon.com/Seasons-Thought-D-S-Chapman/dp/0578504359">
