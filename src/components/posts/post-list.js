@@ -1,5 +1,7 @@
+/** @jsx jsx */
 import React from 'react'
 import styled from '@emotion/styled'
+import { jsx, css } from '@emotion/core'
 import { InternalLink } from '../layout/links'
 import { bpMaxLG, bpMaxSM } from '../../lib/breakpoints'
 import colors from '../../lib/colors'
@@ -61,22 +63,43 @@ const Description = styled.div`
   font-size: 1rem;
 `
 
-export default ({ posts }) => (
-  <PostList>
-    {posts.map(({ node: post }) => (
-      <PostLink key={post.frontmatter.slug}>
-        <InternalLink to={post.frontmatter.slug}>
-          {post.frontmatter.title}
-        </InternalLink>
-        <Description>{post.frontmatter.excerpt}</Description>
-        <ul>
-          {post.frontmatter.tags.map((tag) => (
-            <li key={tag}>
-              <TagLink to={`/tag/${tag}`}>{tag}</TagLink>
-            </li>
-          ))}
-        </ul>
-      </PostLink>
-    ))}
-  </PostList>
-)
+export default ({ posts, type }) => {
+  let color
+  switch (type) {
+    case 'article':
+      color = colors.blue
+      break
+    case 'poem':
+      color = colors.red
+      break
+    default:
+      color = colors.blue
+      break
+  }
+
+  return (
+    <PostList>
+      {posts.map(({ node: post }) => (
+        <PostLink
+          key={post.frontmatter.slug}
+          css={css`
+            &:hover {
+              border-color: ${color};
+            }
+          `}>
+          <InternalLink to={post.frontmatter.slug}>
+            {post.frontmatter.title}
+          </InternalLink>
+          <Description>{post.frontmatter.excerpt}</Description>
+          <ul>
+            {post.frontmatter.tags.map((tag) => (
+              <li key={tag}>
+                <TagLink to={`/tag/${tag}`}>{tag}</TagLink>
+              </li>
+            ))}
+          </ul>
+        </PostLink>
+      ))}
+    </PostList>
+  )
+}

@@ -51,9 +51,9 @@ export default () => {
   return (
     <>
       <h2>Featured Articles</h2>
-      <PostList posts={data.posts.edges} />
+      <PostList posts={data.posts.edges} type="article" />
       <h2>Featured Poems</h2>
-      <PostList posts={data.poems.edges} />
+      <PostList posts={data.poems.edges} type="poem" />
     </>
   )
 }

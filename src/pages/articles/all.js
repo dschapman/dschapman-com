@@ -10,7 +10,7 @@ const PostsIndex = ({ data, location }) => (
     type="📚"
     titleTagName="h1"
     location={location}>
-    <PostList posts={data.allMdx.edges} />
+    <PostList posts={data.allMdx.edges} type="article" />
   </Layout>
 )
 export const pageQuery = graphql`

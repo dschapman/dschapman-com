@@ -13,7 +13,7 @@ const PoemIndex = ({ data, location }) => {
       excerpt="All the poems posted on my website."
       type="📚"
       location={location}>
-      <PostList posts={data.allMdx.edges} />
+      <PostList posts={data.allMdx.edges} type="poem" />
     </Layout>
   )
 }
