@@ -15,8 +15,8 @@ export const PostList = styled.ul`
 `
 
 const PostLink = styled.li`
-  padding: 0.25rem;
-  margin: 4px 0;
+  padding: 0.5rem;
+  margin: 4px 8px;
   display: block;
   width: fit-content;
   height: fit-content;
