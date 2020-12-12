@@ -16,16 +16,18 @@ export const PostList = styled.ul`
 
 const PostLink = styled.li`
   padding: 0.5rem;
-  margin: 4px 8px;
+  margin: 4px 0px;
   display: block;
   width: fit-content;
   height: fit-content;
   box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.01);
   transition: all 200ms ease-in-out;
-  border-radius: 5px;
+  border-radius: 0 5px 5px 0;
+
   &:hover {
     box-shadow: 1px 4px 10px 3px rgba(28, 98, 103, 0.3);
     transform: scale(1.02);
+    border-left: 4px solid ${colors.blue};
   }
 
   ul {
