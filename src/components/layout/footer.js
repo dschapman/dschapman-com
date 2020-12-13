@@ -26,7 +26,7 @@ const Footer = () => {
   return (
     <FooterContainer>
       <FooterContent>
-        <h2 style={{ color: 'white' }}>Contact</h2>
+        <h2 style={{ color: 'white', paddingBottom: '1rem' }}>Contact</h2>
         <div>
           <a
             style={{ paddingRight: '1rem' }}
