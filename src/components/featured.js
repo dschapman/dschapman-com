@@ -5,7 +5,7 @@ import styled from '@emotion/styled'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import PostList from './posts/post-list'
 
-export default () => {
+export default function Featured() {
   const data = useStaticQuery(graphql`
     query {
       posts: allMdx(
