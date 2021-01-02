@@ -67,7 +67,7 @@ const Figure = ({ children, caption, src, alt, fullwidth }) => {
         <figure>
           {Caption}
           {children}
-          <img src={src} alt={alt} />
+          <img src={src} alt={alt} height={height} width={width} />
         </figure>
       </span>
     )
