@@ -8593,11 +8593,11 @@ gatsby-plugin-sitemap@^2.4.2:
     sitemap "^1.13.0"
 
 gatsby-plugin-twitter@^2.3.1:
-  version "2.3.10"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-twitter/-/gatsby-plugin-twitter-2.3.10.tgz#1605b39385c475b234eafc422019cb36a7a14648"
-  integrity sha512-WQzjGpeKCdxujzAWE2yFOKaI494J/Qb6vhDdLvtevOAZVXSaMdTSfwSSUr17jsu8TV5s47fasKox+h/0uRlJUw==
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-twitter/-/gatsby-plugin-twitter-2.8.0.tgz#6490dcc32539b1785b46bfeafa3acb3c887401f9"
+  integrity sha512-t5rwcesihxDVBglmD1ha/0451/qcuauTqA3RZUI8QgcWrTGalqEn+xZZep/HFbEZ8ScuZOsvUx6cLXhkCWfFDg==
   dependencies:
-    "@babel/runtime" "^7.10.3"
+    "@babel/runtime" "^7.12.5"
 
 gatsby-plugin-typescript@^2.10.0:
   version "2.10.0"
