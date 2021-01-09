@@ -48,7 +48,6 @@ const Tag = ({ data, pageContext, location }) => {
   }
   function NoteBlock() {
     if (note != null) {
-      console.log(note)
       let references = []
       let referenceBlock
       if (note.inboundReferenceNotes != null) {
