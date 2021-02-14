@@ -111,7 +111,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'assets',
+        name: 'articles',
         path: `${__dirname}/dschapman-com-content/posts/`,
       },
     },
@@ -136,6 +136,13 @@ module.exports = {
       options: {
         name: 'pages',
         path: `${__dirname}/src/pages/`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'Dendron',
+        path: `${__dirname}/Dendron/`,
       },
     },
 

@@ -1,11 +1,44 @@
+const fs = require('fs')
 const path = require('path')
+const yaml = require('js-yaml')
 
+// Load the Dendron settings and capture the site Hierarchies we're publishing
+let fileContents = fs.readFileSync('./Dendron/dendron.yml', 'utf8')
+let dendronData = yaml.load(fileContents)
+let dendronRegexSearch = '('
+for (hierarchy in dendronData.site.siteHierarchies) {
+  if (hierarchy != dendronData.site.siteHierarchies.length - 1) {
+    dendronRegexSearch =
+      dendronRegexSearch + `${dendronData.site.siteHierarchies[hierarchy]}|`
+  } else
+    dendronRegexSearch =
+      dendronRegexSearch + `${dendronData.site.siteHierarchies[hierarchy]})`
+}
+console.log(dendronRegexSearch)
 exports.createPages = async ({ graphql, actions, reporter }) => {
   // Destructure the createPage function from the actions object
   const { createPage } = actions
 
   const result = await graphql(`
     query {
+      dendron: allMdx(
+        filter: { fileAbsolutePath: { regex: "/Dendron\/vault\/${dendronRegexSearch}/"}}
+      ){
+        edges{
+          node {
+            frontmatter {
+              id
+            }
+            id
+          }
+          previous {
+            id
+          }
+          next {
+            id
+          }
+        }
+      }
       poems: allMdx(
         filter: { fileAbsolutePath: { regex: "/dschapman-com-content/poems/" } }
       ) {
@@ -74,11 +107,19 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
   // Create blog post pages.
   const poems = result.data.poems.edges
+  const dendron = result.data.dendron.edges
   const articles = result.data.articles.edges
   const articleTags = result.data.articleTagsGroup.group
   const poemTags = result.data.poemTagsGroup.group
   const allTags = result.data.allTagsGroup.group
   // you'll call `createPage` for each result
+  dendron.forEach(({ node }) => {
+    createPage({
+      path: `dendron/${node.frontmatter.id}`,
+      component: path.resolve(`./src/components/posts/post.js`),
+      context: { id: node.id },
+    })
+  })
   poems.forEach(({ node }) => {
     createPage({
       // This is the slug you created before
