@@ -11,9 +11,7 @@ export default function LatestArticles() {
       posts: allMdx(
         limit: 5
         sort: { fields: frontmatter___date, order: DESC }
-        filter: {
-          fileAbsolutePath: { regex: "/content/dschapman-com-content/posts/" }
-        }
+        filter: { fileAbsolutePath: { regex: "/dschapman-com-content/posts/" } }
       ) {
         edges {
           node {

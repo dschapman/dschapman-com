@@ -2,7 +2,7 @@
 import React from 'react'
 import { jsx, css } from '@emotion/core'
 import styled from '@emotion/styled'
-import book from '../../content/dschapman-com-content/assets/seasons-of-thought-cover.png'
+import book from '../../dschapman-com-content/assets/seasons-of-thought-cover.png'
 import { ExternalLink, InternalLink } from './layout/links'
 import colors from '../lib/colors'
 import { bpMaxLG } from '../lib/breakpoints'

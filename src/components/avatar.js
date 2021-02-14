@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from 'react'
 import { jsx, css } from '@emotion/core'
-import avatar from '../../content/dschapman-com-content/assets/avatar.jpg'
+import avatar from '../../dschapman-com-content/assets/avatar.jpg'
 
 const Avatar = () => {
   return (
