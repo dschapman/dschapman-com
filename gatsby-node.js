@@ -21,13 +21,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const result = await graphql(`
     query {
-      dendron: allMdx(
-        filter: { fileAbsolutePath: { regex: "/Dendron\/vault\/${dendronRegexSearch}/"}}
-      ){
-        edges{
+      dendron: allMdx(filter: { fileAbsolutePath: { regex: "/Dendron/" } }) {
+        edges {
           node {
             frontmatter {
               id
+              title
             }
             id
           }
@@ -115,8 +114,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // you'll call `createPage` for each result
   dendron.forEach(({ node }) => {
     createPage({
-      path: `dendron/${node.frontmatter.id}`,
-      component: path.resolve(`./src/components/posts/post.js`),
+      path: `notes/${node.frontmatter.id}`,
+      component: path.resolve(`./src/components/notes/note.js`),
       context: { id: node.id },
     })
   })

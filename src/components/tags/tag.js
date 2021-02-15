@@ -130,22 +130,6 @@ export const pageQuery = graphql`
         }
       }
     }
-    notes: brainNote(slug: { eq: $tag }) {
-      slug
-      title
-      childMdx {
-        body
-      }
-      inboundReferenceNotes {
-        id
-        title
-        slug
-        childMdx {
-          excerpt
-          body
-        }
-      }
-    }
     articles: allMdx(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }

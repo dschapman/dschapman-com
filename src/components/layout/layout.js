@@ -28,18 +28,11 @@ export default ({
   location,
 }) => {
   const data = useStaticQuery(graphql`
-    query BrainNoteAndAllMdx {
-      allBrainNote {
-        nodes {
-          slug
-          title
-          childMdx {
-            body
-          }
-        }
-      }
+    query AllMdx {
       allMdx(
-        filter: { fileAbsolutePath: { regex: "/content/", ne: "notes" } }
+        filter: {
+          fileAbsolutePath: { regex: "/dschapman-com-content/", ne: "notes" }
+        }
       ) {
         nodes {
           frontmatter {
@@ -54,7 +47,6 @@ export default ({
     }
   `)
   const popups = {}
-  const notes = data.allBrainNote.nodes
   const posts = data.allMdx.nodes
   posts.map((post) => {
     if (post) {
@@ -65,14 +57,6 @@ export default ({
     }
   })
 
-  notes.map((note) => {
-    if (note) {
-      popups[`/notes/${note.slug}`] = {
-        title: note.title,
-        body: note.childMdx.body,
-      }
-    }
-  })
   const AnchorTag = (props) => <components.a {...props} popups={popups} />
   return (
     <Root>

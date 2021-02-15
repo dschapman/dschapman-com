@@ -1,5 +1,3 @@
-const slugify = require('slugify')
-const path = require('path')
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://www.dschapman.com',
@@ -162,24 +160,7 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: '@aengusm/gatsby-theme-brain',
-      options: {
-        notesDirectory: 'dschapman-com-content/notes/',
-        rootPath: 'notes',
-        rootNote: 'notes',
-        mdxOtherwiseConfigured: true,
-        noteTemplate: `${__dirname}/src/@aengusm/gatsby-theme-brain/templates/brain`,
-        generateSlug: (filename) => {
-          const filenameWithExtension = path.parse(filename).name
 
-          return slugify(filenameWithExtension, {
-            lower: true,
-          })
-        },
-        hideDoubleBrackets: true,
-      },
-    },
     'gatsby-plugin-twitter',
   ],
 }
