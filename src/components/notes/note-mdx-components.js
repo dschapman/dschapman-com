@@ -16,7 +16,7 @@ import { InternalLink, InternalNotesLink, ExternalLink } from '../layout/links'
 
 const INTERNAL_LINK_REGEX = /^\/notes/g
 const INTERNAL_NON_NOTES_LINK_REGEX = /^\/(?!notes)/g
-const AnchorTag = ({ href, popups = {}, ...restProps }) => {
+const AnchorTag = ({ href, popups, ...restProps }) => {
   const isInternalNotesLink = !isEmpty(href.match(INTERNAL_LINK_REGEX))
   const isInternalLink = !isEmpty(href.match(INTERNAL_NON_NOTES_LINK_REGEX))
   let renderedLink = restProps.children
@@ -24,7 +24,11 @@ const AnchorTag = ({ href, popups = {}, ...restProps }) => {
     renderedLink = restProps.children.replace(/\[\[(.*?)\]\]/g, '$1')
   }
   if (isInternalNotesLink) {
-    if (isEmpty(popups[`${href}`])) {
+    console.log(popups[`${href.substring(href.lastIndexOf('/') + 1)}`])
+    if (renderedLink.includes('|')) {
+      renderedLink = renderedLink.substring(0, renderedLink.lastIndexOf('|'))
+    }
+    if (isEmpty(popups[`${href.substring(href.lastIndexOf('/') + 1)}`])) {
       return <InternalNotesLink to={href}>{renderedLink}</InternalNotesLink>
     } else {
       return (
@@ -32,18 +36,27 @@ const AnchorTag = ({ href, popups = {}, ...restProps }) => {
           link={true}
           tiptext={
             <MDXProvider components={components}>
-              <h1>{popups[`${href}`].title}</h1>
-              <MDXRenderer>{popups[`${href}`].body}</MDXRenderer>
+              <h1>
+                {popups[`${href.substring(href.lastIndexOf('/') + 1)}`].title}
+              </h1>
+              <MDXRenderer>
+                {popups[`${href.substring(href.lastIndexOf('/') + 1)}`].body}
+              </MDXRenderer>
             </MDXProvider>
           }
           placement="right"
           multiple={false}>
-          <InternalNotesLink to={href}>{renderedLink}</InternalNotesLink>
+          <InternalNotesLink
+            to={`/notes/${
+              popups[`${href.substring(href.lastIndexOf('/') + 1)}`].dendronId
+            }`}>
+            {renderedLink}
+          </InternalNotesLink>
         </LinktipPreview>
       )
     }
   } else if (isInternalLink) {
-    if (isEmpty(popups[`${href}`])) {
+    if (isEmpty(popups[`${href.substring(href.lastIndexOf('/') + 1)}`])) {
       return <InternalLink to={href}>{renderedLink}</InternalLink>
     } else {
       return (
@@ -51,8 +64,12 @@ const AnchorTag = ({ href, popups = {}, ...restProps }) => {
           link={true}
           tiptext={
             <MDXProvider components={components}>
-              <h1>{popups[`${href}`].title}</h1>
-              <MDXRenderer>{popups[`${href}`].body}</MDXRenderer>
+              <h1>
+                {popups[`${href.substring(href.lastIndexOf('/') + 1)}`].title}
+              </h1>
+              <MDXRenderer>
+                {popups[`${href.substring(href.lastIndexOf('/') + 1)}`].body}
+              </MDXRenderer>
             </MDXProvider>
           }
           placement="right"

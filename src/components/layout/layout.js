@@ -31,16 +31,17 @@ export default ({
     query AllMdx {
       allMdx(
         filter: {
-          fileAbsolutePath: { regex: "/dschapman-com-content/", ne: "notes" }
+          fileAbsolutePath: { regex: "/dschapman-com-content|Dendron/" }
+          frontmatter: { published: { eq: true } }
         }
       ) {
         nodes {
           frontmatter {
-            tags
             slug
             title
+            id
           }
-          id
+          slug
           body
         }
       }
@@ -50,9 +51,11 @@ export default ({
   const posts = data.allMdx.nodes
   posts.map((post) => {
     if (post) {
-      popups[`${post.frontmatter.slug}`] = {
+      popups[`${post.slug.substring(post.slug.lastIndexOf('/') + 1)}`] = {
         title: post.frontmatter.title,
         body: post.body,
+        slug: post.frontmatter.slug,
+        dendronId: post.frontmatter.id,
       }
     }
   })

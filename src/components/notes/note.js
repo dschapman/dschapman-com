@@ -12,7 +12,7 @@ export default ({ data, pageContext, location }) => {
       description={data.mdx.frontmatter.excerpt}
       type="Note 📝"
       location={location}>
-      {data.mdx.body}
+      <MDXRenderer>{data.mdx.body}</MDXRenderer>
     </Layout>
   )
 }

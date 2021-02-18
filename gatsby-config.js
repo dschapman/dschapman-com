@@ -31,6 +31,12 @@ module.exports = {
           { resolve: `gatsby-remark-smartypants` },
           { resolve: `gatsby-remark-embedder` },
           {
+            resolve: `gatsby-remark-double-brackets-link`,
+            options: {
+              titleToURLPath: `${__dirname}/src/lib/dendron-parse-url.js`,
+            },
+          },
+          {
             resolve: `gatsby-remark-prismjs`,
             options: {
               // Class prefix for <pre> tags containing syntax highlighting;

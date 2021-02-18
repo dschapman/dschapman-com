@@ -1,27 +1,17 @@
-const fs = require('fs')
 const path = require('path')
-const yaml = require('js-yaml')
 
-// Load the Dendron settings and capture the site Hierarchies we're publishing
-let fileContents = fs.readFileSync('./Dendron/dendron.yml', 'utf8')
-let dendronData = yaml.load(fileContents)
-let dendronRegexSearch = '('
-for (hierarchy in dendronData.site.siteHierarchies) {
-  if (hierarchy != dendronData.site.siteHierarchies.length - 1) {
-    dendronRegexSearch =
-      dendronRegexSearch + `${dendronData.site.siteHierarchies[hierarchy]}|`
-  } else
-    dendronRegexSearch =
-      dendronRegexSearch + `${dendronData.site.siteHierarchies[hierarchy]})`
-}
-console.log(dendronRegexSearch)
 exports.createPages = async ({ graphql, actions, reporter }) => {
   // Destructure the createPage function from the actions object
   const { createPage } = actions
 
   const result = await graphql(`
     query {
-      dendron: allMdx(filter: { fileAbsolutePath: { regex: "/Dendron/" } }) {
+      dendron: allMdx(
+        filter: {
+          fileAbsolutePath: { regex: "/Dendron/" }
+          frontmatter: { published: { eq: true } }
+        }
+      ) {
         edges {
           node {
             frontmatter {
