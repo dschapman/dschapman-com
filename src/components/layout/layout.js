@@ -1,7 +1,7 @@
 import React from 'react'
 import '../global.css'
 import { MDXProvider } from '@mdx-js/react'
-import components from '../notes/note-mdx-components'
+import components from './mdx-components-with-previews'
 import Header from './header'
 import Footer from './footer'
 import Tooltip from './tooltip'

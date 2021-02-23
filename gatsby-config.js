@@ -168,5 +168,12 @@ module.exports = {
     },
 
     'gatsby-plugin-twitter',
+    'gatsby-plugin-netlify-redirect',
+    {
+      resolve: `gatsby-transformer-markdown-references`,
+      options: {
+        types: ['Mdx'], // or ["MarkdownRemark"] (or both)
+      },
+    },
   ],
 }

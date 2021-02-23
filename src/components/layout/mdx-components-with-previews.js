@@ -3,16 +3,16 @@ import React from 'react'
 import { jsx } from '@emotion/core'
 import { isString, isEmpty } from 'lodash'
 
-import Linktip from '../layout/linktip'
-import LinktipPreview from '../layout/linktip-preview'
+import Linktip from './linktip'
+import LinktipPreview from './linktip-preview'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
-import components from '../layout/mdx-components'
+import components from './mdx-components'
 import { MDXProvider } from '@mdx-js/react'
-import Tooltip from '../layout/tooltip'
-import { Footnote, Marginnote } from '../layout/sidenote'
-import { Figure } from '../layout/figure'
-import { Blockquote, Callout } from '../layout/TextStyles'
-import { InternalLink, InternalNotesLink, ExternalLink } from '../layout/links'
+import Tooltip from './tooltip'
+import { Footnote, Marginnote } from './sidenote'
+import { Figure } from './figure'
+import { Blockquote, Callout } from './TextStyles'
+import { InternalLink, InternalNotesLink, ExternalLink } from './links'
 
 const INTERNAL_LINK_REGEX = /^\/notes/g
 const INTERNAL_NON_NOTES_LINK_REGEX = /^\/(?!notes)/g
@@ -24,7 +24,6 @@ const AnchorTag = ({ href, popups, ...restProps }) => {
     renderedLink = restProps.children.replace(/\[\[(.*?)\]\]/g, '$1')
   }
   if (isInternalNotesLink) {
-    console.log(popups[`${href.substring(href.lastIndexOf('/') + 1)}`])
     if (renderedLink.includes('|')) {
       renderedLink = renderedLink.substring(0, renderedLink.lastIndexOf('|'))
     }
