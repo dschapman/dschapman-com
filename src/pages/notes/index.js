@@ -1,6 +1,6 @@
 import React from 'react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import Layout from '../components/layout/layout'
+import Layout from '../../components/layout/layout'
 const NotesIndex = ({ data, location }) => (
   <Layout
     title={data.mdx.frontmatter.title}
