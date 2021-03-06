@@ -48,41 +48,37 @@ const Tag = ({ data, pageContext, location }) => {
   }
   function NoteBlock() {
     if (note != null) {
-      let references = []
-      let referenceBlock
-      if (note.inboundReferenceNotes != null) {
-        references = note.inboundReferenceNotes.map((ref) => (
-          <li key={ref.id}>
-            <InternalLink as={Link} to={`/notes/${ref.slug}`}>
-              {ref.title}
-            </InternalLink>
-          </li>
-        ))
-      }
-
-      if (references.length > 0) {
-        referenceBlock = (
+      if (note.totalCount > 0) {
+        let relatedNotes = note.edges.map(({ node }) => {
+          console.log(node)
+          return (
+            <li key={node.frontmatter.id}>
+              <LinktipPreview
+                placement="right"
+                tiptext={
+                  <MDXProvider components={components}>
+                    <h1>{node.frontmatter.title}</h1>
+                    <MDXRenderer>{node.body}</MDXRenderer>
+                  </MDXProvider>
+                }>
+                <InternalNotesLink
+                  as={Link}
+                  to={`/notes/${node.frontmatter.id}`}>
+                  {node.frontmatter.title}
+                </InternalNotesLink>
+              </LinktipPreview>
+            </li>
+          )
+        })
+        return (
           <>
-            <h2>Referenced in</h2>
-            <ul>{references}</ul>
+            <h2>Notes</h2>
+            <ul>{relatedNotes}</ul>
           </>
         )
+      } else {
+        return <></>
       }
-      return (
-        <LinktipPreview
-          placement="right"
-          tiptext={
-            <MDXProvider components={components}>
-              <h1>{note.title}</h1>
-              <MDXRenderer>{note.childMdx.body}</MDXRenderer>
-              {referenceBlock}
-            </MDXProvider>
-          }>
-          <InternalNotesLink as={Link} to={`/notes/${note.slug}`}>
-            my notes on {tag}
-          </InternalNotesLink>
-        </LinktipPreview>
-      )
     } else {
       return <></>
     }
@@ -113,7 +109,7 @@ export const pageQuery = graphql`
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
-        frontmatter: { tags: { in: [$tag] } }
+        frontmatter: { tags: { in: [$tag] }, published: { eq: true } }
         fileAbsolutePath: { regex: "/content/poems/" }
       }
     ) {
@@ -134,7 +130,7 @@ export const pageQuery = graphql`
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
-        frontmatter: { tags: { in: [$tag] } }
+        frontmatter: { tags: { in: [$tag] }, published: { eq: true } }
         fileAbsolutePath: { regex: "/content/posts/" }
       }
     ) {
@@ -144,6 +140,25 @@ export const pageQuery = graphql`
           frontmatter {
             title
             slug
+            excerpt
+            tags
+          }
+          body
+        }
+      }
+    }
+    notes: allMdx(
+      filter: {
+        frontmatter: { tags: { in: [$tag] }, published: { eq: true } }
+        fileAbsolutePath: { regex: "/Dendron/" }
+      }
+    ) {
+      totalCount
+      edges {
+        node {
+          frontmatter {
+            title
+            id
             excerpt
             tags
           }
