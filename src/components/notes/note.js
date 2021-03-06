@@ -30,13 +30,11 @@ export default ({ data, pageContext, location }) => {
             </InternalNotesLink>
           </LinktipPreview>
         </li>
-      ) : (
-        ''
-      )
+      ) : null
     )
   }
   //related note block
-  if (references.length > 0) {
+  if (references.length > 0 && references[0] != null) {
     referenceBlock = (
       <>
         <h2>Related Notes</h2>

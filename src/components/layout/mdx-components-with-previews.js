@@ -28,31 +28,45 @@ const AnchorTag = ({ href, popups, ...restProps }) => {
       renderedLink = renderedLink.substring(0, renderedLink.lastIndexOf('|'))
     }
     if (isEmpty(popups[`${href.substring(href.lastIndexOf('/') + 1)}`])) {
-      return <InternalNotesLink to={href}>{renderedLink}</InternalNotesLink>
-    } else {
       return (
-        <LinktipPreview
-          link={true}
-          tiptext={
-            <MDXProvider components={components}>
-              <h1>
-                {popups[`${href.substring(href.lastIndexOf('/') + 1)}`].title}
-              </h1>
-              <MDXRenderer>
-                {popups[`${href.substring(href.lastIndexOf('/') + 1)}`].body}
-              </MDXRenderer>
-            </MDXProvider>
-          }
-          placement="right"
-          multiple={false}>
-          <InternalNotesLink
-            to={`/notes/${
-              popups[`${href.substring(href.lastIndexOf('/') + 1)}`].dendronId
-            }`}>
-            {renderedLink}
-          </InternalNotesLink>
-        </LinktipPreview>
+        <InternalNotesLink
+          to={`/notes/${href.substring(href.lastIndexOf('/') + 1)}`}>
+          {renderedLink}
+        </InternalNotesLink>
       )
+    } else {
+      //check if the note is published, if it's not go to a specific 404 page
+      if (
+        popups[`${href.substring(href.lastIndexOf('/') + 1)}`].published != true
+      ) {
+        return (
+          <InternalNotesLink to="/notes/404">{renderedLink}</InternalNotesLink>
+        )
+      } else {
+        return (
+          <LinktipPreview
+            link={true}
+            tiptext={
+              <MDXProvider components={components}>
+                <h1>
+                  {popups[`${href.substring(href.lastIndexOf('/') + 1)}`].title}
+                </h1>
+                <MDXRenderer>
+                  {popups[`${href.substring(href.lastIndexOf('/') + 1)}`].body}
+                </MDXRenderer>
+              </MDXProvider>
+            }
+            placement="right"
+            multiple={false}>
+            <InternalNotesLink
+              to={`/notes/${
+                popups[`${href.substring(href.lastIndexOf('/') + 1)}`].dendronId
+              }`}>
+              {renderedLink}
+            </InternalNotesLink>
+          </LinktipPreview>
+        )
+      }
     }
   } else if (isInternalLink) {
     if (isEmpty(popups[`${href.substring(href.lastIndexOf('/') + 1)}`])) {

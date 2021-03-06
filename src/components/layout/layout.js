@@ -32,7 +32,6 @@ export default ({
       allMdx(
         filter: {
           fileAbsolutePath: { regex: "/dschapman-com-content|Dendron/" }
-          frontmatter: { published: { eq: true } }
         }
       ) {
         nodes {
@@ -40,6 +39,7 @@ export default ({
             slug
             title
             id
+            published
           }
           slug
           body
@@ -56,6 +56,7 @@ export default ({
         body: post.body,
         slug: post.frontmatter.slug,
         dendronId: post.frontmatter.id,
+        published: post.frontmatter.published,
       }
     }
   })

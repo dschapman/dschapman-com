@@ -50,7 +50,6 @@ const Tag = ({ data, pageContext, location }) => {
     if (note != null) {
       if (note.totalCount > 0) {
         let relatedNotes = note.edges.map(({ node }) => {
-          console.log(node)
           return (
             <li key={node.frontmatter.id}>
               <LinktipPreview
