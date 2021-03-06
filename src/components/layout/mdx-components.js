@@ -19,6 +19,9 @@ const AnchorTag = (props) => {
   let renderedLink = props.children
 
   if (isInternalNotesLink) {
+    if (renderedLink.includes('|')) {
+      renderedLink = renderedLink.substring(0, renderedLink.lastIndexOf('|'))
+    }
     return <InternalNotesLink to={props.href}>{renderedLink}</InternalNotesLink>
   } else if (isInternalLink) {
     return <InternalLink to={props.href}>{renderedLink}</InternalLink>

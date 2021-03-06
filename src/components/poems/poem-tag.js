@@ -102,21 +102,5 @@ export const pageQuery = graphql`
         }
       }
     }
-    notes: brainNote(slug: { eq: $tag }) {
-      slug
-      title
-      childMdx {
-        body
-      }
-      inboundReferenceNotes {
-        id
-        title
-        slug
-        childMdx {
-          excerpt
-          body
-        }
-      }
-    }
   }
 `

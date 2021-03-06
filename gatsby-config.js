@@ -1,5 +1,3 @@
-const slugify = require('slugify')
-const path = require('path')
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://www.dschapman.com',
@@ -32,6 +30,12 @@ module.exports = {
           { resolve: `gatsby-remark-copy-linked-files` },
           { resolve: `gatsby-remark-smartypants` },
           { resolve: `gatsby-remark-embedder` },
+          {
+            resolve: `gatsby-remark-double-brackets-link`,
+            options: {
+              titleToURLPath: `${__dirname}/src/lib/dendron-parse-url.js`,
+            },
+          },
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
@@ -105,14 +109,14 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'assets',
-        path: `${__dirname}/content/dschapman-com-content/assets/`,
+        path: `${__dirname}/dschapman-com-content/assets/`,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'assets',
-        path: `${__dirname}/content/dschapman-com-content/posts/`,
+        name: 'articles',
+        path: `${__dirname}/dschapman-com-content/posts/`,
       },
     },
     {
@@ -128,7 +132,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'poetry',
-        path: `${__dirname}/content/dschapman-com-content/poems/`,
+        path: `${__dirname}/dschapman-com-content/poems/`,
       },
     },
     {
@@ -136,6 +140,13 @@ module.exports = {
       options: {
         name: 'pages',
         path: `${__dirname}/src/pages/`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'Dendron',
+        path: `${__dirname}/Dendron/`,
       },
     },
 
@@ -155,24 +166,14 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: '@aengusm/gatsby-theme-brain',
-      options: {
-        notesDirectory: 'content/dschapman-com-content/notes/',
-        rootPath: 'notes',
-        rootNote: 'notes',
-        mdxOtherwiseConfigured: true,
-        noteTemplate: `${__dirname}/src/@aengusm/gatsby-theme-brain/templates/brain`,
-        generateSlug: (filename) => {
-          const filenameWithExtension = path.parse(filename).name
 
-          return slugify(filenameWithExtension, {
-            lower: true,
-          })
-        },
-        hideDoubleBrackets: true,
+    'gatsby-plugin-twitter',
+    'gatsby-plugin-netlify-redirect',
+    {
+      resolve: `gatsby-transformer-markdown-references`,
+      options: {
+        types: ['Mdx'], // or ["MarkdownRemark"] (or both)
       },
     },
-    'gatsby-plugin-twitter',
   ],
 }

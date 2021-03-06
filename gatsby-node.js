@@ -6,10 +6,30 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const result = await graphql(`
     query {
-      poems: allMdx(
+      dendron: allMdx(
         filter: {
-          fileAbsolutePath: { regex: "/content/dschapman-com-content/poems/" }
+          fileAbsolutePath: { regex: "/Dendron/" }
+          frontmatter: { published: { eq: true } }
         }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              id
+              title
+            }
+            id
+          }
+          previous {
+            id
+          }
+          next {
+            id
+          }
+        }
+      }
+      poems: allMdx(
+        filter: { fileAbsolutePath: { regex: "/dschapman-com-content/poems/" } }
       ) {
         edges {
           node {
@@ -28,9 +48,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         }
       }
       articles: allMdx(
-        filter: {
-          fileAbsolutePath: { regex: "/content/dschapman-com-content/posts/" }
-        }
+        filter: { fileAbsolutePath: { regex: "/dschapman-com-content/posts/" } }
       ) {
         edges {
           node {
@@ -49,9 +67,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         }
       }
       articleTagsGroup: allMdx(
-        filter: {
-          fileAbsolutePath: { regex: "/content/dschapman-com-content/posts/" }
-        }
+        filter: { fileAbsolutePath: { regex: "/dschapman-com-content/posts/" } }
       ) {
         group(field: frontmatter___tags) {
           fieldValue
@@ -59,9 +75,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         }
       }
       poemTagsGroup: allMdx(
-        filter: {
-          fileAbsolutePath: { regex: "/content/dschapman-com-content/poems/" }
-        }
+        filter: { fileAbsolutePath: { regex: "/dschapman-com-content/poems/" } }
       ) {
         group(field: frontmatter___tags) {
           fieldValue
@@ -82,11 +96,19 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
   // Create blog post pages.
   const poems = result.data.poems.edges
+  const dendron = result.data.dendron.edges
   const articles = result.data.articles.edges
   const articleTags = result.data.articleTagsGroup.group
   const poemTags = result.data.poemTagsGroup.group
   const allTags = result.data.allTagsGroup.group
   // you'll call `createPage` for each result
+  dendron.forEach(({ node }) => {
+    createPage({
+      path: `notes/${node.frontmatter.id}`,
+      component: path.resolve(`./src/components/notes/note.js`),
+      context: { id: node.id },
+    })
+  })
   poems.forEach(({ node }) => {
     createPage({
       // This is the slug you created before

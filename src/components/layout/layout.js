@@ -1,7 +1,7 @@
 import React from 'react'
 import '../global.css'
 import { MDXProvider } from '@mdx-js/react'
-import components from '../notes/note-mdx-components'
+import components from './mdx-components-with-previews'
 import Header from './header'
 import Footer from './footer'
 import Tooltip from './tooltip'
@@ -28,51 +28,39 @@ export default ({
   location,
 }) => {
   const data = useStaticQuery(graphql`
-    query BrainNoteAndAllMdx {
-      allBrainNote {
-        nodes {
-          slug
-          title
-          childMdx {
-            body
-          }
-        }
-      }
+    query AllMdx {
       allMdx(
-        filter: { fileAbsolutePath: { regex: "/content/", ne: "notes" } }
+        filter: {
+          fileAbsolutePath: { regex: "/dschapman-com-content|Dendron/" }
+        }
       ) {
         nodes {
           frontmatter {
-            tags
             slug
             title
+            id
+            published
           }
-          id
+          slug
           body
         }
       }
     }
   `)
   const popups = {}
-  const notes = data.allBrainNote.nodes
   const posts = data.allMdx.nodes
   posts.map((post) => {
     if (post) {
-      popups[`${post.frontmatter.slug}`] = {
+      popups[`${post.slug.substring(post.slug.lastIndexOf('/') + 1)}`] = {
         title: post.frontmatter.title,
         body: post.body,
+        slug: post.frontmatter.slug,
+        dendronId: post.frontmatter.id,
+        published: post.frontmatter.published,
       }
     }
   })
 
-  notes.map((note) => {
-    if (note) {
-      popups[`/notes/${note.slug}`] = {
-        title: note.title,
-        body: note.childMdx.body,
-      }
-    }
-  })
   const AnchorTag = (props) => <components.a {...props} popups={popups} />
   return (
     <Root>
