@@ -29,13 +29,8 @@ export default ({ data, pageContext, location }) => {
       description={data.mdx.frontmatter.excerpt}
       type="Article 📄"
       location={location}>
-      <Tooltip
-        css={css`
-          padding-top: 20px;
-        `}
-        tiptext={`${data.mdx.wordCount.words} words`}>
-        {emoji}
-      </Tooltip>
+      <Tooltip tiptext={`${data.mdx.wordCount.words} words`}>{emoji}</Tooltip>
+      <br />
       <MDXRenderer>{data.mdx.body}</MDXRenderer>
     </Layout>
   )
