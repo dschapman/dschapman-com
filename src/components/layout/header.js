@@ -46,9 +46,9 @@ export default ({
   `)
 
   if (seoTitle) {
-    const title = seoTitle
+    title = seoTitle
   } else {
-    const title = title
+    title = title
   }
   return (
     <Header>
