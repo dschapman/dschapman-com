@@ -9,7 +9,7 @@ import { Link } from 'gatsby'
 
 export const PostList = styled.ul`
   list-style-type: none;
-  padding: 4px;
+  padding: 4px 0px;
   margin: 0;
   ${bpMaxLG} {
     width: 100%;
@@ -17,8 +17,8 @@ export const PostList = styled.ul`
 `
 
 const PostLink = styled.li`
-  padding: 0.5rem;
-  margin: 4px 0px;
+  padding: 0.5rem 0.5rem 0.5rem 0;
+  margin: 0px 0px;
   display: block;
   width: fit-content;
   height: fit-content;
@@ -30,6 +30,7 @@ const PostLink = styled.li`
     box-shadow: 1px 4px 10px 3px rgba(28, 98, 103, 0.3);
     transform: scale(1.02);
     border-left: 4px solid ${colors.blue};
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
   }
 
   ul {
@@ -39,28 +40,27 @@ const PostLink = styled.li`
   }
   li {
     display: inline;
+    word-break: all;
   }
 `
 
 const TagLink = styled(Link)`
   font-style: italic;
-  font-size: 1rem;
-  background: ${colors.lightblue};
+  font-size: 1.1rem;
   text-decoration: none;
   color: ${colors.gray};
   border-radius: 5px;
-  padding: 4px;
+  padding: 4px 0px;
   margin-right: 1rem;
-  ${bpMaxSM} {
-    font-size: 0.75rem;
-  }
   &:hover {
-    background: white;
+    color: ${colors.red};
   }
 `
 
 const Description = styled.div`
-  font-size: 1rem;
+  font-size: 1.4rem;
+  padding-top: 0.5rem;
+  color: ${colors.gray};
 `
 
 export default ({ posts, type }) => {
