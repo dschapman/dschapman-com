@@ -18,7 +18,7 @@ export const PostList = styled.ul`
 
 const PostLink = styled.li`
   padding: 0.5rem 0.5rem 0.5rem 0;
-  margin: 0px 0px;
+  margin: 0 0rem 0.5rem 0rem;
   display: block;
   width: fit-content;
   height: fit-content;
@@ -40,13 +40,15 @@ const PostLink = styled.li`
   }
   li {
     display: inline;
-    word-break: all;
+    word-break: keep-all;
+    margin: 0;
+    padding: 0;
   }
 `
 
 const TagLink = styled(Link)`
   font-style: italic;
-  font-size: 1.1rem;
+  font-size: 1rem;
   text-decoration: none;
   color: ${colors.gray};
   border-radius: 5px;
@@ -59,7 +61,7 @@ const TagLink = styled(Link)`
 
 const Description = styled.div`
   font-size: 1.4rem;
-  padding-top: 0.5rem;
+  padding: 0.5rem 0;
   color: ${colors.gray};
 `
 
