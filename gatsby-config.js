@@ -1,4 +1,5 @@
 module.exports = {
+  flags: { PRESERVE_WEBPACK_CACHE: true },
   siteMetadata: {
     siteUrl: 'https://www.dschapman.com',
     title: 'D.S. Chapman',

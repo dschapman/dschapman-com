@@ -34,8 +34,8 @@ h6 {
 
 h1 {
   font-size: 3rem;
-  line-height: 3rem;
-  font-weight: 100;
+  line-height: 5rem;
+  font-weight: 300;
 }
 
 h2 {
@@ -88,9 +88,9 @@ hr {
 
 @media (max-width: 1199px) {
   body {
-    width: 84%;
-    padding-left: 8%;
-    padding-right: 8%;
+    width: 74%;
+    padding-left: 13%;
+    padding-right: 13%;
   }
 
   hr,
@@ -102,13 +102,18 @@ hr {
 }
 
 @media (max-width: 767px) {
+  body {
+    width: 88%;
+    padding-left: 6%;
+    padding-right: 6%;
+  }
   p,
   dl,
   ol,
   ul,
   div {
-    font-size: 1.2rem;
-    line-height: 1.5rem;
+    font-size: 1.4rem;
+    line-height: 2rem;
   }
 }
 
@@ -118,7 +123,7 @@ hr {
   ol,
   ul,
   div {
-    font-size: 1.1rem;
-    line-height: 1.5rem;
+    font-size: 1.4rem;
+    line-height: 2rem;
   }
 }

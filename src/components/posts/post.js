@@ -1,10 +1,16 @@
 /** @jsx jsx */
 import React from 'react'
 import { css, jsx } from '@emotion/core'
+import styled from '@emotion/styled'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Tooltip from '../layout/tooltip'
 import Layout from '../layout/layout'
 import { graphql } from 'gatsby'
+
+const WordCount = styled.div`
+  position: absolute;
+  bottom: -0.5rem;
+`
 
 export default ({ data, pageContext, location }) => {
   const wordCount = data.mdx.wordCount.words
@@ -25,12 +31,19 @@ export default ({ data, pageContext, location }) => {
 
   return (
     <Layout
-      title={data.mdx.frontmatter.title}
+      seoTitle={data.mdx.frontmatter.title}
       description={data.mdx.frontmatter.excerpt}
       type="Article 📄"
       location={location}>
-      <Tooltip tiptext={`${data.mdx.wordCount.words} words`}>{emoji}</Tooltip>
-      <br />
+      <h1
+        css={css`
+          position: relative;
+          padding-bottom: 2rem;
+        `}>
+        {data.mdx.frontmatter.title}
+        <WordCount>{emoji}</WordCount>
+      </h1>
+
       <MDXRenderer>{data.mdx.body}</MDXRenderer>
     </Layout>
   )
