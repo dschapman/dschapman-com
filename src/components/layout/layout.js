@@ -26,6 +26,7 @@ export default ({
   seoTitleAddition2,
   type,
   location,
+  className,
 }) => {
   const data = useStaticQuery(graphql`
     query AllMdx {
@@ -60,10 +61,10 @@ export default ({
       }
     }
   })
-
+  console.log(className)
   const AnchorTag = (props) => <components.a {...props} popups={popups} />
   return (
-    <Root>
+    <Root className={`${className ? className : ''}`}>
       <Header
         title={title}
         seoTitle={seoTitle}

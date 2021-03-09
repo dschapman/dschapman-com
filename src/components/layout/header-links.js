@@ -12,7 +12,7 @@ const Nav = styled.nav`
 
 const NavLink = styled(Link)`
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: ${colors.text};
   text-decoration: none;
   text-transform: uppercase;

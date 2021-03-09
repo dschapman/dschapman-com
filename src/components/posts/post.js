@@ -9,7 +9,7 @@ import { graphql } from 'gatsby'
 
 const WordCount = styled.div`
   position: absolute;
-  bottom: -0.5rem;
+  bottom: 0rem;
 `
 
 export default ({ data, pageContext, location }) => {
@@ -34,7 +34,8 @@ export default ({ data, pageContext, location }) => {
       seoTitle={data.mdx.frontmatter.title}
       description={data.mdx.frontmatter.excerpt}
       type="Article 📄"
-      location={location}>
+      location={location}
+      className="post">
       <h1
         css={css`
           position: relative;

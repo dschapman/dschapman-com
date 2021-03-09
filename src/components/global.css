@@ -7,7 +7,7 @@
 }
 
 html {
-  font-size: 15px;
+  font-size: 16px;
   font-family: adobe-garamond-pro;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -19,7 +19,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   padding-left: 12.5%;
-  max-width: 1400px;
+  max-width: 1200px;
 }
 
 h1,
@@ -42,14 +42,16 @@ h2 {
   display: inline-block;
   font-size: 2.25rem;
   font-weight: 300;
-  padding-bottom: 2px;
-  margin: 0 0;
+  padding-bottom: 5px;
+  margin: 1rem 0;
   border-bottom: 2px solid #75b9be;
-  line-height: 1.4;
+}
+.post h2 {
+  margin: 1.5rem 0;
 }
 
 h3 {
-  font-size: 1.75rem;
+  font-size: 1.4rem;
 }
 
 p,
@@ -87,10 +89,17 @@ hr {
 }
 
 @media (max-width: 1199px) {
+  html {
+    font-size: 16px;
+  }
+
+  main {
+    max-width: 700px;
+  }
   body {
-    width: 74%;
-    padding-left: 13%;
-    padding-right: 13%;
+    width: 75%;
+    padding-left: 12.5%;
+    padding-right: 12.5%;
   }
 
   hr,
@@ -102,28 +111,18 @@ hr {
 }
 
 @media (max-width: 767px) {
+  html {
+    font-size: 15px;
+  }
   body {
     width: 88%;
     padding-left: 6%;
     padding-right: 6%;
   }
-  p,
-  dl,
-  ol,
-  ul,
-  div {
-    font-size: 1.4rem;
-    line-height: 2rem;
-  }
 }
 
 @media (max-width: 544px) {
-  p,
-  dl,
-  ol,
-  ul,
-  div {
-    font-size: 1.4rem;
-    line-height: 2rem;
+  html {
+    font-size: 14px;
   }
 }
