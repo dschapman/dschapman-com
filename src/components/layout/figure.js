@@ -2,13 +2,13 @@
 import React from 'react'
 import { jsx, css } from '@emotion/core'
 import { bpMaxLG } from '../../lib/breakpoints'
-import { Marginnote } from './sidenote'
+import colors from '../../lib/colors'
 
 function getCaption(caption) {
   if (caption == undefined) {
     return <></>
   } else {
-    return <Marginnote>{caption}</Marginnote>
+    return <figcaption>{caption}</figcaption>
   }
 }
 
@@ -37,10 +37,10 @@ const Figure = ({ children, caption, src, alt, fullwidth }) => {
       margin-top: 0;
       margin-bottom: 0;
       font-size: 1.1rem;
-      line-height: 1.6;
+      line-height: 1.4;
       vertical-align: baseline;
       position: relative;
-      max-width: 40%;
+      color: ${colors.gray};
     }
 
     figure.fullwidth figcaption {
@@ -65,9 +65,9 @@ const Figure = ({ children, caption, src, alt, fullwidth }) => {
     return (
       <span css={figureStyles}>
         <figure>
-          {Caption}
           {children}
           <img src={src} alt={alt} height={height} width={width} />
+          {Caption}
         </figure>
       </span>
     )
@@ -75,9 +75,9 @@ const Figure = ({ children, caption, src, alt, fullwidth }) => {
     return (
       <span css={figureStyles}>
         <figure className="fullwidth">
-          {Caption}
           {children}
           <img src={src} alt={alt} />
+          {Caption}
         </figure>
       </span>
     )
