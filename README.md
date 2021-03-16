@@ -1,14 +1,14 @@
 # About this Website
 
-The website currently has three different types of posts - articles, poems, and notes. The articles and poems are implemented with gatsby-plugin-mdx and I curate links on /articles and /poetry respectively; however, the notes are implemented using gatsby-theme-brain.
+The website currently has three different types of posts - articles, poems, and notes. All three are implemented with gatsby-plugin-mdx and I curate links on /articles and /poetry respectively. On the backend I write my notes using [Dendron](https://dendron.so)
 
 ## 📝 Notes
 
-This website uses gatsby-theme-brain to add a notes section. These notes use Bidirectional links and are aware when they are referenced by other notes or and when they are on the same topic as other articles and poems across this website.
+Dendron notes use wikilinks, are hierarchical, and context aware. Currently I use gatsby-remark-double-brackets-link to handle the wikilinks and gatsby-remark-copy-linked-files to display when these notes are referenced by another note.
 
 ## 📘 Articles
 
-Implemented in gatsby-plugin-mdx. The slug is drawn from slug in the frontmatter, title, and excerpt are also important values. A list of all tags used in articles can be viewed at /articles/tags. These tags will also list links to a note page with the same name as the tag if present.
+Implemented in gatsby-plugin-mdx. The slug is drawn from slug in the frontmatter, title, and excerpt are also important values. A list of all tags used in articles can be viewed at /articles/tags. These tags will also list links to any note pages that are tagged as well.
 
 ## 📜 Poems
 
