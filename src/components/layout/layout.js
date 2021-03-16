@@ -67,7 +67,6 @@ export default ({
       }
     }
   })
-  console.log(className)
   const AnchorTag = (props) => <components.a {...props} popups={popups} />
   return (
     <Root className={`${className ? className : ''}`}>

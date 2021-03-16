@@ -6,7 +6,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Tooltip from '../layout/tooltip'
 import Layout from '../layout/layout'
 import { graphql } from 'gatsby'
-import SimilarPosts from './similar-posts'
+import SimilarContent from '../similar-content'
 
 const WordCount = styled.div`
   position: absolute;
@@ -47,7 +47,7 @@ export default ({ data, pageContext, location }) => {
       </h1>
 
       <MDXRenderer>{data.mdx.body}</MDXRenderer>
-      <SimilarPosts
+      <SimilarContent
         tags={data.mdx.frontmatter.tags}
         title={data.mdx.frontmatter.title}
       />

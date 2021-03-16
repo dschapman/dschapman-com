@@ -5,6 +5,7 @@ import Audio from '../audio'
 import { InternalLink } from '../layout/links'
 
 import Layout from '../layout/layout'
+import SimilarContent from '../similar-content'
 
 export default function PageTemplate({ data: { mdx }, location }) {
   let recording = mdx.frontmatter.recording
@@ -16,9 +17,13 @@ export default function PageTemplate({ data: { mdx }, location }) {
       location={location}>
       <Audio src={recording} />
       <MDXRenderer>{mdx.body}</MDXRenderer>
-      <div>
+      <h3>
         <InternalLink to="/poetry/all">All Poems &rarr; </InternalLink>
-      </div>
+      </h3>
+      <SimilarContent
+        title={mdx.frontmatter.title}
+        tags={mdx.frontmatter.tags}
+      />
     </Layout>
   )
 }
@@ -29,6 +34,7 @@ export const pageQuery = graphql`
       id
       body
       frontmatter {
+        tags
         title
         excerpt
         recording

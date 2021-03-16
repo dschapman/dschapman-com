@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { PostLink, Description } from './post-list'
+import { PostLink, Description } from './posts/post-list'
 import { jsx, css } from '@emotion/core'
-import colors from '../../lib/colors'
-import { InternalLink } from '../layout/links'
+import colors from './../lib/colors'
+import { InternalLink } from './layout/links'
 
 export const useContentMdx = () => {
   return useStaticQuery(graphql`
@@ -65,7 +65,7 @@ export default ({ type, tags, title }) => {
   let matchesArray = Object.values(matches)
   matchesArray.sort((a, b) => (a.points < b.points ? 1 : -1))
   matchesArray = matchesArray.slice(0, 3)
-  console.log(matchesArray)
+
   return (
     <>
       <h2>Related Content</h2>
