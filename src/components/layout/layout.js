@@ -12,6 +12,31 @@ import { Callout } from './TextStyles'
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
 
+export const useAllMdx = () => {
+  return useStaticQuery(graphql`
+    query AllMdx {
+      allMdx(
+        filter: {
+          fileAbsolutePath: { regex: "/dschapman-com-content|Dendron/" }
+        }
+      ) {
+        nodes {
+          frontmatter {
+            slug
+            title
+            id
+            published
+            tags
+          }
+          slug
+          body
+          fileAbsolutePath
+        }
+      }
+    }
+  `)
+}
+
 export const Root = styled.root``
 export const Main = styled.main`
   padding: 1rem 0rem;
@@ -28,26 +53,7 @@ export default ({
   location,
   className,
 }) => {
-  const data = useStaticQuery(graphql`
-    query AllMdx {
-      allMdx(
-        filter: {
-          fileAbsolutePath: { regex: "/dschapman-com-content|Dendron/" }
-        }
-      ) {
-        nodes {
-          frontmatter {
-            slug
-            title
-            id
-            published
-          }
-          slug
-          body
-        }
-      }
-    }
-  `)
+  const data = useAllMdx()
   const popups = {}
   const posts = data.allMdx.nodes
   posts.map((post) => {

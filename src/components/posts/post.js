@@ -6,6 +6,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Tooltip from '../layout/tooltip'
 import Layout from '../layout/layout'
 import { graphql } from 'gatsby'
+import SimilarPosts from './similar-posts'
 
 const WordCount = styled.div`
   position: absolute;
@@ -46,6 +47,10 @@ export default ({ data, pageContext, location }) => {
       </h1>
 
       <MDXRenderer>{data.mdx.body}</MDXRenderer>
+      <SimilarPosts
+        tags={data.mdx.frontmatter.tags}
+        title={data.mdx.frontmatter.title}
+      />
     </Layout>
   )
 }
@@ -58,6 +63,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         excerpt
+        tags
       }
       timeToRead
       wordCount {

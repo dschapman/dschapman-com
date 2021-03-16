@@ -12,7 +12,7 @@ export default function Featured() {
         limit: 1000
         sort: { fields: frontmatter___date, order: DESC }
         filter: {
-          frontmatter: { tags: { in: "featured" } }
+          frontmatter: { featured: { eq: true } }
           fileAbsolutePath: { regex: "/dschapman-com-content/posts/" }
         }
       ) {
@@ -31,7 +31,7 @@ export default function Featured() {
         limit: 1000
         sort: { fields: frontmatter___title, order: DESC }
         filter: {
-          frontmatter: { tags: { in: "featured" } }
+          frontmatter: { featured: { eq: true } }
           fileAbsolutePath: { regex: "/dschapman-com-content/poems/" }
         }
       ) {

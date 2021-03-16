@@ -16,7 +16,7 @@ export const PostList = styled.ul`
   }
 `
 
-const PostLink = styled.li`
+export const PostLink = styled.li`
   padding: 0.5rem 0.5rem 0.5rem 0;
   margin: 0 0rem 0.5rem 0rem;
   display: block;
@@ -59,7 +59,7 @@ const TagLink = styled(Link)`
   }
 `
 
-const Description = styled.div`
+export const Description = styled.div`
   font-size: 1.4rem;
   padding: 0.5rem 0;
   color: ${colors.gray};
