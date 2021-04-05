@@ -1,6 +1,7 @@
 import React from 'react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '../../components/layout/layout'
+import NoteNav from '../../components/notes/note-nav'
 const NotesIndex = ({ data, location }) => (
   <Layout
     title={data.mdx.frontmatter.title}
@@ -8,6 +9,7 @@ const NotesIndex = ({ data, location }) => (
     type="📝"
     titleTagName="h1"
     location={location}>
+    <NoteNav />
     <MDXRenderer>{data.mdx.body}</MDXRenderer>
   </Layout>
 )
