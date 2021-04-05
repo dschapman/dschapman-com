@@ -8,6 +8,7 @@ import LinktipPreview from '../layout/linktip-preview'
 import { MDXProvider } from '@mdx-js/react'
 import regularComponents from '../layout/mdx-components'
 import { InternalLink, InternalNotesLink } from '../layout/links'
+import NoteNav from './note-nav'
 
 export default ({ data, pageContext, location }) => {
   //notes that reference this note
@@ -49,6 +50,7 @@ export default ({ data, pageContext, location }) => {
       description={data.mdx.frontmatter.excerpt}
       type="Note 📝"
       location={location}>
+      <NoteNav></NoteNav>
       <MDXRenderer>{data.mdx.body}</MDXRenderer>
       {referenceBlock}
     </Layout>
@@ -73,17 +75,6 @@ export const pageQuery = graphql`
       frontmatter {
         title
         id
-      }
-    }
-    allMdx(filter: { fileAbsolutePath: { regex: "/content/", ne: "notes" } }) {
-      nodes {
-        frontmatter {
-          tags
-          slug
-          title
-        }
-        id
-        body
       }
     }
   }
