@@ -14,3 +14,4 @@ export const bpMaxXS = `@media (max-width: ${minSM - 1}px)`
 export const bpMaxSM = `@media (max-width: ${minMD - 1}px)`
 export const bpMaxMD = `@media (max-width: ${minLG - 1}px)`
 export const bpMaxLG = `@media (max-width: ${minXL - 1}px)`
+export const bpMaxXL = `@media (max-width: ${minXXL - 1}px)`

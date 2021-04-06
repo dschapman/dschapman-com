@@ -4,13 +4,14 @@ import { css, jsx } from '@emotion/core'
 import styled from '@emotion/styled'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import { InternalLink, InternalNotesLink } from '../layout/links'
-import { bpMaxMD } from '../../lib/breakpoints'
+import { bpMinXL, bpMaxLG, bpMaxMD, bpMaxXL } from '../../lib/breakpoints'
 
 const Nav = styled.nav`
-  padding-top: 6rem;
+  padding-left: 2rem;
+  padding-top: 8rem;
   background: white;
-  max-width: 12.5%;
-
+  max-width: 15%;
+  max-height: 100%;
   position: absolute;
   overflow-y: scroll;
   z-index: 1;
@@ -28,6 +29,20 @@ const Nav = styled.nav`
   }
   ${bpMaxMD} {
     display: none;
+  }
+  ${bpMaxLG} {
+    padding-left: 2px;
+  }
+  ${bpMaxXL} {
+    padding-left: 1rem;
+    max-width: 11%;
+  }
+  summary {
+    font-size: 1.25rem;
+
+    ${bpMaxXL} {
+      font-size: 1rem;
+    }
   }
 `
 
@@ -101,10 +116,9 @@ export default function NoteNav() {
     }
   }
 
-  console.log(topHierarchies)
-
   return (
     <Nav>
+      <h4>Table of Notes</h4>
       {topHierarchies.map((hierarchy) => {
         if (hierarchy.parent.id === 404) {
           return (
