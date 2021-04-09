@@ -11,6 +11,7 @@ import Linktip from './linktip'
 import { Callout } from './TextStyles'
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
+import NoteNav from '../notes/note-nav'
 
 export const useAllMdx = () => {
   return useStaticQuery(graphql`
@@ -67,6 +68,14 @@ export default ({
       }
     }
   })
+  const NoteBlock = () => {
+    if (type === 'Note 📝') {
+      return <NoteNav />
+    } else {
+      return <></>
+    }
+  }
+
   const AnchorTag = (props) => <components.a {...props} popups={popups} />
   return (
     <Root className={`${className ? className : ''}`}>
@@ -79,20 +88,24 @@ export default ({
         type={type}
         location={location}
       />
+
       <Main>
-        <h1>{title}</h1>
-        <MDXProvider
-          components={{
-            a: AnchorTag,
-            Footnote: (props) => <Footnote {...props} />,
-            Tooltip: (props) => <Tooltip {...props} />,
-            Linktip: (props) => <Linktip {...props} />,
-            Callout: (props) => <Callout {...props} />,
-            Marginnote: (props) => <Marginnote {...props} />,
-            Figure: (props) => <Figure {...props} />,
-          }}>
-          {children}
-        </MDXProvider>
+        <NoteBlock />
+        <article>
+          <h1>{title}</h1>
+          <MDXProvider
+            components={{
+              a: AnchorTag,
+              Footnote: (props) => <Footnote {...props} />,
+              Tooltip: (props) => <Tooltip {...props} />,
+              Linktip: (props) => <Linktip {...props} />,
+              Callout: (props) => <Callout {...props} />,
+              Marginnote: (props) => <Marginnote {...props} />,
+              Figure: (props) => <Figure {...props} />,
+            }}>
+            {children}
+          </MDXProvider>
+        </article>
       </Main>
       <Footer />
     </Root>

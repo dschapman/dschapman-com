@@ -7,16 +7,8 @@ import { InternalLink, InternalNotesLink } from '../layout/links'
 import { bpMinXL, bpMaxLG, bpMaxMD, bpMaxXL } from '../../lib/breakpoints'
 
 const Nav = styled.nav`
-  padding-left: 2rem;
-  padding-top: 8rem;
   background: white;
-  max-width: 15%;
-  max-height: 100%;
-  position: absolute;
-  overflow-y: scroll;
-  z-index: 1;
-  top: 0;
-  left: 0;
+  width: 20%;
 
   ul {
     padding: 0;
@@ -30,13 +22,7 @@ const Nav = styled.nav`
   ${bpMaxMD} {
     display: none;
   }
-  ${bpMaxLG} {
-    padding-left: 2px;
-  }
-  ${bpMaxXL} {
-    padding-left: 1rem;
-    max-width: 11%;
-  }
+
   summary {
     font-size: 1.25rem;
 
@@ -104,35 +90,120 @@ export default function NoteNav() {
             title: notes[index].hierarchies[0],
             id: 404,
           },
-          children: [notes[index]],
+          children: [{ parent: notes[index], children: [] }],
         })
       }
     } else {
-      topHierarchies[
-        topHierarchies.findIndex(
-          (x) => x.parent.slug === notes[index].hierarchies[0]
+      let foundIndex1 = topHierarchies.findIndex(
+        (x) => x.parent.slug === notes[index].hierarchies[0]
+      )
+      if (
+        !topHierarchies[foundIndex1].children.some(
+          (hierarchy) =>
+            hierarchy.parent.slug ===
+            notes[index].hierarchies[0] + '.' + notes[index].hierarchies[1]
         )
-      ].children.push(notes[index])
+      ) {
+        //check if the second level note is published (because we sorted the list if it exists it should be first) if not insert a dummy object
+        if (
+          notes[index].slug ===
+          notes[index].hierarchies[0] + '.' + notes[index].hierarchies[1]
+        ) {
+          topHierarchies[foundIndex1].children.push({
+            parent: notes[index],
+            children: [],
+          })
+        } else {
+          topHierarchies[foundIndex1].children.push({
+            parent: {
+              slug:
+                notes[index].hierarchies[0] + '.' + notes[index].hierarchies[1],
+              title: notes[index].hierarchies[1],
+              id: 404,
+            },
+            children: [{ parent: notes[index], children: [] }],
+          })
+        }
+      } else {
+        let foundIndex2 = topHierarchies[foundIndex1].children.findIndex(
+          (x) =>
+            x.parent.slug ===
+            notes[index].hierarchies[0] + '.' + notes[index].hierarchies[1]
+        )
+        topHierarchies[foundIndex1].children[foundIndex2].children.push({
+          parent: notes[index],
+          children: [],
+        })
+      }
     }
   }
 
+  console.log(topHierarchies)
   return (
     <Nav>
       <h4>Table of Notes</h4>
       {topHierarchies.map((hierarchy) => {
+        // non-published first-level hierarchy
         if (hierarchy.parent.id === 404) {
           return (
             <details key={hierarchy.parent.id}>
               <summary>{hierarchy.parent.title}</summary>
               <ul>
                 {hierarchy.children.map((note) => {
-                  return (
-                    <li key={note.id}>
-                      <InternalLink to={`/notes/${note.id}`}>
-                        {note.title}
-                      </InternalLink>
-                    </li>
-                  )
+                  // non-published second-level hierarchy
+                  if (note.parent.id === 404) {
+                    return (
+                      <details key={note.parent.id}>
+                        <summary>{note.parent.title}</summary>
+                        {note.children.map((note2) => {
+                          //children of non-published second-level hierarchy
+                          return (
+                            <li key={note2.parent.id}>
+                              <InternalLink to={`/notes/${note2.parent.id}`}>
+                                {note2.parent.title}
+                              </InternalLink>
+                            </li>
+                          )
+                        })}
+                      </details>
+                    )
+                  } else {
+                    //published second-level hierarchy
+                    if (note.children.length === 0) {
+                      // second-level hierarchy no children
+                      return (
+                        <li key={note.parent.id}>
+                          <InternalLink to={`/notes/${note.parent.id}`}>
+                            {note.parent.title}
+                          </InternalLink>
+                        </li>
+                      )
+                    } else {
+                      //second-level hierarchy w/children
+
+                      return (
+                        <li key={note.parent.id}>
+                          <details key={note.parent.id}>
+                            <summary>
+                              <InternalLink to={`/notes/${note.parent.id}`}>
+                                {note.parent.title}
+                              </InternalLink>
+                            </summary>
+                            {note.children.map((note2) => {
+                              return (
+                                <li key={note2.parent.id}>
+                                  <InternalLink
+                                    to={`/notes/${note2.parent.id}`}>
+                                    {note2.parent.title}
+                                  </InternalLink>
+                                </li>
+                              )
+                            })}
+                          </details>
+                        </li>
+                      )
+                    }
+                  }
                 })}
               </ul>
             </details>
@@ -147,13 +218,50 @@ export default function NoteNav() {
               </summary>
               <ul>
                 {hierarchy.children.map((note) => {
-                  return (
-                    <li key={note.id}>
-                      <InternalLink to={`/notes/${note.id}`}>
-                        {note.title}
-                      </InternalLink>
-                    </li>
-                  )
+                  if (note.parent.id === '404') {
+                    return (
+                      <details key={note.parent.title}>
+                        <summary>{note.parent.title}</summary>
+
+                        {note.children.map((note2) => {
+                          return (
+                            <li key={note2.parent.id}>
+                              <InternalLink to={`/notes/${note2.parent.id}`}>
+                                {note2.parent.title}
+                              </InternalLink>
+                            </li>
+                          )
+                        })}
+                      </details>
+                    )
+                  } else if (note.children.length === 0) {
+                    return (
+                      <li key={note.parent.id}>
+                        <InternalLink to={`/notes/${note.parent.id}`}>
+                          {note.parent.title}
+                        </InternalLink>
+                      </li>
+                    )
+                  } else {
+                    return (
+                      <details key={note.parent.id}>
+                        <summary>
+                          <InternalLink to={`/notes/${note.parent.id}`}>
+                            {note.parent.title}
+                          </InternalLink>
+                        </summary>
+                        {note.children.map((note2) => {
+                          return (
+                            <li key={note2.parent.id}>
+                              <InternalLink to={`/notes/${note2.parent.id}`}>
+                                {note2.parent.title}
+                              </InternalLink>
+                            </li>
+                          )
+                        })}
+                      </details>
+                    )
+                  }
                 })}
               </ul>
             </details>

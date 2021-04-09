@@ -8,18 +8,44 @@
 
 html {
   font-size: 16px;
-  font-family: adobe-garamond-pro;
+  font-family: 'adobe-garamond-pro';
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 
 body {
   counter-reset: sidenote-counter;
-  width: 87.5%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 12.5%;
-  max-width: 1200px;
+  margin: 0;
+}
+
+root {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  flex-basis: 1200px;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding-top: 4rem;
+  margin: 0 75px;
+  flex-basis: 1200px;
+  max-height: 100px;
+}
+
+footer {
+  right: 0;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 3rem;
+  width: 100%;
+  font-family: 'proxima-nova';
+  font-weight: 100;
+  font-size: 2rem;
 }
 
 h1,
@@ -75,10 +101,31 @@ blockquote p {
   margin-right: 40px;
 }
 
-main > p,
-main > footer,
-main > table,
-main > ul {
+main {
+  margin: 0 75px;
+  min-width: 1200px;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+}
+
+article {
+  max-width: 87.5%;
+}
+
+article > h1,
+article > h2,
+article > h3,
+article > h4,
+article > h5,
+article > h6 {
+  max-width: 70%;
+}
+
+article > p,
+article > footer,
+article > table,
+article > ul {
   width: 55%;
 }
 
@@ -94,18 +141,28 @@ hr {
   }
 
   main {
-    max-width: 700px;
+    width: 800px;
+    margin: 0 40px;
   }
-  body {
-    width: 75%;
-    padding-left: 12.5%;
-    padding-right: 12.5%;
+
+  header {
+    max-width: 700px;
+    margin: 0 40px;
+  }
+
+  article > h1,
+  article > h2,
+  article > h3,
+  article > h4,
+  article > h5,
+  article > h6 {
+    max-width: 100%;
   }
 
   hr,
-  main > p,
-  main > footer,
-  main > table {
+  article > p,
+  article > footer,
+  article > table {
     width: 100%;
   }
 }
@@ -113,11 +170,6 @@ hr {
 @media (max-width: 767px) {
   html {
     font-size: 15px;
-  }
-  body {
-    width: 88%;
-    padding-left: 6%;
-    padding-right: 6%;
   }
 }
 

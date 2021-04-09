@@ -6,10 +6,9 @@ const NotesIndex = ({ data, location }) => (
   <Layout
     title={data.mdx.frontmatter.title}
     descriptions="My public notes, digital scraps of paper, and ephemeral scratchings."
-    type="📝"
+    type="Note 📝"
     titleTagName="h1"
     location={location}>
-    <NoteNav />
     <MDXRenderer>{data.mdx.body}</MDXRenderer>
   </Layout>
 )

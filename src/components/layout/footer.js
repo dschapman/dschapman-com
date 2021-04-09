@@ -6,22 +6,7 @@ import colors from '../../lib/colors'
 
 const Footer = () => {
   const FooterContainer = styled.footer`
-    display: flex;
-    position: absolute;
     background: ${colors.bluegreen};
-    right: 0;
-    margin-top: 5px;
-
-    flex-shrink: 0;
-    padding: 3rem;
-    width: 84%;
-    padding-left: 8%;
-    padding-right: 8%;
-    font-family: proxima-nova;
-    font-weight: 100;
-    font-size: 2rem;
-    margin: 0 auto;
-    align-items: center;
   `
   return (
     <FooterContainer>

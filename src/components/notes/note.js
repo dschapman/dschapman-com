@@ -50,7 +50,6 @@ export default ({ data, pageContext, location }) => {
       description={data.mdx.frontmatter.excerpt}
       type="Note 📝"
       location={location}>
-      <NoteNav></NoteNav>
       <MDXRenderer>{data.mdx.body}</MDXRenderer>
       {referenceBlock}
     </Layout>

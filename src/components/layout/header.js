@@ -8,11 +8,6 @@ import styled from '@emotion/styled'
 import { bpMaxLG, bpMaxSM, bpMaxXS } from '../../lib/breakpoints'
 
 export const Header = styled.header`
-  display: flex;
-  align-items: center;
-  padding-top: 4rem;
-  padding-right: 12.5%;
-  margin: 0 auto;
   ${bpMaxLG} {
     padding-top: 2rem;
   }
