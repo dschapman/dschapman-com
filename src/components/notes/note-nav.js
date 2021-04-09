@@ -8,7 +8,9 @@ import { bpMinXL, bpMaxLG, bpMaxMD, bpMaxXL } from '../../lib/breakpoints'
 
 const Nav = styled.nav`
   background: white;
-  width: 20%;
+  width: 25%;
+  margin-right: 2.5rem;
+  margin-top: 1.5rem;
 
   ul {
     padding: 0;
@@ -141,7 +143,7 @@ export default function NoteNav() {
   console.log(topHierarchies)
   return (
     <Nav>
-      <h4>Table of Notes</h4>
+      <h5>Table of Notes</h5>
       {topHierarchies.map((hierarchy) => {
         // non-published first-level hierarchy
         if (hierarchy.parent.id === 404) {

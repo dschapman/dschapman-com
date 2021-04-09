@@ -18,14 +18,6 @@ body {
   margin: 0;
 }
 
-root {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  flex-basis: 1200px;
-  align-items: center;
-}
-
 header {
   display: flex;
   align-items: center;
@@ -103,7 +95,6 @@ blockquote p {
 
 main {
   margin: 0 75px;
-  min-width: 1200px;
   display: flex;
   flex-grow: 1;
   flex-direction: row;
@@ -141,8 +132,8 @@ hr {
   }
 
   main {
-    width: 800px;
     margin: 0 40px;
+    flex: 1;
   }
 
   header {
