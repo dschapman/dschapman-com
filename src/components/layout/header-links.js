@@ -23,11 +23,14 @@ const NavLink = styled(Link)`
   }
 
   ${bpMaxLG} {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     padding: 0.75rem;
   }
   ${bpMaxMD} {
     font-size: 1rem;
+  }
+  ${bpMaxSM} {
+    font-size: 0.75rem;
   }
 `
 
@@ -38,11 +41,11 @@ export default () => {
       <NavLink
         css={css`
           ${bpMaxSM} {
-            font-size: 0.75rem;
+            font-size: 1rem;
             padding-right: 0.5rem;
           }
           ${bpMaxXS} {
-            font-size: 0.5rem;
+            font-size: 0.75rem;
           }
         `}
         to="/articles">
@@ -51,11 +54,11 @@ export default () => {
       <NavLink
         css={css`
           ${bpMaxSM} {
-            font-size: 0.75rem;
+            font-size: 01rem;
             padding-right: 0.5rem;
           }
           ${bpMaxXS} {
-            font-size: 0.5rem;
+            font-size: 0.75rem;
           }
         `}
         to="/poetry">
@@ -64,11 +67,11 @@ export default () => {
       <NavLink
         css={css`
           ${bpMaxSM} {
-            font-size: 0.75rem;
+            font-size: 1rem;
             padding-right: 0.5rem;
           }
           ${bpMaxXS} {
-            font-size: 0.5rem;
+            font-size: 0.75rem;
           }
         `}
         to="/notes">

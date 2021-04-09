@@ -21,10 +21,15 @@ body {
 header {
   display: flex;
   align-items: center;
-  padding-top: 4rem;
+  padding-top: 3rem;
   margin: 0 75px;
-  flex-basis: 1200px;
-  max-height: 100px;
+  justify-content: center;
+}
+
+header > div {
+  display: flex;
+  align-items: center;
+  width: 85%;
 }
 
 footer {
@@ -34,7 +39,6 @@ footer {
   flex-direction: column;
   flex-grow: 1;
   padding: 3rem;
-  width: 100%;
   font-family: 'proxima-nova';
   font-weight: 100;
   font-size: 2rem;
@@ -98,10 +102,11 @@ main {
   display: flex;
   flex-grow: 1;
   flex-direction: row;
+  justify-content: center;
 }
 
 article {
-  max-width: 87.5%;
+  width: 87.5%;
 }
 
 article > h1,
@@ -137,7 +142,6 @@ hr {
   }
 
   header {
-    max-width: 700px;
     margin: 0 40px;
   }
 

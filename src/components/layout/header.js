@@ -47,16 +47,18 @@ export default ({
   }
   return (
     <Header>
-      <Logo />
-      <HeaderLinks notes={false} />
-      <SEO
-        title={title}
-        seoTitle={seoTitle}
-        seoTitleAddition1={seoTitleAddition1}
-        seoTitleAddition2={seoTitleAddition2}
-        description={description}
-        type={type}
-        location={location}></SEO>
+      <div>
+        <Logo />
+        <HeaderLinks notes={false} />
+        <SEO
+          title={title}
+          seoTitle={seoTitle}
+          seoTitleAddition1={seoTitleAddition1}
+          seoTitleAddition2={seoTitleAddition2}
+          description={description}
+          type={type}
+          location={location}></SEO>
+      </div>
     </Header>
   )
 }

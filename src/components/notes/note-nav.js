@@ -8,7 +8,7 @@ import { bpMinXL, bpMaxLG, bpMaxMD, bpMaxXL } from '../../lib/breakpoints'
 
 const Nav = styled.nav`
   background: white;
-  width: 25%;
+  width: 20%;
   margin-right: 2.5rem;
   margin-top: 1.5rem;
 
