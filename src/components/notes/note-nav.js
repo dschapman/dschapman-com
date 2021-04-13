@@ -5,12 +5,28 @@ import styled from '@emotion/styled'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import { InternalLink, InternalNotesLink } from '../layout/links'
 import { bpMinXL, bpMaxLG, bpMaxMD, bpMaxXL } from '../../lib/breakpoints'
+import colors from '../../lib/colors'
 
 const Nav = styled.nav`
   background: white;
   width: 20%;
   margin-right: 2.5rem;
   margin-top: 1.5rem;
+
+  details summary {
+    cursor: pointer;
+  }
+
+  details summary > * {
+    display: inline;
+  }
+  details details {
+    margin-left: 8px;
+  }
+
+  details details summary {
+    color: ${colors.gray};
+  }
 
   ul {
     padding: 0;
