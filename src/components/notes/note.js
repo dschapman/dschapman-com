@@ -14,6 +14,7 @@ export default ({ data, pageContext, location }) => {
   //notes that reference this note
   let references = []
   let referenceBlock
+
   if (data.mdx.inboundReferences != null) {
     references = data.mdx.inboundReferences.map((ref) =>
       ref.frontmatter.published ? (
@@ -35,7 +36,8 @@ export default ({ data, pageContext, location }) => {
     )
   }
   //related note block
-  if (references.length > 0 && references[0] != null) {
+  console.log(references)
+  if (references.length > 0) {
     referenceBlock = (
       <>
         <h2>Related Notes</h2>

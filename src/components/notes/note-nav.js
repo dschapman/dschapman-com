@@ -24,10 +24,6 @@ const Nav = styled.nav`
     margin-left: 8px;
   }
 
-  details details summary {
-    color: ${colors.gray};
-  }
-
   ul {
     padding: 0;
     margin: 0;
@@ -156,7 +152,6 @@ export default function NoteNav() {
     }
   }
 
-  console.log(topHierarchies)
   return (
     <Nav>
       <h5>Table of Notes</h5>
