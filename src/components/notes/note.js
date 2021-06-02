@@ -96,7 +96,6 @@ export default ({ data, pageContext, location }) => {
       </>
     )
   }
-  console.log(data.mdx.inboundReferences)
   if (data.mdx.inboundReferences != null) {
     references = data.mdx.inboundReferences.map((ref) =>
       ref.frontmatter.published ? (
