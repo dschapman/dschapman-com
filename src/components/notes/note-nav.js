@@ -46,7 +46,7 @@ const Nav = styled.nav`
   }
 `
 
-export default function NoteNav() {
+const NoteNav = React.memo(() => {
   const data = useStaticQuery(graphql`
     query {
       notes: allMdx(
@@ -283,4 +283,6 @@ export default function NoteNav() {
       })}
     </Nav>
   )
-}
+})
+
+export default NoteNav

@@ -14,7 +14,89 @@ export default ({ data, pageContext, location }) => {
   //notes that reference this note
   let references = []
   let referenceBlock
+  let nodes = data.allMdx.nodes
+  let relatedPoemsBlock
+  let relatedArticlesBlock
 
+  let relatedArticles = []
+  let relatedPoems = []
+  const popups = {}
+  nodes.map((post) => {
+    if (
+      data.mdx.frontmatter.tags != null &&
+      post.frontmatter.tags != null &&
+      post.frontmatter.tags.some((tag) =>
+        data.mdx.frontmatter.tags.includes(tag)
+      ) &&
+      post.frontmatter.slug.includes('/articles/')
+    ) {
+      relatedArticles.push(
+        <li key={post.id}>
+          <LinktipPreview
+            tiptext={
+              <MDXProvider components={regularComponents}>
+                <h1>{post.frontmatter.title}</h1>
+                <MDXRenderer>{post.body}</MDXRenderer>
+              </MDXProvider>
+            }
+            placement="right">
+            <InternalLink key={post.id} to={post.frontmatter.slug}>
+              {post.frontmatter.title}
+            </InternalLink>
+          </LinktipPreview>
+        </li>
+      )
+    } else if (
+      data.mdx.frontmatter.tags != null &&
+      post.frontmatter.tags != null &&
+      post.frontmatter.tags.some((tag) =>
+        data.mdx.frontmatter.tags.includes(tag)
+      ) &&
+      post.frontmatter.slug.includes('/poetry/')
+    ) {
+      relatedPoems.push(
+        <li key={post.id}>
+          <LinktipPreview
+            tiptext={
+              <MDXProvider components={regularComponents}>
+                <h1>{post.frontmatter.title}</h1>
+                <MDXRenderer>{post.body}</MDXRenderer>
+              </MDXProvider>
+            }
+            placement="right">
+            <InternalLink key={post.id} to={post.frontmatter.slug}>
+              {post.frontmatter.title}
+            </InternalLink>
+          </LinktipPreview>
+        </li>
+      )
+    }
+
+    if (post) {
+      popups[`${post.frontmatter.slug}`] = {
+        title: post.frontmatter.title,
+        body: post.body,
+      }
+    }
+  })
+
+  if (relatedArticles.length > 0) {
+    relatedArticlesBlock = (
+      <>
+        <h2>Related Articles</h2>
+        <ul>{relatedArticles}</ul>
+      </>
+    )
+  }
+  if (relatedPoems.length > 0) {
+    relatedPoemsBlock = (
+      <>
+        <h2>Related Poems</h2>
+        <ul>{relatedPoems}</ul>
+      </>
+    )
+  }
+  console.log(data.mdx.inboundReferences)
   if (data.mdx.inboundReferences != null) {
     references = data.mdx.inboundReferences.map((ref) =>
       ref.frontmatter.published ? (
@@ -36,8 +118,7 @@ export default ({ data, pageContext, location }) => {
     )
   }
   //related note block
-  console.log(references)
-  if (references.length > 0) {
+  if (references.length > 0 && references[0] != null) {
     referenceBlock = (
       <>
         <h2>Related Notes</h2>
@@ -54,6 +135,8 @@ export default ({ data, pageContext, location }) => {
       location={location}>
       <MDXRenderer>{data.mdx.body}</MDXRenderer>
       {referenceBlock}
+      {relatedArticlesBlock}
+      {relatedPoemsBlock}
     </Layout>
   )
 }
@@ -76,6 +159,18 @@ export const pageQuery = graphql`
       frontmatter {
         title
         id
+        tags
+      }
+    }
+    allMdx(filter: { fileAbsolutePath: { regex: "/content/" } }) {
+      nodes {
+        frontmatter {
+          tags
+          slug
+          title
+        }
+        id
+        body
       }
     }
   }
