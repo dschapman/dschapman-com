@@ -65,24 +65,27 @@ export default ({ type, tags, title }) => {
   let matchesArray = Object.values(matches)
   matchesArray.sort((a, b) => (a.points < b.points ? 1 : -1))
   matchesArray = matchesArray.slice(0, 3)
-
-  return (
-    <>
-      <h2>Related Content</h2>
-      {matchesArray.map((match) => {
-        return (
-          <PostLink
-            key={match.slug}
-            css={css`
-              &:hover {
-                border-color: ${color};
-              }
-            `}>
-            <InternalLink to={match.slug}>{match.title}</InternalLink>
-            <Description>{match.description}</Description>
-          </PostLink>
-        )
-      })}
-    </>
-  )
+  if (matchesArray.length > 0) {
+    return (
+      <>
+        <h2>Related Content</h2>
+        {matchesArray.map((match) => {
+          return (
+            <PostLink
+              key={match.slug}
+              css={css`
+                &:hover {
+                  border-color: ${color};
+                }
+              `}>
+              <InternalLink to={match.slug}>{match.title}</InternalLink>
+              <Description>{match.description}</Description>
+            </PostLink>
+          )
+        })}
+      </>
+    )
+  } else {
+    return <></>
+  }
 }
