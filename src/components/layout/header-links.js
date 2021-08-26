@@ -1,6 +1,6 @@
 /**@jsx jsx */
 import React from 'react'
-import { css, jsx } from '@emotion/core'
+import { css, jsx } from '@emotion/react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import colors from '../../lib/colors'

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from 'react'
-import { css, jsx } from '@emotion/core'
+import { css, jsx } from '@emotion/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '../layout/layout'
 import { graphql } from 'gatsby'

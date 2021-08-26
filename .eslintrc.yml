@@ -13,6 +13,7 @@ env:
 plugins:
   - import
   - prettier
+  - '@emotion'
 
 extends:
   - plugin:react/recommended
@@ -27,7 +28,7 @@ rules:
   no-unused-vars:
     - error
     - args: after-used
-      argsIgnorePattern: "^_"
+      argsIgnorePattern: '^_'
   no-var: error
   import/no-extraneous-dependencies: error
   prettier/prettier: error
@@ -35,16 +36,17 @@ rules:
   react/display-name: off
   react/no-children-prop: off
   react/react-in-jsx-scope: off
+  '@emotion/pkg-renaming': error
 
 settings:
   react:
     version: 16.10.1
 
 overrides:
-  - files: "*.md"
+  - files: '*.md'
     extends: plugin:mdx/recommended
 
-  - files: "*.mdx"
+  - files: '*.mdx'
     extends:
       - plugin:mdx/recommended
       - plugin:mdx/overrides
@@ -52,13 +54,13 @@ overrides:
       import/no-extraneous-dependencies: 0
 
   - files:
-      - "**/test/**/*.js"
-      - "**/*.test.js"
+      - '**/test/**/*.js'
+      - '**/*.test.js'
     env:
       jest: true
 
   - files:
-      - "src/**/*js"
+      - 'src/**/*js'
     env:
       browser: true
     rules:

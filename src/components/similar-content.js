@@ -2,7 +2,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { PostLink, Description } from './posts/post-list'
-import { jsx, css } from '@emotion/core'
+import { jsx, css } from '@emotion/react'
 import colors from './../lib/colors'
 import { InternalLink } from './layout/links'
 

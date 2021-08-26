@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React, { forwardRef } from 'react'
 import Tippy from '@tippyjs/react'
-import { css, jsx } from '@emotion/core'
+import { css, jsx } from '@emotion/react'
 import 'tippy.js/dist/tippy.css'
 import 'tippy.js/animations/shift-away.css'
 import 'tippy.js/themes/light.css'

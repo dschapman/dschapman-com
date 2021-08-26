@@ -5,7 +5,7 @@ import 'tippy.js/dist/tippy.css'
 import 'tippy.js/animations/shift-away.css'
 import 'tippy.js/themes/light.css'
 
-import { jsx, css } from '@emotion/core'
+import { jsx, css } from '@emotion/react'
 import colors from '../../lib/colors'
 
 const Tooltip = forwardRef((props, ref) => {

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from 'react'
 import styled from '@emotion/styled'
-import { jsx, css } from '@emotion/core'
+import { jsx, css } from '@emotion/react'
 import { InternalLink } from '../layout/links'
 import { bpMaxLG, bpMaxSM } from '../../lib/breakpoints'
 import colors from '../../lib/colors'

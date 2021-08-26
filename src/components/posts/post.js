@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from 'react'
-import { css, jsx } from '@emotion/core'
+import { css, jsx } from '@emotion/react'
 import styled from '@emotion/styled'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Tooltip from '../layout/tooltip'

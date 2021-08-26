@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from 'react'
-import { jsx } from '@emotion/core'
+import { jsx } from '@emotion/react'
 import { graphql } from 'gatsby'
 import { InternalLink, InternalNotesLink } from '../layout/links'
 import Layout from '../layout/layout'
