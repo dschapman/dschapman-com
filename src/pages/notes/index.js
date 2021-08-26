@@ -2,6 +2,7 @@ import React from 'react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '../../components/layout/layout'
 import NoteNav from '../../components/notes/note-nav'
+import { graphql } from 'gatsby'
 const NotesIndex = ({ data, location }) => (
   <Layout
     title={data.mdx.frontmatter.title}

@@ -1,5 +1,4 @@
 module.exports = {
-  flags: { PRESERVE_WEBPACK_CACHE: true },
   siteMetadata: {
     siteUrl: 'https://www.dschapman.com',
     title: 'D.S. Chapman',
@@ -13,7 +12,6 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-remark-images',
-    `gatsby-plugin-favicon`,
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-mdx`,
@@ -31,6 +29,7 @@ module.exports = {
           { resolve: `gatsby-remark-copy-linked-files` },
           { resolve: `gatsby-remark-smartypants` },
           { resolve: `gatsby-remark-embedder` },
+          { resolve: `gatsby-remark-slug` },
           {
             resolve: `gatsby-remark-double-brackets-link`,
             options: {
@@ -103,7 +102,6 @@ module.exports = {
             },
           },
         ],
-        remarkPlugins: [require(`remark-slug`)],
       },
     },
     {
@@ -152,24 +150,8 @@ module.exports = {
     },
 
     'gatsby-plugin-sitemap',
-    {
-      resolve: `gatsby-plugin-breadcrumb`,
-      options: {
-        defaultCrumb: {
-          // location: required and must include the pathname property
-          location: {
-            pathname: '/notes',
-          },
-          // crumbLabel: required label for the default crumb
-          crumbLabel: 'Notes',
-          // all other properties optional
-          crumbSeparator: ' / ',
-        },
-      },
-    },
-
     'gatsby-plugin-twitter',
-    'gatsby-plugin-netlify-redirect',
+    'gatsby-plugin-netlify',
     {
       resolve: `gatsby-transformer-markdown-references`,
       options: {
