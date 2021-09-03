@@ -7,13 +7,14 @@ import Tooltip from '../layout/tooltip'
 import Layout from '../layout/layout'
 import { graphql } from 'gatsby'
 import SimilarContent from '../similar-content'
+import colors from '../../lib/colors'
 
 const WordCount = styled.div`
   position: absolute;
   bottom: 0rem;
 `
 
-export default ({ data, pageContext, location }) => {
+const Post = ({ data, pageContext, location }) => {
   const wordCount = data.mdx.wordCount.words
   let emoji
   if (wordCount < 500) {
@@ -45,7 +46,25 @@ export default ({ data, pageContext, location }) => {
         {data.mdx.frontmatter.title}
         <WordCount>{emoji}</WordCount>
       </h1>
-
+      <p
+        css={css`
+          margin-top: -2rem;
+          margin-left: 0rem;
+          font-style: italic;
+          font-size: 1.25rem;
+          color: ${colors.gray};
+        `}>
+        {' '}
+        First published on{' '}
+        <time dateTime={data.mdx.frontmatter.date}>
+          {new Date(data.mdx.frontmatter.date).toLocaleDateString(undefined, {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}
+        </time>
+        .
+      </p>
       <MDXRenderer>{data.mdx.body}</MDXRenderer>
       <SimilarContent
         tags={data.mdx.frontmatter.tags}
@@ -64,6 +83,7 @@ export const pageQuery = graphql`
         title
         excerpt
         tags
+        date
       }
       timeToRead
       wordCount {
@@ -72,3 +92,4 @@ export const pageQuery = graphql`
     }
   }
 `
+export default Post
