@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { PostLink, Description } from './posts/post-list'
+import { PostLinkStyled, Description, PostListStyled } from './posts/post-list'
 import { jsx, css } from '@emotion/react'
 import colors from './../lib/colors'
 import { InternalLink } from './layout/links'
@@ -69,20 +69,22 @@ export default ({ type, tags, title }) => {
     return (
       <>
         <h2>Related Content</h2>
-        {matchesArray.map((match) => {
-          return (
-            <PostLink
-              key={match.slug}
-              css={css`
-                &:hover {
-                  border-color: ${color};
-                }
-              `}>
-              <InternalLink to={match.slug}>{match.title}</InternalLink>
-              <Description>{match.description}</Description>
-            </PostLink>
-          )
-        })}
+        <PostListStyled>
+          {matchesArray.map((match) => {
+            return (
+              <PostLinkStyled
+                key={match.slug}
+                css={css`
+                  &:hover {
+                    border-color: ${color};
+                  }
+                `}>
+                <InternalLink to={match.slug}>{match.title}</InternalLink>
+                <Description>{match.description}</Description>
+              </PostLinkStyled>
+            )
+          })}
+        </PostListStyled>
       </>
     )
   } else {

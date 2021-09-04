@@ -3,6 +3,12 @@ slug: '/poetry'
 ---
 
 import Layout from '../../components/layout/layout'
+import { InternalLink } from '../../components/layout/links'
+import {
+  PostListStyled,
+  PostLinkStyled,
+  Description,
+} from '../../components/posts/post-list.js'
 export default (props, location) => (
   <Layout
     title="Poetry"
@@ -15,7 +21,17 @@ export default (props, location) => (
 
 ## Books
 
-- [Seasons of Thought](/poetry/seasons-of-thought). Born out of a project where I [wrote a poem every day for a year](/articles/on-writing-poems-daily) and available for purchase on Amazon.
+<PostListStyled>
+  <PostLinkStyled key="/poetry/seasons-of-thought">
+    <InternalLink to="/poetry/seasons-of-thought">
+      Seasons of Thought
+    </InternalLink>
+    <Description>
+      A collection of poetry reflecting on the seasons, nature, childhood,
+      family, and faith.
+    </Description>
+  </PostLinkStyled>
+</PostListStyled>
 
 ## Poems
 

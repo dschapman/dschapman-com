@@ -7,7 +7,7 @@ import { bpMaxLG, bpMaxSM } from '../../lib/breakpoints'
 import colors from '../../lib/colors'
 import { Link } from 'gatsby'
 
-export const PostList = styled.ul`
+export const PostListStyled = styled.ul`
   list-style-type: none;
   padding: 4px 0px;
   margin: 0;
@@ -16,7 +16,7 @@ export const PostList = styled.ul`
   }
 `
 
-export const PostLink = styled.li`
+export const PostLinkStyled = styled.li`
   padding: 0.5rem 0.5rem 0.5rem 0;
   margin: 0 0rem 0.5rem 0rem;
   display: block;
@@ -80,9 +80,9 @@ export default ({ posts, type }) => {
   }
 
   return (
-    <PostList>
+    <PostListStyled>
       {posts.map(({ node: post }) => (
-        <PostLink
+        <PostLinkStyled
           key={post.frontmatter.slug}
           css={css`
             &:hover {
@@ -100,8 +100,8 @@ export default ({ posts, type }) => {
               </li>
             ))}
           </ul>
-        </PostLink>
+        </PostLinkStyled>
       ))}
-    </PostList>
+    </PostListStyled>
   )
 }

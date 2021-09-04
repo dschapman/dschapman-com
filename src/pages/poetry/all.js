@@ -3,7 +3,6 @@ import React from 'react'
 import Layout from '../../components/layout/layout'
 import PostList from '../../components/posts/post-list'
 import { graphql } from 'gatsby'
-import { PoemList } from '../../components/poems/poem-list'
 import { jsx } from '@emotion/react'
 
 const PoemIndex = ({ data, location }) => {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { InternalLink } from '../layout/links'
-import { PostList } from '../posts/post-list'
+import { PostListStyled } from '../posts/post-list'
 
 export default ({ tag, tagCount, type }) => {
   let slug = ''
@@ -26,10 +26,10 @@ export default ({ tag, tagCount, type }) => {
       new Error('Unexpected type in Tag List Item')
   }
   return (
-    <PostList>
+    <PostListStyled>
       <span>
         <InternalLink to={slug}>{tag}</InternalLink> ({tagCount})
       </span>
-    </PostList>
+    </PostListStyled>
   )
 }

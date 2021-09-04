@@ -25,13 +25,46 @@ const Links = styled.div`
 `
 
 const Button = styled(ExternalLink)`
-  padding: .66rem;
+  padding: 0.66rem;
   border: solid 2px ${colors.red};
+  background-color: ${colors.background};
+  position: relative;
+  overflow: hidden;
+  color: ${colors.red};
+  font-family: 'proxima-nova';
   border-radius: 30px;
   text-decoration: none;
-  margin: .5rem; 2rem;
+  transition: 0.2s transform ease-in-out;
+  margin: 0.5rem 2rem;
   white-space: nowrap;
-  font-size: 1rem;
+  font-size: 1.25rem;
+
+  &:after {
+    background-color: ${colors.red};
+    border-radius: 30px;
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-100%, 0) rotate(10deg);
+    transform-origin: top left;
+    transition: 0.2s transform ease-out;
+    will-change: transform;
+    z-index: -1;
+  }
+
+  &:hover {
+    border: solid 2px transparent;
+    color: ${colors.background};
+    transform: scale(1.05);
+    will-change: transform;
+    &:after {
+      transform: translate(0, 0);
+    }
+  }
 `
 
 const BookCard = ({ description }) => {
@@ -69,7 +102,7 @@ const BookCard = ({ description }) => {
             Buy the Book
           </Button>
           <Button to="https://www.goodreads.com/book/show/46134618-seasons-of-thought">
-            Review on Goodreads
+            Add on Goodreads
           </Button>
         </Links>
       </div>

@@ -1,11 +1,11 @@
 import React from 'react'
-import { PostList } from '../posts/post-list'
+import { PostListStyled } from '../posts/post-list'
 import TagListItem from './list-item'
 
 export default ({ tags, type }) => {
   let newTags = tags.filter((tag) => tag.totalCount > 1) //filter out any tags with only one item
   return (
-    <PostList>
+    <PostListStyled>
       {newTags.map((tag) => (
         <TagListItem
           key={tag.fieldValue}
@@ -14,6 +14,6 @@ export default ({ tags, type }) => {
           type={type}
         />
       ))}
-    </PostList>
+    </PostListStyled>
   )
 }
