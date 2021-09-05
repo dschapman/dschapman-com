@@ -173,4 +173,22 @@ hr {
   html {
     font-size: 14px;
   }
+  article {
+    width: 90%;
+  }
+}
+
+@media (max-width: 400px) {
+  article {
+    width: 100%;
+  }
+  header {
+    margin: 0 5px;
+  }
+  header > div {
+    width: 100%;
+  }
+  main {
+    margin: 0 5px;
+  }
 }

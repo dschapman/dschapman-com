@@ -56,7 +56,7 @@ const Post = ({ data, pageContext, location }) => {
         `}>
         {' '}
         First published on{' '}
-        <time dateTime={data.mdx.frontmatter.date}>
+        <time dateTime={`${data.mdx.frontmatter.date}`}>
           {new Date(data.mdx.frontmatter.date).toLocaleDateString(undefined, {
             year: 'numeric',
             month: 'long',

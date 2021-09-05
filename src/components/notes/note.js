@@ -9,8 +9,7 @@ import { MDXProvider } from '@mdx-js/react'
 import regularComponents from '../layout/mdx-components'
 import { InternalLink, InternalNotesLink } from '../layout/links'
 import NoteNav from './note-nav'
-
-export default ({ data, pageContext, location }) => {
+const NotePage = ({ data, pageContext, location }) => {
   //notes that reference this note
   let references = []
   let referenceBlock
@@ -174,3 +173,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export default NotePage
