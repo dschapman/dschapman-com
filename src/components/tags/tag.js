@@ -149,7 +149,7 @@ export const pageQuery = graphql`
     notes: allMdx(
       filter: {
         frontmatter: { tags: { in: [$tag] }, published: { eq: true } }
-        fileAbsolutePath: { regex: "/Dendron/" }
+        fileAbsolutePath: { regex: "/My-notes/" }
       }
     ) {
       totalCount

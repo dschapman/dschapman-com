@@ -8,7 +8,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     query {
       dendron: allMdx(
         filter: {
-          fileAbsolutePath: { regex: "/Dendron/" }
+          fileAbsolutePath: { regex: "/My-notes/" }
           frontmatter: { published: { eq: true } }
         }
       ) {

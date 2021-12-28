@@ -1,6 +1,6 @@
 [submodule "dschapman-com-content"]
 	path = dschapman-com-content
 	url = git@github.com:dschapman/dschapman-com-content
-[submodule "Dendron"]
-	path = Dendron
-	url = git@github.com:dschapman/Dendron.git
+[submodule "My-notes"]
+	path = My-notes
+	url = git@github.com:dschapman/My-notes

@@ -18,7 +18,7 @@ export const useAllMdx = () => {
     query AllMdx {
       allMdx(
         filter: {
-          fileAbsolutePath: { regex: "/dschapman-com-content|Dendron/" }
+          fileAbsolutePath: { regex: "/dschapman-com-content|My-notes/" }
         }
       ) {
         nodes {

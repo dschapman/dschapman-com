@@ -9,7 +9,6 @@ module.exports = {
       'The website and digital home of writer and poet D.S. Chapman. Explore for articles, poetry, and other projects including my recent book - Seasons of Thought.',
   },
   plugins: [
-    'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-remark-images',
     'gatsby-plugin-react-helmet',
@@ -23,7 +22,6 @@ module.exports = {
             options: {
               // should this be configurable by the end-user?
               maxWidth: 1380,
-              linkImagesToOriginal: false,
             },
           },
           { resolve: `gatsby-remark-copy-linked-files` },
@@ -144,8 +142,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'Dendron',
-        path: `${__dirname}/Dendron/`,
+        name: 'My-notes',
+        path: `${__dirname}/My-notes/`,
       },
     },
 

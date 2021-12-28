@@ -40,7 +40,7 @@ export const PostLinkStyled = styled.li`
   }
   li {
     display: inline;
-    word-break: keep-all;
+    word-break: break-word;
     margin: 0;
     padding: 0;
   }

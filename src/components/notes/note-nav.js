@@ -51,7 +51,7 @@ const NoteNav = React.memo(() => {
     query {
       notes: allMdx(
         filter: {
-          fileAbsolutePath: { regex: "/Dendron/" }
+          fileAbsolutePath: { regex: "/My-notes/" }
           frontmatter: { published: { eq: true } }
         }
       ) {

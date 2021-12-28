@@ -25,7 +25,10 @@ const AnchorTag = ({ href, popups, ...restProps }) => {
   }
   if (isInternalNotesLink) {
     if (renderedLink.includes('|')) {
-      renderedLink = renderedLink.substring(0, renderedLink.lastIndexOf('|'))
+      renderedLink = renderedLink.substring(
+        renderedLink.lastIndexOf('|') + 1,
+        renderedLink.length
+      )
     }
     if (isEmpty(popups[`${href.substring(href.lastIndexOf('/') + 1)}`])) {
       return (
@@ -39,9 +42,7 @@ const AnchorTag = ({ href, popups, ...restProps }) => {
       if (
         popups[`${href.substring(href.lastIndexOf('/') + 1)}`].published != true
       ) {
-        return (
-          <InternalNotesLink to="/notes/404">{renderedLink}</InternalNotesLink>
-        )
+        return <span>{renderedLink}</span>
       } else {
         return (
           <LinktipPreview
