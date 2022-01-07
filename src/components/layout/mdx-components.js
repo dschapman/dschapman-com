@@ -19,15 +19,16 @@ const AnchorTag = (props) => {
   let renderedLink = props.children
 
   if (isInternalNotesLink) {
+    renderedLink = renderedLink.replace(/\[\[(.*?)\]\]/g, '$1')
     renderedLink = renderedLink.substring(
       renderedLink.lastIndexOf('|') + 1,
       renderedLink.length
     )
-    return <InternalNotesLink to={props.href}>{renderedLink}</InternalNotesLink>
+    return <u>{renderedLink}</u>
   } else if (isInternalLink) {
-    return <InternalLink to={props.href}>{renderedLink}</InternalLink>
+    return <u>{renderedLink}</u>
   } else {
-    return <ExternalLink {...props}>{renderedLink}</ExternalLink>
+    return <u>{renderedLink}</u>
   }
 }
 

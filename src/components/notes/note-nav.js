@@ -10,7 +10,7 @@ import colors from '../../lib/colors'
 const Nav = styled.nav`
   background: white;
   width: 20%;
-  margin-right: 2.5rem;
+  margin-right: 1.5rem;
   margin-top: 1.5rem;
 
   details summary {
@@ -20,8 +20,8 @@ const Nav = styled.nav`
   details summary > * {
     display: inline;
   }
-  details details {
-    margin-left: 8px;
+  ul ul {
+    margin-left: 1rem;
   }
 
   ul {
@@ -35,14 +35,6 @@ const Nav = styled.nav`
   }
   ${bpMaxMD} {
     display: none;
-  }
-
-  summary {
-    font-size: 1.25rem;
-
-    ${bpMaxXL} {
-      font-size: 1rem;
-    }
   }
 `
 
@@ -154,36 +146,103 @@ const NoteNav = React.memo(() => {
 
   return (
     <Nav>
-      <h5>Table of Notes</h5>
-      {topHierarchies.map((hierarchy) => {
-        // non-published first-level hierarchy
-        if (hierarchy.parent.id === 404) {
-          return (
-            <details key={hierarchy.parent.id}>
-              <summary>{hierarchy.parent.title}</summary>
-              <ul>
-                {hierarchy.children.map((note) => {
-                  // non-published second-level hierarchy
-                  if (note.parent.id === 404) {
-                    return (
-                      <details key={note.parent.id}>
-                        <summary>{note.parent.title}</summary>
-                        {note.children.map((note2) => {
-                          //children of non-published second-level hierarchy
-                          return (
-                            <li key={note2.parent.id}>
-                              <InternalLink to={`/notes/${note2.parent.id}`}>
-                                {note2.parent.title}
-                              </InternalLink>
-                            </li>
-                          )
-                        })}
-                      </details>
-                    )
-                  } else {
-                    //published second-level hierarchy
-                    if (note.children.length === 0) {
-                      // second-level hierarchy no children
+      <details>
+        <summary>
+          <h4>Table of Notes</h4>
+        </summary>
+        {topHierarchies.map((hierarchy) => {
+          // non-published first-level hierarchy
+          if (hierarchy.parent.id === 404) {
+            return (
+              <ul key={hierarchy.parent.id}>
+                <li>{hierarchy.parent.title}</li>
+                <ul>
+                  {hierarchy.children.map((note) => {
+                    // non-published second-level hierarchy
+                    if (note.parent.id === 404) {
+                      return (
+                        <ul key={note.parent.id}>
+                          <li>{note.parent.title}</li>
+                          {note.children.map((note2) => {
+                            //children of non-published second-level hierarchy
+                            return (
+                              <li key={note2.parent.id}>
+                                <InternalLink to={`/notes/${note2.parent.id}`}>
+                                  {note2.parent.title}
+                                </InternalLink>
+                              </li>
+                            )
+                          })}
+                        </ul>
+                      )
+                    } else {
+                      //published second-level hierarchy
+                      if (note.children.length === 0) {
+                        // second-level hierarchy no children
+                        return (
+                          <li key={note.parent.id}>
+                            <InternalLink to={`/notes/${note.parent.id}`}>
+                              {note.parent.title}
+                            </InternalLink>
+                          </li>
+                        )
+                      } else {
+                        //second-level hierarchy w/children
+
+                        return (
+                          <li key={note.parent.id}>
+                            <ul key={note.parent.id}>
+                              <li>
+                                <InternalLink to={`/notes/${note.parent.id}`}>
+                                  {note.parent.title}
+                                </InternalLink>
+                              </li>
+                              {note.children.map((note2) => {
+                                return (
+                                  <li key={note2.parent.id}>
+                                    <InternalLink
+                                      to={`/notes/${note2.parent.id}`}>
+                                      {note2.parent.title}
+                                    </InternalLink>
+                                  </li>
+                                )
+                              })}
+                            </ul>
+                          </li>
+                        )
+                      }
+                    }
+                  })}
+                </ul>
+              </ul>
+            )
+          } else {
+            return (
+              <ul key={hierarchy.parent.id}>
+                <li>
+                  <InternalLink to={`/notes/${hierarchy.parent.id}`}>
+                    {hierarchy.parent.title}
+                  </InternalLink>
+                </li>
+                <ul>
+                  {hierarchy.children.map((note) => {
+                    if (note.parent.id === '404') {
+                      return (
+                        <ul key={note.parent.title}>
+                          <li>{note.parent.title}</li>
+
+                          {note.children.map((note2) => {
+                            return (
+                              <li key={note2.parent.id}>
+                                <InternalLink to={`/notes/${note2.parent.id}`}>
+                                  {note2.parent.title}
+                                </InternalLink>
+                              </li>
+                            )
+                          })}
+                        </ul>
+                      )
+                    } else if (note.children.length === 0) {
                       return (
                         <li key={note.parent.id}>
                           <InternalLink to={`/notes/${note.parent.id}`}>
@@ -192,95 +251,32 @@ const NoteNav = React.memo(() => {
                         </li>
                       )
                     } else {
-                      //second-level hierarchy w/children
-
                       return (
-                        <li key={note.parent.id}>
-                          <details key={note.parent.id}>
-                            <summary>
-                              <InternalLink to={`/notes/${note.parent.id}`}>
-                                {note.parent.title}
-                              </InternalLink>
-                            </summary>
-                            {note.children.map((note2) => {
-                              return (
-                                <li key={note2.parent.id}>
-                                  <InternalLink
-                                    to={`/notes/${note2.parent.id}`}>
-                                    {note2.parent.title}
-                                  </InternalLink>
-                                </li>
-                              )
-                            })}
-                          </details>
-                        </li>
+                        <ul key={note.parent.id}>
+                          <li>
+                            <InternalLink to={`/notes/${note.parent.id}`}>
+                              {note.parent.title}
+                            </InternalLink>
+                          </li>
+                          {note.children.map((note2) => {
+                            return (
+                              <li key={note2.parent.id}>
+                                <InternalLink to={`/notes/${note2.parent.id}`}>
+                                  {note2.parent.title}
+                                </InternalLink>
+                              </li>
+                            )
+                          })}
+                        </ul>
                       )
                     }
-                  }
-                })}
+                  })}
+                </ul>
               </ul>
-            </details>
-          )
-        } else {
-          return (
-            <details key={hierarchy.parent.id}>
-              <summary>
-                <InternalLink to={`/notes/${hierarchy.parent.id}`}>
-                  {hierarchy.parent.title}
-                </InternalLink>
-              </summary>
-              <ul>
-                {hierarchy.children.map((note) => {
-                  if (note.parent.id === '404') {
-                    return (
-                      <details key={note.parent.title}>
-                        <summary>{note.parent.title}</summary>
-
-                        {note.children.map((note2) => {
-                          return (
-                            <li key={note2.parent.id}>
-                              <InternalLink to={`/notes/${note2.parent.id}`}>
-                                {note2.parent.title}
-                              </InternalLink>
-                            </li>
-                          )
-                        })}
-                      </details>
-                    )
-                  } else if (note.children.length === 0) {
-                    return (
-                      <li key={note.parent.id}>
-                        <InternalLink to={`/notes/${note.parent.id}`}>
-                          {note.parent.title}
-                        </InternalLink>
-                      </li>
-                    )
-                  } else {
-                    return (
-                      <details key={note.parent.id}>
-                        <summary>
-                          <InternalLink to={`/notes/${note.parent.id}`}>
-                            {note.parent.title}
-                          </InternalLink>
-                        </summary>
-                        {note.children.map((note2) => {
-                          return (
-                            <li key={note2.parent.id}>
-                              <InternalLink to={`/notes/${note2.parent.id}`}>
-                                {note2.parent.title}
-                              </InternalLink>
-                            </li>
-                          )
-                        })}
-                      </details>
-                    )
-                  }
-                })}
-              </ul>
-            </details>
-          )
-        }
-      })}
+            )
+          }
+        })}
+      </details>
     </Nav>
   )
 })

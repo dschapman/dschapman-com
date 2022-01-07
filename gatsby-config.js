@@ -28,6 +28,7 @@ module.exports = {
           { resolve: `gatsby-remark-smartypants` },
           { resolve: `gatsby-remark-embedder` },
           { resolve: `gatsby-remark-slug` },
+          { resolve: `gatsby-remark-mermaid` },
           {
             resolve: `gatsby-remark-double-brackets-link`,
             options: {
