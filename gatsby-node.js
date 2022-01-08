@@ -66,8 +66,37 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
       }
+      blogs: allMdx(
+        filter: { fileAbsolutePath: { regex: "/dschapman-com-content/blog/" } }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              title
+              date
+              tags
+            }
+            id
+            slug
+          }
+          previous {
+            id
+          }
+          next {
+            id
+          }
+        }
+      }
       articleTagsGroup: allMdx(
         filter: { fileAbsolutePath: { regex: "/dschapman-com-content/posts/" } }
+      ) {
+        group(field: frontmatter___tags) {
+          fieldValue
+          totalCount
+        }
+      }
+      blogTagsGroup: allMdx(
+        filter: { fileAbsolutePath: { regex: "/dschapman-com-content/blog/" } }
       ) {
         group(field: frontmatter___tags) {
           fieldValue
@@ -98,8 +127,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const poems = result.data.poems.edges
   const dendron = result.data.dendron.edges
   const articles = result.data.articles.edges
+  const blogs = result.data.blogs.edges
   const articleTags = result.data.articleTagsGroup.group
   const poemTags = result.data.poemTagsGroup.group
+  //const blogTags = result.data.blogTagsGroup.group
   const allTags = result.data.allTagsGroup.group
   // you'll call `createPage` for each result
   dendron.forEach(({ node }) => {
@@ -118,6 +149,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       component: path.resolve(`./src/components/poems/poem-layout.js`),
       // You can use the values in this context in
       // our page layout component
+      context: { id: node.id },
+    })
+  })
+  blogs.forEach(({ node }) => {
+    let year = node.frontmatter.date.substring(0, 4)
+    let month = node.frontmatter.date.substring(5, 7)
+    createPage({
+      path: `blog/${year}/${month}/${node.slug}`,
+      component: path.resolve(`./src/components/blog/blog-layout.js`),
       context: { id: node.id },
     })
   })
