@@ -1,6 +1,3 @@
-[submodule "dschapman-com-content"]
-	path = dschapman-com-content
-	url = git@github.com:dschapman/dschapman-com-content
 [submodule "My-notes"]
 	path = My-notes
 	url = git@github.com:dschapman/My-note
