@@ -4,6 +4,7 @@ import { css, jsx } from '@emotion/react'
 import styled from '@emotion/styled'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import PostList from './posts/post-list'
+import BlogList from './blog/blog-list'
 
 export default function Featured() {
   const data = useStaticQuery(graphql`
@@ -46,10 +47,29 @@ export default function Featured() {
           }
         }
       }
+      blogs: allMdx(
+        limit: 3
+        sort: { fields: frontmatter___date, order: DESC }
+        filter: { fileAbsolutePath: { regex: "/dschapman-com-content/blog/" } }
+      ) {
+        edges {
+          node {
+            slug
+            frontmatter {
+              title
+              date
+              excerpt
+              tags
+            }
+          }
+        }
+      }
     }
   `)
   return (
     <>
+      <h2>Latest Blog Posts</h2>
+      <BlogList posts={data.blogs.edges} />
       <h2>Featured Articles</h2>
       <PostList posts={data.posts.edges} type="article" />
       <h2>Featured Poems</h2>

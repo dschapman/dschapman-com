@@ -3,6 +3,7 @@ import { InternalLink, InternalNotesLink } from '../layout/links'
 import { graphql, Link } from 'gatsby'
 import Layout from '../layout/layout'
 import PostList from '../posts/post-list'
+import BlogList from '../blog/blog-list'
 import { MDXProvider } from '@mdx-js/react'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import components from '../layout/mdx-components'
@@ -13,6 +14,7 @@ const Tag = ({ data, pageContext, location }) => {
   const poem = data.poems
   const article = data.articles
   let note = data.notes
+  let blog = data.blogs
 
   function PoemBlock() {
     if (poem != null) {
@@ -37,6 +39,22 @@ const Tag = ({ data, pageContext, location }) => {
           <>
             <h2>Articles</h2>
             <PostList posts={article.edges} />
+          </>
+        )
+      } else {
+        return <></>
+      }
+    } else {
+      return <></>
+    }
+  }
+  function BlogBlock() {
+    if (blog != null) {
+      if (blog.totalCount > 0) {
+        return (
+          <>
+            <h2>Blogs</h2>
+            <BlogList posts={blog.edges} />
           </>
         )
       } else {
@@ -90,6 +108,7 @@ const Tag = ({ data, pageContext, location }) => {
       location={location}>
       <ArticleBlock />
       <PoemBlock />
+      <BlogBlock />
       <br />
       <NoteBlock />
       <br />
@@ -139,6 +158,28 @@ export const pageQuery = graphql`
           frontmatter {
             title
             slug
+            excerpt
+            tags
+          }
+          body
+        }
+      }
+    }
+    blogs: allMdx(
+      limit: 2000
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: {
+        frontmatter: { tags: { in: [$tag] }, published: { eq: true } }
+        fileAbsolutePath: { regex: "/content/blog/" }
+      }
+    ) {
+      totalCount
+      edges {
+        node {
+          slug
+          frontmatter {
+            title
+            date
             excerpt
             tags
           }

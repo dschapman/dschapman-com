@@ -1,4 +1,5 @@
 import React from 'react'
+import blogList from '../blog/blog-list'
 import { InternalLink } from '../layout/links'
 import { PostListStyled } from '../posts/post-list'
 
@@ -22,9 +23,12 @@ export default ({ tag, tagCount, type }) => {
     case 'article':
       slug = '/articles/tag/' + tagSlug
       break
+    case 'blog':
+      slug = '/blog/tag' + tagSlug
     default:
       new Error('Unexpected type in Tag List Item')
   }
+
   return (
     <PostListStyled>
       <span>

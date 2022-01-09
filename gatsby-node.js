@@ -130,7 +130,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const blogs = result.data.blogs.edges
   const articleTags = result.data.articleTagsGroup.group
   const poemTags = result.data.poemTagsGroup.group
-  //const blogTags = result.data.blogTagsGroup.group
+  const blogTags = result.data.blogTagsGroup.group
   const allTags = result.data.allTagsGroup.group
   // you'll call `createPage` for each result
   dendron.forEach(({ node }) => {
@@ -190,6 +190,23 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       context: { tag: tag },
     })
   })
+  blogTags.forEach((blogTag) => {
+    let tag = blogTag.fieldValue
+    let slug = tag
+      .toString()
+      .toLowerCase()
+      .replace(/\s+/g, '-') // Replace spaces with -
+      .replace(/[^\w\-]+/g, '') // Remove all non-word chars
+      .replace(/\-\-+/g, '-') // Replace multiple - with single -
+      .replace(/^-+/, '') // Trim - from start of text
+      .replace(/-+$/, '') // Trim - from end of text
+
+    createPage({
+      path: `blog/tag/${slug}`,
+      component: path.resolve(`./src/components/blog/blog-tag.js`),
+      context: { tag: tag },
+    })
+  })
   poemTags.forEach((poemTag) => {
     let tag = poemTag.fieldValue
     let slug = tag
@@ -235,6 +252,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     path: 'articles/tags',
     component: path.resolve(`./src/components/posts/post-tags.js`),
     context: { tags: articleTags },
+  })
+  createPage({
+    path: 'blog/tags',
+    component: path.resolve(`./src/components/blog/blog-tags.js`),
+    context: { tags: blogTags },
   })
   createPage({
     path: '/tags',

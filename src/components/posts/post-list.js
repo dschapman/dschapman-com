@@ -96,7 +96,17 @@ export default ({ posts, type }) => {
           <ul>
             {post.frontmatter.tags.map((tag) => (
               <li key={tag}>
-                <TagLink to={`/tag/${tag}`}>{tag}</TagLink>
+                <TagLink
+                  to={`/tag/${tag
+                    .toString()
+                    .toLowerCase()
+                    .replace(/\s+/g, '-') // Replace spaces with -
+                    .replace(/[^\w\-]+/g, '') // Remove all non-word chars
+                    .replace(/\-\-+/g, '-') // Replace multiple - with single -
+                    .replace(/^-+/, '') // Trim - from start of text
+                    .replace(/-+$/, '')}`}>
+                  {tag}
+                </TagLink>
               </li>
             ))}
           </ul>
