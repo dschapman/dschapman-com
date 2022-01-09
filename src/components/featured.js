@@ -55,10 +55,10 @@ export default function Featured() {
         edges {
           node {
             slug
+            excerpt
             frontmatter {
               title
               date
-              excerpt
               tags
             }
           }

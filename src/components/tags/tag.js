@@ -177,10 +177,10 @@ export const pageQuery = graphql`
       edges {
         node {
           slug
+          excerpt
           frontmatter {
             title
             date
-            excerpt
             tags
           }
           body
