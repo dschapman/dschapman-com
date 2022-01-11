@@ -9,8 +9,10 @@ import { InternalLink } from './layout/links'
 export const useContentMdx = () => {
   return useStaticQuery(graphql`
     query ContentMdx {
-      allMdx(
-        filter: { fileAbsolutePath: { regex: "/dschapman-com-content/" } }
+      content: allMdx(
+        filter: {
+          fileAbsolutePath: { regex: "/dschapman-com-content/[poems|posts]/" }
+        }
       ) {
         nodes {
           frontmatter {
@@ -24,6 +26,21 @@ export const useContentMdx = () => {
           slug
         }
       }
+      blog: allMdx(
+        filter: { fileAbsolutePath: { regex: "/dschapman-com-content/blog/" } }
+      ) {
+        nodes {
+          excerpt
+          slug
+          frontmatter {
+            date
+            title
+            published
+            tags
+            featured
+          }
+        }
+      }
     }
   `)
 }
@@ -33,7 +50,7 @@ export default ({ type, tags, title }) => {
   const data = useContentMdx()
   let matches = {}
   tags.filter((tag) =>
-    data.allMdx.nodes.forEach((node) => {
+    data.content.nodes.forEach((node) => {
       if (node.frontmatter.tags !== null) {
         if (node.frontmatter.tags.indexOf(tag) != -1) {
           if (node.frontmatter.title in matches) {
@@ -62,6 +79,41 @@ export default ({ type, tags, title }) => {
       }
     })
   )
+
+  tags.filter((tag) =>
+    data.blog.nodes.forEach((node) => {
+      if (node.frontmatter.tags !== null) {
+        if (node.frontmatter.tags.indexOf(tag) != -1) {
+          if (node.frontmatter.title in matches) {
+            matches[node.frontmatter.title].points++
+            matches[node.frontmatter.title].tags.push(tag)
+          } else if (node.frontmatter.title != title) {
+            if (node.frontmatter.featured == true) {
+              matches[node.frontmatter.title] = {
+                points: 2,
+                slug: node.slug,
+                tags: [tag],
+                title: node.frontmatter.title,
+                description: node.excerpt,
+              }
+            } else {
+              matches[node.frontmatter.title] = {
+                points: 1,
+                slug: `/blog/${node.frontmatter.date.substring(
+                  0,
+                  4
+                )}/${node.frontmatter.date.substring(5, 7)}/${node.slug}`,
+                tags: [tag],
+                title: node.frontmatter.title,
+                description: node.excerpt,
+              }
+            }
+          }
+        }
+      }
+    })
+  )
+
   let matchesArray = Object.values(matches)
   matchesArray.sort((a, b) => (a.points < b.points ? 1 : -1))
   matchesArray = matchesArray.slice(0, 3)
