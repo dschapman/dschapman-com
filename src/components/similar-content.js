@@ -68,7 +68,7 @@ export default ({ type, tags, title }) => {
   if (matchesArray.length > 0) {
     return (
       <>
-        <h2>Related Content</h2>
+        <h2>Other things to read</h2>
         <PostListStyled>
           {matchesArray.map((match) => {
             return (

@@ -2,7 +2,7 @@
 import React from 'react'
 import { css, jsx } from '@emotion/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-
+import SimilarContent from '../similar-content.js'
 import Layout from '../layout/layout'
 import { graphql } from 'gatsby'
 
@@ -31,6 +31,10 @@ const Post = ({ data, pageContext, location }) => {
         </time>
       </h4>
       <MDXRenderer>{data.mdx.body}</MDXRenderer>
+      <SimilarContent
+        tags={data.mdx.frontmatter.tags}
+        title={data.mdx.frontmatter.title}
+      />
     </Layout>
   )
 }
