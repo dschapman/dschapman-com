@@ -245,7 +245,7 @@ function SortMedium(a, b) {
 
 const CanonPage = ({ data }) => {
   return (
-    <Layout title={'Personal Canon'} type={'📚'} location={location}>
+    <Layout title={'Personal Canon'} type={'📚'}>
       <Canon data={data} />
     </Layout>
   )
