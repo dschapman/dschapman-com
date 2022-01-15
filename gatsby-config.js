@@ -193,7 +193,16 @@ module.exports = {
                         site.siteMetadata.siteUrl + edge.node.frontmatter.slug,
                       guid:
                         site.siteMetadata.siteUrl + edge.node.frontmatter.slug,
-                      custom_elements: [{ 'content:encoded': edge.node.html }],
+                      custom_elements: [
+                        {
+                          'content:encoded': edge.node.html
+                            .replace(
+                              /(?<=\"|\s)\/static\//g,
+                              `${site.siteMetadata.siteUrl}\/static\/`
+                            )
+                            .replace(/\[\[(\w*)\|(\w*)\]\]/g, '$2'),
+                        },
+                      ],
                     })
                   } else {
                     let year = edge.node.frontmatter.date.substring(0, 4)
@@ -208,7 +217,16 @@ module.exports = {
                       guid:
                         site.siteMetadata.siteUrl +
                         `/blog/${year}/${month}/${edge.node.slug}`,
-                      custom_elements: [{ 'content:encoded': edge.node.html }],
+                      custom_elements: [
+                        {
+                          'content:encoded': edge.node.html
+                            .replace(
+                              /(?<=\"|\s)\/static\//g,
+                              `${site.siteMetadata.siteUrl}\/static\/`
+                            )
+                            .replace(/\[\[(\w*)\|(\w*)\]\]/g, '$2'),
+                        },
+                      ],
                     })
                   }
                 })
