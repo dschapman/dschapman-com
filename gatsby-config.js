@@ -164,5 +164,84 @@ module.exports = {
         types: ['Mdx'], // or ["MarkdownRemark"] (or both)
       },
     },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMdx } }) => {
+              {
+                return allMdx.edges.map((edge) => {
+                  if (edge.node.frontmatter.slug != null) {
+                    return Object.assign({}, edge.node.frontmatter, {
+                      title: edge.node.frontmatter.title,
+                      description: edge.node.frontmatter.excerpt,
+                      date: edge.node.frontmatter.date,
+                      url:
+                        site.siteMetadata.siteUrl + edge.node.frontmatter.slug,
+                      guid:
+                        site.siteMetadata.siteUrl + edge.node.frontmatter.slug,
+                      custom_elements: [{ 'content:encoded': edge.node.html }],
+                    })
+                  } else {
+                    let year = edge.node.frontmatter.date.substring(0, 4)
+                    let month = edge.node.frontmatter.date.substring(5, 7)
+                    return Object.assign({}, edge.node.frontmatter, {
+                      title: edge.node.frontmatter.title,
+                      description: edge.node.excerpt,
+                      date: edge.node.frontmatter.date,
+                      url:
+                        site.siteMetadata.siteUrl +
+                        `/blog/${year}/${month}/${edge.node.slug}`,
+                      guid:
+                        site.siteMetadata.siteUrl +
+                        `/blog/${year}/${month}/${edge.node.slug}`,
+                      custom_elements: [{ 'content:encoded': edge.node.html }],
+                    })
+                  }
+                })
+              }
+            },
+            query: `
+            {
+              allMdx(
+                filter: {fileAbsolutePath: {regex: "/dschapman-com-content/(?:posts|blog)/"}}
+                sort: {order: DESC, fields: frontmatter___date}
+              ) {
+                edges {
+                  node {
+                    frontmatter {
+                      slug
+                      title
+                      date
+                      excerpt
+                    }
+                    html
+                    slug
+                    excerpt
+                  }
+                }
+              }
+            }
+              
+            `,
+            output: '/rss.xml',
+            title: "D.S. Chapman's RSS Feed",
+          },
+        ],
+      },
+    },
   ],
 }

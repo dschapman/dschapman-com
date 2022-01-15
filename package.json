@@ -25,6 +25,7 @@
     "gatsby": "^3.13.0",
     "gatsby-cli": "^3.13.0",
     "gatsby-image": "^3.11.0",
+    "gatsby-plugin-feed": "^3.0ya",
     "gatsby-plugin-google-analytics": "^3.13.0",
     "gatsby-plugin-mdx": "^2.13.0",
     "gatsby-plugin-netlify": "^3.13.0",
