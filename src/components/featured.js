@@ -13,7 +13,7 @@ export default function Featured() {
         limit: 1000
         sort: { fields: frontmatter___date, order: DESC }
         filter: {
-          frontmatter: { featured: { eq: true } }
+          frontmatter: { published: { eq: true } }
           fileAbsolutePath: { regex: "/dschapman-com-content/posts/" }
         }
       ) {
@@ -32,7 +32,7 @@ export default function Featured() {
         limit: 1000
         sort: { fields: frontmatter___title, order: DESC }
         filter: {
-          frontmatter: { featured: { eq: true } }
+          frontmatter: { published: { eq: true } }
           fileAbsolutePath: { regex: "/dschapman-com-content/poems/" }
         }
       ) {
@@ -50,7 +50,10 @@ export default function Featured() {
       blogs: allMdx(
         limit: 3
         sort: { fields: frontmatter___date, order: DESC }
-        filter: { fileAbsolutePath: { regex: "/dschapman-com-content/blog/" } }
+        filter: {
+          frontmatter: { published: { eq: true } }
+          fileAbsolutePath: { regex: "/dschapman-com-content/blog/" }
+        }
       ) {
         edges {
           node {

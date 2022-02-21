@@ -17,7 +17,10 @@ const BlogIndex = ({ data, location }) => (
 export const pageQuery = graphql`
   query BlogsQuery {
     allMdx(
-      filter: { fileAbsolutePath: { regex: "/content/blog/" } }
+      filter: {
+        frontmatter: { published: { eq: true } }
+        fileAbsolutePath: { regex: "/content/blog/" }
+      }
       sort: { fields: frontmatter___date, order: ASC }
       limit: 1000
     ) {
@@ -30,6 +33,7 @@ export const pageQuery = graphql`
             title
             date
             tags
+            published
           }
           excerpt
         }
