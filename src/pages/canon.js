@@ -7,48 +7,27 @@ import data from '../content/canon.yml'
 import Layout from '../components/layout/layout.js'
 import colors from '../lib/colors'
 import { bpMaxSM, bpMaxLG } from '../lib/breakpoints'
+import { map } from 'lodash'
 
 function Canon(props) {
   const Container = styled.div(
     `
-        display:flex;
+        display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
         `
   )
-  console.log(data)
-  const [sort, setSort] = useState('title')
-  let list = data
-  const SelectSort = () => {
-    return (
-      <form style={{ marginBottom: '2rem' }}>
-        <label>Sort By:</label>
-        <select
-          style={{ marginLeft: '1rem', fontSize: '1rem' }}
-          onChange={(e) => setSort(e.target.value)}
-          value={sort}>
-          <option value="none">-- Select --</option>
-          <option value="title">Title</option>
-          <option value="author">Author</option>
-          <option value="medium">Medium</option>
-        </select>
-      </form>
-    )
-  }
 
-  switch (sort) {
-    case 'title':
-      list = list.sort((a, b) => SortTitle(a, b))
-      break
-    case 'medium':
-      list = list.sort((a, b) => SortMedium(a, b))
-      break
-    case 'author':
-      list = list.sort((a, b) => SortAuthor(a, b))
-      break
-    case 'default':
-      break
-  }
+  const Category = styled.h2(
+    `
+      display: flex;
+      width: fit-content;
+      margin-bottom: 2rem;
+
+    `
+  )
+
+  let categories = data
 
   return (
     <div className="Canon">
@@ -57,18 +36,29 @@ function Canon(props) {
         list is far from exhaustive, but tries to identify some of my influences
         in my poetry, storytelling, and thought.
       </p>
-      <SelectSort />
+
       <Container>
-        {list.map((node, index) => (
-          <CanonItem
-            key={node.id}
-            title={node.title}
-            author={node.author}
-            medium={node.medium}
-            text={node.text}
-            link={node.link}
-          />
-        ))}
+        {categories.map((list) => {
+          return (
+            <div css={css``} key={Object.keys(list).pop()}>
+              <Category>{Object.keys(list).pop()}</Category>
+              {Object.values(list).map((item) =>
+                item.map((node) => {
+                  return (
+                    <CanonItem
+                      key={node.id}
+                      title={node.title}
+                      author={node.author}
+                      medium={node.medium}
+                      text={node.text}
+                      link={node.link}
+                    />
+                  )
+                })
+              )}
+            </div>
+          )
+        })}
       </Container>
       <p style={{ textAlign: 'center' }}>
         <i>
