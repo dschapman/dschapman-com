@@ -161,6 +161,9 @@ hr {
   article > table {
     width: 100%;
   }
+  blockquote p {
+    width: 100%;
+  }
 }
 
 @media (max-width: 767px) {
