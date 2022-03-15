@@ -3,8 +3,16 @@ import React from 'react'
 import { jsx, css } from '@emotion/react'
 import { bpMaxLG } from '../../lib/breakpoints'
 import colors from '../../lib/colors'
+import { random } from 'lodash'
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max)
+}
 
 const Footnote = ({ count, children }) => {
+  if (count == undefined) {
+    count = getRandomInt(3000)
+  }
   const footnoteStyles = css`
     .sidenote,
     .marginnote {
@@ -105,6 +113,9 @@ const Footnote = ({ count, children }) => {
 }
 
 const Marginnote = ({ count, children }) => {
+  if (count == undefined) {
+    count = getRandomInt(3000)
+  }
   const marginnoteStyles = css`
     .marginnote {
       float: right;
