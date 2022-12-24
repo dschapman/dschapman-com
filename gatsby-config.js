@@ -26,7 +26,6 @@ module.exports = {
           },
           { resolve: `gatsby-remark-copy-linked-files` },
           { resolve: `gatsby-remark-smartypants` },
-          { resolve: `gatsby-remark-embedder` },
           { resolve: `gatsby-remark-slug` },
           { resolve: `gatsby-remark-mermaid` },
           {
