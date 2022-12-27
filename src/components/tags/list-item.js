@@ -24,7 +24,7 @@ export default ({ tag, tagCount, type }) => {
       slug = '/articles/tag/' + tagSlug
       break
     case 'blog':
-      slug = '/blog/tag' + tagSlug
+      slug = '/blog/tag/' + tagSlug
     default:
       new Error('Unexpected type in Tag List Item')
   }
