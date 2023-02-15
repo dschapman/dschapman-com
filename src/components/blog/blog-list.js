@@ -89,28 +89,18 @@ export default ({ posts, type }) => {
   return (
     <BlogListStyled>
       {posts.map(({ node: post }) => (
-        <BlogLinkStyled
-          key={post.slug}
-          css={css`
-            &:hover {
-              border-color: ${color};
-            }
-          `}>
-          <PubDate>
-            {new Date(post.frontmatter.date).toLocaleDateString(undefined, {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            })}
-          </PubDate>
+        <BlogLinkStyled key={post.slug}>
           <InternalLink
             to={`/blog/${post.frontmatter.date.substring(
               0,
               4
             )}/${post.frontmatter.date.substring(5, 7)}/${post.slug}`}>
             {post.frontmatter.title}
-          </InternalLink>
-          <Description>{post.excerpt}</Description>
+          </InternalLink>{' '}
+          -{' '}
+          <i>
+            <small>{new Date(post.frontmatter.date).toDateString()}</small>
+          </i>
           <ul>
             {post.frontmatter.tags.map((tag) => (
               <li key={tag}>
