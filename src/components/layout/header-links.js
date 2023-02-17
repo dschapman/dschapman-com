@@ -67,15 +67,15 @@ export default () => {
       <NavLink
         css={css`
           ${bpMaxSM} {
-            font-size: 1rem;
+            font-size: 01rem;
             padding-right: 0.5rem;
           }
           ${bpMaxXS} {
             font-size: 0.75rem;
           }
         `}
-        to="/notes">
-        Notes
+        to="/blog">
+        Blog
       </NavLink>
     </Nav>
   )

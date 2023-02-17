@@ -72,22 +72,20 @@ export const PubDate = styled.h3`
   color: ${colors.text};
 `
 
-export default ({ posts, type }) => {
-  let color
-  switch (type) {
-    case 'article':
-      color = colors.blue
-      break
-    case 'poem':
-      color = colors.red
-      break
-    default:
-      color = colors.blue
-      break
-  }
-
+export default ({ posts, format }) => {
   return (
-    <BlogListStyled>
+    <BlogListStyled
+      css={
+        format == 'grid'
+          ? css`
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              ${bpMaxSM} {
+                grid-template-columns: 1fr;
+              }
+            `
+          : ''
+      }>
       {posts.map(({ node: post }) => (
         <BlogLinkStyled key={post.slug}>
           <InternalLink
@@ -96,8 +94,8 @@ export default ({ posts, type }) => {
               4
             )}/${post.frontmatter.date.substring(5, 7)}/${post.slug}`}>
             {post.frontmatter.title}
-          </InternalLink>{' '}
-          -{' '}
+          </InternalLink>
+          <br />
           <i>
             <small>{new Date(post.frontmatter.date).toDateString()}</small>
           </i>

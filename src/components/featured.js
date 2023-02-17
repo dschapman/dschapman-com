@@ -72,7 +72,7 @@ export default function Featured() {
   return (
     <>
       <h2>Latest Blog Posts</h2>
-      <BlogList posts={data.blogs.edges} />
+      <BlogList posts={data.blogs.edges} format="grid" />
       <h2>Featured Articles</h2>
       <PostList posts={data.posts.edges} type="article" />
       <h2>Featured Poems</h2>

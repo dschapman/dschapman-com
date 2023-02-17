@@ -1,0 +1,16 @@
+import Layout from '../../components/layout/layout'
+import BlogIndex from '../../components/blog/blog-index'
+export default (props, location) => (
+  <Layout
+    title="Daniel's Corner Garden Blog 🌻"
+    descriptions="A place to plant ideas in clear straight lines to see what grows."
+    type="📅"
+    titleTagName="h1"
+    location={location}
+    {...props}
+  />
+)
+
+As my website has grown I found myself wanting a space for long-form writing that is not as structured or focused on one particular idea or topic - a place for personal musings and reflections to grow and flourish. In otherwords I was looking for a good old fashioned blog.
+
+<BlogIndex />
