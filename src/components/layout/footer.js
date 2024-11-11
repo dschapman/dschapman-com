@@ -35,7 +35,7 @@ const Footer = () => {
             padding-top: 2rem;
             color: white;
           `}>
-          Content is copyrighted 2019-2023 © D.S. Chapman. This site was built
+          Content is copyrighted 2019-2024 © D.S. Chapman. This site was built
           using GatsbyJS. Code for this website is open source and available on{' '}
           <a href="https://github.com/dschapman/my-website">Github</a>
         </div>
